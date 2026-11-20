@@ -1,0 +1,11 @@
+
+# Generated data: two scheduled workflows publish these files, and a merge between two runs
+# must take the newer, more complete payload rather than create a conflict artifact. The
+# "newest run wins" rule is implemented in scripts/ci_commit.sh; this marks the files as
+# generated so a human resolving a conflict knows to prefer the newer side.
+data/reviews/*.json linguist-generated=true
+data/site/*.json linguist-generated=true
+data/capture/*.json linguist-generated=true
+models/pending_model.json linguist-generated=true
+docs/PENDING_MODEL.md linguist-generated=true
+docs/RUN_REMOVED.md linguist-generated=true

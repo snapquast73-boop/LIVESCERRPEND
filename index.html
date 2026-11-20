@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MLB Run-Removed Overturns &amp; Pending Scoring Decisions — verified from official feeds</title>
+<meta name="description" content="Every replay overturn that removed a run from the score, with click-to-watch video, plus live pending official-scorer rulings — built from the official MLB Stats API with every number traceable to a source link." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h1>Run-Removed Overturns <span class="slash">/</span> Pending Scoring Decisions</h1>
+        <p class="tag">Every number comes from an official MLB feed and links to the record it came from. Nothing here is estimated or typed by hand.</p>
+      </div>
+    </div>
+    <div class="status" id="status" role="status" aria-live="polite">loading data…</div>
+  </div>
+</header>
+
+<nav class="tabs wrap" role="tablist" aria-label="Sections">
+  <button class="tab is-active" data-view="run-removed" role="tab" aria-selected="true">Run-removed overturns</button>
+  <button class="tab" data-view="pending" role="tab" aria-selected="false">Pending rulings</button>
+  <button class="tab" data-view="reviews" role="tab" aria-selected="false">All replay overturns</button>
+  <button class="tab" data-view="decisions" role="tab" aria-selected="false">Scorer decision changes</button>
+  <button class="tab" data-view="scorer" role="tab" aria-selected="false">Live scorer (0–100)</button>
+  <button class="tab" data-view="model" role="tab" aria-selected="false">Scoring model</button>
+  <button class="tab" data-view="method" role="tab" aria-selected="false">Method &amp; sources</button>
+</nav>
+
+<main id="main" class="wrap">
+
+  <!-- ============================ RUN-REMOVED ============================ -->
+  <section id="view-run-removed" class="view is-active" role="tabpanel" aria-labelledby="run-removed-tab">
+    <div class="card intro">
+      <h2>Plays where a replay overturn took runs off the scoreboard</h2>
+      <p>
+        A home run scores the batter <em>and</em> every runner on base. When MLB's own review
+        text says the call on the field was a home run and the review overturned it, the final
+        play record still lists who actually scored — so the runs removed are arithmetic on the
+        official record:
+      </p>
+      <p class="formula">runs removed = (runners on base + 1 batter) − runs the final record credits</p>
+      <p class="muted">
+        Every row prints those inputs, links to the official play-by-play, and opens the broadcast
+        clip. The same MLB wording (“call on the field was overturned”) also covers reviews that
+        <em>award</em> a home run, and those are listed separately as <strong>additions</strong> with
+        no run count: the pre-review state needed to quantify them is not kept in the archived feed.
+        Plays where a run could have come off the board but no number can be derived at all are
+        listed as <strong>candidates</strong> with the reason and the clip — never as a count.
+      </p>
+      <div class="summary" id="rr-summary"></div>
+    </div>
+
+    <div class="controls card">
+      <label>Season
+        <select id="rr-season"><option value="">all</option></select>
+      </label>
+      <label>Search
+        <input type="search" id="rr-search" placeholder="player, team, or date" />
+      </label>
+      <label>Rows
+        <select id="rr-rows">
+          <option value="run_removals">run-removals only</option>
+          <option value="all">run-removals + additions + candidates</option>
+        </select>
+      </label>
+      <button class="btn" id="rr-csv">Download CSV</button>
+      <span class="notice" id="rr-notice"></span>
+    </div>
+
+    <div id="rr-list" class="cards"></div>
+  </section>
+
+  <!-- ============================ PENDING ============================ -->
+  <section id="view-pending" class="view" role="tabpanel" aria-labelledby="pending-tab">
+    <div class="card intro">
+      <h2>Pending official-scorer rulings</h2>
+      <p>
+        When the official scorer cannot decide at once whether a ball in play is a hit, an error
+        or a fielder's choice, the feed carries the event code
+        <code>os_ruling_pending_primary</code> (or <code>os_ruling_pending_prior</code> for a prior
+        base-running event of the same play) with the registered description
+        <em>“Official Scorer Ruling Pending.”</em> Detection below uses those exact registry values.
+      </p>
+      <p class="muted">
+        The live panel reads MLB's feed straight from your browser. If your browser or network
+        cannot reach <code>statsapi.mlb.com</code>, the panel says so and the harvested history
+        underneath still works.
+      </p>
+      <div class="controls">
+        <button class="btn primary" id="pend-refresh">Refresh live</button>
+        <span class="notice" id="pend-notice"></span>
+      </div>
+      <div id="pend-live" class="cards"></div>
+    </div>
+
+    <div class="card">
+      <h2>What pending rulings actually resolved to</h2>
+      <p class="muted" id="pend-model-summary">Loading the harvested history…</p>
+      <div id="pend-dist" class="dist"></div>
+      <p class="foot" id="pend-model-foot"></p>
+    </div>
+
+    <div class="card">
+      <h2>Pending cases on file</h2>
+      <p class="muted">
+        Two sources feed this list. The post-game <code>harvest</code> reads what the official
+        archive still shows; the <code>live-capture</code> workflow polls in-progress games and keeps
+        every pending state it sees, because the archive replaces the marker with the corrected call.
+        A case captured live shows when it was first and last seen pending, and what it resolved to.
+      </p>
+      <div class="controls">
+        <label>Season <select id="pend-season"><option value="">all</option></select></label>
+        <label>Search <input type="search" id="pend-search" placeholder="player, team, or date" /></label>
+        <span class="notice" id="pend-list-notice"></span>
+      </div>
+      <div id="pend-list" class="cards"></div>
+    </div>
+  </section>
+
+  <!-- ============================ REVIEWS ============================ -->
+  <section id="view-reviews" class="view" role="tabpanel" aria-labelledby="reviews-tab">
+    <div class="card intro">
+      <h2>Every overturned replay review found in the scanned games</h2>
+      <p class="muted">
+        Read from <code>reviewDetails</code> on the official play-by-play
+        (<code>isOverturned: true</code>, <code>inProgress: false</code>). Reviews are stored at two
+        levels in that feed — on the play and on the individual pitch/play event — and both are
+        collected here. Each row links to the clip, the official play-by-play and the Gameday page.
+      </p>
+      <div class="controls">
+        <label>Season <select id="rv-season"><option value="">all</option></select></label>
+        <label>Type
+          <select id="rv-type">
+            <option value="">all</option>
+            <option value="NH">NH — boundary / home-run review</option>
+            <option value="MA">MA — manager challenge</option>
+            <option value="MF">MF — close play at 1st</option>
+            <option value="MJ">MJ — pitch result (ABS)</option>
+          </select>
+        </label>
+        <label>Search <input type="search" id="rv-search" placeholder="player, team, or date" /></label>
+        <span class="notice" id="rv-notice"></span>
+      </div>
+      <div class="summary" id="rv-summary"></div>
+    </div>
+    <div id="rv-list" class="cards"></div>
+  </section>
+
+  <!-- ============================ DECISION CHANGES ============================ -->
+  <section id="view-decisions" class="view" role="tabpanel" aria-labelledby="decisions-tab">
+    <div class="card intro">
+      <h2>When the Official Scorer changed a call — error to hit, hit to fielder's choice</h2>
+      <p class="muted">
+        Replay reviews are decided on the field in seconds and say nothing about the scorer's own
+        statistical call. This is the slower, separate record: MLB's official post-game
+        <a href="https://www.mlb.com/official-information/scoring-changes" target="_blank" rel="noopener">scoring-change bulletin</a>,
+        which states in words that a batter scored on an error was re-scored on a hit or a
+        fielder's choice — and whether the batter's RBI moved with it.
+      </p>
+      <p class="muted">
+        Each row is classified only when the official text names <em>both</em> sides of the
+        change, and the row quotes the exact span that was read. Rows that state no ruling change
+        (an assist, a putout, an earned/unearned reclassification) stay unclassified and are
+        counted separately, never guessed. The totals below are tallies of the entries on file:
+        they are <strong>not</strong> a base rate and <strong>not</strong> a probability, because
+        MLB publishes the changes it chooses to publish.
+      </p>
+      <div class="controls">
+        <label>Change
+          <select id="dc-transition">
+            <option value="">every classified reversal</option>
+            <option value="error-&gt;hit">error → hit</option>
+            <option value="error-&gt;fielders_choice">error → fielder's choice</option>
+            <option value="hit-&gt;error">hit → error</option>
+            <option value="hit-&gt;fielders_choice">hit → fielder's choice</option>
+            <option value="fielders_choice-&gt;hit">fielder's choice → hit</option>
+          </select>
+        </label>
+        <label><input type="checkbox" id="dc-rbi" /> only entries where the RBI changed</label>
+        <span class="notice" id="dc-notice"></span>
+      </div>
+      <div class="summary" id="dc-summary"></div>
+    </div>
+    <div id="dc-list" class="cards"></div>
+  </section>
+
+  <!-- ============================ LIVE SCORER ============================ -->
+  <section id="view-scorer" class="view" role="tabpanel" aria-labelledby="scorer-tab">    <div class="card intro">
+      <h2>How a batted ball is scored — the 0–100 view</h2>
+      <p>
+        Two numbers are published for every scored play in the committed set:
+      </p>
+      <ul class="sources">
+        <li><strong>Score</strong> (0–100) — the model's probability of its top class for the
+          batted ball (hit, error, fielder's choice, or out). This is the number to read while a
+          ball is in the air and no ruling exists yet.</li>
+        <li><strong>SCI</strong> (0–100) — the <em>conditional</em> scoring-impact score: the
+          probability of the ruling actually in force, renormalised over hit / error / fielder's
+          choice. It is shown only where the batter reached, because an out has no hit/error/FC
+          ruling to weigh; elsewhere it reads “—” and is never filled in.</li>
+      </ul>
+      <p class="muted">
+        Each row also prints what the rule engine would award the batter under every candidate
+        ruling — the RBI answer to “error or hit?”: an error denies the RBI, a hit or a
+        fielder's choice can credit one (with the Rule 9.04(a)(3) exception where a runner from
+        third would have scored). Where the rule needs a scorer's judgment, the row says so.
+      </p>
+      <p class="foot" id="sc-caveat"></p>
+      <div class="summary" id="sc-summary"></div>
+    </div>
+
+    <div class="controls card">
+      <label>Season <select id="sc-season"><option value="">all</option></select></label>
+      <label>Show
+        <select id="sc-state">
+          <option value="">all scored plays</option>
+          <option value="reached">only plays where the batter reached (SCI exists)</option>
+          <option value="disagree">only where the model disagreed with the official ruling</option>
+          <option value="low">only SCI below 50</option>
+        </select>
+      </label>
+      <label>Search <input type="search" id="sc-search" placeholder="batter, pitcher, team, or date" /></label>
+      <button class="btn" id="sc-csv">Download CSV</button>
+      <span class="notice" id="sc-notice"></span>
+    </div>
+
+    <div id="sc-list" class="cards"></div>
+  </section>
+
+  <!-- ============================ MODEL ============================ -->
+  <section id="view-model" class="view" role="tabpanel" aria-labelledby="model-tab">
+    <div class="card">
+      <h2>What the numbers can and cannot say</h2>
+      <table class="kv" id="model-card"></table>
+      <p class="foot">
+        The published accuracy below is measured on held-out data by the training scripts in this
+        repository. Where a metric has not been produced, the table says so instead of quoting one.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Correlation study</h2>
+      <p class="muted">
+        Point-biserial, Spearman, partial correlation, Cramér's V and mutual information between
+        batted-ball inputs and the four-way outcome. Association is not causation and these are
+        unconditional associations — read <code>docs/CORRELATIONS.md</code> for the method.
+      </p>
+      <div id="corr-table"></div>
+    </div>
+    <div class="card">
+      <h2>Rule 9.04 RBI consequences</h2>
+      <p class="muted">
+        An error ruling normally denies the batter an RBI, with one exception: Rule 9.04(a)(3),
+        which the scorer applies when — before two are out — a runner from third would ordinarily
+        have scored. A fielder's choice or a hit can credit an RBI that an error would not. The
+        engine returns a <em>range</em> when the facts the rule needs are missing from the feed,
+        because those are scorer judgments, not data.
+      </p>
+      <div id="rbi-note"></div>
+    </div>
+  </section>
+
+  <!-- ============================ METHOD ============================ -->
+  <section id="view-method" class="view" role="tabpanel" aria-labelledby="method-tab">
+    <div class="card">
+      <h2>How every number on this site is produced</h2>
+      <ol class="method">
+        <li><strong>Harvest.</strong> A GitHub Actions job (this repository's <code>harvest</code>
+          workflow) reads the official schedule and each game's play-by-play from
+          <a href="https://statsapi.mlb.com/api/v1/schedule">statsapi.mlb.com</a>, then commits the
+          derived JSON. No human edits it.</li>
+        <li><strong>Detect.</strong> Replay reviews come from <code>reviewDetails</code>; pending
+          rulings come only from the two registry codes
+          (<a href="https://statsapi.mlb.com/api/v1/eventTypes">/v1/eventTypes</a>); errors come from
+          the official event codes <code>field_error</code> and <code>error</code>.</li>
+        <li><strong>Compute.</strong> Run removals are arithmetic on the official record and are
+          emitted only when a completed review overturned the call <em>and</em> the final event shows
+          the home run was taken away. Direction is read from that final event — the same wording
+          covers reviews that award a home run, which are published separately with no count.</li>
+        <li><strong>Capture live.</strong> The pending marker is a live state: the archive replaces it
+          with the corrected call, so the <code>live-capture</code> workflow polls in-progress games
+          every 10 minutes during game hours and records each pending state and its resolution in
+          <code>data/capture/pending_live.json</code>.</li>
+        <li><strong>Cross-check.</strong> For every play, the runs implied by the runner movements
+          are compared with the official score delta. Disagreements are published in the harvest
+          metadata rather than smoothed away.</li>
+        <li><strong>Verify.</strong> Three plays with published run-removal values are re-fetched and
+          re-checked on every run; the result is shown in the table below and in the workflow log.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Verification anchors</h2>
+      <div id="anchor-table" class="muted">Loading…</div>
+    </div>
+    <div class="card">
+      <h2>Coverage, freshness and irregularities</h2>
+      <div id="meta-table" class="muted">Loading…</div>
+    </div>
+    <div class="card">
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li><a href="https://statsapi.mlb.com/api/v1/schedule">MLB Stats API — schedule</a> (official game list)</li>
+        <li><a href="https://statsapi.mlb.com/api/v1/game/778307/playByPlay">MLB Stats API — play-by-play</a> (the record behind every row)</li>
+        <li><a href="https://statsapi.mlb.com/api/v1/eventTypes">MLB Stats API — event types</a> (the pending-ruling codes)</li>
+        <li><a href="https://statsapi.mlb.com/api/v1/reviewReasons">MLB Stats API — review reasons</a> (review code → description)</li>
+        <li><a href="https://baseballsavant.mlb.com/sporty-videos?playId=4ff0b9e8-374a-34e0-9adc-f5c198e858b3">Baseball Savant — clip for a playId</a> (click-to-watch; verified 2026-09-28)</li>
+        <li><a href="https://www.mlb.com/official-information/scoring-changes">MLB — official scoring changes</a> (statistical revisions, a different mechanism from replay)</li>
+        <li><a href="https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf">Official Baseball Rules — Rule 9, the Official Scorer</a> (Rule 9.01(a), 9.04)</li>
+        <li><a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending">This repository</a> — README, docs/VERIFICATION.md, docs/RUN_REMOVED.md</li>
+      </ul>
+      <p class="foot">
+        Data © MLB Advanced Media, L.P. This project is not affiliated with or endorsed by MLB.
+        Clip links point to MLB's own public pages; nothing is re-hosted here.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot-bar">
+  <span id="footer-meta">—</span>
+  <span><a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending/blob/main/docs/RUN_REMOVED.md">docs/RUN_REMOVED.md</a> · <a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending/blob/main/docs/VERIFICATION.md">verification log</a></span>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/run-removed.js"></script>
+<script src="assets/js/pending.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/decision-changes.js"></script>
+<script src="assets/js/scorer.js"></script>
+<script src="assets/js/model.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

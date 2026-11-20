@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Harvested raw Statcast data — regenerate with scripts/harvest_statcast.py
+data/raw/
+data/cache/
+# Watcher database — local observation log
+data/watch.sqlite3
+*.log
