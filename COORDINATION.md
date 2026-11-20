@@ -24,7 +24,7 @@ Shared task board for `snapquast73-boop/LIVESCERRPEND`.
 | T-3 | Flag irregularities / unverified items page | done | arena/3061568e-livescerrpend | docs/FLAGGED.md, docs/VERIFICATION.md, docs/SOURCES.md | IRR-01..IRR-04 |
 | T-4 | Repoint buffedlizard55-lab -> snapquast73-boop/LIVESCERRPEND | done | arena/3061568e-livescerrpend | README.md, index.html | GitHub repo settings |
 | T-5 | Add GitHub Actions (harvest + tests) | done | arena/3061568e-livescerrpend | .github/workflows/*.yml, tests/test_payload.py | pytest: 4 passed |
-| T-6 | Integration: rebase onto main, merge PR #2, confirm Pages deploys | in progress | arena/3061568e-livescerrpend | GitHub PR #2 + COORDINATION.md | PR #2 created; merging to main |
+| T-6 | Integration: rebase onto main, merge PR #2, confirm Pages deploys | done | arena/3061568e-livescerrpend | GitHub PR #2 + COORDINATION.md | PR #2 merged to main; Pages status "built" |
 
 ## Conflict resolution (this session)
 
@@ -45,4 +45,6 @@ Resolution: kept the arena/3061568e-livescerrpend (verified) engine for those fi
 | Pull request | https://github.com/snapquast73-boop/LIVESCERRPEND/pull/2 |
 | Head | arena/3061568e-livescerrpend |
 | Base | main |
-| Merge result | pending |
+| Merge result | merged (merge commit) — `main` @ 9bf7039 "Merge pull request #2 ..." |
+| GitHub Pages | status `built`; https://snapquast73-boop.github.io/LIVESCERRPEND/ (source: branch main, path /) |
+| Live-site note | Direct curl from sandbox returns TLS connect failure (same egress block as IRR-04 / *.mlb.com); GitHub's Pages API is the source of truth and reports `built`. All assets verified HTTP 200 locally with no broken links. |
