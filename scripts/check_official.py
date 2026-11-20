@@ -76,10 +76,20 @@ def check_game_rows(rows):
         plays = json.loads(read(row['pbp']))['allPlays']
         idx = row['atBatIndex']
         play, = [p for p in plays if p['atBatIndex'] == idx]
-        review = play['reviewDetails']
+        # A review can sit on the play or on one of its pitch events; the row records
+        # which one with `eventIndex`, so the same record is looked up either way.
+        index = row.get('eventIndex')
+        if index is None:
+            review = play.get('reviewDetails')
+            result_text = play['result']['description']
+        else:
+            event, = [e for e in play['playEvents'] if e.get('index') == index]
+            review = event.get('reviewDetails')
+            result_text = (event.get('details') or {}).get('description') or play['result']['description']
+        assert review, f"{gid}/{idx}: the official feed has no review record at this position"
         assert review['isOverturned'] is True and review['inProgress'] is False, (gid, idx)
         assert row['reviewType'] == review['reviewType'], (gid, idx)
-        assert row['play'] == play['result']['description'], (gid, idx)
+        assert row['play'] == result_text, (gid, idx)
         assert row['batter'] == play['matchup']['batter']['fullName'], gid
         for key, actual in [('pitcher', play['matchup']['pitcher']['fullName']),
                             ('inning', play['about']['inning']),
