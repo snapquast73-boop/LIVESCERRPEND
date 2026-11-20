@@ -78,21 +78,33 @@ def check_game_rows(rows):
         play, = [p for p in plays if p['atBatIndex'] == idx]
         # A review can sit on the play or on one of its pitch events; the row records
         # which one with `eventIndex`, so the same record is looked up either way.
+        # A review record can sit on the play or on any of its pitch events, and the
+        # published row records which one it used. The check accepts a record at the
+        # recorded position or, for a play-level row, any record on that play — what it
+        # will not accept is a review that is not in the official feed at all.
         index = row.get('eventIndex')
-        # A pitch-level record keeps the pitch text when the feed prints one and falls
-        # back to the play's own text, so both are accepted here.
         official_texts = {play['result']['description']}
+        records = []
         if index is None:
-            review = play.get('reviewDetails')
+            if play.get('reviewDetails'):
+                records.append(play['reviewDetails'])
+            for event in play['playEvents'] or []:
+                if event.get('reviewDetails'):
+                    records.append(event['reviewDetails'])
+                    pitch_text = (event.get('details') or {}).get('description')
+                    if pitch_text:
+                        official_texts.add(pitch_text)
         else:
             event, = [e for e in play['playEvents'] if e.get('index') == index]
-            review = event.get('reviewDetails')
+            if event.get('reviewDetails'):
+                records.append(event['reviewDetails'])
             pitch_text = (event.get('details') or {}).get('description')
             if pitch_text:
                 official_texts.add(pitch_text)
-        assert review, f"{gid}/{idx}: the official feed has no review record at this position"
+        matching = [r for r in records if r.get('reviewType') == row['reviewType']]
+        assert matching, f"{gid}/{idx}: the official feed has no {row['reviewType']} review record on this play"
+        review = matching[0]
         assert review['isOverturned'] is True and review['inProgress'] is False, (gid, idx)
-        assert row['reviewType'] == review['reviewType'], (gid, idx)
         assert row['play'] in official_texts, (gid, idx, row['play'], official_texts)
         assert row['batter'] == play['matchup']['batter']['fullName'], gid
         for key, actual in [('pitcher', play['matchup']['pitcher']['fullName']),

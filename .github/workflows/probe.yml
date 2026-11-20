@@ -1,6 +1,6 @@
 name: probe
 
-# Temporary diagnostic workflow (deleted before merge). Rerun 4.
+# Temporary diagnostic workflow (deleted before merge). Rerun 5.
 on:
   push:
     branches: [arena/c68ee0e2-livescerrpend]
