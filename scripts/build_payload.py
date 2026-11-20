@@ -92,10 +92,13 @@ def main() -> int:
         pitch_all.extend(pitch)
 
         published = [trim(row, ROW_FIELDS["runRemoved"]) for row in archive.get("runRemoved", [])]
+        # Only the overturned reviews are published as rows: the pitch-challenge
+        # archive is large (thousands of rows) and is reported as a count here,
+        # while reviews.html reads a date's pitch challenges live from MLB.
         (SITE_DIR / f"reviews-{season}.json").write_text(
             json.dumps({"season": season, "generatedAt": archive.get("generatedAt"),
                         "source": archive.get("source"), "reviews": reviews,
-                        "pitchChallenges": pitch}, indent=1, ensure_ascii=False) + "\n")
+                        "pitchChallengeCount": len(pitch)}, indent=1, ensure_ascii=False) + "\n")
 
         scale.append({
             "season": season,

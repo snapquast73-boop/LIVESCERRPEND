@@ -237,11 +237,20 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
     scores = (0, 0)
     tracked_runs = {"away": 0, "home": 0}
     tracking_issue: str | None = None
+    previous_half = None
 
     for play in feed.get("allPlays") or []:
         about = play.get("about") or {}
         result = play.get("result") or {}
         is_top = bool(about.get("isTopInning"))
+
+        # A half inning always starts with empty bases. Clearing here is a rule of
+        # baseball, not an assumption about the feed: it stops a runner left on base
+        # at the end of one half inning leaking into the next play's occupancy.
+        half = (about.get("inning"), about.get("halfInning"))
+        if previous_half is not None and half != previous_half:
+            bases.clear()
+        previous_half = half
 
         state = apply_play(play, bases)
         delta, scores = score_delta(play, is_top, scores)
