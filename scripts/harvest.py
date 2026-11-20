@@ -236,25 +236,21 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
     bases: dict[str, str] = {}
     scores = (0, 0)
     tracked_runs = {"away": 0, "home": 0}
+    tracking_issue: str | None = None
 
     for play in feed.get("allPlays") or []:
         about = play.get("about") or {}
         result = play.get("result") or {}
         is_top = bool(about.get("isTopInning"))
-        is_complete = about.get("isComplete", True)
 
         state = apply_play(play, bases)
         delta, scores = score_delta(play, is_top, scores)
         tracked_runs["away" if is_top else "home"] += len(state["scored"])
         if delta != len(state["scored"]):
-            base_issues.append(
-                f"play {about.get('atBatIndex')}: official score moved {delta} run(s) but"
-                f" {len(state['scored'])} runner(s) are recorded scoring"
-            )
-        if (about.get("halfInning") == "bottom" and about.get("inning")) and is_complete:
-            # A completed half inning leaves the bases empty unless the feed carries
-            # an automatic runner; a non-empty state here means tracking drifted.
-            pass
+            issue = (f"play {about.get('atBatIndex')}: official score moved {delta} run(s) but"
+                     f" {len(state['scored'])} runner(s) are recorded scoring")
+            base_issues.append(issue)
+            tracking_issue = tracking_issue or issue
 
         review = play.get("reviewDetails")
         events = play.get("playEvents") or []
@@ -288,7 +284,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
                 "filmRoom": film_room_url(game_pk),
                 "savant": savant_url(play_play_id(play)),
                 "source": play_by_play_url(game_pk),
-                "trackingIssue": base_issues[-1] if base_issues and base_issues[-1].startswith(f"play {about.get('atBatIndex')}:") else None,
+                "trackingIssue": tracking_issue,
             })
         for index, event_review in event_reviews:
             if event_review.get("isOverturned") is not True or event_review.get("inProgress") is not False:
@@ -319,7 +315,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
                 "filmRoom": film_room_url(game_pk),
                 "savant": None,
                 "source": play_by_play_url(game_pk),
-                "trackingIssue": None,
+                "trackingIssue": tracking_issue,
             })
 
     final_away = (game.get("teams", {}).get("away") or {}).get("score")

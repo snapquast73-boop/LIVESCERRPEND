@@ -1,38 +1,82 @@
 name: harvest
 
+# Reads the official MLB Stats API and MLB's scoring-change bulletin, rebuilds
+# data/site/payload.json, and commits the result. No manual data entry.
 on:
   schedule:
-    - cron: "0 */3 * * *"   # every 3 hours (in-season)
-  push:
-    branches: [ main, arena/3061568e-livescerrpend ]
+    - cron: "17 7 * * *"          # daily refresh of the bulletin + payload
+    - cron: "17 3,9,15,21 * * *"  # in-season: keep the live capture fresh
   workflow_dispatch:
+    inputs:
+      seasons:
+        description: space separated seasons to (re)harvest, e.g. "2026 2025"
+        default: "2026"
+      force:
+        description: re-harvest seasons that are already on disk (true/false)
+        default: "false"
+      max_games:
+        description: debug limit of games per season (blank = all)
+        default: ""
+  push:
+    branches: [main, arena/c68ee0e2-livescerrpend]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/harvest.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harvest
+  cancel-in-progress: false
 
 jobs:
   harvest:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      SEASONS: ${{ github.event.inputs.seasons || '2026 2025' }}
+      FORCE: "true"
+      MAX_GAMES: ${{ github.event.inputs.max_games || '' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Probe official MLB Stats API reachability
-        id: probe
+
+      - name: Harvest official game feeds
         run: |
-          python - <<'EOF'
-          import urllib.request
-          try:
-              with urllib.request.urlopen("https://statsapi.mlb.com/api/v1/schedule", timeout=20) as r:
-                  print(f"MLB Stats API reachable (HTTP {r.status})")
-                  print("reachable=true")
-          except Exception as e:
-              print(f"MLB Stats API not reachable: {e}")
-              print("reachable=false")
-          EOF
-      - name: Validate committed snapshot offline
-        run: pip install pytest >/dev/null && pytest -q
-      - name: Report
+          args=""
+          for season in $SEASONS; do args="$args --season $season"; done
+          if [ "$FORCE" = "true" ]; then args="$args --force"; fi
+          if [ -n "$MAX_GAMES" ]; then args="$args --max-games $MAX_GAMES"; fi
+          python3 scripts/harvest.py $args
+
+      - name: Harvest official scoring-change bulletin
+        run: python3 scripts/harvest_scoring_changes.py
+
+      - name: Build published payload
+        run: python3 scripts/build_payload.py
+
+      - name: Offline checks
         run: |
-          echo "Harvest data collection requires the full harvest scripts (scripts/harvest_reviews.py, ...)"
-          echo "which were not part of this upload and cannot be verified without reaching *.mlb.com from this sandbox."
-          echo "See docs/FLAGGED.md IRR-04."
+          python3 -m pip install --quiet pytest
+          python3 -m pytest -q
+
+      - name: Commit harvested data
+        run: |
+          git config user.name "harvest-bot"
+          git config user.email "harvest-bot@users.noreply.github.com"
+          git add data/seasons data/site data/decision_changes.json
+          if git diff --cached --quiet; then
+            echo "No data change this run."
+            exit 0
+          fi
+          git commit -m "harvest: official MLB feeds $(date -u +%FT%TZ)"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep 5
+          done

@@ -8,3 +8,4 @@ data/cache/
 # Watcher database — local observation log
 data/watch.sqlite3
 *.log
+data/cache/
