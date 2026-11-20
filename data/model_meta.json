@@ -1,0 +1,8 @@
+{
+  "status": "unverified",
+  "model_type": "— (not trained in this repository)",
+  "held_out_accuracy": "— (unverified; not produced)",
+  "correlations": [],
+  "rbi_rule": "Rule 9.04(a)(3): an error normally denies the batter an RBI unless, before two are out, a runner from third would ordinarily have scored.",
+  "source": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf"
+}

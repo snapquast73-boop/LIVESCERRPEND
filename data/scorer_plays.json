@@ -1,0 +1,7 @@
+{
+  "generated_at": null,
+  "status": "unverified",
+  "note": "No scored plays committed yet; model training/harvest scripts were not included in the uploaded files.",
+  "source": "https://statsapi.mlb.com/api/v1/schedule",
+  "rows": []
+}

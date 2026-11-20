@@ -31,6 +31,7 @@
   <button class="tab" data-view="scorer" role="tab" aria-selected="false">Live scorer (0–100)</button>
   <button class="tab" data-view="model" role="tab" aria-selected="false">Scoring model</button>
   <button class="tab" data-view="method" role="tab" aria-selected="false">Method &amp; sources</button>
+  <button class="tab" data-view="flagged" role="tab" aria-selected="false">Flagged for Review</button>
 </nav>
 
 <main id="main" class="wrap">
@@ -312,7 +313,7 @@
         <li><a href="https://baseballsavant.mlb.com/sporty-videos?playId=4ff0b9e8-374a-34e0-9adc-f5c198e858b3">Baseball Savant — clip for a playId</a> (click-to-watch; verified 2026-09-28)</li>
         <li><a href="https://www.mlb.com/official-information/scoring-changes">MLB — official scoring changes</a> (statistical revisions, a different mechanism from replay)</li>
         <li><a href="https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf">Official Baseball Rules — Rule 9, the Official Scorer</a> (Rule 9.01(a), 9.04)</li>
-        <li><a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending">This repository</a> — README, docs/VERIFICATION.md, docs/RUN_REMOVED.md</li>
+        <li><a href="https://github.com/snapquast73-boop/LIVESCERRPEND">This repository (snapquast73-boop/LIVESCERRPEND)</a> — README.md, COORDINATION.md</li>
       </ul>
       <p class="foot">
         Data © MLB Advanced Media, L.P. This project is not affiliated with or endorsed by MLB.
@@ -320,11 +321,24 @@
       </p>
     </div>
   </section>
+
+  <!-- ============================ FLAGGED FOR REVIEW ============================ -->
+  <section id="view-flagged" class="view" role="tabpanel" aria-labelledby="flagged-tab">
+    <div class="card intro">
+      <h2>Flagged for Review</h2>
+      <p class="muted">
+        Items below could not be verified from an official source in the build environment or had
+        missing upstream files. Nothing has been inferred or filled in; each item includes its
+        official source link for manual review.
+      </p>
+    </div>
+    <div id="flagged-list" class="cards"></div>
+  </section>
 </main>
 
 <footer class="wrap foot-bar">
   <span id="footer-meta">—</span>
-  <span><a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending/blob/main/docs/RUN_REMOVED.md">docs/RUN_REMOVED.md</a> · <a href="https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending/blob/main/docs/VERIFICATION.md">verification log</a></span>
+  <span><a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/COORDINATION.md">COORDINATION.md</a> · <a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/README.md">README.md</a></span>
 </footer>
 
 <script src="assets/js/api.js"></script>

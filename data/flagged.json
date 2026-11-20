@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "FLAG-01",
+      "area": "Repository Assets & Scripts",
+      "status": "needs_review",
+      "description": "The initial upload to snapquast73-boop/LIVESCERRPEND only included root files (index.html, README.md, conftest.py, requirements.txt). Subdirectories (assets/, data/, src/, scripts/, docs/) were missing and were reconstructed for GitHub Pages.",
+      "source_url": "https://github.com/snapquast73-boop/LIVESCERRPEND",
+      "source_label": "snapquast73-boop/LIVESCERRPEND"
+    },
+    {
+      "id": "FLAG-02",
+      "area": "MLB Stats API Archive Harvest",
+      "status": "unverified",
+      "description": "statsapi.mlb.com is unreachable from the build sandbox. All archived datasets (run_removed, reviews, decision_changes, scorer_plays) are left empty rather than estimated. Use the 'Refresh live' button on Pending rulings in your browser to query statsapi.mlb.com directly.",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule",
+      "source_label": "MLB Stats API — Schedule"
+    },
+    {
+      "id": "FLAG-03",
+      "area": "Official Scoring Changes Bulletin",
+      "status": "unverified",
+      "description": "Post-game scoring-change bulletin entries have not been harvested yet.",
+      "source_url": "https://www.mlb.com/official-information/scoring-changes",
+      "source_label": "MLB Official Scoring Changes"
+    },
+    {
+      "id": "FLAG-04",
+      "area": "Official Baseball Rules — Rule 9.04",
+      "status": "verified_reference",
+      "description": "Rule 9.04(a)(3) RBI exception reference linked for manual verification.",
+      "source_url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "source_label": "2026 Official Baseball Rules (PDF)"
+    }
+  ]
+}
