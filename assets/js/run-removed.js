@@ -77,7 +77,7 @@ const RunRemoved = (() => {
 
     R.list("rr-list", parts);
     R.$("rr-csv").disabled = filtered.length === 0;
-    const totalRemoved = rows.filter(r => r.runsRemoved != null).reduce((a, b) => a + (Number(r.runsRemoved) || 0), 0);
+    const totalRemoved = rows.filter(r => r.runsRemoved != null).reduce((a, b) => a + (Number(b.runsRemoved) || 0), 0);
     R.summary("rr-summary", `
       ${filtered.length} row${filtered.length !== 1 ? "s" : ""} shown
       ${rows.filter(r => r.runsRemoved != null).length > 0 ? ` · ${rows.filter(r => r.runsRemoved != null).length} run-removals · ${totalRemoved} run${totalRemoved !== 1 ? "s" : ""} removed in sample` : ""}

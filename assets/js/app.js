@@ -103,6 +103,7 @@ API.onLoad((payload) => {
 // initial load
 API.load().then(() => {
   setStatus("Data loaded.", "ok");
-}).catch(() => {
+}).catch((error) => {
+  console.error("Site initialization failed:", error);
   setStatus("Data unavailable — showing empty shell.", "warn");
 });
