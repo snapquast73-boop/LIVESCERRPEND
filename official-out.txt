@@ -1,0 +1,26 @@
+run removals: all 23 rows
+Checked game 849838, play 47: https://statsapi.mlb.com/api/v1/game/849838/playByPlay
+Checked game 823616, play 63: https://statsapi.mlb.com/api/v1/game/823616/playByPlay
+Checked game 824431, play 46: https://statsapi.mlb.com/api/v1/game/824431/playByPlay
+Checked game 823381, play 47: https://statsapi.mlb.com/api/v1/game/823381/playByPlay
+Checked game 823877, play 6: https://statsapi.mlb.com/api/v1/game/823877/playByPlay
+Checked game 822998, play 46: https://statsapi.mlb.com/api/v1/game/822998/playByPlay
+Checked game 776683, play 16: https://statsapi.mlb.com/api/v1/game/776683/playByPlay
+Checked game 777008, play 2: https://statsapi.mlb.com/api/v1/game/777008/playByPlay
+Checked game 777291, play 57: https://statsapi.mlb.com/api/v1/game/777291/playByPlay
+Checked game 777432, play 55: https://statsapi.mlb.com/api/v1/game/777432/playByPlay
+Checked game 777725, play 72: https://statsapi.mlb.com/api/v1/game/777725/playByPlay
+Checked game 777906, play 56: https://statsapi.mlb.com/api/v1/game/777906/playByPlay
+Checked game 777929, play 18: https://statsapi.mlb.com/api/v1/game/777929/playByPlay
+Checked game 778307, play 29: https://statsapi.mlb.com/api/v1/game/778307/playByPlay
+Checked game 745857, play 63: https://statsapi.mlb.com/api/v1/game/745857/playByPlay
+Checked game 745541, play 25: https://statsapi.mlb.com/api/v1/game/745541/playByPlay
+Traceback (most recent call last):
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 121, in <module>
+    main()
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 106, in main
+    check_game_rows(removals)
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 69, in check_game_rows
+    game, = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
+    ^^^^^
+ValueError: too many values to unpack (expected 1)
