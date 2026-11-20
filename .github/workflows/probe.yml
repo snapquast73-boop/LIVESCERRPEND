@@ -1,0 +1,65 @@
+name: probe
+
+# Temporary diagnostic workflow (deleted before merge).
+on:
+  workflow_dispatch:
+    inputs:
+      games:
+        description: space separated gamePks
+        default: "823616 778307"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe official MLB feeds
+        run: |
+          python3 - "${{ github.event.inputs.games }}" <<'EOF'
+          import json, sys, urllib.request
+
+          games = sys.argv[1].split()
+
+          def get(url):
+              with urllib.request.urlopen(url, timeout=60) as r:
+                  return json.load(r)
+
+          print("=== reviewReasons registry ===")
+          rr = get("https://statsapi.mlb.com/api/v1/reviewReasons")
+          print(json.dumps(rr)[:4000])
+
+          print("\n=== eventTypes (pending codes) ===")
+          et = get("https://statsapi.mlb.com/api/v1/eventTypes")
+          codes = [e for e in (et if isinstance(et, list) else et.get("eventTypes", []))]
+          for e in codes:
+              name = e.get("code") or e.get("eventType") or e
+              if "pending" in json.dumps(e).lower():
+                  print(json.dumps(e))
+
+          for pk in games:
+              print(f"\n=== game {pk} ===")
+              feed = get(f"https://statsapi.mlb.com/api/v1/game/{pk}/playByPlay")
+              print("top-level keys:", list(feed.keys()))
+              plays = feed.get("allPlays", [])
+              print("plays:", len(plays))
+              for play in plays:
+                  rd = play.get("reviewDetails")
+                  ev_rd = [ (e.get("index"), e.get("reviewDetails")) for e in play.get("playEvents", []) if e.get("reviewDetails") ]
+                  if not rd and not ev_rd:
+                      continue
+                  out = {
+                      "atBatIndex": play.get("atBatIndex"),
+                      "about": {k: play.get("about", {}).get(k) for k in ("inning", "halfInning", "isComplete", "hasReview", "captivatingIndex")},
+                      "result": play.get("result"),
+                      "reviewDetails": rd,
+                      "eventReviewDetails": ev_rd,
+                      "runners": [
+                          {
+                              "movement": r.get("movement"),
+                              "details": {k: r.get("details", {}).get(k) for k in ("eventType", "event", "isScoringEvent", "rbi", "earned", "playIndex")},
+                          }
+                          for r in play.get("runners", [])
+                      ],
+                      "lastEventIndex": (play.get("playEvents") or [{}])[-1].get("index"),
+                  }
+                  print(json.dumps(out, indent=1)[:6000])
+          EOF
