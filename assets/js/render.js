@@ -1,66 +1,61 @@
-window.LSP = window.LSP || {};
+/* LiveScoringErrors-Pending — shared rendering helpers */
 
-window.LSP.render = {
-  esc(v) {
-    if (v === null || v === undefined) return "";
-    return String(v)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  },
+const R = (() => {
+  const esc = (s) => {
+    if (s == null) return "";
+    const d = document.createElement("div");
+    d.textContent = String(s);
+    return d.innerHTML;
+  };
 
-  setNotice(id, msg) {
-    const node = document.getElementById(id);
-    if (node) node.textContent = msg || "";
-  },
+  const $ = (id) => document.getElementById(id);
+  const empty = (id) => { const el = $(id); if (el) el.innerHTML = ""; };
 
-  renderSummary(id, stats) {
-    const node = document.getElementById(id);
-    if (!node) return;
-    node.innerHTML = stats
-      .map(
-        (s) => `
-        <div class="stat">
-          <div class="stat-val">${this.esc(s.value)}</div>
-          <div class="stat-lbl">${this.esc(s.label)}</div>
-        </div>`
-      )
-      .join("");
-  },
+  const fmtDate = (iso) => {
+    if (!iso) return "—";
+    try { return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }); }
+    catch (e) { return String(iso); }
+  };
 
-  emptyCard(title, detail, sourceUrl, sourceLabel) {
-    const link = sourceUrl
-      ? `<p class="foot">Official source: <a href="${this.esc(sourceUrl)}" target="_blank" rel="noopener">${this.esc(sourceLabel || sourceUrl)}</a></p>`
-      : "";
-    return `
-      <div class="row-card">
-        <div class="row-head">
-          <strong>${this.esc(title)}</strong>
-          <span class="badge warn">unverified / empty</span>
-        </div>
-        <p class="muted">${this.esc(detail)}</p>
-        ${link}
-      </div>`;
-  },
+  const fmtDateTime = (iso) => {
+    if (!iso) return "—";
+    try { return new Date(iso).toLocaleString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }); }
+    catch (e) { return String(iso); }
+  };
 
-  downloadCsv(filename, headers, rows) {
-    const escapeCell = (v) => {
-      const s = v === null || v === undefined ? "" : String(v);
-      return `"${s.replace(/"/g, '""')}"`;
-    };
-    const lines = [
-      headers.map(escapeCell).join(","),
-      ...rows.map((r) => headers.map((h) => escapeCell(r[h])).join(","))
-    ];
-    const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-};
+  const chip = (text, kind) => `<span class="chip ${kind || ""}">${esc(text)}</span>`;
+
+  const link = (url, label) => {
+    if (!url) return esc(label || "—");
+    return `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label || "link")}</a>`;
+  };
+
+  const pct = (n, d) => {
+    if (!d) return "—";
+    return ((100 * n) / d).toFixed(1) + "%";
+  };
+
+  const card = (html) => `<article class="row-card">${html}</article>`;
+
+  const list = (containerId, itemsHtml) => {
+    const el = $(containerId);
+    if (!el) return;
+    if (!itemsHtml || itemsHtml.length === 0) { el.innerHTML = `<p class="empty">No rows to show.</p>`; return; }
+    el.innerHTML = itemsHtml.join("");
+  };
+
+  const notice = (id, text, kind) => {
+    const el = $(id);
+    if (!el) return;
+    el.textContent = text || "";
+    el.className = "notice" + (kind ? " " + kind : "");
+  };
+
+  const summary = (id, html) => {
+    const el = $(id);
+    if (!el) return;
+    el.innerHTML = html || "";
+  };
+
+  return { esc, $, empty, fmtDate, fmtDateTime, chip, link, pct, card, list, notice, summary };
+})();

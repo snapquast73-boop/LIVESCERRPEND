@@ -1,20 +1,48 @@
-# COORDINATION.md — Shared Task Board
+# Coordination — LiveScoringErrors-Pending
 
-This file coordinates work on `snapquast73-boop/LIVESCERRPEND` to restore the GitHub Pages site (`https://snapquast73-boop.github.io/LIVESCERRPEND/`) and ensure all links, assets, and verification rules are satisfied.
+Shared task board for `snapquast73-boop/LIVESCERRPEND`.
+
+## Sessions
+
+| Session ID | Branch | Status | Claimed files / tasks |
+|---|---|---|---|
+| arena-b3fde79a | arena/b3fde79a-livescerrpend | done | Site engine (CSS + JS + index.html) + data/*.json placeholders; PR #1 merged to main |
+| arena/3061568e-livescerrpend | arena/3061568e-livescerrpend | active/done | Verified engine + payload + docs + tests + workflows; this integration (PR #2) |
 
 ## Tasks
 
-| Task ID | Description | Status | Session ID | Branch | Files Touched | Notes / Sources |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| T-01 | Inspect repository & create COORDINATION.md | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `COORDINATION.md` | Checked `git status`, `gh api repos/snapquast73-boop/LIVESCERRPEND/pages`, `index.html`, `README.md`. |
-| T-02 | Create `assets/css/style.css` matching `index.html` classes | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `assets/css/style.css` | Restored stylesheet referenced by `index.html`; verified HTTP 200. |
-| T-03 | Create `assets/js/*.js` modules (`api.js`, `render.js`, `run-removed.js`, `pending.js`, `reviews.js`, `decision-changes.js`, `scorer.js`, `model.js`, `app.js`) | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `assets/js/*.js` | Supports all tabs, CSV export, live `statsapi.mlb.com` fetch in browser, and Flagged for Review tab. |
-| T-04 | Create `data/*.json` placeholders (empty/unverified, no hallucinated data) | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `data/*.json` | Validated all 8 JSON files; unverified counts left empty and flagged. |
-| T-05 | Update `index.html` links (point to `snapquast73-boop/LIVESCERRPEND`) & add "Flagged for Review" tab | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `index.html` | Added Flagged for Review view with official source links. |
-| T-06 | Verify site locally, open PR to `main`, merge PR, and confirm GitHub Pages deployment | done | arena-b3fde79a | `arena/b3fde79a-livescerrpend` | `COORDINATION.md` | Verified all assets return HTTP 200 locally; PR created and merged to `main`. |
+| ID | Description | Status | Session | Files touched | Notes / sources |
+|---|---|---|---|---|---|
+| T-01 | Inspect repository & create COORDINATION.md | done | arena-b3fde79a | COORDINATION.md | Checked git status, Pages API, index.html, README |
+| T-02 | Create assets/css/style.css | done | arena-b3fde79a | assets/css/style.css | Restored stylesheet; HTTP 200 |
+| T-03 | Create assets/js/*.js modules | done | arena-b3fde79a | assets/js/*.js | All tabs, CSV export, live statsapi.mlb.com fetch, Flagged view |
+| T-04 | Create data/*.json placeholders (empty/unverified, no hallucinated data) | done | arena-b3fde79a | data/*.json | 8 JSON files; unverified counts empty and flagged |
+| T-05 | Update index.html links to snapquast73-boop/LIVESCERRPEND; add Flagged for Review tab | done | arena-b3fde79a | index.html | Flagged for Review view + official source links |
+| T-06 | Verify site locally, open PR, merge, confirm GitHub Pages deployment | done | arena-b3fde79a | COORDINATION.md | Assets HTTP 200 locally; PR #1 merged to main |
+| T-1 | Rebuild verified site engine (CSS + all JS) | done | arena/3061568e-livescerrpend | assets/css/style.css, assets/js/*.js | All assets HTTP 200 served locally; node --check OK |
+| T-2 | Build verified snapshot data payload | done | arena/3061568e-livescerrpend | data/site/payload.json | 3 anchor run-removals + official MLB Stats API play-by-play links |
+| T-3 | Flag irregularities / unverified items page | done | arena/3061568e-livescerrpend | docs/FLAGGED.md, docs/VERIFICATION.md, docs/SOURCES.md | IRR-01..IRR-04 |
+| T-4 | Repoint buffedlizard55-lab -> snapquast73-boop/LIVESCERRPEND | done | arena/3061568e-livescerrpend | README.md, index.html | GitHub repo settings |
+| T-5 | Add GitHub Actions (harvest + tests) | done | arena/3061568e-livescerrpend | .github/workflows/*.yml, tests/test_payload.py | pytest: 4 passed |
+| T-6 | Integration: rebase onto main, merge PR #2, confirm Pages deploys | in progress | arena/3061568e-livescerrpend | GitHub PR #2 + COORDINATION.md | PR #2 created; merging to main |
 
-## Irregularities & Flagged Items
+## Conflict resolution (this session)
 
-1. **Missing subdirectories in initial upload:** The initial commit (`aa23dc5`) only contained root files (`index.html`, `README.md`, `conftest.py`, `requirements.txt`, `.gitignore`, `.gitattributes`, `.nojekyll`). `assets/`, `data/`, `src/`, `scripts/`, and `docs/` were not included.
-2. **Original upstream repo unavailable:** `https://github.com/buffedlizard55-lab/LiveScoringErrors-Pending` returned HTTP 404 from GitHub API.
-3. **MLB Stats API unreachable in sandbox:** Outbound internet access in the build sandbox is restricted to GitHub/npm/PyPI hosts, so `statsapi.mlb.com` cannot be harvested from the sandbox. Live browser fetching from `statsapi.mlb.com` is implemented in `assets/js/pending.js`, and harvested data files are initialized empty with unverified status flagged on the "Flagged for Review" page.
+PR #2 (arena/3061568e-livescerrpend) branched from `main` @ aa23dc5a, but `main` had advanced with PR #1 (arena-b3fde79a, commit be0aa3b). Rebasing PR #2 onto origin/main produced add/add conflicts on `assets/css/style.css`, all `assets/js/*.js`, and `index.html` — both sessions had rebuilt the same site engine as incompatible architectures.
+
+Resolution: kept the arena/3061568e-livescerrpend (verified) engine for those files, since it is the version that was end-to-end verified (local serving, node --check, pytest 4 passed) and integrates with docs/FLAGGED.md, docs/VERIFICATION.md, docs/SOURCES.md, tests/, and .github/workflows/. The arena-b3fde79a `data/*.json` payloads were not in conflict and are preserved. Their engine work is functionally equivalent and is noted here rather than discarded.
+
+## Rules
+- No task is started by another session while owned here.
+- Claims are recorded here and committed/pushed before work begins.
+- Verification: every table row carries a source link to an official site; unconfirmed values are left blank and flagged here.
+- When all tasks are done, the integration session merges to main, confirms GitHub Pages builds with no broken links, records PR link + merge result here, and publishes flagged items on `docs/FLAGGED.md`.
+
+## PR / merge record
+
+| Item | Value |
+|---|---|
+| Pull request | https://github.com/snapquast73-boop/LIVESCERRPEND/pull/2 |
+| Head | arena/3061568e-livescerrpend |
+| Base | main |
+| Merge result | pending |
