@@ -1,0 +1,784 @@
+=== reviewReasons registry ===
+[{"code": "A", "description": "Tag play"}, {"code": "F", "description": "Close play at 1st"}, {"code": "C", "description": "Force play"}, {"code": "H", "description": "Home run"}, {"code": "O", "description": "Fair/foul in outfield"}, {"code": "D", "description": "Catch/drop in outfield"}, {"code": "T", "description": "Trap play in outfield"}, {"code": "J", "description": "Pitch result"}, {"code": "I", "description": "Hit by pitch"}, {"code": "P", "description": "Home-plate collision"}, {"code": "E", "description": "Slide interference"}, {"code": "M", "description": "Timing Play"}, {"code": "U", "description": "Tag-up play"}, {"code": "B", "description": "Touching a base"}, {"code": "R", "description": "Passing runners"}, {"code": "Y", "description": "Runner placement"}, {"code": "S", "description": "Stadium boundary call"}, {"code": "N", "description": "Fan interference"}, {"code": "V", "description": "Catcher interference"}, {"code": "Q", "description": "Rules check"}, {"code": "K", "description": "Record keeping"}, {"code": "G", "description": "Grounds rule"}, {"code": "L", "description": "Multiple issues"}, {"code": "X", "description": "Other"}, {"code": "W", "description": "Defensive Shift"}, {"code": "Z", "description": "Check Swing"}, {"code": "AA", "description": "Runner Abandonment"}]
+
+=== eventTypes: pending entries ===
+{"plateAppearance": false, "hit": false, "code": "os_ruling_pending_prior", "baseRunningEvent": true, "description": "Official Scorer Ruling Pending"}
+{"plateAppearance": true, "hit": false, "code": "os_ruling_pending_primary", "baseRunningEvent": false, "description": "Official Scorer Ruling Pending"}
+
+=== game 823616 ===
+top-level keys: ['copyright', 'allPlays', 'currentPlay', 'scoringPlays', 'playsByInning']
+plays: 67
+{
+ "atBatIndex": 16,
+ "about": {
+  "atBatIndex": 16,
+  "halfInning": "top",
+  "isTopInning": true,
+  "inning": 3,
+  "startTime": "2026-06-13T20:44:16.990Z",
+  "endTime": "2026-06-13T20:46:02.935Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": false,
+  "hasOut": false,
+  "captivatingIndex": 33
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Single",
+  "eventType": "single",
+  "description": "Mauricio Dub\u00f3n singles on a line drive to right fielder MJ Melendez.",
+  "rbi": 0,
+  "awayScore": 1,
+  "homeScore": 0,
+  "isOut": false
+ },
+ "reviewDetails": null,
+ "eventReviewDetails": [
+  [
+   0,
+   {
+    "isOverturned": true,
+    "inProgress": false,
+    "reviewType": "MJ",
+    "challengeTeamId": 144,
+    "player": {
+     "id": 643289,
+     "fullName": "Mauricio Dub\u00f3n",
+     "link": "/api/v1/people/643289"
+    }
+   },
+   {
+    "call": {
+     "code": "B",
+     "description": "Ball"
+    },
+    "description": "Ball",
+    "code": "B",
+    "ballColor": "rgba(39, 161, 39, 1.0)",
+    "trailColor": "rgba(152, 0, 101, 1.0)",
+    "isInPlay": false,
+    "isStrike": false,
+    "isBall": true,
+    "type": {
+     "code": "FC",
+     "description": "Cutter"
+    },
+    "isOut": false,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": "1B",
+    "outBase": null,
+    "isOut": false,
+    "outNumber": null
+   },
+   "details": {
+    "eventType": "single",
+    "event": "Single",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 4
+   }
+  }
+ ],
+ "lastEventIndex": 4
+}
+{
+ "atBatIndex": 21,
+ "about": {
+  "atBatIndex": 21,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 3,
+  "startTime": "2026-06-13T20:53:00.996Z",
+  "endTime": "2026-06-13T20:54:45.657Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": true,
+  "hasOut": false,
+  "captivatingIndex": 0
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Walk",
+  "eventType": "walk",
+  "description": "Carson Benge challenged (pitch result), call on the field was overturned: Carson Benge walks.",
+  "rbi": 0,
+  "awayScore": 1,
+  "homeScore": 0,
+  "isOut": false
+ },
+ "reviewDetails": {
+  "isOverturned": true,
+  "inProgress": false,
+  "reviewType": "MJ",
+  "challengeTeamId": 121,
+  "player": {
+   "id": 701807,
+   "fullName": "Carson Benge",
+   "link": "/api/v1/people/701807"
+  }
+ },
+ "eventReviewDetails": [
+  [
+   3,
+   {
+    "isOverturned": false,
+    "inProgress": false,
+    "reviewType": "MJ",
+    "challengeTeamId": 144,
+    "player": {
+     "id": 506702,
+     "fullName": "Sandy Le\u00f3n",
+     "link": "/api/v1/people/506702"
+    }
+   },
+   {
+    "call": {
+     "code": "B",
+     "description": "Ball"
+    },
+    "description": "Ball",
+    "code": "B",
+    "ballColor": "rgba(39, 161, 39, 1.0)",
+    "trailColor": "rgba(0, 85, 254, 1.0)",
+    "isInPlay": false,
+    "isStrike": false,
+    "isBall": true,
+    "type": {
+     "code": "CH",
+     "description": "Changeup"
+    },
+    "isOut": false,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": "1B",
+    "outBase": null,
+    "isOut": false,
+    "outNumber": null
+   },
+   "details": {
+    "eventType": "walk",
+    "event": "Walk",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 5
+   }
+  }
+ ],
+ "lastEventIndex": 5
+}
+{
+ "atBatIndex": 24,
+ "about": {
+  "atBatIndex": 24,
+  "halfInning": "top",
+  "isTopInning": true,
+  "inning": 4,
+  "startTime": "2026-06-13T20:59:17.320Z",
+  "endTime": "2026-06-13T21:02:10.965Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": false,
+  "hasOut": true,
+  "captivatingIndex": 0
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Groundout",
+  "eventType": "field_out",
+  "description": "Austin Riley grounds out to first baseman Mark Vientos.",
+  "rbi": 0,
+  "awayScore": 1,
+  "homeScore": 0,
+  "isOut": true
+ },
+ "reviewDetails": null,
+ "eventReviewDetails": [
+  [
+   4,
+   {
+    "isOverturned": true,
+    "inProgress": false,
+    "reviewType": "MI",
+    "challengeTeamId": 121
+   },
+   {
+    "call": {
+     "code": "B",
+     "description": "Ball"
+    },
+    "description": "Ball",
+    "code": "B",
+    "ballColor": "rgba(39, 161, 39, 1.0)",
+    "trailColor": "rgba(50, 50, 50, 1.0)",
+    "isInPlay": false,
+    "isStrike": false,
+    "isBall": true,
+    "type": {
+     "code": "ST",
+     "description": "Sweeper"
+    },
+    "isOut": false,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 2
+   },
+   "details": {
+    "eventType": "field_out",
+    "event": "Groundout",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 5
+   }
+  }
+ ],
+ "lastEventIndex": 5
+}
+{
+ "atBatIndex": 33,
+ "about": {
+  "atBatIndex": 33,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 5,
+  "startTime": "2026-06-13T21:17:25.077Z",
+  "endTime": "2026-06-13T21:18:18.536Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": false,
+  "hasOut": true,
+  "captivatingIndex": 14
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Strikeout",
+  "eventType": "strikeout",
+  "description": "Francisco Alvarez called out on strikes.",
+  "rbi": 0,
+  "awayScore": 2,
+  "homeScore": 0,
+  "isOut": true
+ },
+ "reviewDetails": null,
+ "eventReviewDetails": [
+  [
+   1,
+   {
+    "isOverturned": false,
+    "inProgress": false,
+    "reviewType": "MJ",
+    "challengeTeamId": 121,
+    "player": {
+     "id": 682626,
+     "fullName": "Francisco Alvarez",
+     "link": "/api/v1/people/682626"
+    }
+   },
+   {
+    "call": {
+     "code": "C",
+     "description": "Called Strike"
+    },
+    "description": "Called Strike",
+    "code": "C",
+    "ballColor": "rgba(170, 21, 11, 1.0)",
+    "trailColor": "rgba(0, 34, 255, 1.0)",
+    "isInPlay": false,
+    "isStrike": true,
+    "isBall": false,
+    "type": {
+     "code": "CU",
+     "description": "Curveball"
+    },
+    "isOut": false,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 1
+   },
+   "details": {
+    "eventType": "strikeout",
+    "event": "Strikeout",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 3
+   }
+  }
+ ],
+ "lastEventIndex": 3
+}
+{
+ "atBatIndex": 44,
+ "about": {
+  "atBatIndex": 44,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 6,
+  "startTime": "2026-06-13T21:35:04.205Z",
+  "endTime": "2026-06-13T21:36:57.657Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": true,
+  "hasOut": true,
+  "captivatingIndex": 14
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Strikeout",
+  "eventType": "strikeout",
+  "description": "Marcus Semien challenged (pitch result), call on the field was confirmed: Marcus Semien called out on strikes.",
+  "rbi": 0,
+  "awayScore": 2,
+  "homeScore": 1,
+  "isOut": true
+ },
+ "reviewDetails": {
+  "isOverturned": false,
+  "inProgress": false,
+  "reviewType": "MJ",
+  "challengeTeamId": 121,
+  "player": {
+   "id": 543760,
+   "fullName": "Marcus Semien",
+   "link": "/api/v1/people/543760"
+  }
+ },
+ "eventReviewDetails": [],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 3
+   },
+   "details": {
+    "eventType": "strikeout",
+    "event": "Strikeout",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 4
+   }
+  }
+ ],
+ "lastEventIndex": 4
+}
+{
+ "atBatIndex": 63,
+ "about": {
+  "atBatIndex": 63,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 9,
+  "startTime": "2026-06-13T22:22:26.696Z",
+  "endTime": "2026-06-13T22:23:23.319Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": true,
+  "hasOut": false,
+  "captivatingIndex": 34
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Double",
+  "eventType": "double",
+  "description": "Umpire reviewed (home run), call on the field was overturned: Juan Soto doubles (6) on a fly ball to left fielder Mike Yastrzemski.",
+  "rbi": 0,
+  "awayScore": 3,
+  "homeScore": 1,
+  "isOut": false
+ },
+ "reviewDetails": {
+  "isOverturned": true,
+  "inProgress": false,
+  "reviewType": "NH"
+ },
+ "eventReviewDetails": [],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": "2B",
+    "outBase": null,
+    "isOut": false,
+    "outNumber": null
+   },
+   "details": {
+    "eventType": "double",
+    "event": "Double",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 3
+   }
+  }
+ ],
+ "lastEventIndex": 3
+}
+{
+ "atBatIndex": 64,
+ "about": {
+  "atBatIndex": 64,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 9,
+  "startTime": "2026-06-13T22:28:22.435Z",
+  "endTime": "2026-06-13T22:30:27.227Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": false,
+  "hasOut": true,
+  "captivatingIndex": 14
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Strikeout",
+  "eventType": "strikeout",
+  "description": "Mark Vientos strikes out swinging.",
+  "rbi": 0,
+  "awayScore": 3,
+  "homeScore": 1,
+  "isOut": true
+ },
+ "reviewDetails": null,
+ "eventReviewDetails": [
+  [
+   4,
+   {
+    "isOverturned": true,
+    "inProgress": false,
+    "reviewType": "MJ",
+    "challengeTeamId": 144,
+    "player": {
+     "id": 506702,
+     "fullName": "Sandy Le\u00f3n",
+     "link": "/api/v1/people/506702"
+    }
+   },
+   {
+    "call": {
+     "code": "C",
+     "description": "Called Strike"
+    },
+    "description": "Called Strike",
+    "code": "C",
+    "ballColor": "rgba(170, 21, 11, 1.0)",
+    "trailColor": "rgba(0, 85, 254, 1.0)",
+    "isInPlay": false,
+    "isStrike": true,
+    "isBall": false,
+    "type": {
+     "code": "CH",
+     "description": "Changeup"
+    },
+    "isOut": false,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 1
+   },
+   "details": {
+    "eventType": "strikeout",
+    "event": "Strikeout",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 6
+   }
+  }
+ ],
+ "lastEventIndex": 6
+}
+
+=== game 778307 ===
+top-level keys: ['copyright', 'allPlays', 'currentPlay', 'scoringPlays', 'playsByInning']
+plays: 74
+{
+ "atBatIndex": 29,
+ "about": {
+  "atBatIndex": 29,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 4,
+  "startTime": "2025-04-16T00:33:25.732Z",
+  "endTime": "2025-04-16T00:34:35.140Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": true,
+  "hasOut": false,
+  "captivatingIndex": 34
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Double",
+  "eventType": "double",
+  "description": "Umpire reviewed (home run), call on the field was overturned: Ryan Jeffers doubles (2) on a fly ball to left fielder Brandon Nimmo. Trevor Larnach to 3rd.",
+  "rbi": 0,
+  "awayScore": 2,
+  "homeScore": 2,
+  "isOut": false
+ },
+ "reviewDetails": {
+  "isOverturned": true,
+  "inProgress": false,
+  "reviewType": "NH"
+ },
+ "eventReviewDetails": [],
+ "runners": [
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": "2B",
+    "outBase": null,
+    "isOut": false,
+    "outNumber": null
+   },
+   "details": {
+    "eventType": "double",
+    "event": "Double",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 1
+   }
+  },
+  {
+   "movement": {
+    "originBase": "1B",
+    "start": "1B",
+    "end": "3B",
+    "outBase": null,
+    "isOut": false,
+    "outNumber": null
+   },
+   "details": {
+    "eventType": "double",
+    "event": "Double",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 1
+   }
+  }
+ ],
+ "lastEventIndex": 1
+}
+{
+ "atBatIndex": 58,
+ "about": {
+  "atBatIndex": 58,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 7,
+  "startTime": "2025-04-16T01:44:46.788Z",
+  "endTime": "2025-04-16T01:48:23.687Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": false,
+  "hasOut": true,
+  "captivatingIndex": 0
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Groundout",
+  "eventType": "field_out",
+  "description": "Ty France grounds out, shortstop Francisco Lindor to first baseman Pete Alonso.",
+  "rbi": 0,
+  "awayScore": 3,
+  "homeScore": 5,
+  "isOut": true
+ },
+ "reviewDetails": null,
+ "eventReviewDetails": [
+  [
+   2,
+   {
+    "isOverturned": true,
+    "inProgress": false,
+    "reviewType": "MA",
+    "challengeTeamId": 121
+   },
+   {
+    "description": "Mets challenged (tag play), call on the field was overturned: DaShawn Keirsey Jr. caught stealing 2nd base, catcher Luis Torrens to second baseman Luisangel Acu\u00f1a.",
+    "event": "Caught Stealing 2B",
+    "eventType": "caught_stealing_2b",
+    "awayScore": 3,
+    "homeScore": 5,
+    "isScoringPlay": false,
+    "isOut": true,
+    "hasReview": true
+   }
+  ]
+ ],
+ "runners": [
+  {
+   "movement": {
+    "originBase": "1B",
+    "start": "1B",
+    "end": null,
+    "outBase": "2B",
+    "isOut": true,
+    "outNumber": 1
+   },
+   "details": {
+    "eventType": "caught_stealing_2b",
+    "event": "Caught Stealing 2B",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 2
+   }
+  },
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 2
+   },
+   "details": {
+    "eventType": "field_out",
+    "event": "Groundout",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 4
+   }
+  }
+ ],
+ "lastEventIndex": 4
+}
+{
+ "atBatIndex": 68,
+ "about": {
+  "atBatIndex": 68,
+  "halfInning": "bottom",
+  "isTopInning": false,
+  "inning": 8,
+  "startTime": "2025-04-16T02:09:03.175Z",
+  "endTime": "2025-04-16T02:10:41.308Z",
+  "isComplete": true,
+  "isScoringPlay": false,
+  "hasReview": true,
+  "hasOut": true,
+  "captivatingIndex": 24
+ },
+ "result": {
+  "type": "atBat",
+  "event": "Grounded Into DP",
+  "eventType": "grounded_into_double_play",
+  "description": "Twins challenged (play at 1st), call on the field was upheld: Twins challenged (force play), call on the field was upheld: Edouard Julien grounds into a double play, shortstop Francisco Lindor to first baseman Pete Alonso. Harrison Bader out at 2nd. Edouard Julien out at 1st.",
+  "rbi": 0,
+  "awayScore": 3,
+  "homeScore": 6,
+  "isOut": true
+ },
+ "reviewDetails": {
+  "isOverturned": false,
+  "inProgress": false,
+  "reviewType": "MF",
+  "challengeTeamId": 142,
+  "additionalReviews": [
+   {
+    "isOverturned": false,
+    "inProgress": false,
+    "reviewType": "MC",
+    "challengeTeamId": 142
+   }
+  ]
+ },
+ "eventReviewDetails": [],
+ "runners": [
+  {
+   "movement": {
+    "originBase": "1B",
+    "start": "1B",
+    "end": null,
+    "outBase": "2B",
+    "isOut": true,
+    "outNumber": 2
+   },
+   "details": {
+    "eventType": "grounded_into_double_play",
+    "event": "Grounded Into DP",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 4
+   }
+  },
+  {
+   "movement": {
+    "originBase": null,
+    "start": null,
+    "end": null,
+    "outBase": "1B",
+    "isOut": true,
+    "outNumber": 3
+   },
+   "details": {
+    "eventType": "grounded_into_double_play",
+    "event": "Grounded Into DP",
+    "isScoringEvent": false,
+    "rbi": false,
+    "earned": false,
+    "playIndex": 4
+   }
+  }
+ ],
+ "lastEventIndex": 4
+}
