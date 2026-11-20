@@ -161,3 +161,18 @@ def test_extra_inning_automatic_runner_is_placed_not_flagged():
 def test_a_missing_runner_before_the_tenth_is_still_flagged():
     state = harvest.apply_play(play([runner("Runner", "2B", "3B")], inning=3), {}, automatic_runner=False)
     assert state["unoccupied"]
+
+
+def test_occupancy_is_verified_against_the_feed_runners():
+    bases = {"1B": ident("Runner")}
+    state = harvest.apply_play(play([runner("Batter", None, "2B"), runner("Runner", "1B", "3B")]), bases)
+    assert state["occupancyVerified"] is True
+    # A runner the feed places on second that the tracker never recorded breaks the check.
+    state = harvest.apply_play(play([runner("Batter", None, "1B"), runner("Ghost", "2B", "3B")]), {})
+    assert state["occupancyVerified"] is False
+
+
+def test_extra_inning_automatic_runner_still_verifies():
+    state = harvest.apply_play(play([runner("Ghost", "2B", "3B")], inning=10), {},
+                              automatic_runner=True)
+    assert state["occupancyVerified"] is True

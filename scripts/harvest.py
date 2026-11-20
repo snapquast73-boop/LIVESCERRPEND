@@ -223,9 +223,12 @@ def apply_play(play: dict, bases: dict[str, str], *, automatic_runner: bool = Fa
     before = dict(bases)
     scored: list[str] = []
     unoccupied: list[str] = []
+    from_feed = {runner_identity(runner) for runner in play.get("runners") or []
+                 if (runner.get("movement") or {}).get("start")}
     order: list[str] = []
     final: dict[str, dict] = {}
     automatic_placed: list[str] = []
+    automatic_keys: set[str] = set()
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
         key = runner_identity(runner)
@@ -247,6 +250,7 @@ def apply_play(play: dict, bases: dict[str, str], *, automatic_runner: bool = Fa
                     # He was placed there by rule, so the base is vacant in the
                     # tracker; nothing to release, and his end base is written below.
                     automatic_placed.append(name)
+                    automatic_keys.add(key)
                     automatic_runner = False
                 else:
                     unoccupied.append(f"{name} advanced from {start} that tracking did not have occupied")
@@ -255,7 +259,8 @@ def apply_play(play: dict, bases: dict[str, str], *, automatic_runner: bool = Fa
         elif end in {"1B", "2B", "3B"}:
             bases[end] = key
     return {"before": before, "scored": scored, "unoccupied": unoccupied,
-            "automaticPlaced": automatic_placed}
+            "automaticPlaced": automatic_placed,
+            "occupancyVerified": from_feed == set(before.values()) | automatic_keys}
 
 
 def score_delta(play: dict, is_top: bool, previous: tuple[int, int]) -> tuple[int, tuple[int, int]]:
@@ -345,6 +350,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
                 "savant": savant_url(play_play_id(play)),
                 "source": play_by_play_url(game_pk),
                 "trackingIssue": tracking_issue,
+                "occupancyVerified": state["occupancyVerified"],
             })
         for index, event_review in event_reviews:
             if event_review.get("isOverturned") is not True or event_review.get("inProgress") is not False:
@@ -376,6 +382,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
                 "savant": None,
                 "source": play_by_play_url(game_pk),
                 "trackingIssue": tracking_issue,
+                "occupancyVerified": state["occupancyVerified"],
             })
 
     final_away = (game.get("teams", {}).get("away") or {}).get("score")
@@ -425,6 +432,11 @@ def classify(rows: list[dict], registry: dict[str, str]) -> dict:
         # a home run: runs removed is arithmetic on the official record.
         runners_on = row.get("runnersOn")
         credited = row.get("runsCredited")
+        if not row.get("occupancyVerified"):
+            rows.append({**row, "runsRemoved": None, "arithmetic": None,
+                         "noCountReason": ("The official runner movements on this play do not match the"
+                                           " tracked base state, so no count is published.")})
+            continue
         if row.get("trackingIssue") or runners_on is None or credited is None:
             candidates.append(dict(row, noCountReason="Base occupancy could not be verified from the feed."))
             continue
