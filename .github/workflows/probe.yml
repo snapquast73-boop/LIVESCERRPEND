@@ -12,18 +12,17 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Trace the anchor games and sample dates
+      - name: Trace games that failed the occupancy invariant
         run: |
-          python3 scripts/trace_game.py 823616 778307 > trace-out.txt 2>&1
-          python3 scripts/trace_game.py --sample 2024-06-01 2025-07-15 2026-06-13 >> trace-out.txt 2>&1
-          grep -c "<<<" trace-out.txt || true
-          tail -12 trace-out.txt
+          python3 scripts/trace_game.py 744795 > trace-out.txt 2>&1
+          python3 scripts/trace_game.py 745980 >> trace-out.txt 2>&1
+          grep -n "<<<" trace-out.txt || echo "no invariant issues"
       - name: Commit trace output
         run: |
           git config user.name "probe-bot"
