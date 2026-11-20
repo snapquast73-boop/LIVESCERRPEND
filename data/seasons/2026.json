@@ -1,6 +1,6 @@
 {
  "season": "2026",
- "generatedAt": "2026-11-20T23:19:21+00:00",
+ "generatedAt": "2026-11-20T23:25:53+00:00",
  "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue",
  "games": {
   "completed": 2470,
@@ -2134,7 +2134,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823003",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5368b3c0-2407-35a8-ab01-49542e077c4c",
    "source": "https://statsapi.mlb.com/api/v1/game/823003/playByPlay",
-   "trackingIssue": "play 83: Leo Bernal advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "V",
    "reason": "Catcher interference"
   },
@@ -4354,7 +4354,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823319",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=970d8011-847c-3857-bacb-693d04de4809",
    "source": "https://statsapi.mlb.com/api/v1/game/823319/playByPlay",
-   "trackingIssue": "play 70: Willi Castro advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "E",
    "reason": "Slide interference"
   },
@@ -4624,7 +4624,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823350",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=68b35a0d-d1d7-334c-85c1-122dcaf2b208",
    "source": "https://statsapi.mlb.com/api/v1/game/823350/playByPlay",
-   "trackingIssue": "play 85: Tyler Locklear advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "A",
    "reason": "Tag play"
   },
@@ -15454,7 +15454,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824599",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b50c5728-4b18-3333-92b8-b71a1222af35",
    "source": "https://statsapi.mlb.com/api/v1/game/824599/playByPlay",
-   "trackingIssue": "play 85: Pete Crow-Armstrong advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "F",
    "reason": "Close play at 1st"
   },
@@ -16144,7 +16144,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824671",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=75667272-0e61-3ba9-ba70-42f5d0c2b5a3",
    "source": "https://statsapi.mlb.com/api/v1/game/824671/playByPlay",
-   "trackingIssue": "play 72: Alika Williams advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "F",
    "reason": "Close play at 1st"
   },
@@ -18814,7 +18814,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824998",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=4846280e-6668-3e6d-9a6a-280e8c06cba5",
    "source": "https://statsapi.mlb.com/api/v1/game/824998/playByPlay",
-   "trackingIssue": "play 88: David Hamilton advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 97: Henry Bolte advanced from 2B that tracking did not have occupied",
    "reasonCode": "F",
    "reason": "Close play at 1st"
   },
@@ -23646,7 +23646,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822734",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822734/playByPlay",
-   "trackingIssue": "play 81: Carson Benge advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -23676,7 +23676,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822734",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822734/playByPlay",
-   "trackingIssue": "play 81: Carson Benge advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -26406,7 +26406,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822774",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822774/playByPlay",
-   "trackingIssue": "play 68: Ali Sánchez advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -26436,7 +26436,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822774",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822774/playByPlay",
-   "trackingIssue": "play 68: Ali Sánchez advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -28206,7 +28206,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822799",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822799/playByPlay",
-   "trackingIssue": "play 87: Jeremy Peña advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 96: Jose Altuve advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -39966,7 +39966,7 @@
    "filmRoom": "https://www.mlb.com/video/game/822981",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/822981/playByPlay",
-   "trackingIssue": "play 71: Esteury Ruiz advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -41436,7 +41436,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823003",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823003/playByPlay",
-   "trackingIssue": "play 83: Leo Bernal advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -41526,7 +41526,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823004",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823004/playByPlay",
-   "trackingIssue": "play 78: Grant McCray advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -49566,7 +49566,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823133",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823133/playByPlay",
-   "trackingIssue": "play 73: Ildemaro Vargas advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -50136,7 +50136,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823144",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823144/playByPlay",
-   "trackingIssue": "play 70: Michael Massey advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -52386,7 +52386,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823175",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823175/playByPlay",
-   "trackingIssue": "play 76: Alec Burleson advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 81: Turner Hill advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -53826,7 +53826,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823189",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823189/playByPlay",
-   "trackingIssue": "play 69: Cam Smith advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -53946,7 +53946,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823190",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823190/playByPlay",
-   "trackingIssue": "play 65: Riley Greene advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -58656,7 +58656,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823260",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823260/playByPlay",
-   "trackingIssue": "play 73: Jake Mangum advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 80: Brandon Lowe advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -63216,7 +63216,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823319",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823319/playByPlay",
-   "trackingIssue": "play 70: Willi Castro advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -63246,7 +63246,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823319",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823319/playByPlay",
-   "trackingIssue": "play 70: Willi Castro advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -69996,7 +69996,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823425",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823425/playByPlay",
-   "trackingIssue": "play 79: George Springer advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -74136,7 +74136,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823488",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823488/playByPlay",
-   "trackingIssue": "play 72: Brandon Nimmo advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -74166,7 +74166,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823488",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823488/playByPlay",
-   "trackingIssue": "play 72: Brandon Nimmo advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -87606,7 +87606,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823655",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823655/playByPlay",
-   "trackingIssue": "play 74: Cody Bellinger advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -87636,7 +87636,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823655",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823655/playByPlay",
-   "trackingIssue": "play 74: Cody Bellinger advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -87666,7 +87666,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823655",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823655/playByPlay",
-   "trackingIssue": "play 74: Cody Bellinger advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -88176,7 +88176,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823660",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823660/playByPlay",
-   "trackingIssue": "play 91: Kaelen Culpepper advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -88206,7 +88206,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823660",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823660/playByPlay",
-   "trackingIssue": "play 91: Kaelen Culpepper advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -93936,7 +93936,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823729",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823729/playByPlay",
-   "trackingIssue": "play 65: Ben Williamson advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -101076,7 +101076,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823826",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823826/playByPlay",
-   "trackingIssue": "play 72: Connor Wong advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 77: Brian Navarreto advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -101106,7 +101106,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823826",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823826/playByPlay",
-   "trackingIssue": "play 72: Connor Wong advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 77: Brian Navarreto advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -102756,7 +102756,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823847",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=340f7077-01d0-3b57-bb80-10d2f41fc62b",
    "source": "https://statsapi.mlb.com/api/v1/game/823847/playByPlay",
-   "trackingIssue": "play 80: Weston Wilson advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -102786,7 +102786,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823847",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823847/playByPlay",
-   "trackingIssue": "play 80: Weston Wilson advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -107436,7 +107436,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823917",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823917/playByPlay",
-   "trackingIssue": "play 73: Kyle Isbel advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -111696,7 +111696,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823978",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823978/playByPlay",
-   "trackingIssue": "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -111726,7 +111726,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823978",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823978/playByPlay",
-   "trackingIssue": "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -111756,7 +111756,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823978",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823978/playByPlay",
-   "trackingIssue": "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -111786,7 +111786,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823978",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823978/playByPlay",
-   "trackingIssue": "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -111816,7 +111816,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823978",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823978/playByPlay",
-   "trackingIssue": "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -112326,7 +112326,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823989",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823989/playByPlay",
-   "trackingIssue": "play 86: Brayan Rocchio advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -112356,7 +112356,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823989",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823989/playByPlay",
-   "trackingIssue": "play 86: Brayan Rocchio advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -112386,7 +112386,7 @@
    "filmRoom": "https://www.mlb.com/video/game/823989",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/823989/playByPlay",
-   "trackingIssue": "play 86: Brayan Rocchio advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 93: Josh Lowe advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -116826,7 +116826,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824062",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824062/playByPlay",
-   "trackingIssue": "play 67: Corbin Carroll advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -116856,7 +116856,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824063",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824063/playByPlay",
-   "trackingIssue": "play 75: Gabriel Moreno advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -135576,7 +135576,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824321",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824321/playByPlay",
-   "trackingIssue": "play 78: Ryan Vilade advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 82: Jake McCarthy advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -154086,7 +154086,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824563",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824563/playByPlay",
-   "trackingIssue": "play 69: Matt McLain advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -156426,7 +156426,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824599",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824599/playByPlay",
-   "trackingIssue": "play 85: Pete Crow-Armstrong advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -157566,7 +157566,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824612",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824612/playByPlay",
-   "trackingIssue": "play 65: Daylen Lile advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -162306,7 +162306,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824669",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824669/playByPlay",
-   "trackingIssue": "play 77: Dansby Swanson advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -162396,7 +162396,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824670",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824670/playByPlay",
-   "trackingIssue": "play 70: Jonah Cox advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -162426,7 +162426,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824670",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824670/playByPlay",
-   "trackingIssue": "play 70: Jonah Cox advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -166626,7 +166626,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824729",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824729/playByPlay",
-   "trackingIssue": "play 86: Braden Montgomery advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 98: Miguel Vargas advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -170946,7 +170946,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824812",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824812/playByPlay",
-   "trackingIssue": "play 74: Brewer Hicklen advanced from 2B that tracking did not have occupied",
+   "trackingIssue": null,
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -184326,7 +184326,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824998",
    "savant": null,
    "source": "https://statsapi.mlb.com/api/v1/game/824998/playByPlay",
-   "trackingIssue": "play 88: David Hamilton advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 97: Henry Bolte advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -184356,7 +184356,7 @@
    "filmRoom": "https://www.mlb.com/video/game/824998",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=6c67b983-0b84-3565-ba46-403b222e3e2d",
    "source": "https://statsapi.mlb.com/api/v1/game/824998/playByPlay",
-   "trackingIssue": "play 88: David Hamilton advanced from 2B that tracking did not have occupied",
+   "trackingIssue": "play 97: Henry Bolte advanced from 2B that tracking did not have occupied",
    "reasonCode": "J",
    "reason": "Pitch result"
   },
@@ -197735,6 +197735,7 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 78: Zach Neto advanced from 2B that tracking did not have occupied",
@@ -197750,29 +197751,11 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 76: Heriberto Hernández advanced from 2B that tracking did not have occupied",
      "play 81: Nasim Nuñez advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822734": {
-    "officialFinal": {
-     "away": 16,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 16,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 81: Carson Benge advanced from 2B that tracking did not have occupied",
-     "play 84: Jorbit Vivas advanced from 2B that tracking did not have occupied",
-     "play 89: Vidal Bruján advanced from 2B that tracking did not have occupied",
-     "play 93: CJ Abrams advanced from 2B that tracking did not have occupied",
-     "play 98: Tyrone Taylor advanced from 2B that tracking did not have occupied",
-     "play 111: Drew Millas advanced from 2B that tracking did not have occupied"
     ]
    },
    "822751": {
@@ -197784,10 +197767,12 @@
      "away": 7,
      "home": 6
     },
+    "automaticRunners": [
+     "Luis Arraez"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 84: Joey Wiemer advanced from 2B that tracking did not have occupied",
-     "play 95: Luis Arraez advanced from 2B that tracking did not have occupied"
+     "play 84: Joey Wiemer advanced from 2B that tracking did not have occupied"
     ]
    },
    "822754": {
@@ -197799,24 +197784,10 @@
      "away": 7,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 89: Daylen Lile advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822774": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 68: Ali Sánchez advanced from 2B that tracking did not have occupied",
-     "play 72: Kazuma Okamoto advanced from 2B that tracking did not have occupied"
     ]
    },
    "822799": {
@@ -197828,10 +197799,12 @@
      "away": 9,
      "home": 7
     },
+    "automaticRunners": [
+     "Jeremy Peña",
+     "Nathan Lukes"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 87: Jeremy Peña advanced from 2B that tracking did not have occupied",
-     "play 90: Nathan Lukes advanced from 2B that tracking did not have occupied",
      "play 96: Jose Altuve advanced from 2B that tracking did not have occupied",
      "play 99: Vladimir Guerrero Jr. advanced from 2B that tracking did not have occupied"
     ]
@@ -197845,25 +197818,12 @@
      "away": 3,
      "home": 5
     },
+    "automaticRunners": [
+     "Chandler Simpson"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 75: Chandler Simpson advanced from 2B that tracking did not have occupied",
      "play 82: George Springer advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822817": {
-    "officialFinal": {
-     "away": 7,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 7,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 80: Cedric Mullins advanced from 2B that tracking did not have occupied",
-     "play 85: George Springer advanced from 2B that tracking did not have occupied"
     ]
    },
    "822835": {
@@ -197875,9 +197835,11 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [
+     "Brenton Doyle"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 71: Brenton Doyle advanced from 2B that tracking did not have occupied",
      "play 77: Andrés Giménez advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -197890,40 +197852,14 @@
      "away": 7,
      "home": 8
     },
+    "automaticRunners": [
+     "Jesús Sánchez",
+     "Darell Hernaiz"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 82: Nick Kurtz advanced from 2B that tracking did not have occupied",
-     "play 85: Jesús Sánchez advanced from 2B that tracking did not have occupied",
-     "play 90: Darell Hernaiz advanced from 2B that tracking did not have occupied",
      "play 96: Nathan Lukes advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822850": {
-    "officialFinal": {
-     "away": 6,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Jorge Mateo advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822857": {
-    "officialFinal": {
-     "away": 1,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 1,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: Evan Carter advanced from 2B that tracking did not have occupied"
     ]
    },
    "822885": {
@@ -197935,10 +197871,12 @@
      "away": 6,
      "home": 4
     },
+    "automaticRunners": [
+     "Elias Díaz"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 74: Fernando Tatis Jr. advanced from 2B that tracking did not have occupied",
-     "play 79: Elias Díaz advanced from 2B that tracking did not have occupied"
+     "play 74: Fernando Tatis Jr. advanced from 2B that tracking did not have occupied"
     ]
    },
    "822933": {
@@ -197950,40 +197888,14 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Manny Machado"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 74: Jase Bowen advanced from 2B that tracking did not have occupied",
      "play 76: Jorge Mateo advanced from 2B that tracking did not have occupied",
-     "play 79: Manny Machado advanced from 2B that tracking did not have occupied",
      "play 83: Richie Palacios advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822941": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 76: Colton Cowser advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "822981": {
-    "officialFinal": {
-     "away": 10,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 10,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 71: Esteury Ruiz advanced from 2B that tracking did not have occupied"
     ]
    },
    "822987": {
@@ -197995,6 +197907,7 @@
      "away": 1,
      "home": 2
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 74: Chandler Simpson advanced from 2B that tracking did not have occupied"
@@ -198009,41 +197922,12 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Cedric Mullins"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 76: Randal Grichuk advanced from 2B that tracking did not have occupied",
-     "play 79: Cedric Mullins advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823003": {
-    "officialFinal": {
-     "away": 8,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 83: Leo Bernal advanced from 2B that tracking did not have occupied",
-     "play 86: Yohandy Morales advanced from 2B that tracking did not have occupied",
-     "play 94: Nathan Church advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823004": {
-    "officialFinal": {
-     "away": 6,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 78: Grant McCray advanced from 2B that tracking did not have occupied",
-     "play 83: Alec Burleson advanced from 2B that tracking did not have occupied"
+     "play 76: Randal Grichuk advanced from 2B that tracking did not have occupied"
     ]
    },
    "823022": {
@@ -198055,24 +197939,12 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [
+     "Nathan Church"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 71: Dansby Swanson advanced from 2B that tracking did not have occupied",
-     "play 74: Nathan Church advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823023": {
-    "officialFinal": {
-     "away": 4,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 76: Seiya Suzuki advanced from 2B that tracking did not have occupied"
+     "play 71: Dansby Swanson advanced from 2B that tracking did not have occupied"
     ]
    },
    "823028": {
@@ -198084,24 +197956,12 @@
      "away": 5,
      "home": 3
     },
+    "automaticRunners": [
+     "Tyler Stephenson"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Tyler Stephenson advanced from 2B that tracking did not have occupied",
      "play 80: JJ Wetherholt advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823059": {
-    "officialFinal": {
-     "away": 6,
-     "home": 9
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 9
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 82: Victor Scott II advanced from 2B that tracking did not have occupied"
     ]
    },
    "823061": {
@@ -198113,11 +197973,13 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Thomas Saggese",
+     "Nathan Church"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 80: Thomas Saggese advanced from 2B that tracking did not have occupied",
-     "play 87: Lane Thomas advanced from 2B that tracking did not have occupied",
-     "play 89: Nathan Church advanced from 2B that tracking did not have occupied"
+     "play 87: Lane Thomas advanced from 2B that tracking did not have occupied"
     ]
    },
    "823072": {
@@ -198129,10 +197991,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Thomas Saggese"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 75: Chase DeLauter advanced from 2B that tracking did not have occupied",
-     "play 76: Thomas Saggese advanced from 2B that tracking did not have occupied"
+     "play 75: Chase DeLauter advanced from 2B that tracking did not have occupied"
     ]
    },
    "823078": {
@@ -198144,11 +198008,13 @@
      "away": 1,
      "home": 2
     },
+    "automaticRunners": [
+     "Marcus Semien",
+     "Juan Soto"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 68: Marcus Semien advanced from 2B that tracking did not have occupied",
      "play 73: Jordan Walker advanced from 2B that tracking did not have occupied",
-     "play 75: Juan Soto advanced from 2B that tracking did not have occupied",
      "play 81: JJ Wetherholt advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198161,9 +198027,11 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Ben Williamson"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: Ben Williamson advanced from 2B that tracking did not have occupied",
      "play 74: Nathan Church advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198176,6 +198044,7 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 76: Yordan Alvarez advanced from 2B that tracking did not have occupied",
@@ -198191,38 +198060,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Randy Arozarena"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 81: Nico Hoerner advanced from 2B that tracking did not have occupied",
-     "play 83: Randy Arozarena advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823116": {
-    "officialFinal": {
-     "away": 3,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 76: Victor Robles advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823131": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 63: Randy Arozarena advanced from 2B that tracking did not have occupied"
+     "play 81: Nico Hoerner advanced from 2B that tracking did not have occupied"
     ]
    },
    "823133": {
@@ -198234,52 +198077,12 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [
+     "Ildemaro Vargas"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 73: Ildemaro Vargas advanced from 2B that tracking did not have occupied",
      "play 78: Randy Arozarena advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823135": {
-    "officialFinal": {
-     "away": 6,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 82: Tommy Troy advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823144": {
-    "officialFinal": {
-     "away": 3,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 70: Michael Massey advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823161": {
-    "officialFinal": {
-     "away": 6,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 82: Randy Arozarena advanced from 2B that tracking did not have occupied"
     ]
    },
    "823175": {
@@ -198291,40 +198094,14 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Alec Burleson",
+     "Joshua Báez",
+     "Nate Furman"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 76: Alec Burleson advanced from 2B that tracking did not have occupied",
-     "play 81: Turner Hill advanced from 2B that tracking did not have occupied",
-     "play 85: Joshua Báez advanced from 2B that tracking did not have occupied",
-     "play 89: Nate Furman advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823189": {
-    "officialFinal": {
-     "away": 6,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Cam Smith advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823190": {
-    "officialFinal": {
-     "away": 3,
-     "home": 1
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 1
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 65: Riley Greene advanced from 2B that tracking did not have occupied"
+     "play 81: Turner Hill advanced from 2B that tracking did not have occupied"
     ]
    },
    "823196": {
@@ -198336,10 +198113,12 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Jesus Rodriguez"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 77: Oswald Peraza advanced from 2B that tracking did not have occupied",
-     "play 78: Jesus Rodriguez advanced from 2B that tracking did not have occupied"
+     "play 77: Oswald Peraza advanced from 2B that tracking did not have occupied"
     ]
    },
    "823221": {
@@ -198351,27 +198130,15 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Nick Gonzales",
+     "Billy Cook",
+     "Jesus Rodriguez"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 77: Nick Gonzales advanced from 2B that tracking did not have occupied",
      "play 84: Luis Arraez advanced from 2B that tracking did not have occupied",
-     "play 89: Billy Cook advanced from 2B that tracking did not have occupied",
-     "play 92: Jesus Rodriguez advanced from 2B that tracking did not have occupied",
      "play 98: Brandon Lowe advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823249": {
-    "officialFinal": {
-     "away": 6,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 91: Jake Cronenworth advanced from 2B that tracking did not have occupied"
     ]
    },
    "823256": {
@@ -198383,6 +198150,7 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 68: Dustin Harris advanced from 2B that tracking did not have occupied"
@@ -198397,13 +198165,15 @@
      "away": 3,
      "home": 2
     },
+    "automaticRunners": [
+     "Jake Mangum",
+     "Luis Campusano",
+     "Jared Triolo"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 73: Jake Mangum advanced from 2B that tracking did not have occupied",
-     "play 77: Luis Campusano advanced from 2B that tracking did not have occupied",
      "play 80: Brandon Lowe advanced from 2B that tracking did not have occupied",
-     "play 84: Fernando Tatis Jr. advanced from 2B that tracking did not have occupied",
-     "play 87: Jared Triolo advanced from 2B that tracking did not have occupied"
+     "play 84: Fernando Tatis Jr. advanced from 2B that tracking did not have occupied"
     ]
    },
    "823263": {
@@ -198415,26 +198185,13 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Brice Turang",
+     "Jake Cronenworth"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Brice Turang advanced from 2B that tracking did not have occupied",
-     "play 78: Jase Bowen advanced from 2B that tracking did not have occupied",
-     "play 85: Jake Cronenworth advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823286": {
-    "officialFinal": {
-     "away": 6,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 81: Ha-Seong Kim advanced from 2B that tracking did not have occupied",
-     "play 84: Jackson Merrill advanced from 2B that tracking did not have occupied"
+     "play 78: Jase Bowen advanced from 2B that tracking did not have occupied"
     ]
    },
    "823290": {
@@ -198446,10 +198203,12 @@
      "away": 5,
      "home": 3
     },
+    "automaticRunners": [
+     "Blake Dunn"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 87: Gavin Sheets advanced from 2B that tracking did not have occupied",
-     "play 90: Blake Dunn advanced from 2B that tracking did not have occupied",
      "play 95: Freddy Fermin advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198462,59 +198221,10 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 71: Ramón Laureano advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823319": {
-    "officialFinal": {
-     "away": 3,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 70: Willi Castro advanced from 2B that tracking did not have occupied",
-     "play 74: Luis Campusano advanced from 2B that tracking did not have occupied",
-     "play 84: Xander Bogaerts advanced from 2B that tracking did not have occupied",
-     "play 89: Willi Castro advanced from 2B that tracking did not have occupied",
-     "play 93: Jake Cronenworth advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823339": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 75: Christian Koss advanced from 2B that tracking did not have occupied",
-     "play 80: Bryan Reynolds advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823350": {
-    "officialFinal": {
-     "away": 8,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 85: Tyler Locklear advanced from 2B that tracking did not have occupied",
-     "play 91: Endy Rodríguez advanced from 2B that tracking did not have occupied",
-     "play 95: Gabriel Moreno advanced from 2B that tracking did not have occupied",
-     "play 101: Tyler Locklear advanced from 2B that tracking did not have occupied"
     ]
    },
    "823352": {
@@ -198526,24 +198236,12 @@
      "away": 3,
      "home": 2
     },
+    "automaticRunners": [
+     "Henry Davis"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 71: Ian Happ advanced from 2B that tracking did not have occupied",
-     "play 75: Henry Davis advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823353": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 77: Billy Cook advanced from 2B that tracking did not have occupied"
+     "play 71: Ian Happ advanced from 2B that tracking did not have occupied"
     ]
    },
    "823384": {
@@ -198555,6 +198253,7 @@
      "away": 11,
      "home": 9
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 88: Ryan O'Hearn advanced from 2B that tracking did not have occupied"
@@ -198569,13 +198268,15 @@
      "away": 8,
      "home": 7
     },
+    "automaticRunners": [
+     "Oneil Cruz",
+     "Ben Williamson",
+     "Nick Yorke",
+     "Junior Caminero",
+     "Jonny DeLuca"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 81: Oneil Cruz advanced from 2B that tracking did not have occupied",
-     "play 86: Ben Williamson advanced from 2B that tracking did not have occupied",
-     "play 90: Nick Yorke advanced from 2B that tracking did not have occupied",
-     "play 93: Junior Caminero advanced from 2B that tracking did not have occupied",
-     "play 100: Jonny DeLuca advanced from 2B that tracking did not have occupied",
      "play 107: Jake Mangum advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198588,10 +198289,12 @@
      "away": 8,
      "home": 7
     },
+    "automaticRunners": [
+     "Henry Davis"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 88: Jorbit Vivas advanced from 2B that tracking did not have occupied",
-     "play 91: Henry Davis advanced from 2B that tracking did not have occupied"
+     "play 88: Jorbit Vivas advanced from 2B that tracking did not have occupied"
     ]
    },
    "823420": {
@@ -198603,10 +198306,12 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Bryce Harper"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 80: Alec Burleson advanced from 2B that tracking did not have occupied",
-     "play 82: Bryce Harper advanced from 2B that tracking did not have occupied"
+     "play 80: Alec Burleson advanced from 2B that tracking did not have occupied"
     ]
    },
    "823425": {
@@ -198618,14 +198323,16 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "George Springer",
+     "J.T. Realmuto",
+     "Nathan Lukes",
+     "Luis Arraez"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 79: George Springer advanced from 2B that tracking did not have occupied",
-     "play 83: J.T. Realmuto advanced from 2B that tracking did not have occupied",
      "play 88: Andrés Giménez advanced from 2B that tracking did not have occupied",
-     "play 91: Derek Hill advanced from 2B that tracking did not have occupied",
-     "play 94: Nathan Lukes advanced from 2B that tracking did not have occupied",
-     "play 97: Luis Arraez advanced from 2B that tracking did not have occupied"
+     "play 91: Derek Hill advanced from 2B that tracking did not have occupied"
     ]
    },
    "823426": {
@@ -198637,10 +198344,12 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [
+     "Trea Turner"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 78: Brett Bateman advanced from 2B that tracking did not have occupied",
-     "play 81: Trea Turner advanced from 2B that tracking did not have occupied",
      "play 86: Brandon Valenzuela advanced from 2B that tracking did not have occupied",
      "play 91: Brandon Marsh advanced from 2B that tracking did not have occupied"
     ]
@@ -198654,10 +198363,12 @@
      "away": 10,
      "home": 4
     },
+    "automaticRunners": [
+     "Derek Hill"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 77: Andrew Pinckney advanced from 2B that tracking did not have occupied",
-     "play 80: Derek Hill advanced from 2B that tracking did not have occupied",
      "play 85: Brady House advanced from 2B that tracking did not have occupied",
      "play 94: Bryce Harper advanced from 2B that tracking did not have occupied"
     ]
@@ -198671,25 +198382,11 @@
      "away": 9,
      "home": 7
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: Tyler Freeman advanced from 2B that tracking did not have occupied",
      "play 94: Edmundo Sosa advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823471": {
-    "officialFinal": {
-     "away": 5,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 85: Drew Gilbert advanced from 2B that tracking did not have occupied",
-     "play 89: Adolis García advanced from 2B that tracking did not have occupied"
     ]
    },
    "823483": {
@@ -198701,10 +198398,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Brandon Marsh"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 85: Daylen Lile advanced from 2B that tracking did not have occupied",
-     "play 86: Brandon Marsh advanced from 2B that tracking did not have occupied"
+     "play 85: Daylen Lile advanced from 2B that tracking did not have occupied"
     ]
    },
    "823488": {
@@ -198716,24 +198415,12 @@
      "away": 5,
      "home": 4
     },
+    "automaticRunners": [
+     "Brandon Nimmo"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Brandon Nimmo advanced from 2B that tracking did not have occupied",
      "play 80: J.T. Realmuto advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823513": {
-    "officialFinal": {
-     "away": 2,
-     "home": 1
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 1
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 62: Ha-Seong Kim advanced from 2B that tracking did not have occupied"
     ]
    },
    "823515": {
@@ -198745,6 +198432,7 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 75: Austin Riley advanced from 2B that tracking did not have occupied",
@@ -198760,9 +198448,11 @@
      "away": 5,
      "home": 3
     },
+    "automaticRunners": [
+     "Nick Gonzales"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Nick Gonzales advanced from 2B that tracking did not have occupied",
      "play 80: Amed Rosario advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198775,11 +198465,13 @@
      "away": 6,
      "home": 2
     },
+    "automaticRunners": [
+     "Spencer Jones",
+     "Kevin McGonigle"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 69: Zach McKinstry advanced from 2B that tracking did not have occupied",
-     "play 71: Spencer Jones advanced from 2B that tracking did not have occupied",
-     "play 75: Kevin McGonigle advanced from 2B that tracking did not have occupied"
+     "play 69: Zach McKinstry advanced from 2B that tracking did not have occupied"
     ]
    },
    "823574": {
@@ -198791,10 +198483,12 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [
+     "Christian Encarnacion-Strand",
+     "Carson Benge"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 71: Christian Encarnacion-Strand advanced from 2B that tracking did not have occupied",
-     "play 75: Carson Benge advanced from 2B that tracking did not have occupied",
      "play 83: Leody Taveras advanced from 2B that tracking did not have occupied",
      "play 87: Francisco Alvarez advanced from 2B that tracking did not have occupied"
     ]
@@ -198808,23 +198502,10 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: Francisco Lindor advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823602": {
-    "officialFinal": {
-     "away": 3,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 68: Masataka Yoshida advanced from 2B that tracking did not have occupied"
     ]
    },
    "823612": {
@@ -198836,6 +198517,7 @@
      "away": 4,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 83: Ronny Mauricio advanced from 2B that tracking did not have occupied"
@@ -198850,6 +198532,7 @@
      "away": 7,
      "home": 9
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: Jakob Marsee advanced from 2B that tracking did not have occupied",
@@ -198865,10 +198548,12 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Marcus Semien"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 86: Ryan McMahon advanced from 2B that tracking did not have occupied",
-     "play 88: Marcus Semien advanced from 2B that tracking did not have occupied"
+     "play 86: Ryan McMahon advanced from 2B that tracking did not have occupied"
     ]
    },
    "823631": {
@@ -198880,37 +198565,10 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: A.J. Ewing advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823647": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 75: Bryan Reynolds advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823648": {
-    "officialFinal": {
-     "away": 3,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 81: Francisco Lindor advanced from 2B that tracking did not have occupied"
     ]
    },
    "823651": {
@@ -198922,6 +198580,7 @@
      "away": 2,
      "home": 4
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 73: Bryan Reynolds advanced from 2B that tracking did not have occupied",
@@ -198939,30 +198598,17 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Cody Bellinger",
+     "Brooks Lee",
+     "George Lombard Jr.",
+     "Walker Jenkins",
+     "Luke Keaschall"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 74: Cody Bellinger advanced from 2B that tracking did not have occupied",
-     "play 78: Brooks Lee advanced from 2B that tracking did not have occupied",
-     "play 82: George Lombard Jr. advanced from 2B that tracking did not have occupied",
-     "play 85: Walker Jenkins advanced from 2B that tracking did not have occupied",
      "play 90: Anthony Volpe advanced from 2B that tracking did not have occupied",
-     "play 94: Ryan Kreidler advanced from 2B that tracking did not have occupied",
-     "play 98: Luke Keaschall advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823660": {
-    "officialFinal": {
-     "away": 11,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 11,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 91: Kaelen Culpepper advanced from 2B that tracking did not have occupied",
-     "play 96: Hao-Yu Lee advanced from 2B that tracking did not have occupied"
+     "play 94: Ryan Kreidler advanced from 2B that tracking did not have occupied"
     ]
    },
    "823688": {
@@ -198974,9 +198620,11 @@
      "away": 8,
      "home": 9
     },
+    "automaticRunners": [
+     "Tyler Freeman"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 82: Tyler Freeman advanced from 2B that tracking did not have occupied",
      "play 86: Kyler Fedko advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -198989,23 +198637,10 @@
      "away": 7,
      "home": 4
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 87: Victor Caratini advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823729": {
-    "officialFinal": {
-     "away": 4,
-     "home": 1
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 1
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 65: Ben Williamson advanced from 2B that tracking did not have occupied"
     ]
    },
    "823738": {
@@ -199017,9 +198652,11 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Seiya Suzuki"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 76: Seiya Suzuki advanced from 2B that tracking did not have occupied",
      "play 81: Brice Turang advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199032,6 +198669,7 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 77: Royce Lewis advanced from 2B that tracking did not have occupied",
@@ -199047,24 +198685,11 @@
      "away": 1,
      "home": 2
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 71: Heriberto Hernández advanced from 2B that tracking did not have occupied",
      "play 76: Jackson Chourio advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823769": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 70: Justin Dean advanced from 2B that tracking did not have occupied"
     ]
    },
    "823792": {
@@ -199076,10 +198701,12 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Garrett Mitchell"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 74: Max Schuemann advanced from 2B that tracking did not have occupied",
-     "play 75: Garrett Mitchell advanced from 2B that tracking did not have occupied"
+     "play 74: Max Schuemann advanced from 2B that tracking did not have occupied"
     ]
    },
    "823799": {
@@ -199091,23 +198718,10 @@
      "away": 6,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 75: Henry Davis advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823802": {
-    "officialFinal": {
-     "away": 9,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 9,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 86: Joey Ortiz advanced from 2B that tracking did not have occupied"
     ]
    },
    "823826": {
@@ -199119,27 +198733,14 @@
      "away": 7,
      "home": 3
     },
+    "automaticRunners": [
+     "Connor Wong",
+     "Wilyer Abreu"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Connor Wong advanced from 2B that tracking did not have occupied",
      "play 77: Brian Navarreto advanced from 2B that tracking did not have occupied",
-     "play 80: Wilyer Abreu advanced from 2B that tracking did not have occupied",
      "play 88: Xavier Edwards advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823847": {
-    "officialFinal": {
-     "away": 5,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 80: Weston Wilson advanced from 2B that tracking did not have occupied",
-     "play 83: Xavier Edwards advanced from 2B that tracking did not have occupied"
     ]
    },
    "823883": {
@@ -199151,40 +198752,12 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [
+     "Jakob Marsee"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: Brice Turang advanced from 2B that tracking did not have occupied",
-     "play 84: Jakob Marsee advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823887": {
-    "officialFinal": {
-     "away": 6,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: Spencer Steer advanced from 2B that tracking did not have occupied",
-     "play 80: Jakob Marsee advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823906": {
-    "officialFinal": {
-     "away": 8,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 79: José Fermín advanced from 2B that tracking did not have occupied",
-     "play 85: Will Smith advanced from 2B that tracking did not have occupied"
+     "play 78: Brice Turang advanced from 2B that tracking did not have occupied"
     ]
    },
    "823911": {
@@ -199196,9 +198769,11 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Brandon Lowe"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 77: Brandon Lowe advanced from 2B that tracking did not have occupied",
      "play 83: Enrique Hernández advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199211,9 +198786,11 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Kyle Isbel"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 73: Kyle Isbel advanced from 2B that tracking did not have occupied",
      "play 78: Shohei Ohtani advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199226,10 +198803,12 @@
      "away": 7,
      "home": 8
     },
+    "automaticRunners": [
+     "Cole Carrigg",
+     "Andy Pages"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 79: Cole Carrigg advanced from 2B that tracking did not have occupied",
-     "play 83: Andy Pages advanced from 2B that tracking did not have occupied",
      "play 91: Teoscar Hernández advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199242,27 +198821,14 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Ben Ross"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 82: Ben Ross advanced from 2B that tracking did not have occupied",
      "play 86: Bryce Teodosio advanced from 2B that tracking did not have occupied",
      "play 89: Royce Lewis advanced from 2B that tracking did not have occupied",
      "play 93: Zach Neto advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823978": {
-    "officialFinal": {
-     "away": 4,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 71: Ben Ross advanced from 2B that tracking did not have occupied",
-     "play 77: Jose Siri advanced from 2B that tracking did not have occupied"
     ]
    },
    "823983": {
@@ -199274,25 +198840,11 @@
      "away": 6,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 63: Amed Rosario advanced from 2B that tracking did not have occupied",
      "play 72: Wade Meckler advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "823986": {
-    "officialFinal": {
-     "away": 4,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Brandon Marsh advanced from 2B that tracking did not have occupied",
-     "play 75: Denzer Guzman advanced from 2B that tracking did not have occupied"
     ]
    },
    "823989": {
@@ -199304,9 +198856,11 @@
      "away": 8,
      "home": 6
     },
+    "automaticRunners": [
+     "Brayan Rocchio"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 86: Brayan Rocchio advanced from 2B that tracking did not have occupied",
      "play 93: Josh Lowe advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199319,6 +198873,7 @@
      "away": 4,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 73: Nicky Lopez advanced from 2B that tracking did not have occupied",
@@ -199334,9 +198889,11 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Blaze Alexander"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 79: Blaze Alexander advanced from 2B that tracking did not have occupied",
      "play 85: Oswald Peraza advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199349,24 +198906,12 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [
+     "Nick Madrigal"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 64: Jeremy Peña advanced from 2B that tracking did not have occupied",
-     "play 67: Nick Madrigal advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824025": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 79: Jose Altuve advanced from 2B that tracking did not have occupied"
+     "play 64: Jeremy Peña advanced from 2B that tracking did not have occupied"
     ]
    },
    "824031": {
@@ -199378,10 +198923,12 @@
      "away": 3,
      "home": 2
     },
+    "automaticRunners": [
+     "Vaughn Grissom"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: Shea Langeliers advanced from 2B that tracking did not have occupied",
-     "play 75: Vaughn Grissom advanced from 2B that tracking did not have occupied"
+     "play 70: Shea Langeliers advanced from 2B that tracking did not have occupied"
     ]
    },
    "824032": {
@@ -199393,6 +198940,7 @@
      "away": 6,
      "home": 5
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 75: Nick Kurtz advanced from 2B that tracking did not have occupied",
@@ -199408,6 +198956,7 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 75: MJ Melendez advanced from 2B that tracking did not have occupied",
@@ -199423,85 +198972,14 @@
      "away": 7,
      "home": 8
     },
+    "automaticRunners": [
+     "Julio Rodríguez",
+     "Jo Adell"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 82: Julio Rodríguez advanced from 2B that tracking did not have occupied",
-     "play 85: Jo Adell advanced from 2B that tracking did not have occupied",
      "play 91: J.P. Crawford advanced from 2B that tracking did not have occupied",
      "play 94: Adam Frazier advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824056": {
-    "officialFinal": {
-     "away": 3,
-     "home": 1
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 1
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 64: Luke Raley advanced from 2B that tracking did not have occupied",
-     "play 71: Mike Trout advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824062": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 67: Corbin Carroll advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824063": {
-    "officialFinal": {
-     "away": 5,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 75: Gabriel Moreno advanced from 2B that tracking did not have occupied",
-     "play 80: Kyle Isbel advanced from 2B that tracking did not have occupied",
-     "play 86: Ildemaro Vargas advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824090": {
-    "officialFinal": {
-     "away": 6,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 81: Vinnie Pasquantino advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824103": {
-    "officialFinal": {
-     "away": 6,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 91: Starling Marte advanced from 2B that tracking did not have occupied"
     ]
    },
    "824122": {
@@ -199513,10 +198991,12 @@
      "away": 9,
      "home": 11
     },
+    "automaticRunners": [
+     "Carter Jensen"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 88: Adam Frazier advanced from 2B that tracking did not have occupied",
-     "play 91: Carter Jensen advanced from 2B that tracking did not have occupied"
+     "play 88: Adam Frazier advanced from 2B that tracking did not have occupied"
     ]
    },
    "824125": {
@@ -199528,42 +199008,15 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [
+     "Isaac Collins",
+     "Coby Mayo",
+     "Vinnie Pasquantino"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 78: Lane Thomas advanced from 2B that tracking did not have occupied",
-     "play 82: Blaze Alexander advanced from 2B that tracking did not have occupied",
-     "play 84: Isaac Collins advanced from 2B that tracking did not have occupied",
-     "play 88: Coby Mayo advanced from 2B that tracking did not have occupied",
-     "play 95: Vinnie Pasquantino advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824145": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 74: Ildemaro Vargas advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824158": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 71: Luis Urías advanced from 2B that tracking did not have occupied",
-     "play 76: Jeremy Peña advanced from 2B that tracking did not have occupied"
+     "play 82: Blaze Alexander advanced from 2B that tracking did not have occupied"
     ]
    },
    "824159": {
@@ -199575,10 +199028,12 @@
      "away": 7,
      "home": 10
     },
+    "automaticRunners": [
+     "Jeremy Peña"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 81: Brendan Donovan advanced from 2B that tracking did not have occupied",
-     "play 84: Jeremy Peña advanced from 2B that tracking did not have occupied"
+     "play 81: Brendan Donovan advanced from 2B that tracking did not have occupied"
     ]
    },
    "824169": {
@@ -199590,10 +199045,12 @@
      "away": 4,
      "home": 2
     },
+    "automaticRunners": [
+     "Leody Taveras",
+     "Lucas Spence"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: Leody Taveras advanced from 2B that tracking did not have occupied",
-     "play 74: Lucas Spence advanced from 2B that tracking did not have occupied",
      "play 82: Gunnar Henderson advanced from 2B that tracking did not have occupied",
      "play 86: LaMonte Wade Jr. advanced from 2B that tracking did not have occupied"
     ]
@@ -199607,9 +199064,11 @@
      "away": 5,
      "home": 4
     },
+    "automaticRunners": [
+     "Christian Yelich"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 75: Christian Yelich advanced from 2B that tracking did not have occupied",
      "play 79: Zach Dezenzo advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199622,10 +199081,12 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Brice Matthews"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 84: Josh Naylor advanced from 2B that tracking did not have occupied",
-     "play 86: Brice Matthews advanced from 2B that tracking did not have occupied"
+     "play 84: Josh Naylor advanced from 2B that tracking did not have occupied"
     ]
    },
    "824205": {
@@ -199637,10 +199098,12 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [
+     "Dustin Harris"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 76: Iván Herrera advanced from 2B that tracking did not have occupied",
-     "play 80: Dustin Harris advanced from 2B that tracking did not have occupied"
+     "play 76: Iván Herrera advanced from 2B that tracking did not have occupied"
     ]
    },
    "824242": {
@@ -199652,12 +199115,14 @@
      "away": 10,
      "home": 9
     },
+    "automaticRunners": [
+     "Colt Keith",
+     "Eduardo Valencia"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 79: Gunnar Henderson advanced from 2B that tracking did not have occupied",
-     "play 80: Colt Keith advanced from 2B that tracking did not have occupied",
      "play 84: Christian Encarnacion-Strand advanced from 2B that tracking did not have occupied",
-     "play 88: Eduardo Valencia advanced from 2B that tracking did not have occupied",
      "play 94: Taylor Ward advanced from 2B that tracking did not have occupied",
      "play 99: Kevin McGonigle advanced from 2B that tracking did not have occupied"
     ]
@@ -199671,40 +199136,11 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 78: Jeremy Peña advanced from 2B that tracking did not have occupied",
      "play 84: Riley Greene advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824260": {
-    "officialFinal": {
-     "away": 4,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: Jacob Gonzalez advanced from 2B that tracking did not have occupied",
-     "play 75: Kerry Carpenter advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824273": {
-    "officialFinal": {
-     "away": 3,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Brayan Rocchio advanced from 2B that tracking did not have occupied",
-     "play 74: Wenceel Pérez advanced from 2B that tracking did not have occupied"
     ]
    },
    "824278": {
@@ -199716,40 +199152,11 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 68: Vladimir Guerrero Jr. advanced from 2B that tracking did not have occupied",
      "play 73: Zack Short advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824312": {
-    "officialFinal": {
-     "away": 5,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: Jackson Holliday advanced from 2B that tracking did not have occupied",
-     "play 79: Luis Robert Jr. advanced from 2B that tracking did not have occupied",
-     "play 85: Connor Norby advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824318": {
-    "officialFinal": {
-     "away": 6,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 77: Andy Pages advanced from 2B that tracking did not have occupied"
     ]
    },
    "824321": {
@@ -199761,11 +199168,13 @@
      "away": 9,
      "home": 7
     },
+    "automaticRunners": [
+     "Ryan Vilade",
+     "Ben Williamson"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: Ryan Vilade advanced from 2B that tracking did not have occupied",
-     "play 82: Jake McCarthy advanced from 2B that tracking did not have occupied",
-     "play 85: Ben Williamson advanced from 2B that tracking did not have occupied"
+     "play 82: Jake McCarthy advanced from 2B that tracking did not have occupied"
     ]
    },
    "824350": {
@@ -199777,24 +199186,11 @@
      "away": 9,
      "home": 7
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: Christian Yelich advanced from 2B that tracking did not have occupied",
      "play 88: Troy Johnston advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824385": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Angel Genao advanced from 2B that tracking did not have occupied"
     ]
    },
    "824387": {
@@ -199806,24 +199202,12 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Patrick Bailey"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 73: Javier Báez advanced from 2B that tracking did not have occupied",
-     "play 75: Patrick Bailey advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824402": {
-    "officialFinal": {
-     "away": 6,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 83: Francisco Lindor advanced from 2B that tracking did not have occupied"
+     "play 73: Javier Báez advanced from 2B that tracking did not have occupied"
     ]
    },
    "824406": {
@@ -199835,6 +199219,7 @@
      "away": 3,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 67: Kody Clemens advanced from 2B that tracking did not have occupied",
@@ -199842,20 +199227,6 @@
      "play 73: Luke Keaschall advanced from 2B that tracking did not have occupied",
      "play 81: Ryan Jeffers advanced from 2B that tracking did not have occupied",
      "play 87: Travis Bazzana advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824417": {
-    "officialFinal": {
-     "away": 3,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 3,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 73: Steven Kwan advanced from 2B that tracking did not have occupied"
     ]
    },
    "824427": {
@@ -199867,6 +199238,7 @@
      "away": 7,
      "home": 5
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 80: Ali Sánchez advanced from 2B that tracking did not have occupied"
@@ -199881,10 +199253,12 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [
+     "Matt Wallner"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 75: Petey Halpin advanced from 2B that tracking did not have occupied",
-     "play 78: Matt Wallner advanced from 2B that tracking did not have occupied",
      "play 83: Travis Bazzana advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199897,10 +199271,12 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [
+     "Blake Dunn"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 61: Jake Bauers advanced from 2B that tracking did not have occupied",
-     "play 64: Blake Dunn advanced from 2B that tracking did not have occupied"
+     "play 61: Jake Bauers advanced from 2B that tracking did not have occupied"
     ]
    },
    "824511": {
@@ -199912,9 +199288,11 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Carter Jensen"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Carter Jensen advanced from 2B that tracking did not have occupied",
      "play 77: Spencer Steer advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -199927,12 +199305,14 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Thomas Saggese",
+     "Spencer Steer"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 80: Thomas Saggese advanced from 2B that tracking did not have occupied",
      "play 85: JJ Bleday advanced from 2B that tracking did not have occupied",
-     "play 88: Yohel Pozo advanced from 2B that tracking did not have occupied",
-     "play 90: Spencer Steer advanced from 2B that tracking did not have occupied"
+     "play 88: Yohel Pozo advanced from 2B that tracking did not have occupied"
     ]
    },
    "824519": {
@@ -199944,10 +199324,12 @@
      "away": 8,
      "home": 7
     },
+    "automaticRunners": [
+     "Sal Stewart"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 81: CJ Abrams advanced from 2B that tracking did not have occupied",
-     "play 84: Sal Stewart advanced from 2B that tracking did not have occupied"
+     "play 81: CJ Abrams advanced from 2B that tracking did not have occupied"
     ]
    },
    "824540": {
@@ -199959,25 +199341,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 90: Noelvi Marte advanced from 2B that tracking did not have occupied",
      "play 93: Ceddanne Rafaela advanced from 2B that tracking did not have occupied",
      "play 96: TJ Friedl advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824563": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 69: Matt McLain advanced from 2B that tracking did not have occupied"
     ]
    },
    "824567": {
@@ -199989,14 +199358,16 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Chase Meidroth",
+     "Ali Sánchez",
+     "Munetaka Murakami",
+     "Ryan McMahon",
+     "Tristan Peters"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Max Schuemann advanced from 2B that tracking did not have occupied",
-     "play 74: Chase Meidroth advanced from 2B that tracking did not have occupied",
-     "play 77: Ali Sánchez advanced from 2B that tracking did not have occupied",
-     "play 81: Munetaka Murakami advanced from 2B that tracking did not have occupied",
-     "play 86: Ryan McMahon advanced from 2B that tracking did not have occupied",
-     "play 91: Tristan Peters advanced from 2B that tracking did not have occupied"
+     "play 72: Max Schuemann advanced from 2B that tracking did not have occupied"
     ]
    },
    "824568": {
@@ -200008,11 +199379,13 @@
      "away": 1,
      "home": 2
     },
+    "automaticRunners": [
+     "Tristan Peters",
+     "Jasson Domínguez"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 69: Anthony Volpe advanced from 2B that tracking did not have occupied",
-     "play 73: Tristan Peters advanced from 2B that tracking did not have occupied",
-     "play 77: Jasson Domínguez advanced from 2B that tracking did not have occupied",
      "play 83: Chase Meidroth advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200025,10 +199398,12 @@
      "away": 4,
      "home": 3
     },
+    "automaticRunners": [
+     "Miguel Vargas"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: Petey Halpin advanced from 2B that tracking did not have occupied",
-     "play 82: Miguel Vargas advanced from 2B that tracking did not have occupied"
+     "play 78: Petey Halpin advanced from 2B that tracking did not have occupied"
     ]
    },
    "824591": {
@@ -200040,6 +199415,7 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 85: Andrew Benintendi advanced from 2B that tracking did not have occupied"
@@ -200054,9 +199430,11 @@
      "away": 3,
      "home": 4
     },
+    "automaticRunners": [
+     "Matt Vierling"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: Matt Vierling advanced from 2B that tracking did not have occupied",
      "play 75: Drew Romo advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200069,27 +199447,14 @@
      "away": 5,
      "home": 3
     },
+    "automaticRunners": [
+     "Ryan Kreidler",
+     "Munetaka Murakami"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 68: Kody Clemens advanced from 2B that tracking did not have occupied",
-     "play 70: Luisangel Acuña advanced from 2B that tracking did not have occupied",
-     "play 72: Ryan Kreidler advanced from 2B that tracking did not have occupied",
-     "play 78: Munetaka Murakami advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824599": {
-    "officialFinal": {
-     "away": 8,
-     "home": 9
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 9
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 85: Pete Crow-Armstrong advanced from 2B that tracking did not have occupied",
-     "play 91: Chase Meidroth advanced from 2B that tracking did not have occupied"
+     "play 70: Luisangel Acuña advanced from 2B that tracking did not have occupied"
     ]
    },
    "824608": {
@@ -200101,6 +199466,7 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 73: Chase Meidroth advanced from 2B that tracking did not have occupied"
@@ -200115,9 +199481,11 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [
+     "Daylen Lile"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 65: Daylen Lile advanced from 2B that tracking did not have occupied",
      "play 70: Derek Hill advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200130,25 +199498,12 @@
      "away": 6,
      "home": 3
     },
+    "automaticRunners": [
+     "Colson Montgomery"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: James Wood advanced from 2B that tracking did not have occupied",
-     "play 85: Colson Montgomery advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824621": {
-    "officialFinal": {
-     "away": 4,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 73: Davis Schneider advanced from 2B that tracking did not have occupied",
-     "play 77: Miguel Vargas advanced from 2B that tracking did not have occupied"
+     "play 78: James Wood advanced from 2B that tracking did not have occupied"
     ]
    },
    "824624": {
@@ -200160,12 +199515,14 @@
      "away": 8,
      "home": 2
     },
+    "automaticRunners": [
+     "Heriberto Hernández",
+     "Esteury Ruiz"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 75: Griffin Conine advanced from 2B that tracking did not have occupied",
-     "play 79: Seiya Suzuki advanced from 2B that tracking did not have occupied",
-     "play 81: Heriberto Hernández advanced from 2B that tracking did not have occupied",
-     "play 90: Esteury Ruiz advanced from 2B that tracking did not have occupied"
+     "play 79: Seiya Suzuki advanced from 2B that tracking did not have occupied"
     ]
    },
    "824641": {
@@ -200177,10 +199534,12 @@
      "away": 5,
      "home": 7
     },
+    "automaticRunners": [
+     "Carson Kelly"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 86: Chase Meidroth advanced from 2B that tracking did not have occupied",
-     "play 88: Carson Kelly advanced from 2B that tracking did not have occupied"
+     "play 86: Chase Meidroth advanced from 2B that tracking did not have occupied"
     ]
    },
    "824654": {
@@ -200192,9 +199551,11 @@
      "away": 8,
      "home": 6
     },
+    "automaticRunners": [
+     "Hao-Yu Lee"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 80: Hao-Yu Lee advanced from 2B that tracking did not have occupied",
      "play 89: Alex Bregman advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200207,24 +199568,11 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 76: Tyrone Taylor advanced from 2B that tracking did not have occupied",
      "play 79: Ernie Clement advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824669": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 77: Dansby Swanson advanced from 2B that tracking did not have occupied"
     ]
    },
    "824670": {
@@ -200236,39 +199584,12 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [
+     "Jonah Cox"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: Jonah Cox advanced from 2B that tracking did not have occupied",
      "play 75: Pete Crow-Armstrong advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824671": {
-    "officialFinal": {
-     "away": 5,
-     "home": 4
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 4
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: Alika Williams advanced from 2B that tracking did not have occupied",
-     "play 76: Kevin Alcántara advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824682": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 80: Dansby Swanson advanced from 2B that tracking did not have occupied"
     ]
    },
    "824683": {
@@ -200280,10 +199601,12 @@
      "away": 6,
      "home": 7
     },
+    "automaticRunners": [
+     "Nico Hoerner"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: Ke'Bryan Hayes advanced from 2B that tracking did not have occupied",
-     "play 80: Nico Hoerner advanced from 2B that tracking did not have occupied"
+     "play 78: Ke'Bryan Hayes advanced from 2B that tracking did not have occupied"
     ]
    },
    "824689": {
@@ -200295,6 +199618,7 @@
      "away": 7,
      "home": 8
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 90: Brandon Marsh advanced from 2B that tracking did not have occupied",
@@ -200310,10 +199634,12 @@
      "away": 1,
      "home": 2
     },
+    "automaticRunners": [
+     "Pete Crow-Armstrong"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 70: MJ Melendez advanced from 2B that tracking did not have occupied",
-     "play 72: Pete Crow-Armstrong advanced from 2B that tracking did not have occupied"
+     "play 70: MJ Melendez advanced from 2B that tracking did not have occupied"
     ]
    },
    "824697": {
@@ -200325,40 +199651,11 @@
      "away": 4,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 86: Ian Happ advanced from 2B that tracking did not have occupied",
      "play 91: Nick Gonzales advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824719": {
-    "officialFinal": {
-     "away": 8,
-     "home": 9
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 9
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 82: Josh Naylor advanced from 2B that tracking did not have occupied",
-     "play 85: Eli White advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824722": {
-    "officialFinal": {
-     "away": 7,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 7,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 78: Gabriel Moreno advanced from 2B that tracking did not have occupied",
-     "play 84: Ceddanne Rafaela advanced from 2B that tracking did not have occupied"
     ]
    },
    "824729": {
@@ -200370,29 +199667,17 @@
      "away": 11,
      "home": 12
     },
+    "automaticRunners": [
+     "Braden Montgomery",
+     "Nick Sogard",
+     "Drew Romo"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 86: Braden Montgomery advanced from 2B that tracking did not have occupied",
      "play 98: Miguel Vargas advanced from 2B that tracking did not have occupied",
-     "play 100: Nick Sogard advanced from 2B that tracking did not have occupied",
-     "play 106: Drew Romo advanced from 2B that tracking did not have occupied",
      "play 113: Jarren Duran advanced from 2B that tracking did not have occupied",
      "play 116: Miguel Vargas advanced from 2B that tracking did not have occupied",
      "play 120: Nick Sogard advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824744": {
-    "officialFinal": {
-     "away": 4,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 70: Caleb Durbin advanced from 2B that tracking did not have occupied"
     ]
    },
    "824769": {
@@ -200404,53 +199689,11 @@
      "away": 3,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 78: Yordan Alvarez advanced from 2B that tracking did not have occupied",
      "play 83: Roman Anthony advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824778": {
-    "officialFinal": {
-     "away": 0,
-     "home": 1
-    },
-    "trackedRuns": {
-     "away": 0,
-     "home": 1
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 63: Dillon Dingler advanced from 2B that tracking did not have occupied",
-     "play 66: Jarren Duran advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824790": {
-    "officialFinal": {
-     "away": 6,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 85: Joey Ortiz advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824798": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 70: Richie Palacios advanced from 2B that tracking did not have occupied"
     ]
    },
    "824810": {
@@ -200462,40 +199705,12 @@
      "away": 3,
      "home": 2
     },
+    "automaticRunners": [
+     "Sam Huff"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 78: Sam Huff advanced from 2B that tracking did not have occupied",
      "play 91: Taylor Ward advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824812": {
-    "officialFinal": {
-     "away": 7,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 7,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 74: Brewer Hicklen advanced from 2B that tracking did not have occupied",
-     "play 81: Taylor Ward advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824825": {
-    "officialFinal": {
-     "away": 4,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 76: Dylan Crews advanced from 2B that tracking did not have occupied",
-     "play 81: Jeremiah Jackson advanced from 2B that tracking did not have occupied"
     ]
    },
    "824830": {
@@ -200507,9 +199722,11 @@
      "away": 6,
      "home": 5
     },
+    "automaticRunners": [
+     "Julio Rodríguez"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 77: Julio Rodríguez advanced from 2B that tracking did not have occupied",
      "play 82: Pete Alonso advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200522,42 +199739,15 @@
      "away": 7,
      "home": 9
     },
+    "automaticRunners": [
+     "Cedric Mullins",
+     "Chandler Simpson",
+     "Colton Cowser",
+     "Oliver Dunn"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 75: Chandler Simpson advanced from 2B that tracking did not have occupied",
-     "play 82: Cedric Mullins advanced from 2B that tracking did not have occupied",
-     "play 92: Chandler Simpson advanced from 2B that tracking did not have occupied",
-     "play 95: Colton Cowser advanced from 2B that tracking did not have occupied",
-     "play 100: Oliver Dunn advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824855": {
-    "officialFinal": {
-     "away": 8,
-     "home": 5
-    },
-    "trackedRuns": {
-     "away": 8,
-     "home": 5
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 77: Corbin Carroll advanced from 2B that tracking did not have occupied",
-     "play 83: Pete Alonso advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824868": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 72: DaShawn Keirsey Jr. advanced from 2B that tracking did not have occupied"
+     "play 75: Chandler Simpson advanced from 2B that tracking did not have occupied"
     ]
    },
    "824873": {
@@ -200569,26 +199759,14 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Bryson Stott",
+     "Brewer Hicklen"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 72: Bryson Stott advanced from 2B that tracking did not have occupied",
-     "play 76: Brewer Hicklen advanced from 2B that tracking did not have occupied",
      "play 80: Garrett Stubbs advanced from 2B that tracking did not have occupied",
      "play 87: Ozzie Albies advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824876": {
-    "officialFinal": {
-     "away": 2,
-     "home": 3
-    },
-    "trackedRuns": {
-     "away": 2,
-     "home": 3
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 74: Brewer Hicklen advanced from 2B that tracking did not have occupied"
     ]
    },
    "824900": {
@@ -200600,6 +199778,7 @@
      "away": 7,
      "home": 6
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 84: Bo Bichette advanced from 2B that tracking did not have occupied"
@@ -200614,10 +199793,12 @@
      "away": 4,
      "home": 5
     },
+    "automaticRunners": [
+     "Ha-Seong Kim"
+    ],
     "scoreConsistent": true,
     "issues": [
      "play 74: James Wood advanced from 2B that tracking did not have occupied",
-     "play 77: Ha-Seong Kim advanced from 2B that tracking did not have occupied",
      "play 85: Daylen Lile advanced from 2B that tracking did not have occupied",
      "play 89: Eli White advanced from 2B that tracking did not have occupied"
     ]
@@ -200631,6 +199812,7 @@
      "away": 2,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 71: Andruw Monasterio advanced from 2B that tracking did not have occupied"
@@ -200645,6 +199827,7 @@
      "away": 8,
      "home": 5
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 73: Garrett Stubbs advanced from 2B that tracking did not have occupied",
@@ -200660,10 +199843,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Michael Stefanic"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 80: Randy Arozarena advanced from 2B that tracking did not have occupied",
-     "play 84: Michael Stefanic advanced from 2B that tracking did not have occupied"
+     "play 80: Randy Arozarena advanced from 2B that tracking did not have occupied"
     ]
    },
    "824960": {
@@ -200675,24 +199860,11 @@
      "away": 4,
      "home": 3
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 75: Carlos Narváez advanced from 2B that tracking did not have occupied",
      "play 80: Alika Williams advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "824973": {
-    "officialFinal": {
-     "away": 4,
-     "home": 2
-    },
-    "trackedRuns": {
-     "away": 4,
-     "home": 2
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 80: Romy Gonzalez advanced from 2B that tracking did not have occupied"
     ]
    },
    "824990": {
@@ -200704,9 +199876,11 @@
      "away": 11,
      "home": 12
     },
+    "automaticRunners": [
+     "Christian Moore"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 86: Christian Moore advanced from 2B that tracking did not have occupied",
      "play 90: Lawrence Butler advanced from 2B that tracking did not have occupied"
     ]
    },
@@ -200719,12 +199893,14 @@
      "away": 15,
      "home": 14
     },
+    "automaticRunners": [
+     "David Hamilton",
+     "Christian Yelich",
+     "Zack Gelof"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 88: David Hamilton advanced from 2B that tracking did not have occupied",
-     "play 97: Henry Bolte advanced from 2B that tracking did not have occupied",
-     "play 108: Christian Yelich advanced from 2B that tracking did not have occupied",
-     "play 112: Zack Gelof advanced from 2B that tracking did not have occupied"
+     "play 97: Henry Bolte advanced from 2B that tracking did not have occupied"
     ]
    },
    "825017": {
@@ -200736,40 +199912,11 @@
      "away": 4,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 78: Nick Loftin advanced from 2B that tracking did not have occupied",
      "play 84: Nick Kurtz advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "825020": {
-    "officialFinal": {
-     "away": 6,
-     "home": 7
-    },
-    "trackedRuns": {
-     "away": 6,
-     "home": 7
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 91: Darell Hernaiz advanced from 2B that tracking did not have occupied",
-     "play 96: Andrew Benintendi advanced from 2B that tracking did not have occupied",
-     "play 101: Jacob Wilson advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "825025": {
-    "officialFinal": {
-     "away": 10,
-     "home": 12
-    },
-    "trackedRuns": {
-     "away": 10,
-     "home": 12
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 98: Shea Langeliers advanced from 2B that tracking did not have occupied"
     ]
    },
    "825030": {
@@ -200781,6 +199928,7 @@
      "away": 4,
      "home": 2
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 77: Geraldo Perdomo advanced from 2B that tracking did not have occupied",
@@ -200797,6 +199945,7 @@
      "away": 2,
      "home": 1
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 77: Kyle Tucker advanced from 2B that tracking did not have occupied",
@@ -200812,24 +199961,12 @@
      "away": 5,
      "home": 6
     },
+    "automaticRunners": [
+     "Tyler Soderstrom"
+    ],
     "scoreConsistent": true,
     "issues": [
-     "play 77: Tyler Soderstrom advanced from 2B that tracking did not have occupied",
      "play 81: Corbin Carroll advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "825057": {
-    "officialFinal": {
-     "away": 7,
-     "home": 8
-    },
-    "trackedRuns": {
-     "away": 7,
-     "home": 8
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 85: JJ Wetherholt advanced from 2B that tracking did not have occupied"
     ]
    },
    "825062": {
@@ -200841,26 +199978,13 @@
      "away": 7,
      "home": 4
     },
+    "automaticRunners": [],
     "scoreConsistent": true,
     "issues": [
      "play 79: William Contreras advanced from 2B that tracking did not have occupied",
      "play 82: Geraldo Perdomo advanced from 2B that tracking did not have occupied",
      "play 85: Blake Perkins advanced from 2B that tracking did not have occupied",
      "play 92: Lourdes Gurriel Jr. advanced from 2B that tracking did not have occupied"
-    ]
-   },
-   "825102": {
-    "officialFinal": {
-     "away": 5,
-     "home": 6
-    },
-    "trackedRuns": {
-     "away": 5,
-     "home": 6
-    },
-    "scoreConsistent": true,
-    "issues": [
-     "play 77: Michael Harris II advanced from 2B that tracking did not have occupied"
     ]
    }
   }
