@@ -5,17 +5,36 @@ const views = document.querySelectorAll(".view");
 const statusEl = document.getElementById("status");
 const footerMeta = document.getElementById("footer-meta");
 
-function show(viewId) {
+let initialized = false;
+
+function show(viewId, updateURL = false) {
   views.forEach(v => v.classList.toggle("is-active", v.id === `view-${viewId}`));
   tabs.forEach(t => {
     const active = t.dataset.view === viewId;
     t.classList.toggle("is-active", active);
     t.setAttribute("aria-selected", String(active));
+    t.tabIndex = active ? 0 : -1;
   });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (updateURL) history.replaceState(null, "", `#${viewId}`);
+  if (initialized && viewId === "pending") Pending.refreshLive();
 }
 
-tabs.forEach(t => t.addEventListener("click", () => show(t.dataset.view)));
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => show(tab.dataset.view, true));
+  tab.addEventListener("keydown", event => {
+    const next = {ArrowRight: (index + 1) % tabs.length, ArrowLeft: (index + tabs.length - 1) % tabs.length,
+      Home: 0, End: tabs.length - 1}[event.key];
+    if (next == null) return;
+    event.preventDefault();
+    tabs[next].focus();
+    show(tabs[next].dataset.view, true);
+  });
+});
+function openHash() {
+  const current = [...tabs].find(tab => `#${tab.dataset.view}` === location.hash);
+  if (current) show(current.dataset.view);
+}
+window.addEventListener("hashchange", openHash);
 
 function setStatus(msg, kind) {
   if (!statusEl) return;
@@ -36,9 +55,9 @@ function renderAnchors(anchors) {
     <tr><td>gamePk</td><td>runs removed (published)</td><td>re-fetched</td><td>official play-by-play</td></tr>
     ${anchors.map(a => `<tr>
       <td>${R.esc(a.gamePk)}</td>
-      <td>${R.esc(a.runsRemoved == null ? "—" : a.runsRemoved)}</td>
+      <td>${R.esc(a.runsRemoved == null ? "" : a.runsRemoved)}</td>
       <td>${R.esc(a.status || "—")}</td>
-      <td>${R.link(a.pbp, "view")}</td>
+      <td>${R.link(a.pbp, "Play-by-play")} ${a.clip ? R.link(a.clip, "Official clip") : ""}</td>
     </tr>`).join("")}
   </table>`;
 }
@@ -62,7 +81,7 @@ function renderMeta(meta) {
 
 API.onLoad((payload) => {
   setStatus("Data loaded.", "ok");
-  setFooter(`Generated ${payload.generatedAt ? R.fmtDateTime(payload.generatedAt) : "—"} · ${payload.run_removed ? payload.run_removed.length : 0} run-removals · ${payload.decisions ? payload.decisions.length : 0} scorer entries`);
+  setFooter(`Verified sample · ${payload.run_removed ? payload.run_removed.length : 0} run-removals · ${payload.decisions ? payload.decisions.length : 0} scorer entries`);
 
   RunRemoved.init(payload);
   Pending.init(payload);
@@ -74,12 +93,17 @@ API.onLoad((payload) => {
   renderAnchors(payload.anchors);
   renderMeta(payload.meta);
 
-  show("run-removed");
+  initialized = true;
+  openHash();
+  setInterval(() => {
+    if (!document.hidden && R.$("view-pending").classList.contains("is-active")) Pending.refreshLive();
+  }, 60000);
 });
 
 // initial load
 API.load().then(() => {
   setStatus("Data loaded.", "ok");
-}).catch(() => {
+}).catch((error) => {
+  console.error("Site initialization failed:", error);
   setStatus("Data unavailable — showing empty shell.", "warn");
 });

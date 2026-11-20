@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flagged for Review — Run-Removed Overturns</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top"><div class="wrap top-inner"><h1>Flagged for Review</h1><a href="./">Back to the site</a></div></header>
+  <main id="main" class="wrap">
+    <section class="card">
+      <h2>What is covered</h2>
+      <p>Source audit: 2026-11-20. The checkout contained an HTML shell but no styles, runtime scripts, data files, models, or workflow definitions. The original repository and its Pages site were not retrievable during the audit. The restored views use a verified sample and direct MLB lookups, not a recovered archive.</p>
+      <p>Every published baseball row links to MLB. A blank value is unverified, not zero; a count of displayed rows is not a season total. See the <a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/COORDINATION.md">coordination log</a> for repository verification.</p>
+    </section>
+    <section class="card table-wrap">
+      <h2>Verified sample: field-by-field source notes</h2>
+      <table>
+        <thead><tr><th scope="col">Record</th><th scope="col">Check</th><th scope="col">Official sources</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Juan Soto, atBatIndex 63</th><td>The MLB clip explicitly says home run overturned to double. The schedule confirms date, teams and season. The play-by-play shows the batter only in runner movements and an unchanged score across indexes 62 and 63: (0 + 1) − 0 = 1 run removed on this play.</td><td><a href="https://www.mlb.com/video/juan-soto-s-home-run-overturned-after-review">Clip</a> · <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-06-13&amp;teamId=121">Schedule</a> · <a href="https://statsapi.mlb.com/api/v1/game/823616/playByPlay">Play-by-play</a></td></tr>
+          <tr id="jeffers"><th scope="row">Ryan Jeffers, atBatIndex 29</th><td>The schedule confirms date, teams and season. The completed overturn and corrected double are verified. The accessible clip text and corrected record do not independently establish the original scoring as clearly as the Soto clip, so the run-removal count and its inputs are left blank.</td><td><a href="https://www.mlb.com/video/ryan-jeffers-homers-1-on-a-fly-ball-to-left-center-field-trevor-larnach-s">Clip</a> · <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;gamePk=778307">Schedule</a> · <a href="https://statsapi.mlb.com/api/v1/game/778307/playByPlay">Play-by-play</a></td></tr>
+          <tr><th scope="row">2026 bulletin 002, 003, 016, 017</th><td>The date/matchup labels, before/after ruling, and excerpt were read directly from each numbered MLB entry. No batter RBI change is stated in these excerpts, so the RBI cells are blank.</td><td><a href="https://www.mlb.com/official-information/scoring-changes">MLB scoring-change bulletin</a></td></tr>
+          <tr><th scope="row">2026 bulletin 022</th><td>MLB explicitly says Jake Mangum’s single changed to an error and he loses an RBI. The display reports this change, not a revised total.</td><td><a href="https://www.mlb.com/official-information/scoring-changes">MLB scoring-change bulletin</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="card table-wrap">
+      <h2>Unverified or incomplete</h2>
+      <table>
+        <thead><tr><th scope="col">Item</th><th scope="col">What is missing or irregular</th><th scope="col">Official source for review</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Historical totals and replay coverage</th><td>The uploaded README’s historical totals and candidate counts are not reproduced. The run-removal count for game 745857 is also unverified and blank. The date scanner reads completed overturns from available game feeds. It does not infer removed runs or assume that a play-specific clip exists.</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1">MLB schedule</a> · <a href="https://statsapi.mlb.com/api/v1/game/823616/playByPlay">Example MLB play-by-play</a> · <a href="https://statsapi.mlb.com/api/v1/game/745857/playByPlay">Game 745857 play-by-play</a></td></tr>
+          <tr><th scope="row">Review codes</th><td>The registry returned one-part codes (e.g. <code>H</code> = Home run, <code>N</code> = Fan interference); the game feed has values such as <code>NH</code>. The site shows the raw feed value rather than assuming the registry defines that composite.</td><td><a href="https://statsapi.mlb.com/api/v1/reviewReasons">MLB review reasons</a> · <a href="https://statsapi.mlb.com/api/v1/game/823616/playByPlay">MLB play-by-play</a></td></tr>
+          <tr><th scope="row">Pending-ruling history</th><td>Both pending codes match the registry. The live panel checks games for the current Eastern Time schedule date; it may miss cases between refreshes or games still in progress from a different schedule date. No background capture history or measured resolution percentages are published.</td><td><a href="https://statsapi.mlb.com/api/v1/eventTypes">MLB event types</a> · <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1">MLB schedule</a></td></tr>
+          <tr><th scope="row">Scorer decisions and RBI</th><td>The snapshot does not recreate the full bulletin or its historical parser. MLB may revise or renumber entries; the quoted excerpt supports comparison. An unspecified RBI change is not the same as no change.</td><td><a href="https://www.mlb.com/official-information/scoring-changes">MLB scoring-change bulletin</a> · <a href="https://www.mlb.com/glossary/standard-stats/runs-batted-in">MLB RBI glossary</a></td></tr>
+          <tr><th scope="row">Scoring model, SCI, correlations and hypothetical RBI</th><td>No checkpoint, training corpus, evaluation results or rule engine was available. No numerical model results or claims of predictive performance are published.</td><td><a href="https://baseballsavant.mlb.com/statcast_search">MLB Statcast Search</a> · <a href="https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf">MLB Official Baseball Rules</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="wrap foot-bar"><span>Source records © MLB Advanced Media, L.P.</span><a href="./">Back to the site</a></footer>
+</body>
+</html>

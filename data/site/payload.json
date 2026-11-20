@@ -1,115 +1,171 @@
 {
-  "generatedAt": "2026-11-20T00:00:00Z",
+  "generatedAt": null,
   "run_removed": [
     {
-      "gamePk": 778307,
-      "season": "",
-      "date": "",
-      "teams": "",
-      "batter": "",
-      "pitcher": "",
-      "play": "",
-      "event": "",
-      "inning": "",
-      "runnersOn": null,
-      "runsCredited": null,
-      "runsRemoved": 2,
-      "playId": "",
-      "clip": "",
-      "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
-      "gameday": "",
-      "filmRoom": "",
-      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
-    },
-    {
-      "gamePk": 745857,
-      "season": "",
-      "date": "",
-      "teams": "",
-      "batter": "",
-      "pitcher": "",
-      "play": "",
-      "event": "",
-      "inning": "",
-      "runnersOn": null,
-      "runsCredited": null,
-      "runsRemoved": 2,
-      "playId": "",
-      "clip": "",
-      "pbp": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay",
-      "gameday": "",
-      "filmRoom": "",
-      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
-    },
-    {
       "gamePk": 823616,
-      "season": "",
-      "date": "",
-      "teams": "",
-      "batter": "",
-      "pitcher": "",
-      "play": "",
-      "event": "",
-      "inning": "",
-      "runnersOn": null,
-      "runsCredited": null,
-      "runsRemoved": 1,
-      "playId": "",
-      "clip": "",
+      "atBatIndex": 63,
+      "season": "2026",
+      "date": "2026-06-13",
+      "teams": "Atlanta Braves @ New York Mets",
+      "batter": "Juan Soto",
+      "reviewType": "NH",
+      "play": "Umpire reviewed (home run), call on the field was overturned: Juan Soto doubles (6) on a fly ball to left fielder Mike Yastrzemski.",
       "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
-      "gameday": "",
-      "filmRoom": "",
-      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
+      "clip": "https://www.mlb.com/video/juan-soto-s-home-run-overturned-after-review",
+      "filmRoom": "https://www.mlb.com/video/game/823616",
+      "runnersOn": 0,
+      "runsCredited": 0,
+      "runsRemoved": 1,
+      "source": "https://www.mlb.com/video/juan-soto-s-home-run-overturned-after-review"
     }
   ],
   "additions": [],
-  "candidates": [],
-  "reviews": [],
-  "decisions": [],
+  "candidates": [
+    {
+      "gamePk": 778307,
+      "atBatIndex": 29,
+      "season": "2025",
+      "date": "2025-04-15",
+      "teams": "New York Mets @ Minnesota Twins",
+      "batter": "Ryan Jeffers",
+      "reviewType": "NH",
+      "play": "Umpire reviewed (home run), call on the field was overturned: Ryan Jeffers doubles (2) on a fly ball to left fielder Brandon Nimmo. Trevor Larnach to 3rd.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
+      "clip": "https://www.mlb.com/video/ryan-jeffers-homers-1-on-a-fly-ball-to-left-center-field-trevor-larnach-s",
+      "filmRoom": "https://www.mlb.com/video/game/778307",
+      "runnersOn": null,
+      "runsCredited": null,
+      "runsRemoved": null,
+      "source": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay"
+    }
+  ],
+  "reviews": [
+    {
+      "gamePk": 823616,
+      "atBatIndex": 63,
+      "season": "2026",
+      "date": "2026-06-13",
+      "teams": "Atlanta Braves @ New York Mets",
+      "batter": "Juan Soto",
+      "reviewType": "NH",
+      "play": "Umpire reviewed (home run), call on the field was overturned: Juan Soto doubles (6) on a fly ball to left fielder Mike Yastrzemski.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
+      "clip": "https://www.mlb.com/video/juan-soto-s-home-run-overturned-after-review",
+      "filmRoom": "https://www.mlb.com/video/game/823616"
+    },
+    {
+      "gamePk": 778307,
+      "atBatIndex": 29,
+      "season": "2025",
+      "date": "2025-04-15",
+      "teams": "New York Mets @ Minnesota Twins",
+      "batter": "Ryan Jeffers",
+      "reviewType": "NH",
+      "play": "Umpire reviewed (home run), call on the field was overturned: Ryan Jeffers doubles (2) on a fly ball to left fielder Brandon Nimmo. Trevor Larnach to 3rd.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
+      "clip": "https://www.mlb.com/video/ryan-jeffers-homers-1-on-a-fly-ball-to-left-center-field-trevor-larnach-s",
+      "filmRoom": "https://www.mlb.com/video/game/778307"
+    }
+  ],
+  "decisions": [
+    {
+      "season": "2026",
+      "date": "3/28 WSH@CHC",
+      "entryNo": "002",
+      "player": "Dansby Swanson",
+      "before": "fielder's choice",
+      "after": "hit",
+      "rbiChanged": null,
+      "rbiEffect": null,
+      "span": "In the bottom of the 6th, Dansby Swanson is now credited with a single instead of reaching on a fielders' choice.",
+      "source": "https://www.mlb.com/official-information/scoring-changes"
+    },
+    {
+      "season": "2026",
+      "date": "3/30 ATH@ATL",
+      "entryNo": "003",
+      "player": "Ozzie Albies",
+      "before": "error",
+      "after": "hit",
+      "rbiChanged": null,
+      "rbiEffect": null,
+      "span": "In the bottom of the 4th, Ozzie Albies now has a single instead of a reaching on an error charged to Max Muncy.",
+      "source": "https://www.mlb.com/official-information/scoring-changes"
+    },
+    {
+      "season": "2026",
+      "date": "4/3 TB@MIN",
+      "entryNo": "016",
+      "player": "Luke Keaschall",
+      "before": "hit",
+      "after": "error",
+      "rbiChanged": null,
+      "rbiEffect": null,
+      "span": "In the bottom of the 7th, Luke Keaschall now reaches on an error by third baseman Junior Caminero, instead of on a single.",
+      "source": "https://www.mlb.com/official-information/scoring-changes"
+    },
+    {
+      "season": "2026",
+      "date": "4/3 TB@MIN",
+      "entryNo": "017",
+      "player": "Ryan Jeffers",
+      "before": "error",
+      "after": "hit",
+      "rbiChanged": null,
+      "rbiEffect": null,
+      "span": "In the bottom of the 7th, Ryan Jeffers now reaches on a single, instead of an error by third baseman Junior Caminero.",
+      "source": "https://www.mlb.com/official-information/scoring-changes"
+    },
+    {
+      "season": "2026",
+      "date": "4/4 BAL@PIT",
+      "entryNo": "022",
+      "player": "Jake Mangum",
+      "before": "hit",
+      "after": "error",
+      "rbiChanged": true,
+      "rbiEffect": "Loses an RBI",
+      "span": "In the bottom of the 8th, the single for Jake Mangum has been changed to an error charged to Anthony Nunez. As a result, Mangum loses an RBI and 1 run is changed to unearned against Anthony Nunez.",
+      "source": "https://www.mlb.com/official-information/scoring-changes"
+    }
+  ],
   "scorer": [],
   "pending": {
     "distribution": [],
     "cases": [],
-    "note": "No pending-ruling history captured in this snapshot. The archive replaces the pending marker with the corrected call, so only live polling captures pending states. The live panel polls statsapi.mlb.com in your browser; when unreachable it shows this notice."
+    "note": "Unverified — no pending-resolution dataset or historical capture was included in the upload."
   },
-  "model": {
-    "trainRows": "",
-    "holdoutRows": "",
-    "holdoutAccuracy": "",
-    "holdoutLogLoss": "",
-    "sciCalibration": "not regenerated — raw training CSV not in this checkout (LIM-5)",
-    "liveFeatures": "experimental — xBA/xwOBA/fielding alignment not populated by the live normaliser (LIM-6)",
-    "trainedAt": ""
-  },
+  "model": {},
   "correlations": [],
   "anchors": [
     {
       "gamePk": 778307,
-      "runsRemoved": 2,
-      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
+      "runsRemoved": null,
+      "status": "Unverified original call and run-removal count; omitted from totals.",
       "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay"
     },
     {
       "gamePk": 745857,
-      "runsRemoved": 2,
-      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
+      "runsRemoved": null,
+      "status": "Unverified original call and run-removal count; omitted from totals.",
       "pbp": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay"
     },
     {
       "gamePk": 823616,
       "runsRemoved": 1,
-      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
-      "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay"
+      "status": "Verified: official clip confirms original call; play-by-play atBatIndex 63 confirms corrected double and no runs credited.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
+      "clip": "https://www.mlb.com/video/juan-soto-s-home-run-overturned-after-review"
     }
   ],
   "meta": {
     "coverage": {
-      "run-removals": "3 anchor plays documented in README (verified values); detailed inputs not re-fetched this session",
-      "pending-rulings": "none captured — pending corpus is empty until live polling captures cases",
-      "scorer-decision-changes": "none captured — automated parser not re-run this session",
-      "all-replay-overturns": "none captured — harvest not re-run this session"
+      "run-removals": "One independently verified run-removal example; not a season total.",
+      "pending-rulings": "Current Eastern Time schedule only; no archived pending sample.",
+      "scorer-decision-changes": "Five independently checked excerpts of the MLB bulletin; not a census.",
+      "all-replay-overturns": "Two verified cases, plus eligible game feeds for dates scanned in the browser."
     },
-    "freshness": "snapshot built 2026-11-20; scheduled harvest not run in this sandbox",
+    "freshness": "Official sample source audit: 2026-11-20.",
     "irregularities": [
       {
         "id": "IRR-01",
@@ -119,19 +175,19 @@
       {
         "id": "IRR-02",
         "text": "Original referenced repositories buffedlizard55-lab/LiveScoringErrors-Pending and buffedlizard55-lab/MLB-overturned-calls return 404 via the GitHub API (private or removed). Nothing from them is copied or assumed.",
-        "source": "https://api.github.com/repos/buffedlizard55-lab/LiveScoringErrors-Pending",
+        "source": "https://github.com/snapquast73-boop/LIVESCERRPEND/blob/aa23dc5a24ed10040741c8dd1838a0db28646f3e/README.md",
         "unverified": true
       },
       {
         "id": "IRR-03",
-        "text": "Run-removal detailed inputs (date, teams, batter, runners on base, runs credited, clip, Gameday) for the three anchor plays could not be re-fetched because the sandbox cannot reach *.mlb.com. Only the documented runs_removed values and official play-by-play links are published; inputs are left blank and flagged.",
+        "text": "The original README is not an official source. Counts for games 778307 and 745857 are blank; only game 823616 met the independent verification standard.",
         "source": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
         "unverified": true
       },
       {
         "id": "IRR-04",
-        "text": "GitHub Pages cannot reach statsapi.mlb.com from this environment, so the scheduled harvest (which needs *.mlb.com) cannot run here. The live pending panel fetches statsapi.mlb.com from the visitor's browser and degrades gracefully when unreachable.",
-        "source": "https://developer.github.com/actions/",
+        "text": "The harvest workflow is a connectivity probe, not a historical harvest. Live browser requests and the small verified sample are separate from the original unavailable archive.",
+        "source": "https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/.github/workflows/harvest.yml",
         "unverified": true
       }
     ]

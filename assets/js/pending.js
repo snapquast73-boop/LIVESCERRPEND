@@ -2,7 +2,7 @@
 
 const Pending = (() => {
   let payload = null;
-  let abortCtrl = null;
+  let running = false;
 
   function init(p) {
     payload = p;
@@ -12,7 +12,7 @@ const Pending = (() => {
 
   function wire() {
     const btn = R.$("pend-refresh");
-    if (btn) btn.addEventListener("click", () => { btn.disabled = true; refreshLive(); });
+    if (btn) btn.addEventListener("click", refreshLive);
     const sel = R.$("pend-season");
     const search = R.$("pend-search");
     const run = () => renderHistory();
@@ -21,31 +21,34 @@ const Pending = (() => {
   }
 
   async function refreshLive() {
+    if (running) return;
+    running = true;
+    R.$("pend-refresh").disabled = true;
     const notice = R.$("pend-notice");
     const liveBox = R.$("pend-live");
     notice.textContent = "Contacting the official feed…";
     liveBox.innerHTML = '<p class="loading">Checking today\'s games for pending rulings…</p>';
     try {
-      abortCtrl = new AbortController();
-      const result = await API.fetchLivePending(abortCtrl.signal);
-      abortCtrl = null;
+      const result = await API.fetchLivePending();
       if (!result.live || result.live.length === 0) {
-        liveBox.innerHTML = `<p class="empty">${result.note || "No pending rulings detected."}</p>`;
+        liveBox.innerHTML = `<p class="empty">${result.failed.length ? "No pending markers in responding feeds; coverage is incomplete." : "No pending markers in the live feeds checked."}</p>`;
       } else {
         const html = result.live.map(x => R.card(`
           <div class="title">${esc(x.description || "Pending ruling")}</div>
-          <div class="meta">Game ${esc(x.gamePk)} · inning ${esc(x.inning)} · ${esc(x.batter)} vs ${esc(x.pitcher)}</div>
+          <div class="meta">Game ${esc(x.gamePk)}${x.batter ? ` · ${esc(x.batter)}` : ""}</div>
           <div class="meta">${esc(x.eventType)} · ${esc(x.eventType === "os_ruling_pending_primary" ? "primary" : "prior")}</div>
           <div style="margin-top:0.35rem">${R.link(x.pbp, "official play-by-play")} ${R.link(x.clip, "watch clip")}</div>
         `)).join("");
         liveBox.innerHTML = `<div class="cards">${html}</div>`;
       }
-      R.notice("pend-notice", result.note || "");
+      notice.innerHTML = `${esc(result.note)} ${R.link(result.schedule, "Official MLB schedule")}` +
+        (result.failed.length ? ` · Unavailable: ${result.failed.map(url => R.link(url, "game feed")).join(", ")}` : "");
     } catch (err) {
       liveBox.innerHTML = `<p class="empty">Live read failed: ${esc(String(err))}</p>`;
       R.notice("pend-notice", "Live feed unavailable.");
     } finally {
-      const b = R.$("pend-refresh"); if (b) b.disabled = false;
+      running = false;
+      R.$("pend-refresh").disabled = false;
     }
   }
 
@@ -114,6 +117,3 @@ const Pending = (() => {
 
   return { init, refreshLive };
 })();
-
-// expose refresh for inline handler
-window.refreshPendingLive = () => { const btn = R.$("pend-refresh"); if (btn) { btn.disabled = true; Pending.refreshLive(); } };

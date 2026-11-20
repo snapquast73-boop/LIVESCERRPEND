@@ -40,3 +40,20 @@ def test_irregularities_are_flagged(payload):
     for irr in (payload.get("meta", {}).get("irregularities") or []):
         assert irr.get("id"), "irregularity missing id"
         assert irr.get("text"), "irregularity missing text"
+
+
+def test_reviewed_run_totals_match_independent_evidence(payload):
+    assert len(payload["run_removed"]) == 1
+    row = payload["run_removed"][0]
+    assert (row["gamePk"], row["atBatIndex"]) == (823616, 63)
+    assert row["runsRemoved"] == row["runnersOn"] + 1 - row["runsCredited"]
+    assert row["source"] == row["clip"]
+    assert all(a["runsRemoved"] is None for a in payload["anchors"] if a["gamePk"] != 823616)
+    assert all(row["runsRemoved"] is None for row in payload["candidates"])
+
+
+def test_bulletin_excerpts_distinguish_missing_rbi_from_no_rbi(payload):
+    rows = payload["decisions"]
+    assert rows and all(row["source"] == "https://www.mlb.com/official-information/scoring-changes" for row in rows)
+    assert sum(row["rbiChanged"] is True for row in rows) == 1
+    assert all(row["rbiEffect"] is None for row in rows if row["rbiChanged"] is None)
