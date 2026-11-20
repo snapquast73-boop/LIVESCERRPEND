@@ -1,6 +1,6 @@
 {
  "season": "2025",
- "generatedAt": "2026-11-20T23:15:24+00:00",
+ "generatedAt": "2026-11-20T23:20:32+00:00",
  "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-01&endDate=2025-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue",
  "reviews": [
   {

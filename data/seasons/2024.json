@@ -1,6 +1,6 @@
 {
  "season": "2024",
- "generatedAt": "2026-11-20T23:16:35+00:00",
+ "generatedAt": "2026-11-20T23:21:43+00:00",
  "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2024-03-01&endDate=2024-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue",
  "games": {
   "completed": 2473,
