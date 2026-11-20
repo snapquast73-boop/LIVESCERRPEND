@@ -1,6 +1,6 @@
 {
  "season": "2026",
- "generatedAt": "2026-11-20T22:55:23+00:00",
+ "generatedAt": "2026-11-20T22:59:53+00:00",
  "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue",
  "games": {
   "completed": 2470,
