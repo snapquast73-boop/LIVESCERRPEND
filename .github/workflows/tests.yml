@@ -27,7 +27,7 @@ jobs:
       - name: Payload, bulletin and harvest-logic checks
         run: python -m pytest -q
       - name: Official-feed parsing tests
-        run: node --test tests/*.mjs
+        run: node --test tests/mlb.test.mjs
       - name: Page, link and ARIA checks
         run: python3 tests/check_site.py
       - name: Syntax-check every browser module
