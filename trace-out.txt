@@ -8,9 +8,9 @@
 [  6] inn1b field_out                    bases=['2B'] -> ['2B'] | Mark Vientos:None->None/out@1B
 [  7] inn2t single                       bases=[] -> ['1B'] | Matt Olson:None->1B  <-- inning boundary (1, 'bottom') -> (2, 'top')
 [  8] inn2t strikeout                    bases=['1B'] -> ['1B'] | Austin Riley:None->None/out@1B
-[  9] inn2t double                       bases=['1B'] -> ['2B', '3B'] | Eli White:None->2B Eli White:2B->3B Matt Olson:1B->3B Matt Olson:3B->score  <<< Eli White advanced from 2B that tracking did not have occupied; Matt Olson advanced from 3B that tracking did not have occupied
-[ 10] inn2t strikeout                    bases=['2B', '3B'] -> ['2B', '3B'] | Jorge Mateo:None->None/out@1B
-[ 11] inn2t field_out                    bases=['2B', '3B'] -> ['2B', '3B'] | Ha-Seong Kim:None->None/out@1B
+[  9] inn2t double                       bases=['1B'] -> ['3B'] | Eli White:None->2B Eli White:2B->3B Matt Olson:1B->3B Matt Olson:3B->score
+[ 10] inn2t strikeout                    bases=['3B'] -> ['3B'] | Jorge Mateo:None->None/out@1B
+[ 11] inn2t field_out                    bases=['3B'] -> ['3B'] | Ha-Seong Kim:None->None/out@1B
 [ 12] inn2b field_out                    bases=[] -> [] | Marcus Semien:None->None/out@1B  <-- inning boundary (2, 'top') -> (2, 'bottom')
 [ 13] inn2b field_out                    bases=[] -> [] | Francisco Alvarez:None->None/out@1B
 [ 14] inn2b strikeout                    bases=[] -> [] | Eric Wagaman:None->None/out@1B
@@ -87,10 +87,10 @@
 [ 17] inn3t strikeout                    bases=[] -> [] | Francisco Lindor:None->None/out@1B
 [ 18] inn3b single                       bases=[] -> ['1B'] | Harrison Bader:None->1B  <-- inning boundary (3, 'top') -> (3, 'bottom')
 [ 19] inn3b field_out                    bases=['1B'] -> ['1B'] | Edouard Julien:None->None/out@1B
-[ 20] inn3b single                       bases=['1B'] -> ['1B', '2B', '3B'] | Harrison Bader:1B->2B Byron Buxton:None->1B Harrison Bader:2B->3B  <<< Harrison Bader advanced from 2B that tracking did not have occupied
-[ 21] inn3b field_out                    bases=['1B', '2B', '3B'] -> ['1B', '2B', '3B'] | DaShawn Keirsey Jr.:None->None/out@1B
-[ 22] inn3b field_error                  bases=['1B', '2B', '3B'] -> ['1B', '2B'] | Ty France:None->1B Harrison Bader:3B->score Byron Buxton:1B->2B
-[ 23] inn3b single                       bases=['1B', '2B'] -> ['1B', '2B', '3B'] | Carlos Correa:None->1B Byron Buxton:2B->3B Byron Buxton:3B->score Ty France:1B->2B Ty France:2B->None/out@3B  <<< Byron Buxton advanced from 3B that tracking did not have occupied
+[ 20] inn3b single                       bases=['1B'] -> ['1B', '3B'] | Harrison Bader:1B->2B Byron Buxton:None->1B Harrison Bader:2B->3B
+[ 21] inn3b field_out                    bases=['1B', '3B'] -> ['1B', '3B'] | DaShawn Keirsey Jr.:None->None/out@1B
+[ 22] inn3b field_error                  bases=['1B', '3B'] -> ['1B', '2B'] | Ty France:None->1B Harrison Bader:3B->score Byron Buxton:1B->2B
+[ 23] inn3b single                       bases=['1B', '2B'] -> ['1B'] | Carlos Correa:None->1B Byron Buxton:2B->3B Byron Buxton:3B->score Ty France:1B->2B Ty France:2B->None/out@3B
 [ 24] inn4t home_run                     bases=[] -> [] | Juan Soto:None->score  <-- inning boundary (3, 'bottom') -> (4, 'top')
 [ 25] inn4t field_out                    bases=[] -> [] | Pete Alonso:None->None/out@1B
 [ 26] inn4t field_out                    bases=[] -> [] | Starling Marte:None->None/out@1B
@@ -105,10 +105,10 @@
 [ 35] inn5t hit_by_pitch                 bases=[] -> ['1B'] | Tyrone Taylor:None->1B
 [ 36] inn5t force_out                    bases=['1B'] -> ['1B'] | Tyrone Taylor:1B->None/out@2B Luisangel Acuña:None->1B
 [ 37] inn5b single                       bases=[] -> ['1B'] | Byron Buxton:None->1B  <-- inning boundary (5, 'top') -> (5, 'bottom')
-[ 38] inn5b field_out                    bases=['1B'] -> ['2B', '3B'] | Byron Buxton:1B->2B DaShawn Keirsey Jr.:None->None/out@1B Byron Buxton:2B->3B  <<< Byron Buxton advanced from 2B that tracking did not have occupied
-[ 39] inn5b fielders_choice              bases=['2B', '3B'] -> ['1B', '2B'] | Byron Buxton:3B->score Ty France:None->1B
-[ 40] inn5b field_out                    bases=['1B', '2B'] -> ['1B', '2B'] | Brooks Lee:None->None/out@1B
-[ 41] inn5b field_out                    bases=['1B', '2B'] -> ['1B', '2B'] | Trevor Larnach:None->None/out@1B
+[ 38] inn5b field_out                    bases=['1B'] -> ['3B'] | Byron Buxton:1B->2B DaShawn Keirsey Jr.:None->None/out@1B Byron Buxton:2B->3B
+[ 39] inn5b fielders_choice              bases=['3B'] -> ['1B'] | Byron Buxton:3B->score Ty France:None->1B
+[ 40] inn5b field_out                    bases=['1B'] -> ['1B'] | Brooks Lee:None->None/out@1B
+[ 41] inn5b field_out                    bases=['1B'] -> ['1B'] | Trevor Larnach:None->None/out@1B
 [ 42] inn6t single                       bases=[] -> ['1B'] | Francisco Lindor:None->1B  <-- inning boundary (5, 'bottom') -> (6, 'top')
 [ 43] inn6t field_out                    bases=['1B'] -> ['1B'] | Juan Soto:None->None/out@1B
 [ 44] inn6t strikeout                    bases=['1B'] -> ['1B'] | Pete Alonso:None->None/out@1B
@@ -139,5 +139,40 @@
 [ 69] inn9t field_error                  bases=[] -> ['1B'] | Mark Vientos:None->1B  <-- inning boundary (8, 'bottom') -> (9, 'top')
 [ 70] inn9t force_out                    bases=['1B'] -> ['1B'] | Mark Vientos:1B->None/out@2B Luis Torrens:None->1B
 [ 71] inn9t force_out                    bases=['1B'] -> ['1B'] | Luis Torrens:1B->None/out@2B Jesse Winker:None->1B
-[ 72] inn9t single                       bases=['1B'] -> ['1B', '2B', '3B'] | Luisangel Acuña:None->1B Jesse Winker:1B->2B Jesse Winker:2B->3B  <<< Jesse Winker advanced from 2B that tracking did not have occupied
-[ 73] inn9t strikeout                    bases=['1B', '2B', '3B'] -> ['2B', '3B'] | Luisangel Acuña:1B->2B Francisco Lindor:None->None/out@1B
+[ 72] inn9t single                       bases=['1B'] -> ['1B', '3B'] | Luisangel Acuña:None->1B Jesse Winker:1B->2B Jesse Winker:2B->3B
+[ 73] inn9t strikeout                    bases=['1B', '3B'] -> ['2B', '3B'] | Luisangel Acuña:1B->2B Francisco Lindor:None->None/out@1B
+744932 2024-06-01: 0 issue(s)
+747029 2024-06-01: 0 issue(s)
+746952 2024-06-01: 0 issue(s)
+746629 2024-06-01: 0 issue(s)
+745812 2024-06-01: 0 issue(s)
+746305 2024-06-01: 0 issue(s)
+746384 2024-06-01: 0 issue(s)
+747111 2024-06-01: 0 issue(s)
+746062 2024-06-01: 0 issue(s)
+745980 2024-06-01: 1 issue(s)
+    play 77: William Contreras advanced from 2B that tracking did not have occupied
+746870 2024-06-01: 0 issue(s)
+745251 2024-06-01: 0 issue(s)
+745575 2024-06-01: 0 issue(s)
+745332 2024-06-01: 0 issue(s)
+746138 2024-06-01: 0 issue(s)
+SUMMARY 2024-06-01: 15 games, 14 clean, 1 issue(s)
+778566 2025-07-15: 0 issue(s)
+SUMMARY 2025-07-15: 1 games, 1 clean, 0 issue(s)
+823694 2026-06-13: 0 issue(s)
+822802 2026-06-13: 0 issue(s)
+824828 2026-06-13: 0 issue(s)
+822725 2026-06-13: 0 issue(s)
+823369 2026-06-13: 0 issue(s)
+824508 2026-06-13: 0 issue(s)
+824426 2026-06-13: 0 issue(s)
+824749 2026-06-13: 0 issue(s)
+823616 2026-06-13: 0 issue(s)
+824587 2026-06-13: 0 issue(s)
+824100 2026-06-13: 0 issue(s)
+823776 2026-06-13: 0 issue(s)
+824995 2026-06-13: 0 issue(s)
+823213 2026-06-13: 0 issue(s)
+824019 2026-06-13: 0 issue(s)
+SUMMARY 2026-06-13: 15 games, 15 clean, 0 issue(s)
