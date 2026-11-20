@@ -2,6 +2,9 @@ name: probe
 
 # Temporary diagnostic workflow (deleted before merge).
 on:
+  push:
+    branches: [arena/c68ee0e2-livescerrpend]
+    paths: [".github/workflows/probe.yml"]
   workflow_dispatch:
     inputs:
       games:
@@ -14,7 +17,7 @@ jobs:
     steps:
       - name: Probe official MLB feeds
         run: |
-          python3 - "${{ github.event.inputs.games }}" <<'EOF'
+          python3 - "${{ github.event.inputs.games || '823616 778307' }}" <<'EOF'
           import json, sys, urllib.request
 
           games = sys.argv[1].split()
