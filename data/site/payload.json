@@ -223,8 +223,8 @@
       },
       {
         "id": "IRR-04",
-        "text": "The harvest workflow is a connectivity probe, not a historical harvest. Live browser requests and the small verified sample are separate from the original unavailable archive.",
-        "source": "https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/.github/workflows/harvest.yml",
+        "text": "The scheduled audit rechecks the published sample, not the missing archive. Live browser requests and the small verified sample are separate from the original unavailable archive.",
+        "source": "https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/.github/workflows/official.yml",
         "unverified": true
       }
     ]
