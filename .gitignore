@@ -9,3 +9,5 @@ data/cache/
 data/watch.sqlite3
 *.log
 data/cache/
+node_modules/
+package-lock.json

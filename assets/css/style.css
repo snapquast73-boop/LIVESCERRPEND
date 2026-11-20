@@ -156,3 +156,11 @@ ul.sources li a { font-size: 0.82rem; }
 .table-wrap { overflow-x: auto; }
 .table-wrap table { border-collapse: collapse; width: 100%; }
 .table-wrap th, .table-wrap td { padding: .55rem; vertical-align: top; text-align: left; border-bottom: 1px solid currentColor; }
+
+/* ---------- live replay feed counters (reviews.html) ---------- */
+.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin-top: 0.75rem; }
+.stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 0.6rem 0.7rem; }
+.stat-value { font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.stat-label { font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-top: 0.15rem; }
+.stat-note { font-size: 0.72rem; color: var(--muted); }
+nav.tabs a.tab { text-decoration: none; display: inline-block; }
