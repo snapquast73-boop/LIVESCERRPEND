@@ -24,12 +24,47 @@ Checked game 746568, play 71: https://statsapi.mlb.com/api/v1/game/746568/playBy
 Checked game 745352, play 14: https://statsapi.mlb.com/api/v1/game/745352/playByPlay
 overturned reviews: 1968 rows on file, checking a sample
 Checked game 744802, play 61: https://statsapi.mlb.com/api/v1/game/744802/playByPlay
+Checked game 745053, play 56: https://statsapi.mlb.com/api/v1/game/745053/playByPlay
+Checked game 745263, play 15: https://statsapi.mlb.com/api/v1/game/745263/playByPlay
+Checked game 745495, play 1: https://statsapi.mlb.com/api/v1/game/745495/playByPlay
+Checked game 745694, play 18: https://statsapi.mlb.com/api/v1/game/745694/playByPlay
+Checked game 745918, play 72: https://statsapi.mlb.com/api/v1/game/745918/playByPlay
+Checked game 746146, play 12: https://statsapi.mlb.com/api/v1/game/746146/playByPlay
+Checked game 746445, play 35: https://statsapi.mlb.com/api/v1/game/746445/playByPlay
+Checked game 746641, play 40: https://statsapi.mlb.com/api/v1/game/746641/playByPlay
+Checked game 746864, play 21: https://statsapi.mlb.com/api/v1/game/746864/playByPlay
+Checked game 747100, play 41: https://statsapi.mlb.com/api/v1/game/747100/playByPlay
+Checked game 776200, play 73: https://statsapi.mlb.com/api/v1/game/776200/playByPlay
+Checked game 776456, play 5: https://statsapi.mlb.com/api/v1/game/776456/playByPlay
+Checked game 776673, play 15: https://statsapi.mlb.com/api/v1/game/776673/playByPlay
+Checked game 776965, play 33: https://statsapi.mlb.com/api/v1/game/776965/playByPlay
+Checked game 777201, play 42: https://statsapi.mlb.com/api/v1/game/777201/playByPlay
+Checked game 777398, play 71: https://statsapi.mlb.com/api/v1/game/777398/playByPlay
+Checked game 777635, play 39: https://statsapi.mlb.com/api/v1/game/777635/playByPlay
+Checked game 777848, play 32: https://statsapi.mlb.com/api/v1/game/777848/playByPlay
+Checked game 778084, play 4: https://statsapi.mlb.com/api/v1/game/778084/playByPlay
+Checked game 778245, play 66: https://statsapi.mlb.com/api/v1/game/778245/playByPlay
+Checked game 778465, play 3: https://statsapi.mlb.com/api/v1/game/778465/playByPlay
+Checked game 822724, play 66: https://statsapi.mlb.com/api/v1/game/822724/playByPlay
+Checked game 823019, play 41: https://statsapi.mlb.com/api/v1/game/823019/playByPlay
+Checked game 823277, play 23: https://statsapi.mlb.com/api/v1/game/823277/playByPlay
+Checked game 823515, play 4: https://statsapi.mlb.com/api/v1/game/823515/playByPlay
+Checked game 823707, play 48: https://statsapi.mlb.com/api/v1/game/823707/playByPlay
+Checked game 823882, play 46: https://statsapi.mlb.com/api/v1/game/823882/playByPlay
+Checked game 824120, play 31: https://statsapi.mlb.com/api/v1/game/824120/playByPlay
+Checked game 824318, play 75: https://statsapi.mlb.com/api/v1/game/824318/playByPlay
+Checked game 824529, play 49: https://statsapi.mlb.com/api/v1/game/824529/playByPlay
+Checked game 824741, play 52: https://statsapi.mlb.com/api/v1/game/824741/playByPlay
+Checked game 824952, play 63: https://statsapi.mlb.com/api/v1/game/824952/playByPlay
+Checked game 849848, play 43: https://statsapi.mlb.com/api/v1/game/849848/playByPlay
+candidates: 129 rows on file, checking a sample
+Checked game 849805, play 67: https://statsapi.mlb.com/api/v1/game/849805/playByPlay
 Traceback (most recent call last):
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 135, in <module>
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 139, in <module>
     main()
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 122, in main
-    check_game_rows(every(reviews, 60))
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 92, in check_game_rows
-    assert row['play'] == result_text, (gid, idx)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: (745053, 56)
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 128, in main
+    check_game_rows(every(candidates, 40))
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 93, in check_game_rows
+    assert review, f"{gid}/{idx}: the official feed has no review record at this position"
+           ^^^^^^
+AssertionError: 823804/54: the official feed has no review record at this position
