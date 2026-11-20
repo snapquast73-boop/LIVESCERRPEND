@@ -5,8 +5,8 @@ const RunRemoved = (() => {
   let seasons = [];
 
   function init(payload) {
-    rows = (payload.run_removed || []).slice();
-    seasons = [...new Set((payload.run_removed || []).map(r => r.season).filter(Boolean))].sort();
+    rows = [...(payload.run_removed || []), ...(payload.additions || []), ...(payload.candidates || [])];
+    seasons = [...new Set(rows.map(r => r.season).filter(Boolean))].sort();
     fillSeason("rr-season", seasons);
     render();
     wire();
@@ -54,7 +54,7 @@ const RunRemoved = (() => {
     for (const r of filtered) {
       const inputs = [];
       if (r.runnersOn != null) inputs.push(`runners on base: ${r.runnersOn}`);
-      inputs.push(`+ 1 batter`);
+      if (r.runnersOn != null) inputs.push(`+ 1 batter`);
       if (r.runsCredited != null) inputs.push(`− ${r.runsCredited} credited`);
       const removed = r.runsRemoved != null ? r.runsRemoved : "—";
       const sourceLink = R.link(r.pbp || r.source, "official play-by-play");
@@ -69,16 +69,18 @@ const RunRemoved = (() => {
         <div class="title">${esc(r.play || "Play")}</div>
         <div class="meta">${esc(r.date || "—")} · ${esc(r.teams || "—")} · ${esc(r.season || "—")}</div>
         <div class="meta" style="font-size:0.78rem">${esc(r.event || "—")} · ${esc(r.inning || "—")}</div>
-        <div style="font-size:0.78rem;color:var(--muted)">${inputs.join(" ")} = <b>${esc(String(removed))}</b> ${esc(r.runsRemoved != null ? "runs removed" : "")}</div>
+        ${r.runsRemoved == null ? '<p class="meta">Value left blank. See <a href="flagged-for-review.html">Flagged for Review</a>.</p>' :
+          `<div class="meta">${inputs.join(" ")} = <b>${esc(removed)}</b> runs removed on this play.</div>`}
         <div class="meta" style="margin-top:0.25rem">${verdict} ${sourceLink} ${clipLink} ${gameday} ${film}</div>
       `));
     }
 
     R.list("rr-list", parts);
+    R.$("rr-csv").disabled = filtered.length === 0;
     const totalRemoved = rows.filter(r => r.runsRemoved != null).reduce((a, b) => a + (Number(r.runsRemoved) || 0), 0);
     R.summary("rr-summary", `
       ${filtered.length} row${filtered.length !== 1 ? "s" : ""} shown
-      ${rows.filter(r => r.runsRemoved != null).length > 0 ? ` · ${rows.filter(r => r.runsRemoved != null).length} run-removals · ${totalRemoved} total run${totalRemoved !== 1 ? "s" : ""} removed` : ""}
+      ${rows.filter(r => r.runsRemoved != null).length > 0 ? ` · ${rows.filter(r => r.runsRemoved != null).length} run-removals · ${totalRemoved} run${totalRemoved !== 1 ? "s" : ""} removed in sample` : ""}
     `);
     R.notice("rr-notice", filtered.length === 0 && rows.length ? "No rows match the current filters." : "");
   }
@@ -95,13 +97,13 @@ const RunRemoved = (() => {
         r.date||"", r.season||"", r.teams||"", r.batter||"", r.pitcher||"", r.play||"", r.event||"", r.inning||"",
         r.runnersOn==null?"":r.runnersOn, r.runsCredited==null?"":r.runsCredited, r.runsRemoved==null?"":r.runsRemoved,
         r.playId||"", r.clip||"", r.pbp||"", r.gameday||"", r.filmRoom||"", r.source||""
-      ].map(c => `"${String(c).replace(/"/g,'""')}"`).join(","));
+      ].map(c => { const text = String(c); return `"${(/^[\s\uFEFF]*[=+@-]|^[\t\r\n]/.test(text) ? "'" + text : text).replaceAll('"', '""')}"`; }).join(","));
     }
     const blob = new Blob([lines.join("\n")], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url; a.download = "run-removed-overturns.csv"; a.click();
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
   return { init };

@@ -45,7 +45,7 @@ Resolution: kept the arena/3061568e-livescerrpend (verified) engine for those fi
 | Pull request | https://github.com/snapquast73-boop/LIVESCERRPEND/pull/2 |
 | Head | arena/3061568e-livescerrpend |
 | Base | main |
-| Merge result | pending |
+| Merge result | Merged as `9bf70398f4341b19f11df33399a952cca2700430`; Pages API reported built for this commit. |
 
 ## Follow-up audit — c5e4b7b5
 

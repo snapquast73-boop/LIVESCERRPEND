@@ -153,3 +153,6 @@ ul.sources li a { font-size: 0.82rem; }
   .top { padding: 1.2rem 0; }
   .tab { padding: 0.6rem 0.5rem; font-size: 0.8rem; }
 }
+.table-wrap { overflow-x: auto; }
+.table-wrap table { border-collapse: collapse; width: 100%; }
+.table-wrap th, .table-wrap td { padding: .55rem; vertical-align: top; text-align: left; border-bottom: 1px solid currentColor; }
