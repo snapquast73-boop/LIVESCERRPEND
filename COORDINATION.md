@@ -61,3 +61,10 @@ PR #1 (`18c9351`) and PR #2 (`9bf7039`) merged during this session. Both rebases
 ### Follow-up merge and deployment
 
 [PR #3](https://github.com/snapquast73-boop/LIVESCERRPEND/pull/3) merged to `main` as `7c1e42f39a3e5efc9197e2137eb6c2b9765932b9`. [GitHub Pages deployment](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828568744) succeeded, and the Pages API confirmed `built` for that merge commit. The public [Flagged for Review page](https://snapquast73-boop.github.io/LIVESCERRPEND/flagged-for-review.html), [published JSON](https://snapquast73-boop.github.io/LIVESCERRPEND/data/site/payload.json), and [browser feed module](https://snapquast73-boop.github.io/LIVESCERRPEND/assets/js/mlb.js) were fetched after deploy. The [GitHub tests run](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828569248) passed. It reported a nonblocking [Node 20 action-runtime deprecation](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) for the existing CI actions; those workflow dependencies were not changed in this follow-up.
+
+## Functional repair, official-source verification & UI parity — e326803f
+
+| Task | Status | Session | Files / scope | Notes |
+|---|---|---|---|---|
+| T-E1: Claim audit, fix UI/JS/CSS bugs, enrich verified MLB data, update tests & CI, merge to main & verify Pages | in progress | e326803f (`arena/e326803f-livescerrpend`) | `assets/css/style.css`, `assets/js/*.js`, `index.html`, `flagged-for-review.html`, `data/site/payload.json`, `docs/*.md`, `tests/*`, `.github/workflows/*.yml`, `COORDINATION.md` | Checked `origin/main` (`68078d04`): PRs #1–#4 merged with no active claims on `main`. (Note: remote branch `arena/312ea5e7-livescerrpend` has an unmerged claim commit from 22:29:22Z with no open PR.) |
+
