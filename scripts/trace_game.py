@@ -52,6 +52,30 @@ def trace(game_pk: int) -> None:
               f" bases={sorted(before)} -> {sorted(bases)} | {' '.join(movements)}{boundary}{flag}")
 
 
+def sample(date: str) -> None:
+    """Trace every game on one official date and summarise the tracker's issues."""
+    schedule = harvest.get_json(harvest.schedule_url(date[:4]) if False else
+                                f"{harvest.API}/schedule?sportId=1&date={date}")
+    games = [game for day in schedule.get("dates") or [] for game in day.get("games") or []
+             if game.get("status", {}).get("abstractGameState") == "Final"]
+    total = 0
+    clean = 0
+    for game in games:
+        feed = harvest.get_json(harvest.play_by_play_url(int(game["gamePk"])))
+        parsed = harvest.review_rows_for_game(feed, game, {})
+        issues = parsed["checks"]["issues"]
+        total += len(issues)
+        clean += 0 if issues else 1
+        print(f"{game['gamePk']} {date}: {len(issues)} issue(s)"
+              + ("".join(f"\n    {issue}" for issue in issues[:3])))
+    print(f"SUMMARY {date}: {len(games)} games, {clean} clean, {total} issue(s)")
+
+
 if __name__ == "__main__":
-    for pk in sys.argv[1:] or ["823616"]:
-        trace(int(pk))
+    args = sys.argv[1:]
+    if args and args[0] == "--sample":
+        for arg in args[1:]:
+            sample(arg)
+    else:
+        for pk in args or ["823616"]:
+            trace(int(pk))

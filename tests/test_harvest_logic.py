@@ -104,3 +104,26 @@ def test_half_inning_boundary_clears_the_bases():
     previous_half = (1, "top")
     bases.clear()
     assert (1, "bottom") != previous_half and not bases
+
+
+def test_multi_segment_advance_inside_one_play_is_applied_in_order():
+    # The feed splits a runner's advance into segments inside the same play:
+    # Eli White reaches 2nd on the hit, then 3rd on the throw, while Matt Olson
+    # goes first-to-third and then scores.
+    bases = {"1B": "Matt Olson"}
+    state = harvest.apply_play(play([
+        runner("Eli White", None, "2B"),
+        runner("Eli White", "2B", "3B"),
+        runner("Matt Olson", "1B", "3B"),
+        runner("Matt Olson", "3B", "score", scoring=True),
+    ]), bases)
+    assert state["unoccupied"] == []
+    assert state["scored"] == ["Matt Olson"]
+    assert bases == {"3B": "Eli White"}
+
+
+def test_runner_leaving_a_base_held_by_someone_else_does_not_evict_him():
+    bases = {"1B": "Batter"}
+    state = harvest.apply_play(play([runner("Old Runner", "1B", "2B")]), bases)
+    assert bases == {"1B": "Batter", "2B": "Old Runner"}
+    assert state["unoccupied"] == []

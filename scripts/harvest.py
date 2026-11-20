@@ -191,30 +191,37 @@ def play_play_id(play: dict) -> str | None:
 def apply_play(play: dict, bases: dict[str, str]) -> dict:
     """Advance the tracked base state through one play and report what happened.
 
-    Occupancy is applied in two phases — every vacated base is released before any
-    destination is written — because the feed lists the batter first: on a single
-    the batter takes first while the previous first-base runner moves to second,
-    and writing destinations in feed order would clobber the runner.
+    The official feed lists movements runner by runner, and splits one runner's
+    advance into segments inside the same play (the batter reaches second on the hit,
+    then third on the throw). A runner's segments are collapsed to his first start and
+    his last end — that is his final state on the play — and applied in feed order. A
+    base is released only when the runner leaving it is the runner the tracker has
+    standing there, so a batter taking first does not evict the previous runner.
 
-    `outBase` is only where an out was recorded, never a base a runner occupied:
-    a batter thrown out at first carries outBase "1B" while a runner stands there.
+    `outBase` is where an out was recorded, never a base a runner occupied: a batter
+    thrown out at first carries outBase "1B" while a runner stands there.
     """
     before = dict(bases)
     scored: list[str] = []
     unoccupied: list[str] = []
-    movements = []
+    order: list[str] = []
+    final: dict[str, dict] = {}
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
-        movements.append((runner_name(runner) or "unknown", movement))
-        start = movement.get("start")
+        name = runner_name(runner) or "unknown"
+        if name not in final:
+            order.append(name)
+            final[name] = {"start": movement.get("start"), "end": movement.get("end")}
+        else:
+            final[name]["end"] = movement.get("end")
+    for name in order:
+        start, end = final[name]["start"], final[name]["end"]
         if start:
-            if start in before:
+            occupant = bases.get(start)
+            if occupant == name:
                 bases.pop(start, None)
-            else:
-                unoccupied.append(f"{runner_name(runner) or 'a runner'} advanced from {start}"
-                                  f" that tracking did not have occupied")
-    for name, movement in movements:
-        end = movement.get("end")
+            elif occupant is None:
+                unoccupied.append(f"{name} advanced from {start} that tracking did not have occupied")
         if end == "score":
             scored.append(name)
         elif end in {"1B", "2B", "3B"}:
