@@ -11,3 +11,6 @@ data/watch.sqlite3
 data/cache/
 node_modules/
 package-lock.json
+probe-out.txt
+trace-out.txt
+bulletin.html
