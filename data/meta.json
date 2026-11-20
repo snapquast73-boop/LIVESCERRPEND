@@ -1,0 +1,10 @@
+{
+  "generated_at": null,
+  "coverage": "Live browser fetch only (archived harvest not yet run)",
+  "anchors": [],
+  "irregularities": [
+    "Initial repository upload contained root files only (assets/, data/, src/, scripts/, docs/ were missing).",
+    "Upstream repository buffedlizard55-lab/LiveScoringErrors-Pending returned HTTP 404.",
+    "Build sandbox has no outbound access to statsapi.mlb.com; archived JSON datasets are empty and flagged for review."
+  ]
+}

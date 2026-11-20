@@ -1,0 +1,7 @@
+{
+  "generated_at": null,
+  "status": "unverified",
+  "note": "Live pending rulings are fetched directly from statsapi.mlb.com in the browser. Harvested archive is empty.",
+  "source": "https://statsapi.mlb.com/api/v1/eventTypes",
+  "cases": []
+}
