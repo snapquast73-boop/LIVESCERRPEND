@@ -61,12 +61,12 @@ candidates: 129 rows on file, checking a sample
 Checked game 849805, play 67: https://statsapi.mlb.com/api/v1/game/849805/playByPlay
 Checked game 823804, play 54: https://statsapi.mlb.com/api/v1/game/823804/playByPlay
 Checked game 778020, play 29: https://statsapi.mlb.com/api/v1/game/778020/playByPlay
+Checked game 745659, play 76: https://statsapi.mlb.com/api/v1/game/745659/playByPlay
+Checked game 745602, play 26: https://statsapi.mlb.com/api/v1/game/745602/playByPlay
 Traceback (most recent call last):
   File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 151, in <module>
     main()
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 140, in main
-    check_game_rows(every(candidates, 40))
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 123, in check_game_rows
-    assert row['runnersOn'] == len(runners), (gid, row['runnersOn'], len(runners))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: (745659, 2, 3)
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 146, in main
+    assert expected in bulletin, row['entryNo']
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: 225
