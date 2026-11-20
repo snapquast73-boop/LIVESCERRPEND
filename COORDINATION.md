@@ -79,3 +79,29 @@ source, and publish to GitHub Pages.
 Checked before claiming: `git log` shows no other branch ahead of `main`; remote branches present are
 `arena/b3fde79a`, `arena/3061568e`, `arena/c5e4b7b5` (all merged) and `arena/312ea5e7` (claim commit
 only, no file work). No other session holds an active claim on the files above.
+
+### Result — session c68ee0e2
+
+| Task | Status | Session | Files / sources |
+| --- | --- | --- | --- |
+| Rebuild the archive from the official feeds | done | c68ee0e2 | `scripts/harvest.py`, `scripts/harvest_scoring_changes.py`, `scripts/capture_pending.py`, `scripts/build_payload.py`, `.github/workflows/harvest.yml`, `.github/workflows/live-capture.yml`, `data/seasons/**`, `data/site/**`. [MLB schedule](https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30), [play-by-play](https://statsapi.mlb.com/api/v1/game/823616/playByPlay), [review reasons](https://statsapi.mlb.com/api/v1/reviewReasons), [scoring bulletin](https://www.mlb.com/official-information/scoring-changes). |
+| Repair the browser client | done | c68ee0e2 | `assets/js/**`, `assets/css/style.css`, `index.html`, `reviews.html`, `flagged-for-review.html`. Fixed the review scan wiring (`#rv-scan`), the missing `#dc-search`, the blank model card, the nested-card markup and the empty archive; added a per-season archive loader and a live replay feed page. |
+| Verification | done | c68ee0e2 | `tests/test_payload.py`, `tests/test_harvest_logic.py`, `tests/mlb.test.mjs`, `tests/site-smoke.mjs`, `tests/check_site.py`, `docs/VERIFICATION.md`. |
+| Publish | in progress | c68ee0e2 | PR from `arena/c68ee0e2-livescerrpend` to `main`, then GitHub Pages. |
+
+Coverage published: 7,420 completed games across 2024–2026 (all scanned, 0 feeds unavailable),
+1,968 overturned reviews, 5,954 automated pitch challenges, 23 run-removal plays / 26 runs removed,
+129 no-count candidates, 31 no-count additions, 255 bulletin entries (63 classified, 17 with a
+stated RBI effect). The three games named in the uploaded README all reproduce from the official
+play-by-play: 745857 = 2 runs, 778307 = 2 runs, 823616 = 1 run.
+
+Base occupancy is tracked from the official runner movements and required to reconcile with the
+score printed on every play and with the official final score: 0 of 7,420 games fail that check.
+Three tracker defects were found and fixed in this session (half-inning reset, batter-out at first
+evicting a runner, multi-segment advances / identity by MLB person id), each with a unit test.
+
+Open items are published on the Flagged for Review page and itemised in `data/flagged.json`:
+the uploaded README's season totals do not reproduce (23/26/129 vs its 22/28/484), the scoring model
+and correlation study were never in the upload, no pending ruling survives in an archived feed, the
+bulletin covers the current season only, and composite review codes are printed raw with only the
+registry's reason part named.
