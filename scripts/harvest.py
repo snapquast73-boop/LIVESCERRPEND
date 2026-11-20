@@ -289,13 +289,16 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
         # baseball, not an assumption about the feed: it stops a runner left on base
         # at the end of one half inning leaking into the next play's occupancy.
         half = (about.get("inning"), about.get("halfInning"))
-        new_half = previous_half is not None and half != previous_half
-        if new_half:
+        if previous_half is not None and half != previous_half:
             bases.clear()
         previous_half = half
 
-        state = apply_play(play, bases, automatic_runner=bool(
-            new_half and isinstance(about.get("inning"), int) and about["inning"] >= 10))
+        # From the tenth inning on, the batting side starts with an automatic runner on
+        # second. The feed reports that runner's moves as starting on second without a
+        # play placing him, so any such runner in an extra inning is placed (and counted
+        # in `checks.automaticRunners`) instead of being reported as untracked.
+        extra_inning = isinstance(about.get("inning"), int) and about["inning"] >= 10
+        state = apply_play(play, bases, automatic_runner=extra_inning)
         automatic_runners.extend(state["automaticPlaced"])
         delta, scores = score_delta(play, is_top, scores)
         for problem in state["unoccupied"]:
