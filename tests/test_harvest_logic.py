@@ -27,35 +27,43 @@ def play(runners, *, atBat=0, inning=1, half="top", away=0, home=0, event="singl
     }
 
 
-def runner(name, start, end, *, out=None, scoring=False):
+def runner(name, start, end, *, out=None, scoring=False, person_id=None):
+    person = {"fullName": name}
+    if person_id is not None:
+        person["id"] = person_id
     return {"movement": {"start": start, "end": end, "outBase": out, "isOut": out is not None},
-            "details": {"runner": {"fullName": name}, "isScoringEvent": scoring}}
+            "details": {"runner": person, "isScoringEvent": scoring}}
+
+
+def ident(name):
+    """How the tracker keys a baserunner when the feed carries no person id."""
+    return f"name:{name}"
 
 
 def test_single_with_runner_on_first_keeps_both_runners():
     bases = {}
     harvest.apply_play(play([runner("Batter", None, "1B"), runner("Runner", "1B", "2B")]), bases)
-    assert bases == {"1B": "Batter", "2B": "Runner"}
+    assert bases == {"1B": ident("Batter"), "2B": ident("Runner")}
 
 
 def test_batter_out_at_first_does_not_evict_the_runner_standing_there():
-    bases = {"1B": "Runner"}
+    bases = {"1B": ident("Runner")}
     harvest.apply_play(play([runner("Batter", None, None, out="1B")]), bases)
-    assert bases == {"1B": "Runner"}
+    assert bases == {"1B": ident("Runner")}
 
 
 def test_fly_out_leaves_runners_in_place_and_counts_no_runs():
-    bases = {"2B": "Runner"}
+    bases = {"2B": ident("Runner")}
     state = harvest.apply_play(play([runner("Batter", None, None, out="1B")]), bases)
-    assert bases == {"2B": "Runner"}
+    assert bases == {"2B": ident("Runner")}
     assert state["scored"] == []
 
 
 def test_run_scores_and_leaves_the_base():
-    bases = {"3B": "Runner"}
+    bases = {"3B": ident("Runner")}
     state = harvest.apply_play(play([runner("Batter", None, "2B"), runner("Runner", "3B", "score", scoring=True)]), bases)
     assert state["scored"] == ["Runner"]
-    assert bases == {"2B": "Batter"}
+    assert bases == {"2B": ident("Batter")}
 
 
 def test_a_runner_moving_from_an_unoccupied_base_is_reported():
@@ -64,7 +72,7 @@ def test_a_runner_moving_from_an_unoccupied_base_is_reported():
 
 
 def test_home_run_overturned_to_double_removes_batter_and_any_runner_left_on():
-    bases = {"1B": "Trevor Larnach"}
+    bases = {"1B": ident("Trevor Larnach")}
     review = {"reviewType": "NH", "isOverturned": True, "inProgress": False}
     state = harvest.apply_play(play([
         {"movement": {"start": None, "end": "2B"}, "details": {"runner": {"fullName": "Ryan Jeffers"}}},
@@ -110,7 +118,7 @@ def test_multi_segment_advance_inside_one_play_is_applied_in_order():
     # The feed splits a runner's advance into segments inside the same play:
     # Eli White reaches 2nd on the hit, then 3rd on the throw, while Matt Olson
     # goes first-to-third and then scores.
-    bases = {"1B": "Matt Olson"}
+    bases = {"1B": ident("Matt Olson")}
     state = harvest.apply_play(play([
         runner("Eli White", None, "2B"),
         runner("Eli White", "2B", "3B"),
@@ -119,11 +127,20 @@ def test_multi_segment_advance_inside_one_play_is_applied_in_order():
     ]), bases)
     assert state["unoccupied"] == []
     assert state["scored"] == ["Matt Olson"]
-    assert bases == {"3B": "Eli White"}
+    assert bases == {"3B": ident("Eli White")}
 
 
 def test_runner_leaving_a_base_held_by_someone_else_does_not_evict_him():
-    bases = {"1B": "Batter"}
+    bases = {"1B": ident("Batter")}
     state = harvest.apply_play(play([runner("Old Runner", "1B", "2B")]), bases)
-    assert bases == {"1B": "Batter", "2B": "Old Runner"}
+    assert bases == {"1B": ident("Batter"), "2B": ident("Old Runner")}
     assert state["unoccupied"] == []
+
+
+def test_runner_identity_prefers_the_mlb_person_id_over_the_printed_name():
+    bases = {}
+    harvest.apply_play(play([runner("Jose F Miranda", None, "1B", person_id=650333)]), bases)
+    # The feed prints the same player differently on a later play; the id still matches.
+    state = harvest.apply_play(play([runner("Jose Miranda", "1B", "2B", person_id=650333)]), bases)
+    assert state["unoccupied"] == []
+    assert bases == {"2B": "id:650333"}

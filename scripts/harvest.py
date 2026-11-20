@@ -180,6 +180,19 @@ def runner_name(runner: dict) -> str | None:
     return ((runner.get("details") or {}).get("runner") or {}).get("fullName")
 
 
+def runner_identity(runner: dict) -> str:
+    """Stable identity for a baserunner: the MLB person id when the feed carries it.
+
+    The feed is not consistent about the display name (`Jose F Miranda` in one play,
+    `Jose Miranda` in another), so occupancy is compared on the id and falls back to
+    the printed name only when no id is present.
+    """
+    person = (runner.get("details") or {}).get("runner") or {}
+    if person.get("id") is not None:
+        return f"id:{person['id']}"
+    return f"name:{person.get('fullName') or 'unknown'}"
+
+
 def play_play_id(play: dict) -> str | None:
     events = play.get("playEvents") or []
     for event in reversed(events):
@@ -208,24 +221,26 @@ def apply_play(play: dict, bases: dict[str, str]) -> dict:
     final: dict[str, dict] = {}
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
-        name = runner_name(runner) or "unknown"
-        if name not in final:
-            order.append(name)
-            final[name] = {"start": movement.get("start"), "end": movement.get("end")}
+        key = runner_identity(runner)
+        if key not in final:
+            order.append(key)
+            final[key] = {"start": movement.get("start"), "end": movement.get("end"),
+                          "name": runner_name(runner) or "unknown"}
         else:
-            final[name]["end"] = movement.get("end")
-    for name in order:
-        start, end = final[name]["start"], final[name]["end"]
+            final[key]["end"] = movement.get("end")
+    for key in order:
+        entry = final[key]
+        start, end, name = entry["start"], entry["end"], entry["name"]
         if start:
             occupant = bases.get(start)
-            if occupant == name:
+            if occupant == key:
                 bases.pop(start, None)
             elif occupant is None:
                 unoccupied.append(f"{name} advanced from {start} that tracking did not have occupied")
         if end == "score":
             scored.append(name)
         elif end in {"1B", "2B", "3B"}:
-            bases[end] = name
+            bases[end] = key
     return {"before": before, "scored": scored, "unoccupied": unoccupied}
 
 
