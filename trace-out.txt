@@ -1,178 +1,150 @@
-=== game 823616: 67 plays ===
-[  0] inn1t field_out                    bases=[] -> [] | Mauricio Dubón:None->None/out@1B
-[  1] inn1t strikeout                    bases=[] -> [] | Michael Harris II:None->None/out@1B
-[  2] inn1t field_out                    bases=[] -> [] | Ozzie Albies:None->None/out@1B
-[  3] inn1b field_out                    bases=[] -> [] | Carson Benge:None->None/out@1B  <-- inning boundary (1, 'top') -> (1, 'bottom')
-[  4] inn1b single                       bases=[] -> ['1B'] | Bo Bichette:None->1B
-[  5] inn1b field_out                    bases=['1B'] -> ['2B'] | Juan Soto:None->None/out@1B Bo Bichette:1B->2B
-[  6] inn1b field_out                    bases=['2B'] -> ['2B'] | Mark Vientos:None->None/out@1B
-[  7] inn2t single                       bases=[] -> ['1B'] | Matt Olson:None->1B  <-- inning boundary (1, 'bottom') -> (2, 'top')
-[  8] inn2t strikeout                    bases=['1B'] -> ['1B'] | Austin Riley:None->None/out@1B
-[  9] inn2t double                       bases=['1B'] -> ['3B'] | Eli White:None->2B Eli White:2B->3B Matt Olson:1B->3B Matt Olson:3B->score
-[ 10] inn2t strikeout                    bases=['3B'] -> ['3B'] | Jorge Mateo:None->None/out@1B
-[ 11] inn2t field_out                    bases=['3B'] -> ['3B'] | Ha-Seong Kim:None->None/out@1B
-[ 12] inn2b field_out                    bases=[] -> [] | Marcus Semien:None->None/out@1B  <-- inning boundary (2, 'top') -> (2, 'bottom')
-[ 13] inn2b field_out                    bases=[] -> [] | Francisco Alvarez:None->None/out@1B
-[ 14] inn2b strikeout                    bases=[] -> [] | Eric Wagaman:None->None/out@1B
-[ 15] inn3t field_out                    bases=[] -> [] | Sandy León:None->None/out@1B  <-- inning boundary (2, 'bottom') -> (3, 'top')
-[ 16] inn3t single                       bases=[] -> ['1B'] | Mauricio Dubón:None->1B
-[ 17] inn3t force_out                    bases=['1B'] -> ['1B'] | Mauricio Dubón:1B->None/out@2B Michael Harris II:None->1B
-[ 18] inn3t field_out                    bases=['1B'] -> ['1B'] | Ozzie Albies:None->None/out@1B
-[ 19] inn3b strikeout                    bases=[] -> [] | MJ Melendez:None->None/out@1B  <-- inning boundary (3, 'top') -> (3, 'bottom')
-[ 20] inn3b field_out                    bases=[] -> [] | Vidal Bruján:None->None/out@1B
-[ 21] inn3b walk                         bases=[] -> ['1B'] | Carson Benge:None->1B
-[ 22] inn3b field_out                    bases=['1B'] -> ['1B'] | Bo Bichette:None->None/out@1B
-[ 23] inn4t strikeout                    bases=[] -> [] | Matt Olson:None->None/out@1B  <-- inning boundary (3, 'bottom') -> (4, 'top')
-[ 24] inn4t field_out                    bases=[] -> [] | Austin Riley:None->None/out@1B
-[ 25] inn4t home_run                     bases=[] -> [] | Eli White:None->score
-[ 26] inn4t field_out                    bases=[] -> [] | Jorge Mateo:None->None/out@1B
-[ 27] inn4b single                       bases=[] -> ['1B'] | Juan Soto:None->1B  <-- inning boundary (4, 'top') -> (4, 'bottom')
-[ 28] inn4b grounded_into_double_play    bases=['1B'] -> [] | Juan Soto:1B->None/out@2B Mark Vientos:None->None/out@1B
-[ 29] inn4b field_out                    bases=[] -> [] | Marcus Semien:None->None/out@1B
-[ 30] inn5t field_out                    bases=[] -> [] | Ha-Seong Kim:None->None/out@1B  <-- inning boundary (4, 'bottom') -> (5, 'top')
-[ 31] inn5t strikeout                    bases=[] -> [] | Sandy León:None->None/out@1B
-[ 32] inn5t field_out                    bases=[] -> [] | Mauricio Dubón:None->None/out@1B
-[ 33] inn5b strikeout                    bases=[] -> [] | Francisco Alvarez:None->None/out@1B  <-- inning boundary (5, 'top') -> (5, 'bottom')
-[ 34] inn5b strikeout                    bases=[] -> [] | Eric Wagaman:None->None/out@1B
-[ 35] inn5b single                       bases=[] -> ['1B'] | MJ Melendez:None->1B
-[ 36] inn5b force_out                    bases=['1B'] -> ['1B'] | MJ Melendez:1B->None/out@2B Vidal Bruján:None->1B
-[ 37] inn6t strikeout                    bases=[] -> [] | Michael Harris II:None->None/out@1B  <-- inning boundary (5, 'bottom') -> (6, 'top')
-[ 38] inn6t field_out                    bases=[] -> [] | Ozzie Albies:None->None/out@1B
-[ 39] inn6t field_out                    bases=[] -> [] | Matt Olson:None->None/out@1B
-[ 40] inn6b field_out                    bases=[] -> [] | Carson Benge:None->None/out@1B  <-- inning boundary (6, 'top') -> (6, 'bottom')
-[ 41] inn6b double                       bases=[] -> ['2B'] | Bo Bichette:None->2B
-[ 42] inn6b field_out                    bases=['2B'] -> ['2B'] | Juan Soto:None->None/out@1B
-[ 43] inn6b single                       bases=['2B'] -> ['1B'] | Mark Vientos:None->1B Bo Bichette:2B->score
-[ 44] inn6b strikeout                    bases=['1B'] -> ['1B'] | Marcus Semien:None->None/out@1B
-[ 45] inn7t field_out                    bases=[] -> [] | Austin Riley:None->None/out@1B  <-- inning boundary (6, 'bottom') -> (7, 'top')
-[ 46] inn7t double                       bases=[] -> ['2B'] | Eli White:None->2B
-[ 47] inn7t field_out                    bases=['2B'] -> ['2B'] | Dominic Smith:None->None/out@1B
-[ 48] inn7t strikeout                    bases=['2B'] -> ['2B'] | Mike Yastrzemski:None->None/out@1B
-[ 49] inn7b strikeout                    bases=[] -> [] | Francisco Alvarez:None->None/out@1B  <-- inning boundary (7, 'top') -> (7, 'bottom')
-[ 50] inn7b strikeout                    bases=[] -> [] | Jared Young:None->None/out@1B
-[ 51] inn7b strikeout                    bases=[] -> [] | MJ Melendez:None->None/out@1B
-[ 52] inn8t strikeout                    bases=[] -> [] | Sandy León:None->None/out@1B  <-- inning boundary (7, 'bottom') -> (8, 'top')
-[ 53] inn8t strikeout                    bases=[] -> [] | Mauricio Dubón:None->None/out@1B
-[ 54] inn8t home_run                     bases=[] -> [] | Michael Harris II:None->score
-[ 55] inn8t single                       bases=[] -> ['1B'] | Ozzie Albies:None->1B
-[ 56] inn8t field_out                    bases=['1B'] -> ['1B'] | Matt Olson:None->None/out@1B
-[ 57] inn8b field_out                    bases=[] -> [] | A.J. Ewing:None->None/out@1B  <-- inning boundary (8, 'top') -> (8, 'bottom')
-[ 58] inn8b strikeout                    bases=[] -> [] | Carson Benge:None->None/out@1B
-[ 59] inn8b field_out                    bases=[] -> [] | Bo Bichette:None->None/out@1B
-[ 60] inn9t strikeout                    bases=[] -> [] | Austin Riley:None->None/out@1B  <-- inning boundary (8, 'bottom') -> (9, 'top')
-[ 61] inn9t field_out                    bases=[] -> [] | Eli White:None->None/out@1B
-[ 62] inn9t field_out                    bases=[] -> [] | Dominic Smith:None->None/out@1B
-[ 63] inn9b double                       bases=[] -> ['2B'] | Juan Soto:None->2B  <-- inning boundary (9, 'top') -> (9, 'bottom')
-[ 64] inn9b strikeout                    bases=['2B'] -> ['2B'] | Mark Vientos:None->None/out@1B
-[ 65] inn9b walk                         bases=['2B'] -> ['1B', '2B'] | Marcus Semien:None->1B
-[ 66] inn9b grounded_into_double_play    bases=['1B', '2B'] -> ['2B'] | Marcus Semien:1B->None/out@2B Francisco Alvarez:None->None/out@1B
-=== game 778307: 74 plays ===
-[  0] inn1t field_out                    bases=[] -> [] | Francisco Lindor:None->None/out@1B
-[  1] inn1t field_out                    bases=[] -> [] | Juan Soto:None->None/out@1B
-[  2] inn1t home_run                     bases=[] -> [] | Pete Alonso:None->score
-[  3] inn1t field_out                    bases=[] -> [] | Starling Marte:None->None/out@1B
-[  4] inn1b field_out                    bases=[] -> [] | Edouard Julien:None->None/out@1B  <-- inning boundary (1, 'top') -> (1, 'bottom')
-[  5] inn1b strikeout                    bases=[] -> [] | Byron Buxton:None->None/out@1B
-[  6] inn1b single                       bases=[] -> ['1B'] | Matt Wallner:None->1B
-[  7] inn1b strikeout                    bases=['1B'] -> ['1B'] | Ty France:None->None/out@1B
-[  8] inn2t field_out                    bases=[] -> [] | Brandon Nimmo:None->None/out@1B  <-- inning boundary (1, 'bottom') -> (2, 'top')
-[  9] inn2t strikeout                    bases=[] -> [] | Mark Vientos:None->None/out@1B
-[ 10] inn2t field_out                    bases=[] -> [] | Luis Torrens:None->None/out@1B
-[ 11] inn2b field_out                    bases=[] -> [] | Carlos Correa:None->None/out@1B  <-- inning boundary (2, 'top') -> (2, 'bottom')
-[ 12] inn2b field_out                    bases=[] -> [] | Trevor Larnach:None->None/out@1B
-[ 13] inn2b single                       bases=[] -> ['1B'] | Ryan Jeffers:None->1B
-[ 14] inn2b field_out                    bases=['1B'] -> ['1B'] | Willi Castro:None->None/out@1B
-[ 15] inn3t strikeout                    bases=[] -> [] | Tyrone Taylor:None->None/out@1B  <-- inning boundary (2, 'bottom') -> (3, 'top')
-[ 16] inn3t field_out                    bases=[] -> [] | Luisangel Acuña:None->None/out@1B
-[ 17] inn3t strikeout                    bases=[] -> [] | Francisco Lindor:None->None/out@1B
-[ 18] inn3b single                       bases=[] -> ['1B'] | Harrison Bader:None->1B  <-- inning boundary (3, 'top') -> (3, 'bottom')
-[ 19] inn3b field_out                    bases=['1B'] -> ['1B'] | Edouard Julien:None->None/out@1B
-[ 20] inn3b single                       bases=['1B'] -> ['1B', '3B'] | Harrison Bader:1B->2B Byron Buxton:None->1B Harrison Bader:2B->3B
-[ 21] inn3b field_out                    bases=['1B', '3B'] -> ['1B', '3B'] | DaShawn Keirsey Jr.:None->None/out@1B
-[ 22] inn3b field_error                  bases=['1B', '3B'] -> ['1B', '2B'] | Ty France:None->1B Harrison Bader:3B->score Byron Buxton:1B->2B
-[ 23] inn3b single                       bases=['1B', '2B'] -> ['1B'] | Carlos Correa:None->1B Byron Buxton:2B->3B Byron Buxton:3B->score Ty France:1B->2B Ty France:2B->None/out@3B
-[ 24] inn4t home_run                     bases=[] -> [] | Juan Soto:None->score  <-- inning boundary (3, 'bottom') -> (4, 'top')
-[ 25] inn4t field_out                    bases=[] -> [] | Pete Alonso:None->None/out@1B
-[ 26] inn4t field_out                    bases=[] -> [] | Starling Marte:None->None/out@1B
-[ 27] inn4t strikeout                    bases=[] -> [] | Brandon Nimmo:None->None/out@1B
-[ 28] inn4b hit_by_pitch                 bases=[] -> ['1B'] | Trevor Larnach:None->1B  <-- inning boundary (4, 'top') -> (4, 'bottom')
-[ 29] inn4b double                       bases=['1B'] -> ['2B', '3B'] | Ryan Jeffers:None->2B Trevor Larnach:1B->3B
-[ 30] inn4b strikeout                    bases=['2B', '3B'] -> ['2B', '3B'] | Willi Castro:None->None/out@1B
-[ 31] inn4b single                       bases=['2B', '3B'] -> ['1B', '2B'] | Harrison Bader:None->1B Trevor Larnach:3B->score
-[ 32] inn4b grounded_into_double_play    bases=['1B', '2B'] -> ['2B'] | Harrison Bader:1B->None/out@2B Edouard Julien:None->None/out@1B
-[ 33] inn5t field_out                    bases=[] -> [] | Mark Vientos:None->None/out@1B  <-- inning boundary (4, 'bottom') -> (5, 'top')
-[ 34] inn5t field_out                    bases=[] -> [] | Luis Torrens:None->None/out@1B
-[ 35] inn5t hit_by_pitch                 bases=[] -> ['1B'] | Tyrone Taylor:None->1B
-[ 36] inn5t force_out                    bases=['1B'] -> ['1B'] | Tyrone Taylor:1B->None/out@2B Luisangel Acuña:None->1B
-[ 37] inn5b single                       bases=[] -> ['1B'] | Byron Buxton:None->1B  <-- inning boundary (5, 'top') -> (5, 'bottom')
-[ 38] inn5b field_out                    bases=['1B'] -> ['3B'] | Byron Buxton:1B->2B DaShawn Keirsey Jr.:None->None/out@1B Byron Buxton:2B->3B
-[ 39] inn5b fielders_choice              bases=['3B'] -> ['1B'] | Byron Buxton:3B->score Ty France:None->1B
-[ 40] inn5b field_out                    bases=['1B'] -> ['1B'] | Brooks Lee:None->None/out@1B
-[ 41] inn5b field_out                    bases=['1B'] -> ['1B'] | Trevor Larnach:None->None/out@1B
-[ 42] inn6t single                       bases=[] -> ['1B'] | Francisco Lindor:None->1B  <-- inning boundary (5, 'bottom') -> (6, 'top')
-[ 43] inn6t field_out                    bases=['1B'] -> ['1B'] | Juan Soto:None->None/out@1B
-[ 44] inn6t strikeout                    bases=['1B'] -> ['1B'] | Pete Alonso:None->None/out@1B
-[ 45] inn6t field_out                    bases=['1B'] -> ['1B'] | Starling Marte:None->None/out@1B
-[ 46] inn6b double                       bases=[] -> ['2B'] | Ryan Jeffers:None->2B  <-- inning boundary (6, 'top') -> (6, 'bottom')
-[ 47] inn6b field_out                    bases=['2B'] -> ['3B'] | Willi Castro:None->None/out@1B Ryan Jeffers:2B->3B
-[ 48] inn6b strikeout                    bases=['3B'] -> ['3B'] | Harrison Bader:None->None/out@1B
-[ 49] inn6b single                       bases=['3B'] -> ['1B'] | Edouard Julien:None->1B Ryan Jeffers:3B->score
-[ 50] inn6b field_out                    bases=['1B'] -> ['1B'] | Byron Buxton:None->None/out@1B
-[ 51] inn7t field_out                    bases=[] -> [] | Brandon Nimmo:None->None/out@1B  <-- inning boundary (6, 'bottom') -> (7, 'top')
-[ 52] inn7t single                       bases=[] -> ['1B'] | Mark Vientos:None->1B
-[ 53] inn7t double                       bases=['1B'] -> ['2B', '3B'] | Luis Torrens:None->2B Mark Vientos:1B->3B
-[ 54] inn7t sac_fly                      bases=['2B', '3B'] -> ['2B'] | Jesse Winker:None->None/out@1B Mark Vientos:3B->score
-[ 55] inn7t walk                         bases=['2B'] -> ['1B', '2B'] | Luisangel Acuña:None->1B
-[ 56] inn7t field_out                    bases=['1B', '2B'] -> ['1B', '2B'] | Francisco Lindor:None->None/out@1B
-[ 57] inn7b single                       bases=[] -> ['1B'] | DaShawn Keirsey Jr.:None->1B  <-- inning boundary (7, 'top') -> (7, 'bottom')
-[ 58] inn7b field_out                    bases=['1B'] -> [] | DaShawn Keirsey Jr.:1B->None/out@2B Ty France:None->None/out@1B
-[ 59] inn7b home_run                     bases=[] -> [] | Brooks Lee:None->score
-[ 60] inn7b strikeout                    bases=[] -> [] | Trevor Larnach:None->None/out@1B
-[ 61] inn8t strikeout                    bases=[] -> [] | Juan Soto:None->None/out@1B  <-- inning boundary (7, 'bottom') -> (8, 'top')
-[ 62] inn8t double                       bases=[] -> ['2B'] | Pete Alonso:None->2B
-[ 63] inn8t field_out                    bases=['2B'] -> ['3B'] | Starling Marte:None->None/out@1B Pete Alonso:2B->3B
-[ 64] inn8t field_out                    bases=['3B'] -> ['3B'] | Brandon Nimmo:None->None/out@1B
-[ 65] inn8b hit_by_pitch                 bases=[] -> ['1B'] | Ryan Jeffers:None->1B  <-- inning boundary (8, 'top') -> (8, 'bottom')
-[ 66] inn8b field_out                    bases=['1B'] -> ['2B'] | Willi Castro:None->None/out@1B Ryan Jeffers:1B->2B
-[ 67] inn8b single                       bases=['2B'] -> ['1B', '2B'] | Harrison Bader:None->1B
-[ 68] inn8b grounded_into_double_play    bases=['1B', '2B'] -> ['2B'] | Harrison Bader:1B->None/out@2B Edouard Julien:None->None/out@1B
-[ 69] inn9t field_error                  bases=[] -> ['1B'] | Mark Vientos:None->1B  <-- inning boundary (8, 'bottom') -> (9, 'top')
-[ 70] inn9t force_out                    bases=['1B'] -> ['1B'] | Mark Vientos:1B->None/out@2B Luis Torrens:None->1B
-[ 71] inn9t force_out                    bases=['1B'] -> ['1B'] | Luis Torrens:1B->None/out@2B Jesse Winker:None->1B
-[ 72] inn9t single                       bases=['1B'] -> ['1B', '3B'] | Luisangel Acuña:None->1B Jesse Winker:1B->2B Jesse Winker:2B->3B
-[ 73] inn9t strikeout                    bases=['1B', '3B'] -> ['2B', '3B'] | Luisangel Acuña:1B->2B Francisco Lindor:None->None/out@1B
-744932 2024-06-01: 0 issue(s)
-747029 2024-06-01: 0 issue(s)
-746952 2024-06-01: 0 issue(s)
-746629 2024-06-01: 0 issue(s)
-745812 2024-06-01: 0 issue(s)
-746305 2024-06-01: 0 issue(s)
-746384 2024-06-01: 0 issue(s)
-747111 2024-06-01: 0 issue(s)
-746062 2024-06-01: 0 issue(s)
-745980 2024-06-01: 1 issue(s)
-    play 77: William Contreras advanced from 2B that tracking did not have occupied
-746870 2024-06-01: 0 issue(s)
-745251 2024-06-01: 0 issue(s)
-745575 2024-06-01: 0 issue(s)
-745332 2024-06-01: 0 issue(s)
-746138 2024-06-01: 0 issue(s)
-SUMMARY 2024-06-01: 15 games, 14 clean, 1 issue(s)
-778566 2025-07-15: 0 issue(s)
-SUMMARY 2025-07-15: 1 games, 1 clean, 0 issue(s)
-823694 2026-06-13: 0 issue(s)
-822802 2026-06-13: 0 issue(s)
-824828 2026-06-13: 0 issue(s)
-822725 2026-06-13: 0 issue(s)
-823369 2026-06-13: 0 issue(s)
-824508 2026-06-13: 0 issue(s)
-824426 2026-06-13: 0 issue(s)
-824749 2026-06-13: 0 issue(s)
-823616 2026-06-13: 0 issue(s)
-824587 2026-06-13: 0 issue(s)
-824100 2026-06-13: 0 issue(s)
-823776 2026-06-13: 0 issue(s)
-824995 2026-06-13: 0 issue(s)
-823213 2026-06-13: 0 issue(s)
-824019 2026-06-13: 0 issue(s)
-SUMMARY 2026-06-13: 15 games, 15 clean, 0 issue(s)
+=== game 744795: 70 plays ===
+[  0] inn1t field_out                    bases=[] -> [] | Tommy Pham:None->None/out@1B
+[  1] inn1t field_out                    bases=[] -> [] | Bobby Witt Jr.:None->None/out@1B
+[  2] inn1t single                       bases=[] -> ['1B'] | Michael Massey:None->1B
+[  3] inn1t force_out                    bases=['1B'] -> ['1B'] | Michael Massey:1B->None/out@2B Salvador Perez:None->1B
+[  4] inn1b field_out                    bases=[] -> [] | Dylan Crews:None->None/out@1B  <-- inning boundary (1, 'top') -> (1, 'bottom')
+[  5] inn1b strikeout                    bases=[] -> [] | James Wood:None->None/out@1B
+[  6] inn1b field_out                    bases=[] -> [] | Luis García Jr.:None->None/out@1B
+[  7] inn2t walk                         bases=[] -> ['1B'] | Yuli Gurriel:None->1B  <-- inning boundary (1, 'bottom') -> (2, 'top')
+[  8] inn2t strikeout                    bases=['1B'] -> ['1B'] | Robbie Grossman:None->None/out@1B
+[  9] inn2t field_out                    bases=['1B'] -> ['1B'] | MJ Melendez:None->None/out@1B
+[ 10] inn2t field_out                    bases=['1B'] -> ['1B'] | Maikel Garcia:None->None/out@1B
+[ 11] inn2b walk                         bases=[] -> ['1B'] | José Tena:None->1B  <-- inning boundary (2, 'top') -> (2, 'bottom')
+[ 12] inn2b field_out                    bases=['1B'] -> ['1B'] | Joey Gallo:None->None/out@1B
+[ 13] inn2b force_out                    bases=['1B'] -> ['1B'] | José Tena:1B->None/out@2B Ildemaro Vargas:None->1B
+[ 14] inn2b field_out                    bases=['1B'] -> ['1B'] | Drew Millas:None->None/out@1B
+[ 15] inn3t walk                         bases=[] -> ['1B'] | Kyle Isbel:None->1B  <-- inning boundary (2, 'bottom') -> (3, 'top')
+[ 16] inn3t single                       bases=['1B'] -> ['1B', '2B'] | Tommy Pham:None->1B Kyle Isbel:1B->2B
+[ 17] inn3t field_out                    bases=['1B', '2B'] -> ['1B', '3B'] | Bobby Witt Jr.:None->None/out@1B Kyle Isbel:2B->3B
+[ 18] inn3t single                       bases=['1B', '3B'] -> ['1B', '2B'] | Michael Massey:None->1B Kyle Isbel:3B->score Tommy Pham:1B->2B
+[ 19] inn3t field_out                    bases=['1B', '2B'] -> ['1B', '3B'] | Salvador Perez:None->None/out@1B Tommy Pham:2B->3B
+[ 20] inn3t field_out                    bases=['1B', '3B'] -> ['1B', '3B'] | Yuli Gurriel:None->None/out@1B
+[ 21] inn3b strikeout                    bases=[] -> [] | Jacob Young:None->None/out@1B  <-- inning boundary (3, 'top') -> (3, 'bottom')
+[ 22] inn3b walk                         bases=[] -> ['1B'] | Nasim Nuñez:None->1B
+[ 23] inn3b field_out                    bases=['1B'] -> ['1B'] | Dylan Crews:None->None/out@1B
+[ 24] inn3b single                       bases=['1B'] -> ['1B', '2B'] | James Wood:None->1B Nasim Nuñez:1B->2B
+[ 25] inn3b force_out                    bases=['1B', '2B'] -> ['1B', '2B'] | James Wood:1B->None/out@2B Luis García Jr.:None->1B
+[ 26] inn4t strikeout                    bases=[] -> [] | Robbie Grossman:None->None/out@1B  <-- inning boundary (3, 'bottom') -> (4, 'top')
+[ 27] inn4t field_out                    bases=[] -> [] | MJ Melendez:None->None/out@1B
+[ 28] inn4t walk                         bases=[] -> ['1B'] | Maikel Garcia:None->1B
+[ 29] inn4t strikeout                    bases=['1B'] -> ['1B'] | Kyle Isbel:None->None/out@1B
+[ 30] inn4b field_out                    bases=[] -> [] | José Tena:None->None/out@1B  <-- inning boundary (4, 'top') -> (4, 'bottom')
+[ 31] inn4b strikeout                    bases=[] -> [] | Joey Gallo:None->None/out@1B
+[ 32] inn4b field_out                    bases=[] -> [] | Ildemaro Vargas:None->None/out@1B
+[ 33] inn5t field_out                    bases=[] -> [] | Tommy Pham:None->None/out@1B  <-- inning boundary (4, 'bottom') -> (5, 'top')
+[ 34] inn5t field_out                    bases=[] -> [] | Bobby Witt Jr.:None->None/out@1B
+[ 35] inn5t field_out                    bases=[] -> [] | Michael Massey:None->None/out@1B
+[ 36] inn5b strikeout                    bases=[] -> [] | Drew Millas:None->None/out@1B  <-- inning boundary (5, 'top') -> (5, 'bottom')
+[ 37] inn5b field_out                    bases=[] -> [] | Jacob Young:None->None/out@1B
+[ 38] inn5b single                       bases=[] -> ['1B'] | Nasim Nuñez:None->1B
+[ 39] inn5b walk                         bases=['1B'] -> ['1B', '3B'] | Nasim Nuñez:1B->2B Nasim Nuñez:2B->3B Dylan Crews:None->1B
+[ 40] inn5b field_out                    bases=['1B', '3B'] -> ['2B', '3B'] | Dylan Crews:1B->2B James Wood:None->None/out@1B
+[ 41] inn6t single                       bases=[] -> ['1B'] | Salvador Perez:None->1B  <-- inning boundary (5, 'bottom') -> (6, 'top')
+[ 42] inn6t double                       bases=['1B'] -> ['2B', '3B'] | Yuli Gurriel:None->2B Salvador Perez:1B->3B
+[ 43] inn6t single                       bases=['2B', '3B'] -> ['1B'] | Robbie Grossman:None->1B Yuli Gurriel:2B->score Salvador Perez:3B->score
+[ 44] inn6t strikeout                    bases=['1B'] -> ['1B'] | MJ Melendez:None->None/out@1B
+[ 45] inn6t force_out                    bases=['1B'] -> ['1B'] | Robbie Grossman:1B->None/out@2B Maikel Garcia:None->1B
+[ 46] inn6t field_out                    bases=['1B'] -> ['1B'] | Kyle Isbel:None->None/out@1B
+[ 47] inn6b field_out                    bases=[] -> [] | Luis García Jr.:None->None/out@1B  <-- inning boundary (6, 'top') -> (6, 'bottom')
+[ 48] inn6b field_out                    bases=[] -> [] | José Tena:None->None/out@1B
+[ 49] inn6b field_out                    bases=[] -> [] | Joey Gallo:None->None/out@1B
+[ 50] inn7t field_out                    bases=[] -> [] | Tommy Pham:None->None/out@1B  <-- inning boundary (6, 'bottom') -> (7, 'top')
+[ 51] inn7t strikeout                    bases=[] -> [] | Bobby Witt Jr.:None->None/out@1B
+[ 52] inn7t strikeout                    bases=[] -> [] | Michael Massey:None->None/out@1B
+[ 53] inn7b walk                         bases=[] -> ['1B'] | Ildemaro Vargas:None->1B  <-- inning boundary (7, 'top') -> (7, 'bottom')
+[ 54] inn7b walk                         bases=['1B'] -> ['1B', '2B'] | Ildemaro Vargas:1B->2B Drew Millas:None->1B
+[ 55] inn7b strikeout                    bases=['1B', '2B'] -> ['1B', '2B'] | Jacob Young:None->None/out@1B
+[ 56] inn7b strikeout                    bases=['1B', '2B'] -> ['1B', '2B'] | Nasim Nuñez:None->None/out@1B
+[ 57] inn7b field_out                    bases=['1B', '2B'] -> ['1B', '2B'] | Dylan Crews:None->None/out@1B
+[ 58] inn8t single                       bases=[] -> ['1B'] | Salvador Perez:None->1B  <-- inning boundary (7, 'bottom') -> (8, 'top')
+[ 59] inn8t grounded_into_double_play    bases=['1B'] -> ['1B'] | Dairon Blanco:1B->None/out@2B Yuli Gurriel:None->None/out@1B
+[ 60] inn8t field_out                    bases=['1B'] -> ['1B'] | Robbie Grossman:None->None/out@1B
+[ 61] inn8b field_out                    bases=[] -> [] | James Wood:None->None/out@1B  <-- inning boundary (8, 'top') -> (8, 'bottom')
+[ 62] inn8b field_out                    bases=[] -> [] | Luis García Jr.:None->None/out@1B
+[ 63] inn8b field_out                    bases=[] -> [] | José Tena:None->None/out@1B
+[ 64] inn9t field_out                    bases=[] -> [] | Hunter Renfroe:None->None/out@1B  <-- inning boundary (8, 'bottom') -> (9, 'top')
+[ 65] inn9t field_out                    bases=[] -> [] | Maikel Garcia:None->None/out@1B
+[ 66] inn9t field_out                    bases=[] -> [] | Kyle Isbel:None->None/out@1B
+[ 67] inn9b strikeout                    bases=[] -> [] | Joey Gallo:None->None/out@1B  <-- inning boundary (9, 'top') -> (9, 'bottom')
+[ 68] inn9b field_out                    bases=[] -> [] | Ildemaro Vargas:None->None/out@1B
+[ 69] inn9b field_out                    bases=[] -> [] | Drew Millas:None->None/out@1B
+=== game 745980: 78 plays ===
+[  0] inn1t strikeout                    bases=[] -> [] | Tommy Pham:None->None/out@1B
+[  1] inn1t field_out                    bases=[] -> [] | Korey Lee:None->None/out@1B
+[  2] inn1t field_out                    bases=[] -> [] | Corey Julks:None->None/out@1B
+[  3] inn1b field_out                    bases=[] -> [] | Joey Ortiz:None->None/out@1B  <-- inning boundary (1, 'top') -> (1, 'bottom')
+[  4] inn1b strikeout                    bases=[] -> [] | William Contreras:None->None/out@1B
+[  5] inn1b single                       bases=[] -> ['1B'] | Christian Yelich:None->1B
+[  6] inn1b field_out                    bases=['1B'] -> ['1B'] | Willy Adames:None->None/out@1B
+[  7] inn2t field_out                    bases=[] -> [] | Paul DeJong:None->None/out@1B  <-- inning boundary (1, 'bottom') -> (2, 'top')
+[  8] inn2t strikeout                    bases=[] -> [] | Gavin Sheets:None->None/out@1B
+[  9] inn2t field_out                    bases=[] -> [] | Lenyn Sosa:None->None/out@1B
+[ 10] inn2b field_out                    bases=[] -> [] | Rhys Hoskins:None->None/out@1B  <-- inning boundary (2, 'top') -> (2, 'bottom')
+[ 11] inn2b walk                         bases=[] -> ['1B'] | Gary Sánchez:None->1B
+[ 12] inn2b field_out                    bases=['1B'] -> ['2B'] | Blake Perkins:None->None/out@1B Gary Sánchez:1B->2B
+[ 13] inn2b strikeout                    bases=['2B'] -> ['2B'] | Jackson Chourio:None->None/out@1B
+[ 14] inn3t home_run                     bases=[] -> [] | Andrew Benintendi:None->score  <-- inning boundary (2, 'bottom') -> (3, 'top')
+[ 15] inn3t single                       bases=[] -> ['1B'] | Danny Mendick:None->1B
+[ 16] inn3t field_out                    bases=['1B'] -> ['1B'] | Zach Remillard:None->None/out@1B
+[ 17] inn3t field_out                    bases=['1B'] -> ['1B'] | Tommy Pham:None->None/out@1B
+[ 18] inn3t strikeout                    bases=['1B'] -> ['2B'] | Danny Mendick:1B->2B Korey Lee:None->None/out@1B
+[ 19] inn3b single                       bases=[] -> ['1B'] | Brice Turang:None->1B  <-- inning boundary (3, 'top') -> (3, 'bottom')
+[ 20] inn3b double                       bases=['1B'] -> ['2B'] | Brice Turang:1B->2B Joey Ortiz:None->2B Brice Turang:2B->3B Brice Turang:3B->score
+[ 21] inn3b field_out                    bases=['2B'] -> ['3B'] | William Contreras:None->None/out@1B Joey Ortiz:2B->3B
+[ 22] inn3b strikeout                    bases=['3B'] -> ['3B'] | Christian Yelich:None->None/out@1B
+[ 23] inn3b strikeout                    bases=['3B'] -> ['3B'] | Willy Adames:None->None/out@1B
+[ 24] inn4t single                       bases=[] -> ['1B'] | Corey Julks:None->1B  <-- inning boundary (3, 'bottom') -> (4, 'top')
+[ 25] inn4t field_out                    bases=['1B'] -> ['1B'] | Paul DeJong:None->None/out@1B
+[ 26] inn4t home_run                     bases=['1B'] -> [] | Gavin Sheets:None->score Corey Julks:1B->score
+[ 27] inn4t single                       bases=[] -> ['1B'] | Lenyn Sosa:None->1B
+[ 28] inn4t field_out                    bases=['1B'] -> ['1B'] | Dominic Fletcher:None->None/out@1B
+[ 29] inn4t single                       bases=['1B'] -> ['1B', '2B'] | Danny Mendick:None->1B Lenyn Sosa:1B->2B
+[ 30] inn4t force_out                    bases=['1B', '2B'] -> ['1B', '2B'] | Danny Mendick:1B->None/out@2B Zach Remillard:None->1B
+[ 31] inn4b field_out                    bases=[] -> [] | Rhys Hoskins:None->None/out@1B  <-- inning boundary (4, 'top') -> (4, 'bottom')
+[ 32] inn4b field_out                    bases=[] -> [] | Gary Sánchez:None->None/out@1B
+[ 33] inn4b field_error                  bases=[] -> ['1B'] | Blake Perkins:None->1B
+[ 34] inn4b field_out                    bases=['1B'] -> ['1B'] | Jackson Chourio:None->None/out@1B
+[ 35] inn5t field_out                    bases=[] -> [] | Tommy Pham:None->None/out@1B  <-- inning boundary (4, 'bottom') -> (5, 'top')
+[ 36] inn5t field_out                    bases=[] -> [] | Korey Lee:None->None/out@1B
+[ 37] inn5t single                       bases=[] -> ['1B'] | Corey Julks:None->1B
+[ 38] inn5t field_out                    bases=['1B'] -> ['1B'] | Paul DeJong:None->None/out@1B
+[ 39] inn5b strikeout                    bases=[] -> [] | Brice Turang:None->None/out@1B  <-- inning boundary (5, 'top') -> (5, 'bottom')
+[ 40] inn5b field_out                    bases=[] -> [] | Joey Ortiz:None->None/out@1B
+[ 41] inn5b single                       bases=[] -> ['1B'] | William Contreras:None->1B
+[ 42] inn5b field_out                    bases=['1B'] -> ['1B'] | Christian Yelich:None->None/out@1B
+[ 43] inn6t field_out                    bases=[] -> [] | Gavin Sheets:None->None/out@1B  <-- inning boundary (5, 'bottom') -> (6, 'top')
+[ 44] inn6t field_out                    bases=[] -> [] | Lenyn Sosa:None->None/out@1B
+[ 45] inn6t single                       bases=[] -> ['1B'] | Dominic Fletcher:None->1B
+[ 46] inn6t strikeout                    bases=['1B'] -> ['1B'] | Danny Mendick:None->None/out@1B
+[ 47] inn6b strikeout                    bases=[] -> [] | Willy Adames:None->None/out@1B  <-- inning boundary (6, 'top') -> (6, 'bottom')
+[ 48] inn6b single                       bases=[] -> ['1B'] | Rhys Hoskins:None->1B
+[ 49] inn6b strikeout                    bases=['1B'] -> ['1B'] | Gary Sánchez:None->None/out@1B
+[ 50] inn6b strikeout                    bases=['1B'] -> ['1B'] | Blake Perkins:None->None/out@1B
+[ 51] inn7t strikeout                    bases=[] -> [] | Zach Remillard:None->None/out@1B  <-- inning boundary (6, 'bottom') -> (7, 'top')
+[ 52] inn7t strikeout                    bases=[] -> [] | Tommy Pham:None->None/out@1B
+[ 53] inn7t strikeout                    bases=[] -> [] | Korey Lee:None->None/out@1B
+[ 54] inn7b strikeout                    bases=[] -> [] | Sal Frelick:None->None/out@1B  <-- inning boundary (7, 'top') -> (7, 'bottom')
+[ 55] inn7b walk                         bases=[] -> ['1B'] | Brice Turang:None->1B
+[ 56] inn7b field_out                    bases=['1B'] -> ['2B'] | Joey Ortiz:None->None/out@1B Brice Turang:1B->2B
+[ 57] inn7b walk                         bases=['2B'] -> ['1B', '2B'] | William Contreras:None->1B
+[ 58] inn7b walk                         bases=['1B', '2B'] -> ['1B', '2B', '3B'] | Brice Turang:2B->3B William Contreras:1B->2B Christian Yelich:None->1B
+[ 59] inn7b single                       bases=['1B', '2B', '3B'] -> ['1B', '2B'] | Willy Adames:None->1B William Contreras:2B->3B William Contreras:3B->score Brice Turang:3B->score Christian Yelich:1B->2B
+[ 60] inn7b force_out                    bases=['1B', '2B'] -> ['1B'] | Christian Yelich:2B->None/out@3B Rhys Hoskins:None->1B
+[ 61] inn8t field_out                    bases=[] -> [] | Corey Julks:None->None/out@1B  <-- inning boundary (7, 'bottom') -> (8, 'top')
+[ 62] inn8t field_out                    bases=[] -> [] | Paul DeJong:None->None/out@1B
+[ 63] inn8t field_out                    bases=[] -> [] | Gavin Sheets:None->None/out@1B
+[ 64] inn8b field_out                    bases=[] -> [] | Gary Sánchez:None->None/out@1B  <-- inning boundary (8, 'top') -> (8, 'bottom')
+[ 65] inn8b strikeout                    bases=[] -> [] | Blake Perkins:None->None/out@1B
+[ 66] inn8b strikeout                    bases=[] -> [] | Sal Frelick:None->None/out@1B
+[ 67] inn9t hit_by_pitch                 bases=[] -> ['1B'] | Lenyn Sosa:None->1B  <-- inning boundary (8, 'bottom') -> (9, 'top')
+[ 68] inn9t strikeout                    bases=['1B'] -> ['1B'] | Dominic Fletcher:None->None/out@1B
+[ 69] inn9t grounded_into_double_play    bases=['1B'] -> [] | Lenyn Sosa:1B->None/out@2B Danny Mendick:None->None/out@1B
+[ 70] inn9b strikeout                    bases=[] -> [] | Brice Turang:None->None/out@1B  <-- inning boundary (9, 'top') -> (9, 'bottom')
+[ 71] inn9b field_out                    bases=[] -> [] | Joey Ortiz:None->None/out@1B
+[ 72] inn9b strikeout                    bases=[] -> [] | William Contreras:None->None/out@1B
+[ 73] inn10t strikeout                    bases=[] -> [] | Zach Remillard:None->None/out@1B  <-- inning boundary (9, 'bottom') -> (10, 'top')
+[ 74] inn10t field_out                    bases=[] -> [] | Tommy Pham:None->None/out@1B
+[ 75] inn10t field_out                    bases=[] -> [] | Korey Lee:None->None/out@1B
+[ 76] inn10b intent_walk                  bases=[] -> ['1B'] | Christian Yelich:None->1B  <-- inning boundary (10, 'top') -> (10, 'bottom')
+[ 77] inn10b single                       bases=['1B'] -> ['1B', '3B'] | William Contreras:2B->3B Christian Yelich:1B->2B Willy Adames:None->1B William Contreras:3B->score Christian Yelich:2B->3B  <<< William Contreras advanced from 2B that tracking did not have occupied
