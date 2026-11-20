@@ -37,7 +37,7 @@ const Pending = (() => {
           <div class="title">${esc(x.description || "Pending ruling")}</div>
           <div class="meta">Game ${esc(x.gamePk)}${x.batter ? ` · ${esc(x.batter)}` : ""}</div>
           <div class="meta">${esc(x.eventType)} · ${esc(x.eventType === "os_ruling_pending_primary" ? "primary" : "prior")}</div>
-          <div style="margin-top:0.35rem">${R.link(x.pbp, "official play-by-play")} ${R.link(x.clip, "watch clip")}</div>
+          <div style="margin-top:0.35rem">${R.link(x.pbp, "official play-by-play")} ${x.clip ? R.link(x.clip, "watch clip") : ""}</div>
         `)).join("");
         liveBox.innerHTML = `<div class="cards">${html}</div>`;
       }

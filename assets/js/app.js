@@ -16,6 +16,8 @@ function show(viewId, updateURL = false) {
     t.tabIndex = active ? 0 : -1;
   });
   if (updateURL) history.replaceState(null, "", `#${viewId}`);
+  if (initialized && viewId === "reviews") Reviews.open();
+  if (initialized && viewId === "scorer") Scorer.open();
   if (initialized && viewId === "pending") Pending.refreshLive();
 }
 
@@ -96,6 +98,8 @@ API.onLoad((payload) => {
   initialized = true;
   openHash();
   setInterval(() => {
+    if (!document.hidden && R.$("view-reviews").classList.contains("is-active")) Reviews.refreshToday();
+    if (!document.hidden && R.$("view-scorer").classList.contains("is-active")) Scorer.refreshToday();
     if (!document.hidden && R.$("view-pending").classList.contains("is-active")) Pending.refreshLive();
   }, 60000);
 });

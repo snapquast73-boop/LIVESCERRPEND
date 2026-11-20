@@ -4,6 +4,7 @@ const Reviews = (() => {
   let rows = [];
   let sample = [];
   let scanned = [];
+  let panel;
 
   function init(payload) {
     sample = (payload.reviews || []).slice();
@@ -12,7 +13,7 @@ const Reviews = (() => {
   }
 
   function refreshRows() {
-    const key = row => `${row.gamePk}/${row.atBatIndex}/${row.reviewType}`;
+    const key = row => `${row.gamePk}/${row.atBatIndex}/${row.terminalReview ? "play" : row.eventIndex ?? "play"}/${row.reviewType}`;
     const known = new Set(sample.map(key));
     rows = [...sample, ...scanned.filter(row => !known.has(key(row)))];
     fillSeason("rv-season", [...new Set(rows.map(row => row.season).filter(Boolean))].sort());
@@ -43,33 +44,13 @@ const Reviews = (() => {
       const el = R.$(id);
       if (el) el.addEventListener(id === "rv-search" ? "input" : "change", run);
     }
-    const form = R.$("rv-scan");
-    const input = R.$("rv-date");
-    const status = R.$("rv-scan-status");
-    API.mlb.then(mlb => { input.max = input.value = mlb.easternDate(); });
-    form.addEventListener("submit", async event => {
-      event.preventDefault();
-      const button = form.querySelector("button");
-      const date = input.value;
-      button.disabled = true;
-      status.textContent = "Checking official MLB play-by-play…";
-      try {
-        const mlb = await API.mlb;
-        const result = await mlb.scanDate(date, false);
-        scanned = result.feeds.flatMap(mlb.getReviews).map(row => ({
-          ...row, batter: row.player, play: row.description, reviewType: row.type,
-          pbp: mlb.playByPlay(row.gamePk)
-        }));
-        status.innerHTML = `${esc(date)} (ET): ${result.feeds.length} of ${result.scheduled} eligible game feeds checked. ${R.link(mlb.scheduleFor(date), "Official MLB schedule")}`;
-        if (result.failed.length) status.innerHTML += ` · Unavailable: ${result.failed.map(id => R.link(mlb.playByPlay(id), "game feed")).join(", ")}`;
-      } catch {
-        scanned = [];
-        status.textContent = "MLB lookup unavailable. Showing the verified sample.";
-      } finally {
-        button.disabled = false;
-        refreshRows();
-      }
-    });
+    panel = datePanel('rv', (feeds, mlb) => {
+      scanned = feeds.flatMap(feed => mlb.getReviews(feed).map(row => ({
+        ...row, batter: row.player, play: row.description, reviewType: row.type,
+        pbp: mlb.playByPlay(row.gamePk)
+      })));
+      refreshRows();
+    }, 'Showing the verified sample.');
   }
 
   function render() {
@@ -97,5 +78,5 @@ const Reviews = (() => {
   }
 
   function esc(s) { return R.esc(s); }
-  return { init };
+  return { init, open: () => panel.open(), refreshToday: () => panel.refreshToday() };
 })();

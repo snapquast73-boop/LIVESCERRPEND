@@ -69,9 +69,9 @@ const RunRemoved = (() => {
         <div class="title">${esc(r.play || "Play")}</div>
         <div class="meta">${esc(r.date || "—")} · ${esc(r.teams || "—")} · ${esc(r.season || "—")}</div>
         <div class="meta" style="font-size:0.78rem">${esc(r.event || "—")} · ${esc(r.inning || "—")}</div>
-        ${r.runsRemoved == null ? '<p class="meta">Value left blank. See <a href="flagged-for-review.html">Flagged for Review</a>.</p>' :
+        ${r.runsRemoved == null ? `<p class="meta">${inputs.length ? esc([r.runnersOn != null ? `runners on base: ${r.runnersOn}` : "", r.runsCredited != null ? `runs credited: ${r.runsCredited}` : ""].filter(Boolean).join(" · ")) + ". " : ""}Run-removal count unverified. See <a href="flagged-for-review.html">Flagged for Review</a>.</p>` :
           `<div class="meta">${inputs.join(" ")} = <b>${esc(removed)}</b> runs removed on this play.</div>`}
-        <div class="meta" style="margin-top:0.25rem">${verdict} ${sourceLink} ${clipLink} ${gameday} ${film}</div>
+        <div class="meta" style="margin-top:0.25rem">${verdict} ${sourceLink} ${r.source && r.source !== r.clip && r.source !== r.pbp ? R.link(r.source, "original-call evidence") : ""} ${clipLink} ${gameday} ${film}</div>
       `));
     }
 

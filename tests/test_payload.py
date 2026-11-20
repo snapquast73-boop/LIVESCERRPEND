@@ -43,12 +43,12 @@ def test_irregularities_are_flagged(payload):
 
 
 def test_reviewed_run_totals_match_independent_evidence(payload):
-    assert len(payload["run_removed"]) == 1
-    row = payload["run_removed"][0]
-    assert (row["gamePk"], row["atBatIndex"]) == (823616, 63)
-    assert row["runsRemoved"] == row["runnersOn"] + 1 - row["runsCredited"]
-    assert row["source"] == row["clip"]
-    assert all(a["runsRemoved"] is None for a in payload["anchors"] if a["gamePk"] != 823616)
+    counts = {(r['gamePk'], r['atBatIndex']): r['runsRemoved'] for r in payload['run_removed']}
+    assert counts == {(823616, 63): 1, (745857, 63): 2}
+    for row in payload['run_removed']:
+        assert row['runsRemoved'] == row['runnersOn'] + 1 - row['runsCredited']
+    assert {r['gamePk']: r['runsRemoved'] for r in payload['anchors']} == {
+        778307: None, 745857: 2, 823616: 1}
     assert all(row["runsRemoved"] is None for row in payload["candidates"])
 
 

@@ -61,3 +61,9 @@ PR #1 (`18c9351`) and PR #2 (`9bf7039`) merged during this session. Both rebases
 ### Follow-up merge and deployment
 
 [PR #3](https://github.com/snapquast73-boop/LIVESCERRPEND/pull/3) merged to `main` as `7c1e42f39a3e5efc9197e2137eb6c2b9765932b9`. [GitHub Pages deployment](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828568744) succeeded, and the Pages API confirmed `built` for that merge commit. The public [Flagged for Review page](https://snapquast73-boop.github.io/LIVESCERRPEND/flagged-for-review.html), [published JSON](https://snapquast73-boop.github.io/LIVESCERRPEND/data/site/payload.json), and [browser feed module](https://snapquast73-boop.github.io/LIVESCERRPEND/assets/js/mlb.js) were fetched after deploy. The [GitHub tests run](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828569248) passed. It reported a nonblocking [Node 20 action-runtime deprecation](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) for the existing CI actions; those workflow dependencies were not changed in this follow-up.
+
+## Restoration audit — 312ea5e7
+
+| Task | Status | Session | Scope |
+|---|---|---|---|
+| Locate original publisher, restore missing functionality and verify deploy | in progress | 312ea5e7 (integration) | Site, data, tests, workflows, documentation and coordination log as needed. Prior integrations merged; no open PRs or other outstanding implementation claims at start. |
