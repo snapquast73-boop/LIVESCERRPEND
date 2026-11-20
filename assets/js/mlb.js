@@ -79,7 +79,7 @@ export function getReviews({game, plays}) {
     const terminal = (play.playEvents ?? []).at(-1);
     if (type && terminal?.index != null && eventRows.some(row => row.type === type && row.eventIndex === terminal.index)) {
       return eventRows.map(row => row.eventIndex === terminal.index
-        ? {...row, description: play.result?.description ?? row.description} : row);
+        ? {...row, terminalReview: true, description: play.result?.description ?? row.description} : row);
     }
     return [...eventRows, {...base, type, description: play.result?.description}];
   });
@@ -175,4 +175,15 @@ export async function scanReviews(date, request = fetch) {
   const result = await scanDate(date, false, request);
   const rows = result.feeds.flatMap(feed => reviewEvents(feed, registry));
   return {...result, rows, registry};
+}
+
+// Report only completed plate appearances with an explicit in-play event. The
+// feed's actual ruling and RBI are not estimates of a different scorer decision.
+export function getScoredBalls({game, plays}) {
+  return plays.filter(p => p.about?.isComplete === true && p.result?.event &&
+    p.playEvents?.some(e => e.details?.isInPlay === true)).map(p => ({
+    ...playRow(game, p), pitcher: p.matchup?.pitcher?.fullName, inning: p.about.inning,
+    ruling: p.result.event, description: p.result.description, rbi: p.result.rbi,
+    pbp: playByPlay(game.gamePk)
+  }));
 }

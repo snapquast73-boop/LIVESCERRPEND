@@ -101,3 +101,16 @@ test('scanReviews reads the registry once and returns rows plus feed coverage', 
   assert.equal(result.rows[0].reason, 'Home run');
   assert.equal(result.failed.length, 0);
 });
+
+test('official scorer keeps true zero RBI, never manufactures missing values or model scores', async () => {
+  const {getScoredBalls} = await import('../assets/js/mlb.js');
+  const p = {about: {isComplete:true, inning:4}, result: {event:'Double', rbi:0},
+    playEvents: [{details:{isInPlay:true}}], matchup:{batter:{fullName:'Fixture batter'}}};
+  const rows = getScoredBalls({game, plays:[p, {...p, result:{event:'Field Out'}},
+    {...p, about:{isComplete:false}}, {...p, playEvents:[]}]});
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].rbi, 0);
+  assert.equal(rows[1].rbi, undefined);
+  assert.equal(rows[0].score, undefined);
+  assert.equal(rows[0].pbp, playByPlay(game.gamePk));
+});

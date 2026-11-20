@@ -26,6 +26,7 @@ current without anyone checking by hand.
 | What is under review right now? | *Live replay feed* (`reviews.html`): one date's reviews, confirmed calls, reviews still in progress, ABS pitch challenges and any runs credited to the play under review. | the visitor's browser reads the [official schedule](https://statsapi.mlb.com/api/v1/schedule?sportId=1) and each game feed |
 | Is a scoring decision still pending? | *Pending rulings*: the live panel checks today's Eastern Time schedule for the two registered codes `os_ruling_pending_primary` / `os_ruling_pending_prior`. | [event-type registry](https://statsapi.mlb.com/api/v1/eventTypes) |
 | Did the Official Scorer change a call afterwards? | *Scorer decision changes*: every entry MLB publishes on its scoring-change page, with the official sentence quoted and a before/after ruling only when that sentence names both sides. | `scripts/harvest_scoring_changes.py` reads [MLB's scoring-change bulletin](https://www.mlb.com/official-information/scoring-changes) |
+| What did the scorer actually rule on a completed ball in play? | *Live scorer*: completed balls in play from a date's official feeds, with MLB's reported ruling and RBI, filters and CSV. | [official play-by-play](https://statsapi.mlb.com/api/v1/game/823616/playByPlay) |
 | What does the rule say about the RBI? | *Method & sources* / model card: Rule 9.04 is quoted, and no hypothetical RBI is invented. | [Official Baseball Rules](https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf) |
 
 ## How the numbers are produced
@@ -55,7 +56,10 @@ GitHub Actions (harvest.yml, live-capture.yml) commit the JSON ──► GitHub 
    both sides of the change, and the sentence is quoted on the row.
 5. **Verify.** `pytest -q`, `node --test tests/mlb.test.mjs`, `python3 tests/check_site.py` and
    `node tests/site-smoke.mjs` (a jsdom render of the real pages against the real payload) run in
-   `.github/workflows/tests.yml` on every push and pull request.
+   `.github/workflows/tests.yml` on every push and pull request, and
+   `scripts/check_official.py` (`.github/workflows/official.yml`) re-reads the official feed and the
+   bulletin for every published run-removal row plus a sample of reviews, candidates and all 255
+   bulletin entries, to catch drift after publication.
 
 Coverage, per-season counts, the verification anchors and every irregularity are published on the
 [Flagged for Review page](https://snapquast73-boop.github.io/LIVESCERRPEND/flagged-for-review.html)
@@ -72,6 +76,8 @@ and in [docs/VERIFICATION.md](docs/VERIFICATION.md).
   it is, including zero.
 - **No re-hosted video.** Rows link to the official play-by-play and to Baseball Savant's clip page
   for the play id read from the feed.
+- **No model outputs on the scorer view.** That tab shows what MLB actually ruled on completed balls
+  in play (official ruling, RBI, score at the time); it does not score a ball in play itself.
 
 Every open item is listed, with its official source link, on the
 [Flagged for Review page](flagged-for-review.html).

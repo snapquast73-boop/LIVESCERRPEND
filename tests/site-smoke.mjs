@@ -94,9 +94,9 @@ async function loadPage(file, scripts, {transform = code => code} = {}) {
 console.log('index.html');
 {
   const dom = await loadPage('index.html', [
-    'assets/js/render.js', 'assets/js/api.js', 'assets/js/run-removed.js', 'assets/js/pending.js',
-    'assets/js/reviews.js', 'assets/js/decision-changes.js', 'assets/js/scorer.js', 'assets/js/model.js',
-    'assets/js/app.js'
+    'assets/js/api.js', 'assets/js/render.js', 'assets/js/run-removed.js', 'assets/js/pending.js',
+    'assets/js/date-panel.js', 'assets/js/reviews.js', 'assets/js/decision-changes.js',
+    'assets/js/scorer.js', 'assets/js/model.js', 'assets/js/app.js'
   ]);
   const {window} = dom;
   const $ = id => window.document.getElementById(id);

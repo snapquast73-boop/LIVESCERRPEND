@@ -75,6 +75,15 @@ entries for the 2026 season, **63** state both sides of a change in one sentence
 unclassified. **17** entries state an RBI effect and quote the sentence that states it. The official
 sentence is printed on every row, so a revision by MLB can be seen rather than hidden.
 
+## Drift check after publication
+
+`.github/workflows/official.yml` runs `scripts/check_official.py`, which re-reads the official
+schedule and play-by-play for **every** published run-removal row, a fixed sample of the overturned
+reviews and candidates, and the official bulletin page for **all 255** entries. It asserts the date,
+season, matchup, batter, pitcher, inning, event type, review code, official result text, runs
+credited, base occupancy and the `(runners + 1) − credited` arithmetic, then that each bulletin
+sentence still appears in the published page. It never rewrites data — a mismatch is a drift alarm.
+
 ## Review codes
 
 The feed prints composite codes (`NH`, `MJ`, `MF`). MLB's

@@ -1,7 +1,8 @@
 /* LiveScoringErrors-Pending — all replay overturns view.
    The archived rows come from data/site/reviews-<season>.json, written by
-   scripts/build_payload.py from the official play-by-play. The scan below reads
-   a date straight from statsapi.mlb.com in the visitor's browser. */
+   scripts/build_payload.py from the official play-by-play. The date lookup below
+   reads a date straight from statsapi.mlb.com in the visitor's browser and starts
+   on its own the first time the tab is opened. */
 
 const Reviews = (() => {
   let manifest = [];
@@ -9,6 +10,7 @@ const Reviews = (() => {
   let scanned = [];
   let current = null;
   let busy = false;
+  let panel = null;
 
   function init(payload) {
     manifest = (payload.reviewSeries || []).slice();
@@ -24,9 +26,7 @@ const Reviews = (() => {
     const el = R.$("rv-season");
     if (!el) return;
     el.innerHTML = '<option value="">all seasons</option>';
-    for (const item of manifest) {
-      el.add(new Option(`${item.season} (${item.count})`, item.season));
-    }
+    for (const item of manifest) el.add(new Option(`${item.season} (${item.count})`, item.season));
   }
 
   async function select(season) {
@@ -54,7 +54,7 @@ const Reviews = (() => {
     if (!item || loaded.has(item.season)) return;
     if (!item.url) { loaded.set(item.season, { reviews: item.rows || [], pitchChallenges: [] }); return; }
     const doc = await API.loadReviews(item);
-    loaded.set(item.season, { reviews: doc.reviews || [], pitchChallenges: doc.pitchChallenges || [] });
+    loaded.set(item.season, { reviews: doc.reviews || [], pitchChallenges: [] });
   }
 
   function wire() {
@@ -64,46 +64,22 @@ const Reviews = (() => {
       const el = R.$(id);
       if (el) el.addEventListener(id === "rv-search" ? "input" : "change", refresh);
     }
-    const form = R.$("rv-scan");
-    const input = R.$("rv-date");
-    const status = R.$("rv-scan-status");
-    if (!form) return;
-    API.mlb.then(mlb => { input.max = mlb.easternDate(); });
-    form.addEventListener("submit", async event => {
-      event.preventDefault();
-      const button = form.querySelector("button");
-      const date = input.value;
-      button.disabled = true;
-      status.textContent = "Checking official MLB play-by-play…";
-      try {
-        const mlb = await API.mlb;
-        const result = await mlb.scanReviews(date);
-        scanned = result.rows
-          .filter(row => row.overturned && !row.inProgress)
-          .map(row => ({
-            gamePk: row.gamePk, atBatIndex: row.atBatIndex, eventIndex: row.eventIndex,
-            season: String(row.season || date.slice(0, 4)), date: row.date,
-            teams: row.teams, batter: row.batter, pitcher: row.pitcher,
-            reviewType: row.reviewType, reasonCode: row.reasonCode, reason: row.reason,
-            inning: row.inning, half: row.half,
-            play: row.description, event: row.event, playId: row.playId,
-            pbp: mlb.playByPlay(row.gamePk),
-            filmRoom: `https://www.mlb.com/video/game/${row.gamePk}`,
-            savant: row.playId ? `https://baseballsavant.mlb.com/sporty-videos?playId=${row.playId}` : null,
-            source: mlb.playByPlay(row.gamePk),
-            scannedLive: true
-          }));
-        status.innerHTML = `${esc(date)} (ET): ${result.feeds.length} of ${result.scheduled} eligible game feeds checked.` +
-          ` ${R.link(mlb.scheduleFor(date), "Official MLB schedule")}` +
-          (result.failed.length ? ` · Unavailable: ${result.failed.map(id => R.link(mlb.playByPlay(id), "game feed")).join(", ")}` : "");
-      } catch {
-        scanned = [];
-        status.textContent = "MLB lookup unavailable from this browser. Showing the archived rows.";
-      } finally {
-        button.disabled = false;
+    // The date panel (assets/js/date-panel.js) owns the lookup form, its status
+    // line, the first-visit auto-scan and the "follow today" refresh.
+    if (typeof datePanel === "function" && R.$("rv-scan")) {
+      panel = datePanel("rv", (feeds, mlb) => {
+        scanned = !mlb ? [] : feeds.flatMap(feed => mlb.getReviews(feed).map(row => ({
+          ...row,
+          batter: row.player,
+          play: row.description,
+          reviewType: row.type,
+          pbp: mlb.playByPlay(row.gamePk),
+          filmRoom: `https://www.mlb.com/video/game/${row.gamePk}`,
+          scannedLive: true
+        })));
         refresh();
-      }
-    });
+      }, "Showing the archived rows only.");
+    }
   }
 
   function allRows() {
@@ -112,7 +88,7 @@ const Reviews = (() => {
     rows.push(...scanned);
     const seen = new Set();
     return rows.filter(row => {
-      const key = `${row.gamePk}/${row.atBatIndex}/${row.eventIndex ?? "play"}`;
+      const key = `${row.gamePk}/${row.atBatIndex}/${row.terminalReview ? "play" : row.eventIndex ?? "play"}/${row.reviewType}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -136,9 +112,13 @@ const Reviews = (() => {
   }
 
   function render(rows) {
-    const type = R.$("rv-type").value;
-    const search = (R.$("rv-search").value || "").trim().toLowerCase();
+    const seasonEl = R.$("rv-season");
+    const typeEl = R.$("rv-type");
+    const season = seasonEl ? seasonEl.value : "";
+    const type = typeEl ? typeEl.value : "";
+    const search = ((R.$("rv-search") || {}).value || "").trim().toLowerCase();
     const filtered = rows.filter(row => {
+      if (season && String(row.season) !== season) return false;
       if (type && row.reviewType !== type) return false;
       if (search) {
         const hay = [row.play, row.batter, row.pitcher, row.teams, row.date, row.reviewType, row.reason]
@@ -155,7 +135,7 @@ const Reviews = (() => {
         ${R.chip(row.reviewType || "code —", "ok")}
         ${row.reason ? esc(`${row.reasonCode} — ${row.reason}`) : "reason not in MLB's registry"}
         ${row.inning ? ` · ${esc(row.half || "")} ${esc(row.inning)}` : ""}
-        ${row.scannedLive ? R.chip("from this scan", "warn") : ""}
+        ${row.scannedLive ? R.chip("from this lookup", "warn") : ""}
       </div>
       <div style="margin-top:0.35rem">
         ${R.link(row.pbp, "official play-by-play")}
@@ -173,11 +153,16 @@ const Reviews = (() => {
 
     const pitch = [...loaded.values()].reduce((total, doc) => total + (doc.pitchChallenges || []).length, 0);
     R.summary("rv-summary", `${filtered.length} overturn${filtered.length !== 1 ? "s" : ""} shown` +
-      ` · ${rows.length} on file for ${current === "" ? "all loaded seasons" : (current || "this view")}` +
+      ` · ${rows.length} on file${season === "" ? " across the loaded seasons" : ""}` +
       (pitch ? ` · ${pitch} automated pitch challenges counted separately` : ""));
     R.notice("rv-notice", filtered.length === 0 && rows.length ? "No reviews match the current filters." : "");
   }
 
   function esc(s) { return R.esc(s); }
-  return { init };
+
+  return {
+    init,
+    open: () => panel && panel.open(),
+    refreshToday: () => panel && panel.refreshToday()
+  };
 })();

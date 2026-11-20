@@ -24,8 +24,7 @@ class Page(HTMLParser):
                          for value in attrs.get(key, '').split())
 
 
-pages = {file: Page(file) for file in (ROOT / 'index.html', ROOT / 'flagged-for-review.html',
-                                       ROOT / 'reviews.html')}
+pages = {file: Page(file) for file in sorted(ROOT.glob('*.html'))}
 for file, page in pages.items():
     assert all(ref in page.ids for ref in page.refs), file
     for link in page.links:
@@ -39,7 +38,9 @@ for file, page in pages.items():
             target /= 'index.html'
         assert target.is_file(), f'{file.name}: missing {link}'
         if url.fragment:
-            assert url.fragment in pages[target].ids, f'{file.name}: missing {link}'
+            assert (url.fragment in pages[target].ids or
+                    (target == ROOT / "index.html" and f"view-{url.fragment}" in pages[target].ids
+                     and f"{url.fragment}-tab" in pages[target].ids)), f'{file.name}: missing {link}'
 
 assert (ROOT / 'data/site/payload.json').is_file()
 assert (ROOT / 'reviews.html').is_file()

@@ -62,6 +62,25 @@ PR #1 (`18c9351`) and PR #2 (`9bf7039`) merged during this session. Both rebases
 
 [PR #3](https://github.com/snapquast73-boop/LIVESCERRPEND/pull/3) merged to `main` as `7c1e42f39a3e5efc9197e2137eb6c2b9765932b9`. [GitHub Pages deployment](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828568744) succeeded, and the Pages API confirmed `built` for that merge commit. The public [Flagged for Review page](https://snapquast73-boop.github.io/LIVESCERRPEND/flagged-for-review.html), [published JSON](https://snapquast73-boop.github.io/LIVESCERRPEND/data/site/payload.json), and [browser feed module](https://snapquast73-boop.github.io/LIVESCERRPEND/assets/js/mlb.js) were fetched after deploy. The [GitHub tests run](https://github.com/snapquast73-boop/LIVESCERRPEND/actions/runs/44828569248) passed. It reported a nonblocking [Node 20 action-runtime deprecation](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) for the existing CI actions; those workflow dependencies were not changed in this follow-up.
 
+## Merge note — c68ee0e2 rebased on the PR #5 / #6 work
+
+`arena/312ea5e7` merged its client work to `main` (PRs #5 and #6: dated browsing via
+`assets/js/date-panel.js`, the scorer view rebuilt on official completed balls in play with
+`getScoredBalls`, the Lewis overturn recovered, `scripts/check_official.py` plus
+`.github/workflows/official.yml`). This branch merged that work rather than overwriting it:
+
+- `date-panel.js`, `scorer.js`, `pending.js` and `app.js` are kept exactly as merged.
+- `assets/js/reviews.js` keeps the date panel (first-visit auto-scan, follow-today refresh) and
+  adds the per-season archive loader on top of it; `assets/js/mlb.js` keeps both `getScoredBalls`
+  and the review-feed helpers.
+- `official.yml`, `scripts/check_official.py`, `tests/check_site.py`, `tests/mlb.test.mjs` are kept
+  and extended, never dropped.
+- Conflicts were limited to `COORDINATION.md` (union of both records), `index.html` (their scorer
+  form plus this session's copy), the generated payload (regenerated here, and it reproduces the
+  Lewis row they verified: 2 runs removed) and the rewritten client modules.
+
+No other session's work was discarded.
+
 ## Claim — session c68ee0e2 (2026-11-20)
 
 | Item | Value |
