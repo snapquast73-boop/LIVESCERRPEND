@@ -191,35 +191,35 @@ def play_play_id(play: dict) -> str | None:
 def apply_play(play: dict, bases: dict[str, str]) -> dict:
     """Advance the tracked base state through one play and report what happened.
 
-    Returns the occupancy counted before the play, the runners recorded as
-    scoring, and any inconsistency found between those movements and the official
-    score printed on the play.
+    Occupancy is applied in two phases — every vacated base is released before any
+    destination is written — because the feed lists the batter first: on a single
+    the batter takes first while the previous first-base runner moves to second,
+    and writing destinations in feed order would clobber the runner.
+
+    `outBase` is only where an out was recorded, never a base a runner occupied:
+    a batter thrown out at first carries outBase "1B" while a runner stands there.
     """
     before = dict(bases)
     scored: list[str] = []
-    flagged_scoring: list[str] = []
     unoccupied: list[str] = []
+    movements = []
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
-        details = runner.get("details") or {}
-        name = runner_name(runner)
+        movements.append((runner_name(runner) or "unknown", movement))
         start = movement.get("start")
-        end = movement.get("end")
-        # `outBase` is where an out was recorded, not a base a runner occupied: a
-        # batter thrown out at first carries outBase "1B" while another runner is
-        # standing on first. Occupancy therefore follows `start`/`end` only.
         if start:
-            if start in bases:
+            if start in before:
                 bases.pop(start, None)
             else:
-                unoccupied.append(f"{name or 'a runner'} advanced from {start} that tracking did not have occupied")
+                unoccupied.append(f"{runner_name(runner) or 'a runner'} advanced from {start}"
+                                  f" that tracking did not have occupied")
+    for name, movement in movements:
+        end = movement.get("end")
         if end == "score":
-            scored.append(name or "unknown")
+            scored.append(name)
         elif end in {"1B", "2B", "3B"}:
-            bases[end] = name or "unknown"
-        if details.get("isScoringEvent"):
-            flagged_scoring.append(name or "unknown")
-    return {"before": before, "scored": scored, "flagged": flagged_scoring, "unoccupied": unoccupied}
+            bases[end] = name
+    return {"before": before, "scored": scored, "unoccupied": unoccupied}
 
 
 def score_delta(play: dict, is_top: bool, previous: tuple[int, int]) -> tuple[int, tuple[int, int]]:
