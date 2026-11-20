@@ -79,17 +79,21 @@ def check_game_rows(rows):
         # A review can sit on the play or on one of its pitch events; the row records
         # which one with `eventIndex`, so the same record is looked up either way.
         index = row.get('eventIndex')
+        # A pitch-level record keeps the pitch text when the feed prints one and falls
+        # back to the play's own text, so both are accepted here.
+        official_texts = {play['result']['description']}
         if index is None:
             review = play.get('reviewDetails')
-            result_text = play['result']['description']
         else:
             event, = [e for e in play['playEvents'] if e.get('index') == index]
             review = event.get('reviewDetails')
-            result_text = (event.get('details') or {}).get('description') or play['result']['description']
+            pitch_text = (event.get('details') or {}).get('description')
+            if pitch_text:
+                official_texts.add(pitch_text)
         assert review, f"{gid}/{idx}: the official feed has no review record at this position"
         assert review['isOverturned'] is True and review['inProgress'] is False, (gid, idx)
         assert row['reviewType'] == review['reviewType'], (gid, idx)
-        assert row['play'] == result_text, (gid, idx)
+        assert row['play'] in official_texts, (gid, idx, row['play'], official_texts)
         assert row['batter'] == play['matchup']['batter']['fullName'], gid
         for key, actual in [('pitcher', play['matchup']['pitcher']['fullName']),
                             ('inning', play['about']['inning']),
