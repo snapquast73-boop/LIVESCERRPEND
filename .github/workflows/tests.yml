@@ -2,20 +2,37 @@ name: tests
 
 on:
   push:
-    branches: [ main, arena/3061568e-livescerrpend ]
+    branches: [main]
+  pull_request:
   schedule:
     - cron: "0 6 * * *"
+  workflow_dispatch:
 
 jobs:
-  test:
+  offline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install dependencies
+      - name: Install test dependencies
         run: pip install pytest
-      - name: Run offline payload validation
+      - name: Payload validation (official-source and arithmetic checks)
         run: pytest -q
+      - name: Static page, link and ARIA checks
+        run: python3 tests/check_site.py
+
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Official-feed parsing tests
+        run: node --test tests/mlb.test.mjs
+      - name: Page smoke test (jsdom, real assets, real payload)
+        run: |
+          npm install --no-save --silent jsdom
+          node tests/site-smoke.mjs
