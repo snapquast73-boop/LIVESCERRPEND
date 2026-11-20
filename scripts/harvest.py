@@ -201,7 +201,7 @@ def play_play_id(play: dict) -> str | None:
     return None
 
 
-def apply_play(play: dict, bases: dict[str, str]) -> dict:
+def apply_play(play: dict, bases: dict[str, str], *, automatic_runner: bool = False) -> dict:
     """Advance the tracked base state through one play and report what happened.
 
     The official feed lists movements runner by runner, and splits one runner's
@@ -213,12 +213,19 @@ def apply_play(play: dict, bases: dict[str, str]) -> dict:
 
     `outBase` is where an out was recorded, never a base a runner occupied: a batter
     thrown out at first carries outBase "1B" while a runner stands there.
+
+    In an extra half inning the batting side starts with the automatic runner on
+    second base, and the feed reports that runner's first movement as starting on
+    second without any play having placed him there. When `automatic_runner` is set,
+    such a runner is placed rather than reported as untracked — the base itself is
+    still read from the feed, never assumed.
     """
     before = dict(bases)
     scored: list[str] = []
     unoccupied: list[str] = []
     order: list[str] = []
     final: dict[str, dict] = {}
+    automatic_placed: list[str] = []
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
         key = runner_identity(runner)
@@ -236,12 +243,19 @@ def apply_play(play: dict, bases: dict[str, str]) -> dict:
             if occupant == key:
                 bases.pop(start, None)
             elif occupant is None:
-                unoccupied.append(f"{name} advanced from {start} that tracking did not have occupied")
+                if automatic_runner and start == "2B":
+                    # He was placed there by rule, so the base is vacant in the
+                    # tracker; nothing to release, and his end base is written below.
+                    automatic_placed.append(name)
+                    automatic_runner = False
+                else:
+                    unoccupied.append(f"{name} advanced from {start} that tracking did not have occupied")
         if end == "score":
             scored.append(name)
         elif end in {"1B", "2B", "3B"}:
             bases[end] = key
-    return {"before": before, "scored": scored, "unoccupied": unoccupied}
+    return {"before": before, "scored": scored, "unoccupied": unoccupied,
+            "automaticPlaced": automatic_placed}
 
 
 def score_delta(play: dict, is_top: bool, previous: tuple[int, int]) -> tuple[int, tuple[int, int]]:
@@ -264,6 +278,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
     tracked_runs = {"away": 0, "home": 0}
     tracking_issue: str | None = None
     previous_half = None
+    automatic_runners: list[str] = []
 
     for play in feed.get("allPlays") or []:
         about = play.get("about") or {}
@@ -274,11 +289,14 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
         # baseball, not an assumption about the feed: it stops a runner left on base
         # at the end of one half inning leaking into the next play's occupancy.
         half = (about.get("inning"), about.get("halfInning"))
-        if previous_half is not None and half != previous_half:
+        new_half = previous_half is not None and half != previous_half
+        if new_half:
             bases.clear()
         previous_half = half
 
-        state = apply_play(play, bases)
+        state = apply_play(play, bases, automatic_runner=bool(
+            new_half and isinstance(about.get("inning"), int) and about["inning"] >= 10))
+        automatic_runners.extend(state["automaticPlaced"])
         delta, scores = score_delta(play, is_top, scores)
         for problem in state["unoccupied"]:
             issue = f"play {about.get('atBatIndex')}: {problem}"
@@ -362,6 +380,7 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
     checks = {
         "officialFinal": {"away": final_away, "home": final_home},
         "trackedRuns": dict(tracked_runs),
+        "automaticRunners": automatic_runners,
         "scoreConsistent": (final_away == tracked_runs["away"] and final_home == tracked_runs["home"]),
         "issues": base_issues,
     }

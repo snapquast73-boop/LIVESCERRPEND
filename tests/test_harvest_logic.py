@@ -144,3 +144,20 @@ def test_runner_identity_prefers_the_mlb_person_id_over_the_printed_name():
     state = harvest.apply_play(play([runner("Jose Miranda", "1B", "2B", person_id=650333)]), bases)
     assert state["unoccupied"] == []
     assert bases == {"2B": "id:650333"}
+
+
+def test_extra_inning_automatic_runner_is_placed_not_flagged():
+    # 10th inning: the batting side starts with the automatic runner on second and the
+    # feed reports his first movement as starting there.
+    bases = {}
+    state = harvest.apply_play(play([runner("William Contreras", "2B", "3B"),
+                                     runner("Willy Adames", None, "1B")], inning=10, half="bottom"),
+                               bases, automatic_runner=True)
+    assert state["unoccupied"] == []
+    assert state["automaticPlaced"] == ["William Contreras"]
+    assert bases == {"3B": ident("William Contreras"), "1B": ident("Willy Adames")}
+
+
+def test_a_missing_runner_before_the_tenth_is_still_flagged():
+    state = harvest.apply_play(play([runner("Runner", "2B", "3B")], inning=3), {}, automatic_runner=False)
+    assert state["unoccupied"]
