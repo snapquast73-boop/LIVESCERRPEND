@@ -46,3 +46,11 @@ Resolution: kept the arena/3061568e-livescerrpend (verified) engine for those fi
 | Head | arena/3061568e-livescerrpend |
 | Base | main |
 | Merge result | pending |
+
+## Follow-up audit — c5e4b7b5
+
+PR #1 (`18c9351`) and PR #2 (`9bf7039`) merged during this session. Both rebases of the published claim conflicted only in `COORDINATION.md`; each resolution preserved main’s board and carried the claim forward. PR #2’s client, combined payload, documentation, and workflows are the integration baseline. No other branch is being changed.
+
+| Task | Status | Session | Files / sources |
+| --- | --- | --- | --- |
+| Correct published claims and verify combined site | in progress | c5e4b7b5 | `data/site/payload.json`, `docs/`, `README.md`, review page, existing client and tests. [MLB play-by-play](https://statsapi.mlb.com/api/v1/game/823616/playByPlay), [MLB scoring bulletin](https://www.mlb.com/official-information/scoring-changes). |
