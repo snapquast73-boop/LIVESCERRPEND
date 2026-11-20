@@ -2,6 +2,7 @@ name: harvest
 
 # Reads the official MLB Stats API and MLB's scoring-change bulletin, rebuilds
 # data/site/payload.json, and commits the result. No manual data entry.
+# A run is repeatable: seasons already on disk are skipped unless `force` is set.
 on:
   schedule:
     - cron: "17 7 * * *"          # daily refresh of the bulletin + payload
