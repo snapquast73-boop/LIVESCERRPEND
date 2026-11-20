@@ -25,11 +25,11 @@ Checked game 745352, play 14: https://statsapi.mlb.com/api/v1/game/745352/playBy
 overturned reviews: 1968 rows on file, checking a sample
 Checked game 744802, play 61: https://statsapi.mlb.com/api/v1/game/744802/playByPlay
 Traceback (most recent call last):
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 125, in <module>
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 135, in <module>
     main()
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 112, in main
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 122, in main
     check_game_rows(every(reviews, 60))
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 79, in check_game_rows
-    review = play['reviewDetails']
-             ~~~~^^^^^^^^^^^^^^^^^
-KeyError: 'reviewDetails'
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 92, in check_game_rows
+    assert row['play'] == result_text, (gid, idx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (745053, 56)
