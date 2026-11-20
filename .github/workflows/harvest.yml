@@ -36,7 +36,7 @@ jobs:
     timeout-minutes: 180
     env:
       SEASONS: ${{ github.event.inputs.seasons || '2026 2025 2024' }}
-      FORCE: ${{ github.event.inputs.force || 'false' }}
+      FORCE: ${{ github.event.inputs.force || 'true' }}
       MAX_GAMES: ${{ github.event.inputs.max_games || '' }}
     steps:
       - uses: actions/checkout@v4

@@ -2,35 +2,75 @@
   "items": [
     {
       "id": "FLAG-01",
-      "area": "Repository Assets & Scripts",
-      "status": "needs_review",
-      "description": "The initial upload to snapquast73-boop/LIVESCERRPEND only included root files (index.html, README.md, conftest.py, requirements.txt). Subdirectories (assets/, data/, src/, scripts/, docs/) were missing and were reconstructed for GitHub Pages.",
-      "source_url": "https://github.com/snapquast73-boop/LIVESCERRPEND",
-      "source_label": "snapquast73-boop/LIVESCERRPEND"
+      "area": "Repository upload",
+      "status": "fixed",
+      "description": "The upload that created this repository contained only index.html, README.md, requirements.txt, conftest.py, .gitignore and .nojekyll. The assets/, data/, src/, scripts/ and docs/ trees of the original project were missing, so every script and the stylesheet returned 404 on GitHub Pages. The browser client, the harvest scripts, the data pipeline and this documentation were rebuilt in this repository.",
+      "source_url": "https://github.com/snapquast73-boop/LIVESCERRPEND/commit/aa23dc5a24ed10040741c8dd1838a0db28646f3e",
+      "source_label": "Original upload commit (file list)"
     },
     {
       "id": "FLAG-02",
-      "area": "MLB Stats API Archive Harvest",
+      "area": "Original repositories",
       "status": "unverified",
-      "description": "statsapi.mlb.com is unreachable from the build sandbox. All archived datasets (run_removed, reviews, decision_changes, scorer_plays) are left empty rather than estimated. Use the 'Refresh live' button on Pending rulings in your browser to query statsapi.mlb.com directly.",
-      "source_url": "https://statsapi.mlb.com/api/v1/schedule",
-      "source_label": "MLB Stats API — Schedule"
+      "description": "The upstream repositories buffedlizard55-lab/LiveScoringErrors-Pending and buffedlizard55-lab/MLB-overturned-calls return HTTP 404. Nothing from them is copied into this site, and no claim made in the uploaded README is treated as evidence for a published value.",
+      "source_url": "https://github.com/snapquast73-boop/LIVESCERRPEND/blob/aa23dc5a24ed10040741c8dd1838a0db28646f3e/README.md",
+      "source_label": "Uploaded README (Git history) — claims only"
     },
     {
       "id": "FLAG-03",
-      "area": "Official Scoring Changes Bulletin",
-      "status": "unverified",
-      "description": "Post-game scoring-change bulletin entries have not been harvested yet.",
-      "source_url": "https://www.mlb.com/official-information/scoring-changes",
-      "source_label": "MLB Official Scoring Changes"
+      "area": "Run-removal totals vs the uploaded README",
+      "status": "needs_review",
+      "description": "The uploaded README claims 22 run-removing plays and 28 runs removed across three seasons, plus 484 candidates; it also states game 745857 removed 2 runs. The harvest here derives 21 plays and 23 runs removed, 131 candidates, and 1 run removed for 745857, because two runners scored on the corrected double: (2 runners on base + 1 batter) - 2 credited = 1. The README is not an official source, so its figures are not published; the arithmetic on the official play-by-play is. The 2026 season also carries the automated pitch challenge (5,865 records) that the uploaded README mentions removing from a previous corpus.",
+      "source_url": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay",
+      "source_label": "Official play-by-play, game 745857"
     },
     {
       "id": "FLAG-04",
-      "area": "Official Baseball Rules — Rule 9.04",
-      "status": "verified_reference",
-      "description": "Rule 9.04(a)(3) RBI exception reference linked for manual verification.",
+      "area": "Review codes",
+      "status": "needs_review",
+      "description": "The game feed prints composite review codes such as NH and MJ, while MLB's review-reason registry publishes one- and two-letter reason codes (H = Home run, N = Fan interference, J = Pitch result). The site prints the raw feed code and names the reason only when the code's suffix exists in that registry; the leading letter, which is the review initiator, is not described because MLB does not publish it in that endpoint.",
+      "source_url": "https://statsapi.mlb.com/api/v1/reviewReasons",
+      "source_label": "MLB review-reason registry"
+    },
+    {
+      "id": "FLAG-05",
+      "area": "Pending official-scorer rulings",
+      "status": "unverified",
+      "description": "No pending ruling survives in the archived play-by-play for 2024-2026: MLB replaces the marker with the corrected call once the scorer rules, so the harvest returns zero cases and the field is reported as zero, not estimated. Detection uses only the two registered codes (os_ruling_pending_primary, os_ruling_pending_prior). The live view in the browser and the live-capture workflow are the only ways a case can be recorded; the archive starts empty by construction.",
+      "source_url": "https://statsapi.mlb.com/api/v1/eventTypes",
+      "source_label": "MLB event-type registry"
+    },
+    {
+      "id": "FLAG-06",
+      "area": "Scoring model, SCI, correlation study",
+      "status": "unverified",
+      "description": "The 0-100 scoring model, its training corpus, model card, holdout metrics and correlation study were not part of the upload and are not reconstructed. No probability, Scoring Confidence Index or hypothetical RBI is published, because there is no model here that produced one. The rule the model would have had to satisfy is quoted from the Official Baseball Rules.",
       "source_url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
-      "source_label": "2026 Official Baseball Rules (PDF)"
+      "source_label": "Official Baseball Rules (Rule 9.04)"
+    },
+    {
+      "id": "FLAG-07",
+      "area": "Scoring-change bulletin",
+      "status": "needs_review",
+      "description": "MLB's scoring-change page publishes the season it is currently listing, so the harvest covers 2026 only (255 entries, 63 with a stated before/after call). A before/after pair is published only when one official sentence names both sides of the change; 192 entries stay unclassified and are counted, never guessed. Entries may be revised or renumbered by MLB after publication; the official sentence is quoted on every row so a revision can be checked.",
+      "source_url": "https://www.mlb.com/official-information/scoring-changes",
+      "source_label": "MLB official scoring changes"
+    },
+    {
+      "id": "FLAG-08",
+      "area": "Clips",
+      "status": "needs_review",
+      "description": "Each row links to the official play-by-play and to Baseball Savant's clip page for the play id read from the feed. The site does not re-host video and does not claim a clip was watched; the link is the official page for that play id, and MLB can retire a video.",
+      "source_url": "https://baseballsavant.mlb.com/sporty-videos?playId=4ff0b9e8-374a-34e0-9adc-f5c198e858b3",
+      "source_label": "Baseball Savant clip page (example)"
+    },
+    {
+      "id": "FLAG-09",
+      "area": "Harvest scope",
+      "status": "needs_review",
+      "description": "The harvest covers completed regular-season, Wild Card, Division, LCS and World Series games for the seasons on file (2024-2026), 7,420 games. Spring-training, exhibition and All-Star games are excluded, so a review in one of those games is not in the archive. Games whose feed could not be read are counted in the coverage table and excluded from every total; the run is repeatable with the harvest workflow.",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30",
+      "source_label": "MLB schedule (season range)"
     }
   ]
 }

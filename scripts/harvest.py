@@ -198,24 +198,28 @@ def apply_play(play: dict, bases: dict[str, str]) -> dict:
     before = dict(bases)
     scored: list[str] = []
     flagged_scoring: list[str] = []
+    unoccupied: list[str] = []
     for runner in play.get("runners") or []:
         movement = runner.get("movement") or {}
         details = runner.get("details") or {}
         name = runner_name(runner)
         start = movement.get("start")
         end = movement.get("end")
-        out_base = movement.get("outBase")
-        if start in bases:
-            bases.pop(start, None)
+        # `outBase` is where an out was recorded, not a base a runner occupied: a
+        # batter thrown out at first carries outBase "1B" while another runner is
+        # standing on first. Occupancy therefore follows `start`/`end` only.
+        if start:
+            if start in bases:
+                bases.pop(start, None)
+            else:
+                unoccupied.append(f"{name or 'a runner'} advanced from {start} that tracking did not have occupied")
         if end == "score":
             scored.append(name or "unknown")
         elif end in {"1B", "2B", "3B"}:
             bases[end] = name or "unknown"
-        if out_base:
-            bases.pop(out_base, None)
         if details.get("isScoringEvent"):
             flagged_scoring.append(name or "unknown")
-    return {"before": before, "scored": scored, "flagged": flagged_scoring}
+    return {"before": before, "scored": scored, "flagged": flagged_scoring, "unoccupied": unoccupied}
 
 
 def score_delta(play: dict, is_top: bool, previous: tuple[int, int]) -> tuple[int, tuple[int, int]]:
@@ -254,6 +258,10 @@ def review_rows_for_game(feed: dict, game: dict, registry: dict[str, str]) -> di
 
         state = apply_play(play, bases)
         delta, scores = score_delta(play, is_top, scores)
+        for problem in state["unoccupied"]:
+            issue = f"play {about.get('atBatIndex')}: {problem}"
+            base_issues.append(issue)
+            tracking_issue = tracking_issue or issue
         tracked_runs["away" if is_top else "home"] += len(state["scored"])
         if delta != len(state["scored"]):
             issue = (f"play {about.get('atBatIndex')}: official score moved {delta} run(s) but"
