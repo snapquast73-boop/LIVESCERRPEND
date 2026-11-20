@@ -12,59 +12,59 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Probe official MLB feeds
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Harvest a small slice of the official feed
+        run: |
+          python3 scripts/harvest.py --season 2026 --max-games 25 --force 2>&1 | tail -30
+      - name: Build the payload from the slice
+        run: |
+          python3 scripts/build_payload.py 2>&1 | tail -20
+      - name: Probe the scoring-change bulletin and Savant clip pages
         run: |
           python3 - <<'EOF' > probe-out.txt 2>&1
-          import json, urllib.request
+          import json, re, urllib.request
 
-          def get(url):
-              with urllib.request.urlopen(url, timeout=60) as r:
-                  return json.load(r)
+          def fetch(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (probe)"})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  return r.status, r.headers.get("content-type"), r.read()
 
-          print("=== reviewReasons registry ===")
-          print(json.dumps(get("https://statsapi.mlb.com/api/v1/reviewReasons"))[:3000])
+          url = "https://www.mlb.com/official-information/scoring-changes"
+          status, ctype, body = fetch(url)
+          html = body.decode("utf-8", "replace")
+          print("bulletin:", status, ctype, len(html), "bytes")
+          open("bulletin.html", "w").write(html)
+          text = re.sub(r"<script.*?</script>", " ", html, flags=re.S)
+          text = re.sub(r"<style.*?</style>", " ", text, flags=re.S)
+          text = re.sub(r"<[^>]+>", "\n", text)
+          text = re.sub(r"\n{2,}", "\n", text)
+          print("visible text length:", len(text))
+          print("---- first 2500 chars of visible text ----")
+          print(text[:2500])
+          print("---- occurrences of 'In the' ----", text.count("In the"))
+          print("---- occurrences of 'now' ----", text.count(" now "))
+          idx = text.find("In the")
+          print("---- context ----")
+          print(text[max(0, idx-500):idx+1200])
 
-          print("\n=== eventTypes: pending entries ===")
-          et = get("https://statsapi.mlb.com/api/v1/eventTypes")
-          for e in et:
-              if "pending" in json.dumps(e).lower():
-                  print(json.dumps(e))
-
-          for pk in (823616, 778307):
-              print(f"\n=== game {pk} ===")
-              feed = get(f"https://statsapi.mlb.com/api/v1/game/{pk}/playByPlay")
-              print("top-level keys:", list(feed.keys()))
-              plays = feed.get("allPlays", [])
-              print("plays:", len(plays))
-              for play in plays:
-                  rd = play.get("reviewDetails")
-                  ev_rd = [(e.get("index"), e.get("reviewDetails"), e.get("details"))
-                           for e in play.get("playEvents", []) if e.get("reviewDetails")]
-                  if not rd and not ev_rd:
-                      continue
-                  out = {
-                      "atBatIndex": play.get("atBatIndex"),
-                      "about": play.get("about"),
-                      "result": play.get("result"),
-                      "reviewDetails": rd,
-                      "eventReviewDetails": ev_rd,
-                      "runners": [
-                          {"movement": r.get("movement"),
-                           "details": {k: r.get("details", {}).get(k) for k in
-                                       ("eventType", "event", "isScoringEvent", "rbi", "earned", "playIndex")}}
-                          for r in play.get("runners", [])
-                      ],
-                      "lastEventIndex": (play.get("playEvents") or [{}])[-1].get("index"),
-                  }
-                  print(json.dumps(out, indent=1)[:5000])
+          for play_id in ("9238a9d4-3741-36f7-8fac-191567cd87e6",
+                          "4ff0b9e8-374a-34e0-9adc-f5c198e858b3"):
+              try:
+                  s, c, b = fetch("https://baseballsavant.mlb.com/sporty-videos?playId=" + play_id)
+                  print("savant", play_id, s, c, len(b))
+              except Exception as e:
+                  print("savant", play_id, "error", e)
           EOF
-          echo "--- exit $? ---"
+          head -c 2000 probe-out.txt
       - name: Commit probe output
         run: |
           git config user.name "probe-bot"
           git config user.email "probe-bot@users.noreply.github.com"
-          git add probe-out.txt
-          git commit -m "probe output $(date -u +%FT%TZ)" || echo "nothing to commit"
+          git add probe-out.txt bulletin.html data/seasons data/site 2>/dev/null || true
+          git commit -m "probe/harvest slice $(date -u +%FT%TZ)" || echo "nothing to commit"
           git push origin HEAD:arena/c68ee0e2-livescerrpend
