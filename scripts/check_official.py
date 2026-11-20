@@ -66,7 +66,11 @@ def check_game_rows(rows):
     for row in rows:
         gid = row['gamePk']
         schedule = json.loads(read(f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&gamePk={gid}'))
-        game, = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
+        # A suspended or resumed game can be listed on more than one date; the first
+        # entry is the official record for the gamePk, and the row is checked against it.
+        matches = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
+        assert matches, f"{gid}: the official schedule has no game with this gamePk"
+        game = matches[0]
         assert (row['date'], str(row['season'])) == (game['officialDate'], str(game['season'])), gid
         assert row['teams'] == ' @ '.join(game['teams'][side]['team']['name'] for side in ('away', 'home')), gid
         plays = json.loads(read(row['pbp']))['allPlays']
