@@ -7,9 +7,9 @@ This is a static restoration of an incomplete upload. The original HTML structur
 
 - **Run-removed overturns:** a verified sample with an explicit candidate state, season/search filters, official clips and CSV export.
 - **Pending rulings:** direct checks of the current Eastern Time schedule while the tab is open. Only [MLB’s two registered event codes](https://statsapi.mlb.com/api/v1/eventTypes) count as pending. Unavailable feeds are reported separately from an empty result.
-- **All replay overturns:** the local sample plus on-demand scans of a date’s eligible game feeds from the [MLB schedule](https://statsapi.mlb.com/api/v1/schedule?sportId=1). Review codes are displayed as reported, with each row linking to its game’s official play-by-play.
+- **All replay overturns:** the [reviews entry point](https://snapquast73-boop.github.io/LIVESCERRPEND/reviews.html) opens today’s lookup automatically. Browse the local sample plus scans of a date’s eligible game feeds from the [MLB schedule](https://statsapi.mlb.com/api/v1/schedule?sportId=1). Review codes are displayed as reported, with each row linking to its game’s official play-by-play.
 - **Scorer decision changes:** a filterable sample of the [official MLB scoring-change bulletin](https://www.mlb.com/official-information/scoring-changes), with blank RBI values when not stated.
-- **Live scorer and model:** the original model, calibration, snapshots and correlation study were not included. No synthetic scores or substitute estimates are published.
+- **Live scorer and model:** completed balls in play show MLB’s reported ruling and RBI, with date lookup, filters and CSV. The original predictive model, calibration and correlation study were not included. No synthetic scores or substitute estimates are published.
 
 The [uploaded README](https://github.com/snapquast73-boop/LIVESCERRPEND/blob/aa23dc5a24ed10040741c8dd1838a0db28646f3e/README.md) is available in Git history. Its historical totals and references to the absent Python app and pipeline describe upstream claims, not verified functionality in this checkout. `requirements.txt` and `conftest.py` are legacy files and are not needed to run or test the restored site.
 

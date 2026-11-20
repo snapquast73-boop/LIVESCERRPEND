@@ -124,7 +124,7 @@
         Read from <code>reviewDetails</code> on the official play-by-play
         (<code>isOverturned: true</code>, <code>inProgress: false</code>). Reviews are stored at two
         levels in that feed — on the play and on the individual pitch/play event — and both are
-        collected here. The verified sample stays available when an MLB request fails. Each row links to official play-by-play, with an official clip when confirmed.
+        collected here. Opening this tab scans today automatically; choose a past date to inspect that schedule instead. The verified sample stays available when an MLB request fails. Each row links to official play-by-play, with an official clip when confirmed.
       </p>
       <form class="controls" id="rv-scan">
         <label>MLB schedule date <input id="rv-date" type="date" required></label>
@@ -183,21 +183,18 @@
   <!-- ============================ LIVE SCORER ============================ -->
   <section id="view-scorer" class="view" role="tabpanel" aria-labelledby="scorer-tab">    <div class="card intro">
       <h2>How a batted ball is scored — the 0–100 view</h2>
-      <p>The original 0–100 model and snapshot were not included. Probabilities, SCI, and hypothetical RBI are unverified and are not published.</p>
+      <p>Completed balls in play from MLB’s schedule appear here with the official ruling and RBI. Today’s results refresh while this tab is open. The original 0–100 model and snapshot were not included. Probabilities, SCI, and hypothetical RBI are unverified and are not published.</p>
       <p class="foot" id="sc-caveat"></p>
       <div class="summary" id="sc-summary"></div>
     </div>
 
     <div class="controls card">
-      <label>Season <select id="sc-season"><option value="">all</option></select></label>
-      <label>Show
-        <select id="sc-state">
-          <option value="">all scored plays</option>
-          <option value="reached">only plays where the batter reached (SCI exists)</option>
-          <option value="disagree">only where the model disagreed with the official ruling</option>
-          <option value="low">only SCI below 50</option>
-        </select>
-      </label>
+      <form class="controls" id="sc-scan">
+        <label>MLB schedule date <input id="sc-date" type="date" required></label>
+        <button class="btn" type="submit">Scan this date</button>
+        <span id="sc-scan-status" role="status"></span>
+      </form>
+      <label>Ruling <select id="sc-state"><option value="">all official rulings</option></select></label>
       <label>Search <input type="search" id="sc-search" placeholder="batter, pitcher, team, or date" /></label>
       <button class="btn" id="sc-csv">Download CSV</button>
       <span class="notice" id="sc-notice"></span>
@@ -278,6 +275,7 @@
 <script src="assets/js/render.js"></script>
 <script src="assets/js/run-removed.js"></script>
 <script src="assets/js/pending.js"></script>
+<script src="assets/js/date-panel.js"></script>
 <script src="assets/js/reviews.js"></script>
 <script src="assets/js/decision-changes.js"></script>
 <script src="assets/js/scorer.js"></script>
