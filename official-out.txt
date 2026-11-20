@@ -15,12 +15,21 @@ Checked game 777929, play 18: https://statsapi.mlb.com/api/v1/game/777929/playBy
 Checked game 778307, play 29: https://statsapi.mlb.com/api/v1/game/778307/playByPlay
 Checked game 745857, play 63: https://statsapi.mlb.com/api/v1/game/745857/playByPlay
 Checked game 745541, play 25: https://statsapi.mlb.com/api/v1/game/745541/playByPlay
+Checked game 746755, play 20: https://statsapi.mlb.com/api/v1/game/746755/playByPlay
+Checked game 746025, play 71: https://statsapi.mlb.com/api/v1/game/746025/playByPlay
+Checked game 747193, play 47: https://statsapi.mlb.com/api/v1/game/747193/playByPlay
+Checked game 746386, play 28: https://statsapi.mlb.com/api/v1/game/746386/playByPlay
+Checked game 746803, play 66: https://statsapi.mlb.com/api/v1/game/746803/playByPlay
+Checked game 746568, play 71: https://statsapi.mlb.com/api/v1/game/746568/playByPlay
+Checked game 745352, play 14: https://statsapi.mlb.com/api/v1/game/745352/playByPlay
+overturned reviews: 1968 rows on file, checking a sample
+Checked game 744802, play 61: https://statsapi.mlb.com/api/v1/game/744802/playByPlay
 Traceback (most recent call last):
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 121, in <module>
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 125, in <module>
     main()
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 106, in main
-    check_game_rows(removals)
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 69, in check_game_rows
-    game, = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
-    ^^^^^
-ValueError: too many values to unpack (expected 1)
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 112, in main
+    check_game_rows(every(reviews, 60))
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 79, in check_game_rows
+    review = play['reviewDetails']
+             ~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'reviewDetails'
