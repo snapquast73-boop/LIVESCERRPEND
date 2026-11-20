@@ -1,123 +1,119 @@
-window.LSP = window.LSP || {};
+/* LiveScoringErrors-Pending — pending rulings view */
 
-window.LSP.pending = {
-  data: null,
+const Pending = (() => {
+  let payload = null;
+  let abortCtrl = null;
 
-  init(data) {
-    this.data = data || { cases: [] };
-    const btn = document.getElementById("pend-refresh");
-    if (btn) btn.addEventListener("click", () => this.refreshLive());
+  function init(p) {
+    payload = p;
+    renderHistory();
+    wire();
+  }
 
-    const seasonSel = document.getElementById("pend-season");
-    if (seasonSel) {
-      const cases = this.data.cases || [];
-      [...new Set(cases.map((c) => c.season).filter(Boolean))].sort().reverse().forEach((s) => {
-        const opt = document.createElement("option");
-        opt.value = s;
-        opt.textContent = s;
-        seasonSel.appendChild(opt);
-      });
-      seasonSel.addEventListener("change", () => this.renderArchive());
-    }
+  function wire() {
+    const btn = R.$("pend-refresh");
+    if (btn) btn.addEventListener("click", () => { btn.disabled = true; refreshLive(); });
+    const sel = R.$("pend-season");
+    const search = R.$("pend-search");
+    const run = () => renderHistory();
+    if (sel) sel.addEventListener("change", run);
+    if (search) search.addEventListener("input", run);
+  }
 
-    const search = document.getElementById("pend-search");
-    if (search) search.addEventListener("input", () => this.renderArchive());
-
-    this.renderArchive();
-  },
-
-  async refreshLive() {
-    const R = window.LSP.render;
-    const liveBox = document.getElementById("pend-live");
-    R.setNotice("pend-notice", "Querying statsapi.mlb.com…");
+  async function refreshLive() {
+    const notice = R.$("pend-notice");
+    const liveBox = R.$("pend-live");
+    notice.textContent = "Contacting the official feed…";
+    liveBox.innerHTML = '<p class="loading">Checking today\'s games for pending rulings…</p>';
     try {
-      const sched = await window.LSP.api.fetchLiveSchedule();
-      const dates = sched.dates || [];
-      const games = dates.flatMap((d) => d.games || []);
-      const activeGames = games.filter(
-        (g) => g.status && (g.status.abstractGameState === "Live" || g.status.abstractGameState === "Final")
-      );
-
-      const pendingPlays = [];
-      for (const g of activeGames.slice(0, 15)) {
-        try {
-          const pbp = await window.LSP.api.fetchLivePlayByPlay(g.gamePk);
-          const allPlays = pbp.allPlays || [];
-          for (const p of allPlays) {
-            const ev = (p.result && p.result.eventType) || "";
-            if (ev === "os_ruling_pending_primary" || ev === "os_ruling_pending_prior") {
-              pendingPlays.push({
-                gamePk: g.gamePk,
-                away: g.teams && g.teams.away && g.teams.away.team && g.teams.away.team.name,
-                home: g.teams && g.teams.home && g.teams.home.team && g.teams.home.team.name,
-                eventType: ev,
-                description: (p.result && p.result.description) || ""
-              });
-            }
-          }
-        } catch (_) {
-          // Skip individual game fetch errors
-        }
+      abortCtrl = new AbortController();
+      const result = await API.fetchLivePending(abortCtrl.signal);
+      abortCtrl = null;
+      if (!result.live || result.live.length === 0) {
+        liveBox.innerHTML = `<p class="empty">${result.note || "No pending rulings detected."}</p>`;
+      } else {
+        const html = result.live.map(x => R.card(`
+          <div class="title">${esc(x.description || "Pending ruling")}</div>
+          <div class="meta">Game ${esc(x.gamePk)} · inning ${esc(x.inning)} · ${esc(x.batter)} vs ${esc(x.pitcher)}</div>
+          <div class="meta">${esc(x.eventType)} · ${esc(x.eventType === "os_ruling_pending_primary" ? "primary" : "prior")}</div>
+          <div style="margin-top:0.35rem">${R.link(x.pbp, "official play-by-play")} ${R.link(x.clip, "watch clip")}</div>
+        `)).join("");
+        liveBox.innerHTML = `<div class="cards">${html}</div>`;
       }
-
-      R.setNotice("pend-notice", `Checked ${activeGames.length} game(s); found ${pendingPlays.length} pending ruling(s).`);
-      if (liveBox) {
-        if (pendingPlays.length === 0) {
-          liveBox.innerHTML = R.emptyCard(
-            "No live pending official-scorer rulings right now",
-            `Checked ${activeGames.length} live/final MLB game(s) today via statsapi.mlb.com.`,
-            "https://statsapi.mlb.com/api/v1/eventTypes",
-            "MLB Stats API — Event Types"
-          );
-        } else {
-          liveBox.innerHTML = pendingPlays
-            .map(
-              (p) => `
-            <div class="row-card">
-              <div class="row-head">
-                <strong>${R.esc(p.away)} @ ${R.esc(p.home)}</strong>
-                <span class="badge warn">${R.esc(p.eventType)}</span>
-              </div>
-              <p class="muted">${R.esc(p.description)}</p>
-              <p class="foot"><a href="https://statsapi.mlb.com/api/v1/game/${R.esc(p.gamePk)}/playByPlay" target="_blank" rel="noopener">Official play-by-play</a></p>
-            </div>`
-            )
-            .join("");
-        }
-      }
+      R.notice("pend-notice", result.note || "");
     } catch (err) {
-      R.setNotice("pend-notice", `Live fetch failed: ${err.message}`);
-      if (liveBox) {
-        liveBox.innerHTML = R.emptyCard(
-          "Could not reach statsapi.mlb.com from this browser/network",
-          err.message,
-          "https://statsapi.mlb.com/api/v1/schedule",
-          "MLB Stats API — Schedule"
-        );
-      }
-    }
-  },
-
-  renderArchive() {
-    const R = window.LSP.render;
-    const cases = (this.data && this.data.cases) || [];
-    const summaryEl = document.getElementById("pend-model-summary");
-    if (summaryEl) {
-      summaryEl.textContent =
-        cases.length > 0
-          ? `${cases.length} harvested pending case(s) on file.`
-          : "No harvested pending cases on file yet (unverified).";
-    }
-    R.setNotice("pend-list-notice", `${cases.length} case(s)`);
-    const list = document.getElementById("pend-list");
-    if (!list) return;
-    if (cases.length === 0) {
-      list.innerHTML = R.emptyCard(
-        "No archived pending rulings on file",
-        (this.data && this.data.note) || "Use 'Refresh live' above to query statsapi.mlb.com directly.",
-        (this.data && this.data.source) || "https://statsapi.mlb.com/api/v1/eventTypes",
-        "MLB Stats API — Event Types"
-      );
+      liveBox.innerHTML = `<p class="empty">Live read failed: ${esc(String(err))}</p>`;
+      R.notice("pend-notice", "Live feed unavailable.");
+    } finally {
+      const b = R.$("pend-refresh"); if (b) b.disabled = false;
     }
   }
-};
+
+  function renderHistory() {
+    if (!payload) return;
+    const pend = payload.pending || {};
+    const dist = pend.distribution || [];
+    const cases = pend.cases || [];
+
+    // distribution bars
+    const total = dist.reduce((a, b) => a + (Number(b.n) || 0), 0);
+    let distHtml = "";
+    if (total > 0) {
+      distHtml = dist.map(d => {
+        const n = Number(d.n) || 0;
+        const w = total ? (100 * n / total) : 0;
+        return `<div class="dist"><div class="fill" style="width:${w}%"></div><div class="label">${esc(d.ruling)} ${n} / ${total} (${pct(n, total)})</div></div>`;
+      }).join("");
+    } else {
+      distHtml = `<p class="empty">${pend.note || "No pending-ruling history on file."}</p>`;
+    }
+    R.$("pend-dist").innerHTML = distHtml;
+    const foot = total > 0
+      ? `Sample size n = ${total}. ${esc(pend.note || "")}`
+      : esc(pend.note || "No cases captured yet. The post-game harvest finds zero pending markers because the archive replaces them with the corrected call; only live polling captures them.");
+    R.$("pend-model-foot").innerHTML = `<p class="foot">${foot}</p>`;
+    R.summary("pend-model-summary", `Pending rulings resolved to: ${total} case${total !== 1 ? "s" : ""} on file.`);
+
+    // cases list
+    const season = R.$("pend-season").value;
+    const search = (R.$("pend-search").value || "").trim().toLowerCase();
+    const filtered = cases.filter(c => {
+      if (season && c.season !== season) return false;
+      if (search) {
+        const hay = [c.batter, c.pitcher, c.teams, c.date, c.resolvedTo].join(" | ").toLowerCase();
+        return hay.includes(search);
+      }
+      return true;
+    });
+    const seasons = [...new Set(cases.map(c => c.season).filter(Boolean))].sort();
+    fillSeason("pend-season", seasons);
+
+    const html = filtered.map(c => R.card(`
+      <div class="title">${esc(c.play || "Pending case")}</div>
+      <div class="meta">${esc(c.date || "—")} · ${esc(c.teams || "—")} · ${esc(c.season || "—")}</div>
+      <div class="meta">first seen ${esc(fmtDate(c.first_seen))} · last seen ${esc(fmtDate(c.last_seen))}</div>
+      <div class="meta">resolved to: <b>${esc(c.resolvedTo || "—")}</b> ${c.rbi ? `· RBI ${esc(c.rbi)}` : ""}</div>
+      <div style="margin-top:0.35rem">${R.link(c.pbp, "official play-by-play")} ${c.clip ? R.link(c.clip, "watch clip") : ""}</div>
+    `)).join("");
+    R.list("pend-list", html ? [`<div class="cards">${html}</div>`] : null);
+    R.notice("pend-list-notice", filtered.length === 0 && cases.length ? "No cases match the current filters." : "");
+  }
+
+  function fillSeason(id, seasons) {
+    const el = R.$(id);
+    if (!el) return;
+    const had = el.value;
+    el.innerHTML = '<option value="">all</option>';
+    for (const s of seasons) el.add(new Option(s, s));
+    el.value = had;
+  }
+
+  function fmtDate(iso) { return R.fmtDate(iso); }
+  function pct(n, d) { return R.pct(n, d); }
+  function esc(s) { return R.esc(s); }
+
+  return { init, refreshLive };
+})();
+
+// expose refresh for inline handler
+window.refreshPendingLive = () => { const btn = R.$("pend-refresh"); if (btn) { btn.disabled = true; Pending.refreshLive(); } };

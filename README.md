@@ -8,7 +8,7 @@ official scorer revisions, pending scorer rulings, and run-removing replay overt
 number on the website is written by a script from an official MLB feed; nothing is typed by
 hand and nothing is estimated to fill a gap.
 
-**Website (GitHub Pages):** <https://buffedlizard55-lab.github.io/LiveScoringErrors-Pending/>
+**Website (GitHub Pages):** <https://snapquast73-boop.github.io/LIVESCERRPEND/>
 
 ---
 

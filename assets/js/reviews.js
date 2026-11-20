@@ -1,36 +1,69 @@
-window.LSP = window.LSP || {};
+/* LiveScoringErrors-Pending — all replay overturns view */
 
-window.LSP.reviews = {
-  data: null,
+const Reviews = (() => {
+  let rows = [];
+  let seasons = [];
+  let types = [];
 
-  init(data) {
-    this.data = data || { rows: [] };
-    ["rv-season", "rv-type"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener("change", () => this.render());
-    });
-    const search = document.getElementById("rv-search");
-    if (search) search.addEventListener("input", () => this.render());
-    this.render();
-  },
+  function init(payload) {
+    rows = (payload.reviews || []).slice();
+    seasons = [...new Set((payload.reviews || []).map(r => r.season).filter(Boolean))].sort();
+    types = [...new Set((payload.reviews || []).map(r => r.reviewType).filter(Boolean))].sort();
+    fillSeason("rv-season", seasons);
+    fillType("rv-type", types);
+    render();
+    wire();
+  }
 
-  render() {
-    const R = window.LSP.render;
-    const rows = (this.data && this.data.rows) || [];
-    R.renderSummary("rv-summary", [
-      { label: "Overturned reviews", value: rows.length },
-      { label: "Dataset status", value: (this.data && this.data.status) || "unverified" }
-    ]);
-    R.setNotice("rv-notice", `${rows.length} row(s)`);
-    const list = document.getElementById("rv-list");
-    if (!list) return;
-    if (rows.length === 0) {
-      list.innerHTML = R.emptyCard(
-        "No harvested replay overturns on file",
-        (this.data && this.data.note) || "No records available.",
-        (this.data && this.data.source) || "https://statsapi.mlb.com/api/v1/reviewReasons",
-        "MLB Stats API — Review Reasons"
-      );
+  function fillSeason(id, list) {
+    const el = R.$(id);
+    if (!el) return;
+    const had = el.value;
+    el.innerHTML = '<option value="">all</option>';
+    for (const s of list) el.add(new Option(s, s));
+    el.value = had;
+  }
+  function fillType(id, list) {
+    const el = R.$(id);
+    if (!el) return;
+    const had = el.value;
+    el.innerHTML = '<option value="">all</option>';
+    for (const t of list) el.add(new Option(t, t));
+    el.value = had;
+  }
+
+  function wire() {
+    const run = () => render();
+    for (const id of ["rv-season", "rv-type", "rv-search"]) {
+      const el = R.$(id);
+      if (el) el.addEventListener(id === "rv-search" ? "input" : "change", run);
     }
   }
-};
+
+  function render() {
+    const season = R.$("rv-season").value;
+    const type = R.$("rv-type").value;
+    const search = (R.$("rv-search").value || "").trim().toLowerCase();
+    const filtered = rows.filter(r => {
+      if (season && r.season !== season) return false;
+      if (type && r.reviewType !== type) return false;
+      if (search) {
+        const hay = [r.play, r.batter, r.pitcher, r.teams, r.date, r.reviewType, r.reason].join(" | ").toLowerCase();
+        return hay.includes(search);
+      }
+      return true;
+    });
+    const html = filtered.map(r => R.card(`
+      <div class="title">${esc(r.play || "Overturned review")}</div>
+      <div class="meta">${esc(r.date || "—")} · ${esc(r.teams || "—")} · ${esc(r.season || "—")}</div>
+      <div class="meta">${esc(r.reviewType || "—")} ${esc(r.reason ? "— " + r.reason : "")}</div>
+      <div style="margin-top:0.35rem">${R.link(r.pbp, "official play-by-play")} ${r.clip ? R.link(r.clip, "watch clip") : ""} ${r.gameday ? R.link(r.gameday, "Gameday") : ""}</div>
+    `)).join("");
+    R.list("rv-list", html ? [`<div class="cards">${html}</div>`] : null);
+    R.summary("rv-summary", `${filtered.length} overturn${filtered.length !== 1 ? "s" : ""} shown (${rows.length} total on file).`);
+    R.notice("rv-notice", filtered.length === 0 && rows.length ? "No reviews match the current filters." : "");
+  }
+
+  function esc(s) { return R.esc(s); }
+  return { init };
+})();

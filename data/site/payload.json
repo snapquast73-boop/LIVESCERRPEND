@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-11-20T00:00:00Z",
+  "run_removed": [
+    {
+      "gamePk": 778307,
+      "season": "",
+      "date": "",
+      "teams": "",
+      "batter": "",
+      "pitcher": "",
+      "play": "",
+      "event": "",
+      "inning": "",
+      "runnersOn": null,
+      "runsCredited": null,
+      "runsRemoved": 2,
+      "playId": "",
+      "clip": "",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
+      "gameday": "",
+      "filmRoom": "",
+      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
+    },
+    {
+      "gamePk": 745857,
+      "season": "",
+      "date": "",
+      "teams": "",
+      "batter": "",
+      "pitcher": "",
+      "play": "",
+      "event": "",
+      "inning": "",
+      "runnersOn": null,
+      "runsCredited": null,
+      "runsRemoved": 2,
+      "playId": "",
+      "clip": "",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay",
+      "gameday": "",
+      "filmRoom": "",
+      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
+    },
+    {
+      "gamePk": 823616,
+      "season": "",
+      "date": "",
+      "teams": "",
+      "batter": "",
+      "pitcher": "",
+      "play": "",
+      "event": "",
+      "inning": "",
+      "runnersOn": null,
+      "runsCredited": null,
+      "runsRemoved": 1,
+      "playId": "",
+      "clip": "",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
+      "gameday": "",
+      "filmRoom": "",
+      "source": "README V22/V23 anchor — official MLB Stats API play-by-play (not re-fetched this session; sandbox cannot reach *.mlb.com)"
+    }
+  ],
+  "additions": [],
+  "candidates": [],
+  "reviews": [],
+  "decisions": [],
+  "scorer": [],
+  "pending": {
+    "distribution": [],
+    "cases": [],
+    "note": "No pending-ruling history captured in this snapshot. The archive replaces the pending marker with the corrected call, so only live polling captures pending states. The live panel polls statsapi.mlb.com in your browser; when unreachable it shows this notice."
+  },
+  "model": {
+    "trainRows": "",
+    "holdoutRows": "",
+    "holdoutAccuracy": "",
+    "holdoutLogLoss": "",
+    "sciCalibration": "not regenerated — raw training CSV not in this checkout (LIM-5)",
+    "liveFeatures": "experimental — xBA/xwOBA/fielding alignment not populated by the live normaliser (LIM-6)",
+    "trainedAt": ""
+  },
+  "correlations": [],
+  "anchors": [
+    {
+      "gamePk": 778307,
+      "runsRemoved": 2,
+      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay"
+    },
+    {
+      "gamePk": 745857,
+      "runsRemoved": 2,
+      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay"
+    },
+    {
+      "gamePk": 823616,
+      "runsRemoved": 1,
+      "status": "documented in README V22/V23 — not re-fetched this session (sandbox cannot reach *.mlb.com). Official link: play-by-play.",
+      "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay"
+    }
+  ],
+  "meta": {
+    "coverage": {
+      "run-removals": "3 anchor plays documented in README (verified values); detailed inputs not re-fetched this session",
+      "pending-rulings": "none captured — pending corpus is empty until live polling captures cases",
+      "scorer-decision-changes": "none captured — automated parser not re-run this session",
+      "all-replay-overturns": "none captured — harvest not re-run this session"
+    },
+    "freshness": "snapshot built 2026-11-20; scheduled harvest not run in this sandbox",
+    "irregularities": [
+      {
+        "id": "IRR-01",
+        "text": "This upload contained only index.html (static shell), README.md, conftest.py and requirements.txt. The assets, src, scripts, data, docs and .github trees were missing, so the GitHub Pages site was broken (all assets/js scripts and the CSS returned 404). Rebuilt as a standalone static site.",
+        "source": "https://github.com/snapquast73-boop/LIVESCERRPEND"
+      },
+      {
+        "id": "IRR-02",
+        "text": "Original referenced repositories buffedlizard55-lab/LiveScoringErrors-Pending and buffedlizard55-lab/MLB-overturned-calls return 404 via the GitHub API (private or removed). Nothing from them is copied or assumed.",
+        "source": "https://api.github.com/repos/buffedlizard55-lab/LiveScoringErrors-Pending",
+        "unverified": true
+      },
+      {
+        "id": "IRR-03",
+        "text": "Run-removal detailed inputs (date, teams, batter, runners on base, runs credited, clip, Gameday) for the three anchor plays could not be re-fetched because the sandbox cannot reach *.mlb.com. Only the documented runs_removed values and official play-by-play links are published; inputs are left blank and flagged.",
+        "source": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
+        "unverified": true
+      },
+      {
+        "id": "IRR-04",
+        "text": "GitHub Pages cannot reach statsapi.mlb.com from this environment, so the scheduled harvest (which needs *.mlb.com) cannot run here. The live pending panel fetches statsapi.mlb.com from the visitor's browser and degrades gracefully when unreachable.",
+        "source": "https://developer.github.com/actions/",
+        "unverified": true
+      }
+    ]
+  }
+}
