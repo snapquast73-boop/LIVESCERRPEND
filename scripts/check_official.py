@@ -126,6 +126,12 @@ def check_game_rows(rows):
         print(f"Checked game {gid}, play {idx}: {row['pbp']}")
 
 
+def norm(text):
+    """Whitespace and typography are normalised before comparing published text."""
+    return ' '.join(text.replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"')
+                   .replace('\u201d', '"').replace('\u2014', '-').replace('\u2013', '-').split())
+
+
 def main():
     payload = json.loads((ROOT / 'data/site/payload.json').read_text())
     removals = payload['run_removed']
@@ -139,11 +145,15 @@ def main():
     print(f"candidates: {len(candidates)} rows on file, checking a sample")
     check_game_rows(every(candidates, 40))
 
-    bulletin = VisibleText(read(payload['decisions'][0]['source'])).normalized() if payload['decisions'] else ''
+    bulletin = norm(VisibleText(read(payload['decisions'][0]['source'])).normalized()) if payload['decisions'] else ''
     for row in payload['decisions']:
         expected = f"{row['date']} {row['game']} -- {row['span']}" if row.get('game') \
             else f"{row['date']} -- {row['span']}"
-        assert expected in bulletin, row['entryNo']
+        expected = norm(expected)
+        if expected not in bulletin:
+            start = bulletin.find(f"{row['date']} {row.get('game', '')} --".strip())
+            raise AssertionError(f"{row['entryNo']}: official page has {bulletin[start:start + 240]!r}"
+                                 f" but the payload says {expected!r}")
     print(f"bulletin: all {len(payload['decisions'])} entries matched the official text")
 
 
