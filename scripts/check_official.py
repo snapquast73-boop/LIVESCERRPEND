@@ -1,5 +1,6 @@
 """Online drift check for the published sample. Does not extrapolate or rewrite data."""
 import json
+import re
 import time
 from functools import cache
 from html.parser import HTMLParser
@@ -127,9 +128,14 @@ def check_game_rows(rows):
 
 
 def norm(text):
-    """Whitespace and typography are normalised before comparing published text."""
-    return ' '.join(text.replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"')
-                   .replace('\u201d', '"').replace('\u2014', '-').replace('\u2013', '-').split())
+    """Whitespace, typography and ordinal markup are normalised before comparing text.
+
+    The bulletin renders the ordinal suffix of an inning in a <sup> element, so the
+    visible text of "1st" arrives as "1 st" once the tags are stripped.
+    """
+    text = ' '.join(text.replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"')
+                    .replace('\u201d', '"').replace('\u2014', '-').replace('\u2013', '-').split())
+    return re.sub(r'(\d) (st|nd|rd|th)\b', r'\1\2', text)
 
 
 def main():
