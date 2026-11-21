@@ -158,3 +158,21 @@ Merge conflict resolved, not discarded: `main` had received PR #5/#6 from `arena
 branch started. That work (dated browsing via `date-panel.js`, the scorer view on official completed
 balls in play, `scripts/check_official.py` + `official.yml`) is kept in full, and this branch's archive
 loader, live replay page and harvest pipeline were layered on top. See the merge note above.
+
+### Published — PR #8
+
+| Item | Value |
+|---|---|
+| Pull request | https://github.com/snapquast73-boop/LIVESCERRPEND/pull/8 |
+| Merge commit | `ed72e11` (merged 2026-11-21T00:18:12Z) |
+| What changed | every run-removal row now carries its official Baseball Savant clip link (`clip`), and this record |
+| Checks | `offline` pass, `compare` pass (official drift check) |
+| Pages | built for `548cc21`; the public payload serves 23 rows with `clip`, `pbp`, `source` and `arithmetic` |
+
+### Status: done — session c68ee0e2
+
+The site is live and verified after deployment: 23 run-removal plays / 26 runs removed across
+7,420 completed games (2024–2026), 1,968 overturned reviews in per-season archives, 5,954 automated
+pitch challenges counted separately, 255 bulletin entries (63 classified), a live replay feed page,
+and the audit page rendering every flagged item with its official source. All open items are
+published, none blocks the site.
