@@ -124,3 +124,20 @@ the uploaded README's season totals do not reproduce (23/26/129 vs its 22/28/484
 and correlation study were never in the upload, no pending ruling survives in an archived feed, the
 bulletin covers the current season only, and composite review codes are printed raw with only the
 registry's reason part named.
+
+### Drift check on the merged tree
+
+`scripts/check_official.py` (owned by the `312ea5e7` work) was extended, not replaced, to cover the
+rebuilt corpus, and it now passes end to end in CI:
+
+- every one of the 23 run-removal rows: date, season, matchup, batter, pitcher, inning, event type,
+  review code, official result text, runs credited, base occupancy and the
+  `(runners + 1) − credited` arithmetic;
+- a fixed sample of the 1,968 overturned reviews and of the 129 candidates, including pitch-level
+  review records (looked up by `eventIndex`);
+- all 255 bulletin entries, matched against the published page after normalising whitespace,
+  typography and the bulletin's `<sup>` ordinal markup.
+
+That check found a published occupancy value that disagreed with the feed, which is why the harvest
+now verifies its tracked base state against the runners the feed itself lists on each play and
+publishes no count (and no occupancy) when the two disagree.
