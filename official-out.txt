@@ -64,9 +64,8 @@ Checked game 778020, play 29: https://statsapi.mlb.com/api/v1/game/778020/playBy
 Checked game 745659, play 76: https://statsapi.mlb.com/api/v1/game/745659/playByPlay
 Checked game 745602, play 26: https://statsapi.mlb.com/api/v1/game/745602/playByPlay
 Traceback (most recent call last):
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 151, in <module>
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 161, in <module>
     main()
-  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 146, in main
-    assert expected in bulletin, row['entryNo']
-           ^^^^^^^^^^^^^^^^^^^^
-AssertionError: 225
+  File "/home/runner/work/LIVESCERRPEND/LIVESCERRPEND/scripts/check_official.py", line 155, in main
+    raise AssertionError(f"{row['entryNo']}: official page has {bulletin[start:start + 240]!r}"
+AssertionError: 225: official page has '8/25 BAL@STL -- In the top of the 1 st Jackson Holliday reached on what was originally ruled an error on pitcher Matthew Liberatore. This has been changed to a base hit. 8/28 SEA@TOR -- In the bottom of the 7 th Kazuma Okamoto reached on wh' but the payload says '8/25 BAL@STL -- In the top of the 1st Jackson Holliday reached on what was originally ruled an error on pitcher Matthew Liberatore. This has been changed to a base hit.'
