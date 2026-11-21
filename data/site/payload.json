@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T00:03:51+00:00",
+ "generatedAt": "2026-11-21T00:11:07+00:00",
  "seasons": [
   "2024",
   "2025",
@@ -31,7 +31,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/849838/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/849838",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9debdc74-e134-366a-8a47-75e722245464",
-   "source": "https://statsapi.mlb.com/api/v1/game/849838/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/849838/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9debdc74-e134-366a-8a47-75e722245464"
   },
   {
    "gamePk": 823616,
@@ -58,7 +59,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823616",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b01f50d7-8231-3b44-bfcb-47af6178c0dd",
-   "source": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823616/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=b01f50d7-8231-3b44-bfcb-47af6178c0dd"
   },
   {
    "gamePk": 824431,
@@ -85,7 +87,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824431/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824431",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5e2b2e1c-9648-3513-97f9-3171638d5c38",
-   "source": "https://statsapi.mlb.com/api/v1/game/824431/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824431/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5e2b2e1c-9648-3513-97f9-3171638d5c38"
   },
   {
    "gamePk": 823381,
@@ -112,7 +115,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823381/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823381",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=ed0fafd5-652a-338f-bfa1-2f5cb7f7dee9",
-   "source": "https://statsapi.mlb.com/api/v1/game/823381/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823381/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=ed0fafd5-652a-338f-bfa1-2f5cb7f7dee9"
   },
   {
    "gamePk": 823877,
@@ -139,7 +143,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823877/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823877",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=324c14b0-4598-36c8-9923-00ce363d94c8",
-   "source": "https://statsapi.mlb.com/api/v1/game/823877/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823877/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=324c14b0-4598-36c8-9923-00ce363d94c8"
   },
   {
    "gamePk": 822998,
@@ -166,7 +171,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/822998/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/822998",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=29d9ee5d-9ed6-3eb4-96db-19045bba852a",
-   "source": "https://statsapi.mlb.com/api/v1/game/822998/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/822998/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=29d9ee5d-9ed6-3eb4-96db-19045bba852a"
   },
   {
    "gamePk": 776683,
@@ -193,7 +199,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776683/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776683",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=73ae60cd-e290-3154-95d2-2f552105f78b",
-   "source": "https://statsapi.mlb.com/api/v1/game/776683/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776683/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=73ae60cd-e290-3154-95d2-2f552105f78b"
   },
   {
    "gamePk": 777008,
@@ -220,7 +227,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777008/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777008",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=bc11dc7d-6313-3af3-bf13-11f87b23fef4",
-   "source": "https://statsapi.mlb.com/api/v1/game/777008/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777008/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=bc11dc7d-6313-3af3-bf13-11f87b23fef4"
   },
   {
    "gamePk": 777291,
@@ -247,7 +255,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777291/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777291",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=804b8018-c725-39f9-8dfb-34d457bcba5d",
-   "source": "https://statsapi.mlb.com/api/v1/game/777291/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777291/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=804b8018-c725-39f9-8dfb-34d457bcba5d"
   },
   {
    "gamePk": 777432,
@@ -274,7 +283,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777432/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777432",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b9dfdef1-c73d-3089-9f1c-005341be17b2",
-   "source": "https://statsapi.mlb.com/api/v1/game/777432/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777432/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=b9dfdef1-c73d-3089-9f1c-005341be17b2"
   },
   {
    "gamePk": 777725,
@@ -301,7 +311,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777725/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777725",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=186d63c9-325c-312b-803e-ba5d8d97f183",
-   "source": "https://statsapi.mlb.com/api/v1/game/777725/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777725/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=186d63c9-325c-312b-803e-ba5d8d97f183"
   },
   {
    "gamePk": 777906,
@@ -328,7 +339,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777906/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777906",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2f5557c3-8e99-3a2c-af17-c4b23cdf7b3a",
-   "source": "https://statsapi.mlb.com/api/v1/game/777906/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777906/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2f5557c3-8e99-3a2c-af17-c4b23cdf7b3a"
   },
   {
    "gamePk": 777929,
@@ -355,7 +367,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777929/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777929",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d3e76268-d4f7-3f88-a9a4-1115206019bd",
-   "source": "https://statsapi.mlb.com/api/v1/game/777929/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777929/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d3e76268-d4f7-3f88-a9a4-1115206019bd"
   },
   {
    "gamePk": 778307,
@@ -382,7 +395,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778307",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=62b35497-caaa-3459-a33b-c650ff125734",
-   "source": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778307/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=62b35497-caaa-3459-a33b-c650ff125734"
   },
   {
    "gamePk": 745857,
@@ -409,7 +423,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745857",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e4f2348d-c54b-422c-b310-235afa78922d",
-   "source": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745857/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e4f2348d-c54b-422c-b310-235afa78922d"
   },
   {
    "gamePk": 745541,
@@ -436,7 +451,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745541/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745541",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3c65ce09-ec9a-4e2e-a87e-27ed72a096e4",
-   "source": "https://statsapi.mlb.com/api/v1/game/745541/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745541/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3c65ce09-ec9a-4e2e-a87e-27ed72a096e4"
   },
   {
    "gamePk": 746755,
@@ -463,7 +479,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746755/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746755",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=01132d09-6ff1-44b2-b8f9-fb1efda4437a",
-   "source": "https://statsapi.mlb.com/api/v1/game/746755/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746755/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=01132d09-6ff1-44b2-b8f9-fb1efda4437a"
   },
   {
    "gamePk": 746025,
@@ -490,7 +507,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746025/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746025",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=83ebd0ab-a7c8-4c97-9f1c-e98e8818caea",
-   "source": "https://statsapi.mlb.com/api/v1/game/746025/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746025/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=83ebd0ab-a7c8-4c97-9f1c-e98e8818caea"
   },
   {
    "gamePk": 747193,
@@ -517,7 +535,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/747193/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/747193",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=6ce25bab-072a-4008-b320-8bae3f96cd23",
-   "source": "https://statsapi.mlb.com/api/v1/game/747193/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/747193/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=6ce25bab-072a-4008-b320-8bae3f96cd23"
   },
   {
    "gamePk": 746386,
@@ -544,7 +563,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746386/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746386",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8b4cf5b8-e02f-4508-b0e0-3c54dc0b4ed9",
-   "source": "https://statsapi.mlb.com/api/v1/game/746386/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746386/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8b4cf5b8-e02f-4508-b0e0-3c54dc0b4ed9"
   },
   {
    "gamePk": 746803,
@@ -571,7 +591,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746803/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746803",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e3c2b288-be55-42c7-98cd-6ba017c17a0f",
-   "source": "https://statsapi.mlb.com/api/v1/game/746803/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746803/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e3c2b288-be55-42c7-98cd-6ba017c17a0f"
   },
   {
    "gamePk": 746568,
@@ -598,7 +619,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746568/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746568",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2c725a3c-f549-48a2-a8ae-bfffd2313efa",
-   "source": "https://statsapi.mlb.com/api/v1/game/746568/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746568/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2c725a3c-f549-48a2-a8ae-bfffd2313efa"
   },
   {
    "gamePk": 745352,
@@ -625,7 +647,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745352/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745352",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8aeba9fe-a9d5-4557-8e66-3fb0fb2b4b26",
-   "source": "https://statsapi.mlb.com/api/v1/game/745352/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745352/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8aeba9fe-a9d5-4557-8e66-3fb0fb2b4b26"
   }
  ],
  "additions": [
@@ -649,7 +672,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824966/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824966",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=64fac85e-7558-37c0-b712-ec7b5bfb96dd",
-   "source": "https://statsapi.mlb.com/api/v1/game/824966/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824966/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=64fac85e-7558-37c0-b712-ec7b5bfb96dd"
   },
   {
    "gamePk": 822706,
@@ -671,7 +695,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/822706/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/822706",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=a23c3f5e-d96a-38c2-b961-00b0ba9cd4c6",
-   "source": "https://statsapi.mlb.com/api/v1/game/822706/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/822706/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=a23c3f5e-d96a-38c2-b961-00b0ba9cd4c6"
   },
   {
    "gamePk": 824165,
@@ -693,7 +718,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824165/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824165",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8c52ff67-4e8d-3886-acdd-594e0ce462d0",
-   "source": "https://statsapi.mlb.com/api/v1/game/824165/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824165/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8c52ff67-4e8d-3886-acdd-594e0ce462d0"
   },
   {
    "gamePk": 824821,
@@ -715,7 +741,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824821/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824821",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f0905e98-5c8d-31c0-bdd8-e79adc81db39",
-   "source": "https://statsapi.mlb.com/api/v1/game/824821/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824821/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f0905e98-5c8d-31c0-bdd8-e79adc81db39"
   },
   {
    "gamePk": 824427,
@@ -737,7 +764,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824427/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824427",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=62fc8c01-149f-3b79-8948-79ba5b37c9e3",
-   "source": "https://statsapi.mlb.com/api/v1/game/824427/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824427/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=62fc8c01-149f-3b79-8948-79ba5b37c9e3"
   },
   {
    "gamePk": 824754,
@@ -759,7 +787,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824754/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824754",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b77ba227-f24a-361d-9a51-dd4cedae903c",
-   "source": "https://statsapi.mlb.com/api/v1/game/824754/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824754/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=b77ba227-f24a-361d-9a51-dd4cedae903c"
   },
   {
    "gamePk": 824189,
@@ -781,7 +810,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824189/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824189",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9a518add-1151-3f9f-9c64-f4b33fcf3964",
-   "source": "https://statsapi.mlb.com/api/v1/game/824189/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824189/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9a518add-1151-3f9f-9c64-f4b33fcf3964"
   },
   {
    "gamePk": 823479,
@@ -803,7 +833,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823479/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823479",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3fbc514d-b98d-3727-aeb2-9731f58ae527",
-   "source": "https://statsapi.mlb.com/api/v1/game/823479/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823479/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3fbc514d-b98d-3727-aeb2-9731f58ae527"
   },
   {
    "gamePk": 823644,
@@ -825,7 +856,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823644/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823644",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=a2d57a42-c4ca-31ca-88e6-a0b10657410c",
-   "source": "https://statsapi.mlb.com/api/v1/game/823644/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823644/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=a2d57a42-c4ca-31ca-88e6-a0b10657410c"
   },
   {
    "gamePk": 822834,
@@ -847,7 +879,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/822834/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/822834",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f2adbebb-431d-31c5-b397-4b91e5f1f053",
-   "source": "https://statsapi.mlb.com/api/v1/game/822834/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/822834/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f2adbebb-431d-31c5-b397-4b91e5f1f053"
   },
   {
    "gamePk": 776288,
@@ -869,7 +902,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776288/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776288",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=c14fd632-734d-3127-86ff-b3a157f1b293",
-   "source": "https://statsapi.mlb.com/api/v1/game/776288/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776288/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=c14fd632-734d-3127-86ff-b3a157f1b293"
   },
   {
    "gamePk": 776305,
@@ -891,7 +925,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776305/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776305",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=ae2b5ce2-2aa3-3918-84df-05c9870dea2a",
-   "source": "https://statsapi.mlb.com/api/v1/game/776305/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776305/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=ae2b5ce2-2aa3-3918-84df-05c9870dea2a"
   },
   {
    "gamePk": 776832,
@@ -913,7 +948,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776832/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776832",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9552481d-dc76-374c-b67e-b4885ead712d",
-   "source": "https://statsapi.mlb.com/api/v1/game/776832/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776832/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9552481d-dc76-374c-b67e-b4885ead712d"
   },
   {
    "gamePk": 777105,
@@ -935,7 +971,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777105/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777105",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=39b57572-f6b6-3f6f-87af-3e9ba398e7be",
-   "source": "https://statsapi.mlb.com/api/v1/game/777105/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777105/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=39b57572-f6b6-3f6f-87af-3e9ba398e7be"
   },
   {
    "gamePk": 777398,
@@ -957,7 +994,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777398",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=37410210-4968-3dd7-8cc3-e1be95f34c79",
-   "source": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=37410210-4968-3dd7-8cc3-e1be95f34c79"
   },
   {
    "gamePk": 777398,
@@ -979,7 +1017,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777398",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=616694d3-0821-3fe5-9e62-3648d791eef7",
-   "source": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777398/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=616694d3-0821-3fe5-9e62-3648d791eef7"
   },
   {
    "gamePk": 777718,
@@ -1001,7 +1040,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777718/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777718",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=041b346b-9d1a-3437-9713-fa68cae9bc66",
-   "source": "https://statsapi.mlb.com/api/v1/game/777718/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777718/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=041b346b-9d1a-3437-9713-fa68cae9bc66"
   },
   {
    "gamePk": 777925,
@@ -1023,7 +1063,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777925/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777925",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f1a01ca8-d3df-35c9-8e8b-4eb4b17ff0c7",
-   "source": "https://statsapi.mlb.com/api/v1/game/777925/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777925/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f1a01ca8-d3df-35c9-8e8b-4eb4b17ff0c7"
   },
   {
    "gamePk": 778276,
@@ -1045,7 +1086,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778276/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778276",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3f3460bf-a53b-3bd9-9522-38183fe7c4c1",
-   "source": "https://statsapi.mlb.com/api/v1/game/778276/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778276/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3f3460bf-a53b-3bd9-9522-38183fe7c4c1"
   },
   {
    "gamePk": 778464,
@@ -1067,7 +1109,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778464/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778464",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2d402961-5165-3230-a87d-3d3b551491b7",
-   "source": "https://statsapi.mlb.com/api/v1/game/778464/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778464/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2d402961-5165-3230-a87d-3d3b551491b7"
   },
   {
    "gamePk": 778475,
@@ -1089,7 +1132,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778475/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778475",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b9eb0769-fca0-3541-add4-f65afa768feb",
-   "source": "https://statsapi.mlb.com/api/v1/game/778475/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778475/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=b9eb0769-fca0-3541-add4-f65afa768feb"
   },
   {
    "gamePk": 744878,
@@ -1111,7 +1155,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/744878/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/744878",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=4a48bdc5-0371-4423-9d46-a74039ccd974",
-   "source": "https://statsapi.mlb.com/api/v1/game/744878/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/744878/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=4a48bdc5-0371-4423-9d46-a74039ccd974"
   },
   {
    "gamePk": 746628,
@@ -1133,7 +1178,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746628/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746628",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=519f259c-6b69-4c46-91b5-852c6c378d3a",
-   "source": "https://statsapi.mlb.com/api/v1/game/746628/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746628/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=519f259c-6b69-4c46-91b5-852c6c378d3a"
   },
   {
    "gamePk": 744897,
@@ -1155,7 +1201,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/744897/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/744897",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8857ee11-a5cb-487d-b20a-d848f3dac67c",
-   "source": "https://statsapi.mlb.com/api/v1/game/744897/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/744897/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8857ee11-a5cb-487d-b20a-d848f3dac67c"
   },
   {
    "gamePk": 746846,
@@ -1177,7 +1224,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746846/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746846",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=bc34b2cb-1097-4c53-8c4b-2f4ed3f507cb",
-   "source": "https://statsapi.mlb.com/api/v1/game/746846/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746846/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=bc34b2cb-1097-4c53-8c4b-2f4ed3f507cb"
   },
   {
    "gamePk": 746537,
@@ -1199,7 +1247,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746537/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746537",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=fa3a18eb-9ad8-41f9-b6ee-da6c9660b4d9",
-   "source": "https://statsapi.mlb.com/api/v1/game/746537/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746537/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=fa3a18eb-9ad8-41f9-b6ee-da6c9660b4d9"
   },
   {
    "gamePk": 746946,
@@ -1221,7 +1270,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746946/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746946",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3d8d021d-c4e8-4ab7-bc20-ed5ee96105f1",
-   "source": "https://statsapi.mlb.com/api/v1/game/746946/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746946/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3d8d021d-c4e8-4ab7-bc20-ed5ee96105f1"
   },
   {
    "gamePk": 745578,
@@ -1243,7 +1293,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745578/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745578",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=bb32e85a-259e-4ade-92d5-60b5d04567e2",
-   "source": "https://statsapi.mlb.com/api/v1/game/745578/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745578/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=bb32e85a-259e-4ade-92d5-60b5d04567e2"
   },
   {
    "gamePk": 745419,
@@ -1265,7 +1316,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745419/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745419",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e166f93f-c58d-41d6-aaa8-619794e5dc5a",
-   "source": "https://statsapi.mlb.com/api/v1/game/745419/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745419/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e166f93f-c58d-41d6-aaa8-619794e5dc5a"
   },
   {
    "gamePk": 745839,
@@ -1287,7 +1339,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745839/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745839",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3f99fde4-35aa-4e91-b3ce-5c0eb3b19823",
-   "source": "https://statsapi.mlb.com/api/v1/game/745839/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745839/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3f99fde4-35aa-4e91-b3ce-5c0eb3b19823"
   },
   {
    "gamePk": 745601,
@@ -1309,7 +1362,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745601/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745601",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=bf795818-05a9-45d0-9080-f17e20d25ea5",
-   "source": "https://statsapi.mlb.com/api/v1/game/745601/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745601/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=bf795818-05a9-45d0-9080-f17e20d25ea5"
   }
  ],
  "candidates": [
@@ -1334,7 +1388,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/849805/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/849805",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=92c274c8-0915-302d-b297-010915383f14",
-   "source": "https://statsapi.mlb.com/api/v1/game/849805/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/849805/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=92c274c8-0915-302d-b297-010915383f14"
   },
   {
    "gamePk": 849820,
@@ -1357,7 +1412,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/849820/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/849820",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=6cfabddc-4351-3b6d-8ba5-0459b463aa29",
-   "source": "https://statsapi.mlb.com/api/v1/game/849820/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/849820/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=6cfabddc-4351-3b6d-8ba5-0459b463aa29"
   },
   {
    "gamePk": 824625,
@@ -1380,7 +1436,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824625/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824625",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=48acc24d-ba64-3e8c-8498-9ea34d7e0429",
-   "source": "https://statsapi.mlb.com/api/v1/game/824625/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824625/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=48acc24d-ba64-3e8c-8498-9ea34d7e0429"
   },
   {
    "gamePk": 823412,
@@ -1426,7 +1483,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824624/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824624",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5d70e4ee-5ab1-3288-8c5f-d3e582db6818",
-   "source": "https://statsapi.mlb.com/api/v1/game/824624/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824624/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5d70e4ee-5ab1-3288-8c5f-d3e582db6818"
   },
   {
    "gamePk": 823899,
@@ -1449,7 +1507,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823899/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823899",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3134d71f-77b6-3bab-b61b-68f35b6fb82e",
-   "source": "https://statsapi.mlb.com/api/v1/game/823899/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823899/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3134d71f-77b6-3bab-b61b-68f35b6fb82e"
   },
   {
    "gamePk": 823573,
@@ -1472,7 +1531,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823573/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823573",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=04992f07-9dd1-3a3f-a810-15f805cfd5ac",
-   "source": "https://statsapi.mlb.com/api/v1/game/823573/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823573/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=04992f07-9dd1-3a3f-a810-15f805cfd5ac"
   },
   {
    "gamePk": 824627,
@@ -1518,7 +1578,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824312/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824312",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=a34a05ed-58b8-390c-a686-67b88e12e89f",
-   "source": "https://statsapi.mlb.com/api/v1/game/824312/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824312/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=a34a05ed-58b8-390c-a686-67b88e12e89f"
   },
   {
    "gamePk": 824153,
@@ -1541,7 +1602,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824153/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824153",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=0cb31728-bf73-3b6d-a6a1-4ad5a8ecabc9",
-   "source": "https://statsapi.mlb.com/api/v1/game/824153/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824153/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=0cb31728-bf73-3b6d-a6a1-4ad5a8ecabc9"
   },
   {
    "gamePk": 823424,
@@ -1564,7 +1626,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823424/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823424",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=0f18671b-9a30-3d0c-91ba-4b48a9dfed40",
-   "source": "https://statsapi.mlb.com/api/v1/game/823424/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823424/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=0f18671b-9a30-3d0c-91ba-4b48a9dfed40"
   },
   {
    "gamePk": 822774,
@@ -1587,7 +1650,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/822774/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/822774",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=373a4f4c-dcdd-38a0-815c-9cfee596d049",
-   "source": "https://statsapi.mlb.com/api/v1/game/822774/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/822774/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=373a4f4c-dcdd-38a0-815c-9cfee596d049"
   },
   {
    "gamePk": 822780,
@@ -1633,7 +1697,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/822780/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/822780",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=81fff979-7b64-3c1b-9246-241f37cee965",
-   "source": "https://statsapi.mlb.com/api/v1/game/822780/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/822780/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=81fff979-7b64-3c1b-9246-241f37cee965"
   },
   {
    "gamePk": 824649,
@@ -1656,7 +1721,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824649/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824649",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=07fd9919-1bba-3f3d-ba46-360890a699db",
-   "source": "https://statsapi.mlb.com/api/v1/game/824649/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824649/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=07fd9919-1bba-3f3d-ba46-360890a699db"
   },
   {
    "gamePk": 824405,
@@ -1679,7 +1745,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824405/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824405",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=957d3377-5b97-3236-9ee1-c6aaf2886417",
-   "source": "https://statsapi.mlb.com/api/v1/game/824405/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824405/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=957d3377-5b97-3236-9ee1-c6aaf2886417"
   },
   {
    "gamePk": 824409,
@@ -1702,7 +1769,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824409/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824409",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9a901655-cb78-3c96-af2c-2920423fc311",
-   "source": "https://statsapi.mlb.com/api/v1/game/824409/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824409/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9a901655-cb78-3c96-af2c-2920423fc311"
   },
   {
    "gamePk": 824086,
@@ -1748,7 +1816,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823029/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823029",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=15d5f809-e56c-3292-96bc-a1d6b8bb312c",
-   "source": "https://statsapi.mlb.com/api/v1/game/823029/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823029/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=15d5f809-e56c-3292-96bc-a1d6b8bb312c"
   },
   {
    "gamePk": 823846,
@@ -1771,7 +1840,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823846/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823846",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=077500fb-5753-3b17-aa1e-3606fb138f91",
-   "source": "https://statsapi.mlb.com/api/v1/game/823846/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823846/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=077500fb-5753-3b17-aa1e-3606fb138f91"
   },
   {
    "gamePk": 823930,
@@ -1794,7 +1864,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823930/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823930",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e9a72832-b117-385a-9ee7-887090c53a3d",
-   "source": "https://statsapi.mlb.com/api/v1/game/823930/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823930/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e9a72832-b117-385a-9ee7-887090c53a3d"
   },
   {
    "gamePk": 823442,
@@ -1840,7 +1911,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823039/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823039",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d1328114-d441-39ac-a192-2e818084f0dc",
-   "source": "https://statsapi.mlb.com/api/v1/game/823039/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823039/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d1328114-d441-39ac-a192-2e818084f0dc"
   },
   {
    "gamePk": 824585,
@@ -1863,7 +1935,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824585/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824585",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=306ab769-226c-35cf-9bee-14def269c6b9",
-   "source": "https://statsapi.mlb.com/api/v1/game/824585/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824585/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=306ab769-226c-35cf-9bee-14def269c6b9"
   },
   {
    "gamePk": 823531,
@@ -1909,7 +1982,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824823/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824823",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5d9fcb91-7a26-3efc-bd43-c8ab7a76b97e",
-   "source": "https://statsapi.mlb.com/api/v1/game/824823/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824823/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5d9fcb91-7a26-3efc-bd43-c8ab7a76b97e"
   },
   {
    "gamePk": 823855,
@@ -1955,7 +2029,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823378/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823378",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9c5bf32d-d3f5-3022-9533-d3f7d9639eda",
-   "source": "https://statsapi.mlb.com/api/v1/game/823378/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823378/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9c5bf32d-d3f5-3022-9533-d3f7d9639eda"
   },
   {
    "gamePk": 823784,
@@ -2001,7 +2076,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823464/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823464",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8e7aa1fe-003e-3e8f-a3d9-68a847380bba",
-   "source": "https://statsapi.mlb.com/api/v1/game/823464/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823464/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8e7aa1fe-003e-3e8f-a3d9-68a847380bba"
   },
   {
    "gamePk": 823873,
@@ -2024,7 +2100,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823873/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823873",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d455347a-fd4f-325b-820b-58b523e62c2e",
-   "source": "https://statsapi.mlb.com/api/v1/game/823873/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823873/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d455347a-fd4f-325b-820b-58b523e62c2e"
   },
   {
    "gamePk": 824120,
@@ -2047,7 +2124,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824120/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824120",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=a58ef072-843b-3657-b128-dbb2bad40121",
-   "source": "https://statsapi.mlb.com/api/v1/game/824120/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824120/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=a58ef072-843b-3657-b128-dbb2bad40121"
   },
   {
    "gamePk": 823552,
@@ -2093,7 +2171,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823145/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823145",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8ca93a73-829f-3445-b712-a0d4623440c8",
-   "source": "https://statsapi.mlb.com/api/v1/game/823145/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823145/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8ca93a73-829f-3445-b712-a0d4623440c8"
   },
   {
    "gamePk": 825014,
@@ -2116,7 +2195,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/825014/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/825014",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=ec9081ac-cda8-31c7-8d35-394c83a1871b",
-   "source": "https://statsapi.mlb.com/api/v1/game/825014/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/825014/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=ec9081ac-cda8-31c7-8d35-394c83a1871b"
   },
   {
    "gamePk": 823719,
@@ -2139,7 +2219,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823719/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823719",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=7de55a92-f8a9-3f5d-ad15-cd1668fd0fc9",
-   "source": "https://statsapi.mlb.com/api/v1/game/823719/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823719/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=7de55a92-f8a9-3f5d-ad15-cd1668fd0fc9"
   },
   {
    "gamePk": 824203,
@@ -2185,7 +2266,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824448/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824448",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=de87da2f-f815-3c64-8eb7-eaf7cd5faa26",
-   "source": "https://statsapi.mlb.com/api/v1/game/824448/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824448/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=de87da2f-f815-3c64-8eb7-eaf7cd5faa26"
   },
   {
    "gamePk": 823882,
@@ -2208,7 +2290,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823882/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823882",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=71342d7e-68d6-3b67-8c1a-21a4f77f41dd",
-   "source": "https://statsapi.mlb.com/api/v1/game/823882/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823882/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=71342d7e-68d6-3b67-8c1a-21a4f77f41dd"
   },
   {
    "gamePk": 824291,
@@ -2231,7 +2314,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/824291/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/824291",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=130abe44-5ded-32d0-9290-1f74f0755ef1",
-   "source": "https://statsapi.mlb.com/api/v1/game/824291/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/824291/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=130abe44-5ded-32d0-9290-1f74f0755ef1"
   },
   {
    "gamePk": 823804,
@@ -2277,7 +2361,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823156/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823156",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5a687b65-b07a-39f0-b216-fe8e83fee142",
-   "source": "https://statsapi.mlb.com/api/v1/game/823156/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823156/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5a687b65-b07a-39f0-b216-fe8e83fee142"
   },
   {
    "gamePk": 823807,
@@ -2300,7 +2385,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/823807/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/823807",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=55339916-c869-33a1-821c-596e6eeeb7b9",
-   "source": "https://statsapi.mlb.com/api/v1/game/823807/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/823807/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=55339916-c869-33a1-821c-596e6eeeb7b9"
   },
   {
    "gamePk": 825108,
@@ -2323,7 +2409,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/825108/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/825108",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5133dd92-f787-3e8c-92a0-3370d6834b16",
-   "source": "https://statsapi.mlb.com/api/v1/game/825108/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/825108/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5133dd92-f787-3e8c-92a0-3370d6834b16"
   },
   {
    "gamePk": 813073,
@@ -2346,7 +2433,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/813073/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/813073",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=061341ea-f192-31d7-834b-2ec1e6bbc5ba",
-   "source": "https://statsapi.mlb.com/api/v1/game/813073/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/813073/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=061341ea-f192-31d7-834b-2ec1e6bbc5ba"
   },
   {
    "gamePk": 813071,
@@ -2369,7 +2457,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/813071/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/813071",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8bf28740-39f0-3d54-8a97-494f30d10aa0",
-   "source": "https://statsapi.mlb.com/api/v1/game/813071/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/813071/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8bf28740-39f0-3d54-8a97-494f30d10aa0"
   },
   {
    "gamePk": 813072,
@@ -2392,7 +2481,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/813072/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/813072",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9a96b842-0414-3a41-b057-8d20497b90c2",
-   "source": "https://statsapi.mlb.com/api/v1/game/813072/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/813072/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9a96b842-0414-3a41-b057-8d20497b90c2"
   },
   {
    "gamePk": 776317,
@@ -2484,7 +2574,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776409/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776409",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=de98bc23-0d51-3a8a-a933-8a5a4b807f58",
-   "source": "https://statsapi.mlb.com/api/v1/game/776409/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776409/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=de98bc23-0d51-3a8a-a933-8a5a4b807f58"
   },
   {
    "gamePk": 776474,
@@ -2507,7 +2598,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776474/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776474",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2c0dc8b6-3da4-3a40-9247-bc23020213da",
-   "source": "https://statsapi.mlb.com/api/v1/game/776474/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776474/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2c0dc8b6-3da4-3a40-9247-bc23020213da"
   },
   {
    "gamePk": 776491,
@@ -2530,7 +2622,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776491/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776491",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e1fe4496-8d7b-363e-b9c2-cc2d89526c79",
-   "source": "https://statsapi.mlb.com/api/v1/game/776491/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776491/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e1fe4496-8d7b-363e-b9c2-cc2d89526c79"
   },
   {
    "gamePk": 776484,
@@ -2576,7 +2669,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776495/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776495",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3d9432af-e5bb-3f5a-a444-c0886fcacc5c",
-   "source": "https://statsapi.mlb.com/api/v1/game/776495/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776495/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3d9432af-e5bb-3f5a-a444-c0886fcacc5c"
   },
   {
    "gamePk": 776518,
@@ -2599,7 +2693,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776518/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776518",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2d28d8a3-22c5-3307-a6ec-2ad89f016f2b",
-   "source": "https://statsapi.mlb.com/api/v1/game/776518/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776518/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2d28d8a3-22c5-3307-a6ec-2ad89f016f2b"
   },
   {
    "gamePk": 776549,
@@ -2622,7 +2717,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776549/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776549",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d0086dbf-d7a1-356c-964e-f0932525c25e",
-   "source": "https://statsapi.mlb.com/api/v1/game/776549/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776549/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d0086dbf-d7a1-356c-964e-f0932525c25e"
   },
   {
    "gamePk": 776587,
@@ -2668,7 +2764,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776723/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776723",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=cf466fd3-4876-3a49-92c7-e9cf99cb9cf8",
-   "source": "https://statsapi.mlb.com/api/v1/game/776723/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776723/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=cf466fd3-4876-3a49-92c7-e9cf99cb9cf8"
   },
   {
    "gamePk": 776993,
@@ -2691,7 +2788,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/776993/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/776993",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d9ed3410-10bd-3046-8cb1-52cf764f9af1",
-   "source": "https://statsapi.mlb.com/api/v1/game/776993/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/776993/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d9ed3410-10bd-3046-8cb1-52cf764f9af1"
   },
   {
    "gamePk": 777079,
@@ -2714,7 +2812,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777079/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777079",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=6e676ad0-4ce4-3dc0-8b6f-518015833618",
-   "source": "https://statsapi.mlb.com/api/v1/game/777079/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777079/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=6e676ad0-4ce4-3dc0-8b6f-518015833618"
   },
   {
    "gamePk": 777163,
@@ -2737,7 +2836,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777163/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777163",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=200c612e-a394-3501-a652-53217c651a2f",
-   "source": "https://statsapi.mlb.com/api/v1/game/777163/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777163/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=200c612e-a394-3501-a652-53217c651a2f"
   },
   {
    "gamePk": 777188,
@@ -2760,7 +2860,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777188/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777188",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d84fb5d0-4360-3685-9a58-2f6688fc84a7",
-   "source": "https://statsapi.mlb.com/api/v1/game/777188/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777188/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d84fb5d0-4360-3685-9a58-2f6688fc84a7"
   },
   {
    "gamePk": 777201,
@@ -2783,7 +2884,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777201/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777201",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=33065f5a-85ed-3fb6-92a6-968158389d37",
-   "source": "https://statsapi.mlb.com/api/v1/game/777201/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777201/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=33065f5a-85ed-3fb6-92a6-968158389d37"
   },
   {
    "gamePk": 777207,
@@ -2806,7 +2908,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777207/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777207",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e18b7adf-5f6c-3558-857c-51345367577a",
-   "source": "https://statsapi.mlb.com/api/v1/game/777207/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777207/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e18b7adf-5f6c-3558-857c-51345367577a"
   },
   {
    "gamePk": 777292,
@@ -2829,7 +2932,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777292/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777292",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=781bcfc4-5509-3439-a7cf-1f355164c002",
-   "source": "https://statsapi.mlb.com/api/v1/game/777292/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777292/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=781bcfc4-5509-3439-a7cf-1f355164c002"
   },
   {
    "gamePk": 777318,
@@ -2875,7 +2979,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777345/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777345",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=a7ec4480-88c3-3a1e-a29d-038efb1edc04",
-   "source": "https://statsapi.mlb.com/api/v1/game/777345/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777345/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=a7ec4480-88c3-3a1e-a29d-038efb1edc04"
   },
   {
    "gamePk": 777370,
@@ -2898,7 +3003,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777370/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777370",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e6dfe910-afed-3cc7-8559-276ce02ed2e0",
-   "source": "https://statsapi.mlb.com/api/v1/game/777370/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777370/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e6dfe910-afed-3cc7-8559-276ce02ed2e0"
   },
   {
    "gamePk": 777380,
@@ -2921,7 +3027,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777380/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777380",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=1844244c-36d0-39cf-800e-342ed842079a",
-   "source": "https://statsapi.mlb.com/api/v1/game/777380/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777380/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=1844244c-36d0-39cf-800e-342ed842079a"
   },
   {
    "gamePk": 777467,
@@ -2944,7 +3051,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777467/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777467",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=2401649c-7d58-3863-8295-22226e6022f7",
-   "source": "https://statsapi.mlb.com/api/v1/game/777467/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777467/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=2401649c-7d58-3863-8295-22226e6022f7"
   },
   {
    "gamePk": 777512,
@@ -2967,7 +3075,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777512/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777512",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=0d884c7d-ba8b-3ec9-b8d9-a242b783d7f9",
-   "source": "https://statsapi.mlb.com/api/v1/game/777512/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777512/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=0d884c7d-ba8b-3ec9-b8d9-a242b783d7f9"
   },
   {
    "gamePk": 777547,
@@ -2990,7 +3099,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777547/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777547",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e6006edc-5171-362a-88a3-bcc3747622da",
-   "source": "https://statsapi.mlb.com/api/v1/game/777547/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777547/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e6006edc-5171-362a-88a3-bcc3747622da"
   },
   {
    "gamePk": 777599,
@@ -3013,7 +3123,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777599/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777599",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=e8ef2974-420d-38a9-8ff1-b9866f141b48",
-   "source": "https://statsapi.mlb.com/api/v1/game/777599/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777599/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=e8ef2974-420d-38a9-8ff1-b9866f141b48"
   },
   {
    "gamePk": 777685,
@@ -3036,7 +3147,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777685/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777685",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f22ce1a1-af5f-3325-9d73-7378a0d62c92",
-   "source": "https://statsapi.mlb.com/api/v1/game/777685/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777685/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f22ce1a1-af5f-3325-9d73-7378a0d62c92"
   },
   {
    "gamePk": 777739,
@@ -3059,7 +3171,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777739/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777739",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=36ed05bf-2542-3c9e-9ae0-5604a5ccc2fd",
-   "source": "https://statsapi.mlb.com/api/v1/game/777739/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777739/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=36ed05bf-2542-3c9e-9ae0-5604a5ccc2fd"
   },
   {
    "gamePk": 777740,
@@ -3105,7 +3218,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777808/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777808",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=17436689-a19c-30df-bc65-b37eb04af1cd",
-   "source": "https://statsapi.mlb.com/api/v1/game/777808/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777808/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=17436689-a19c-30df-bc65-b37eb04af1cd"
   },
   {
    "gamePk": 777823,
@@ -3128,7 +3242,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777823/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777823",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=c31e2bab-30ff-31e1-a47c-bf8c65f6abdb",
-   "source": "https://statsapi.mlb.com/api/v1/game/777823/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777823/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=c31e2bab-30ff-31e1-a47c-bf8c65f6abdb"
   },
   {
    "gamePk": 777863,
@@ -3151,7 +3266,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/777863/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/777863",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8f607a88-9c91-34a2-8030-ed93f4758ebe",
-   "source": "https://statsapi.mlb.com/api/v1/game/777863/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/777863/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8f607a88-9c91-34a2-8030-ed93f4758ebe"
   },
   {
    "gamePk": 778020,
@@ -3174,7 +3290,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778020/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778020",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=186b411a-ee23-3a8c-b663-ee51d9e4b2ce",
-   "source": "https://statsapi.mlb.com/api/v1/game/778020/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778020/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=186b411a-ee23-3a8c-b663-ee51d9e4b2ce"
   },
   {
    "gamePk": 778015,
@@ -3197,7 +3314,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778015/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778015",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=8b4e7006-930e-37e4-bb05-86f0ffa653d2",
-   "source": "https://statsapi.mlb.com/api/v1/game/778015/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778015/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=8b4e7006-930e-37e4-bb05-86f0ffa653d2"
   },
   {
    "gamePk": 778112,
@@ -3220,7 +3338,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778112/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778112",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=c08e53e2-2528-36c8-9f4d-9c489144bd4c",
-   "source": "https://statsapi.mlb.com/api/v1/game/778112/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778112/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=c08e53e2-2528-36c8-9f4d-9c489144bd4c"
   },
   {
    "gamePk": 778159,
@@ -3266,7 +3385,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778199/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778199",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=7bfe640c-d6e6-35aa-838b-1a4d2cff403c",
-   "source": "https://statsapi.mlb.com/api/v1/game/778199/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778199/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=7bfe640c-d6e6-35aa-838b-1a4d2cff403c"
   },
   {
    "gamePk": 778415,
@@ -3289,7 +3409,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/778415/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/778415",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=7170be8b-36e9-30b2-9281-d9af4c2ce151",
-   "source": "https://statsapi.mlb.com/api/v1/game/778415/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/778415/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=7170be8b-36e9-30b2-9281-d9af4c2ce151"
   },
   {
    "gamePk": 778522,
@@ -3358,7 +3479,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/744879/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/744879",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=fb736196-0d43-4263-803f-d31c5ef671ea",
-   "source": "https://statsapi.mlb.com/api/v1/game/744879/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/744879/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=fb736196-0d43-4263-803f-d31c5ef671ea"
   },
   {
    "gamePk": 744961,
@@ -3404,7 +3526,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745694/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745694",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=21628ffd-129b-43c0-8db1-fc7e0eabd634",
-   "source": "https://statsapi.mlb.com/api/v1/game/745694/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745694/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=21628ffd-129b-43c0-8db1-fc7e0eabd634"
   },
   {
    "gamePk": 746271,
@@ -3427,7 +3550,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746271/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746271",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=b7f677a6-40bb-4fd3-bc59-a6a93fa69570",
-   "source": "https://statsapi.mlb.com/api/v1/game/746271/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746271/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=b7f677a6-40bb-4fd3-bc59-a6a93fa69570"
   },
   {
    "gamePk": 745707,
@@ -3450,7 +3574,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745707/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745707",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=07457076-0136-0033-000c-f08cd117d70a",
-   "source": "https://statsapi.mlb.com/api/v1/game/745707/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745707/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=07457076-0136-0033-000c-f08cd117d70a"
   },
   {
    "gamePk": 745295,
@@ -3473,7 +3598,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745295/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745295",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=3f5d754f-297a-4e81-9fdb-441de097f512",
-   "source": "https://statsapi.mlb.com/api/v1/game/745295/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745295/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=3f5d754f-297a-4e81-9fdb-441de097f512"
   },
   {
    "gamePk": 746266,
@@ -3496,7 +3622,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746266/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746266",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=ddbd2beb-e7b9-45d6-a430-d99e371b315c",
-   "source": "https://statsapi.mlb.com/api/v1/game/746266/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746266/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=ddbd2beb-e7b9-45d6-a430-d99e371b315c"
   },
   {
    "gamePk": 746273,
@@ -3565,7 +3692,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746443/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746443",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=d124d194-1399-4cf6-91ce-d2298b3d83aa",
-   "source": "https://statsapi.mlb.com/api/v1/game/746443/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746443/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=d124d194-1399-4cf6-91ce-d2298b3d83aa"
   },
   {
    "gamePk": 745543,
@@ -3588,7 +3716,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745543/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745543",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f3b3c613-a6c9-4dd9-a83c-c134a4715678",
-   "source": "https://statsapi.mlb.com/api/v1/game/745543/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745543/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f3b3c613-a6c9-4dd9-a83c-c134a4715678"
   },
   {
    "gamePk": 747008,
@@ -3611,7 +3740,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/747008/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/747008",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=920dc354-6949-4d09-a623-790d6b3afe84",
-   "source": "https://statsapi.mlb.com/api/v1/game/747008/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/747008/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=920dc354-6949-4d09-a623-790d6b3afe84"
   },
   {
    "gamePk": 745059,
@@ -3634,7 +3764,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745059/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745059",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=33b4cb24-13bd-4a3d-a4b7-9692805c7101",
-   "source": "https://statsapi.mlb.com/api/v1/game/745059/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745059/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=33b4cb24-13bd-4a3d-a4b7-9692805c7101"
   },
   {
    "gamePk": 745633,
@@ -3657,7 +3788,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745633/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745633",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=5869e73d-9ce2-43f9-b139-0ef60ceba8c1",
-   "source": "https://statsapi.mlb.com/api/v1/game/745633/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745633/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=5869e73d-9ce2-43f9-b139-0ef60ceba8c1"
   },
   {
    "gamePk": 745481,
@@ -3680,7 +3812,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745481/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745481",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=402a046a-ee44-4831-9db4-2679e62fb747",
-   "source": "https://statsapi.mlb.com/api/v1/game/745481/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745481/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=402a046a-ee44-4831-9db4-2679e62fb747"
   },
   {
    "gamePk": 746769,
@@ -3703,7 +3836,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746769/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746769",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=102bb4ea-8f95-4a45-acab-c90351479e72",
-   "source": "https://statsapi.mlb.com/api/v1/game/746769/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746769/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=102bb4ea-8f95-4a45-acab-c90351479e72"
   },
   {
    "gamePk": 745243,
@@ -3726,7 +3860,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745243/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745243",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=eba69595-da39-4b98-8e5a-d557bda66f76",
-   "source": "https://statsapi.mlb.com/api/v1/game/745243/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745243/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=eba69595-da39-4b98-8e5a-d557bda66f76"
   },
   {
    "gamePk": 747016,
@@ -3749,7 +3884,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/747016/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/747016",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=4a1bac34-053e-4c23-a12a-2bde23fd87e6",
-   "source": "https://statsapi.mlb.com/api/v1/game/747016/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/747016/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=4a1bac34-053e-4c23-a12a-2bde23fd87e6"
   },
   {
    "gamePk": 744922,
@@ -3772,7 +3908,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/744922/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/744922",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=fab84ede-9779-4b25-8f6a-9e2280ffef15",
-   "source": "https://statsapi.mlb.com/api/v1/game/744922/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/744922/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=fab84ede-9779-4b25-8f6a-9e2280ffef15"
   },
   {
    "gamePk": 746541,
@@ -3818,7 +3955,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745403/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745403",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=827512ab-00bb-4b3b-a3c3-30490d30ace3",
-   "source": "https://statsapi.mlb.com/api/v1/game/745403/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745403/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=827512ab-00bb-4b3b-a3c3-30490d30ace3"
   },
   {
    "gamePk": 746055,
@@ -3841,7 +3979,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746055",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=7bbeed6a-5b43-4dd7-9154-0c9857e4001f",
-   "source": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=7bbeed6a-5b43-4dd7-9154-0c9857e4001f"
   },
   {
    "gamePk": 746055,
@@ -3864,7 +4003,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746055",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=064d8d16-538e-4240-87fe-6d083f038cce",
-   "source": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746055/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=064d8d16-538e-4240-87fe-6d083f038cce"
   },
   {
    "gamePk": 747025,
@@ -3910,7 +4050,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745979/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745979",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=03840ef5-4eb1-4f24-8990-f59babe5efdf",
-   "source": "https://statsapi.mlb.com/api/v1/game/745979/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745979/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=03840ef5-4eb1-4f24-8990-f59babe5efdf"
   },
   {
    "gamePk": 746870,
@@ -3933,7 +4074,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746870/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746870",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=4ceba39c-f502-433d-9fe8-0aba578df731",
-   "source": "https://statsapi.mlb.com/api/v1/game/746870/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746870/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=4ceba39c-f502-433d-9fe8-0aba578df731"
   },
   {
    "gamePk": 746955,
@@ -3956,7 +4098,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746955/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746955",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=6160adbf-fbda-4282-adb6-942de909c4ab",
-   "source": "https://statsapi.mlb.com/api/v1/game/746955/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746955/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=6160adbf-fbda-4282-adb6-942de909c4ab"
   },
   {
    "gamePk": 747199,
@@ -3979,7 +4122,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/747199/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/747199",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=03a86285-650d-4f4d-ba72-fcdec0cb3355",
-   "source": "https://statsapi.mlb.com/api/v1/game/747199/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/747199/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=03a86285-650d-4f4d-ba72-fcdec0cb3355"
   },
   {
    "gamePk": 747120,
@@ -4002,7 +4146,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/747120/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/747120",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=f10e149e-2443-4ed1-a548-2c0629192cdb",
-   "source": "https://statsapi.mlb.com/api/v1/game/747120/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/747120/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=f10e149e-2443-4ed1-a548-2c0629192cdb"
   },
   {
    "gamePk": 746641,
@@ -4048,7 +4193,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745259/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745259",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=9574135d-6c69-4ba1-834e-5fb3e9c36430",
-   "source": "https://statsapi.mlb.com/api/v1/game/745259/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745259/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=9574135d-6c69-4ba1-834e-5fb3e9c36430"
   },
   {
    "gamePk": 746068,
@@ -4140,7 +4286,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746894/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746894",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=7242b8c3-c812-43d0-ac37-8ed8b0da9a1e",
-   "source": "https://statsapi.mlb.com/api/v1/game/746894/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746894/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=7242b8c3-c812-43d0-ac37-8ed8b0da9a1e"
   },
   {
    "gamePk": 745105,
@@ -4163,7 +4310,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745105/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745105",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=df94f5a0-3fd3-4eb1-b157-6b7d2cffbe89",
-   "source": "https://statsapi.mlb.com/api/v1/game/745105/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745105/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=df94f5a0-3fd3-4eb1-b157-6b7d2cffbe89"
   },
   {
    "gamePk": 746976,
@@ -4186,7 +4334,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/746976/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/746976",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=4e47a74d-0849-4449-9a72-910616d2ff1b",
-   "source": "https://statsapi.mlb.com/api/v1/game/746976/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/746976/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=4e47a74d-0849-4449-9a72-910616d2ff1b"
   },
   {
    "gamePk": 745839,
@@ -4232,7 +4381,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745197/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745197",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=fe7ac712-9965-4368-a0c1-582a79a0f770",
-   "source": "https://statsapi.mlb.com/api/v1/game/745197/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745197/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=fe7ac712-9965-4368-a0c1-582a79a0f770"
   },
   {
    "gamePk": 747222,
@@ -4278,7 +4428,8 @@
    "pbp": "https://statsapi.mlb.com/api/v1/game/745602/playByPlay",
    "filmRoom": "https://www.mlb.com/video/game/745602",
    "savant": "https://baseballsavant.mlb.com/sporty-videos?playId=015a7ce2-8c8e-4ace-98e0-379fca7bc7a4",
-   "source": "https://statsapi.mlb.com/api/v1/game/745602/playByPlay"
+   "source": "https://statsapi.mlb.com/api/v1/game/745602/playByPlay",
+   "clip": "https://baseballsavant.mlb.com/sporty-videos?playId=015a7ce2-8c8e-4ace-98e0-379fca7bc7a4"
   }
  ],
  "reviews": [],
@@ -8224,7 +8375,7 @@
     "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue"
    }
   ],
-  "freshness": "Official-feed harvest completed 2026-11-21 00:03 UTC.",
+  "freshness": "Official-feed harvest completed 2026-11-21 00:11 UTC.",
   "irregularities": [
    {
     "id": "FLAG-01",

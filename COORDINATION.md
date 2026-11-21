@@ -141,3 +141,20 @@ rebuilt corpus, and it now passes end to end in CI:
 That check found a published occupancy value that disagreed with the feed, which is why the harvest
 now verifies its tracked base state against the runners the feed itself lists on each play and
 publishes no count (and no occupancy) when the two disagree.
+
+### Published — PR #7
+
+| Item | Value |
+|---|---|
+| Pull request | https://github.com/snapquast73-boop/LIVESCERRPEND/pull/7 |
+| Head | `arena/c68ee0e2-livescerrpend` |
+| Base | `main` |
+| Merge commit | `fd07f802cb38427bcb1ecc45e0c454a9b8028050` (merged 2026-11-21T00:09:49Z) |
+| Checks before merge | `offline` pass (24 pytest checks, 8 node tests, page/link/ARIA check), `compare` pass (official drift check: all 23 run-removal rows, a sample of 1,968 reviews and 129 candidates, and all 255 bulletin entries) |
+| Pages | `harvest` ran on `main` and committed `a8af371`; the Pages API reported `built` for that commit |
+| Public checks | 23 run-removal rows render with their arithmetic and official links; `reviews.html`, `flagged-for-review.html` and `data/site/payload.json` served |
+
+Merge conflict resolved, not discarded: `main` had received PR #5/#6 from `arena/312ea5e7` after this
+branch started. That work (dated browsing via `date-panel.js`, the scorer view on official completed
+balls in play, `scripts/check_official.py` + `official.yml`) is kept in full, and this branch's archive
+loader, live replay page and harvest pipeline were layered on top. See the merge note above.

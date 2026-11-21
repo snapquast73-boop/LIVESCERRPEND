@@ -32,7 +32,7 @@ ROW_FIELDS = {
     "runRemoved": ("gamePk", "atBatIndex", "season", "date", "teams", "batter", "pitcher", "reviewType",
                    "reasonCode", "reason", "inning", "half", "event", "play", "runnersOn", "runsCredited",
                    "runsRemoved", "arithmetic", "scoreDelta", "rbi", "playId", "pbp", "filmRoom",
-                   "savant", "source"),
+                   "savant", "source", "clip"),
     "candidates": ("gamePk", "atBatIndex", "season", "date", "teams", "batter", "pitcher", "reviewType",
                    "reasonCode", "reason", "inning", "half", "event", "play", "runsCredited",
                    "noCountReason", "playId", "pbp", "filmRoom", "savant", "source"),
@@ -54,7 +54,11 @@ def load_json(path: Path, default):
 
 
 def trim(row: dict, fields: tuple[str, ...]) -> dict:
-    return {field: row.get(field) for field in fields}
+    out = {field: row.get(field) for field in fields}
+    # The client shows `clip`; it is the official Savant page for the feed's play id.
+    if out.get("clip") is None and out.get("savant"):
+        out["clip"] = out["savant"]
+    return out
 
 
 def sort_key(row: dict):
