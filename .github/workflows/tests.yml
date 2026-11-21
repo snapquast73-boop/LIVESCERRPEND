@@ -1,24 +1,38 @@
 name: tests
+
 on:
-  pull_request:
-    branches: [main]
   push:
     branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
-  test:
+  offline:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - uses: actions/setup-node@v6
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
         with:
-          node-version: '22'
-      - run: python -m pip install pytest
-      - run: python -m pytest -q
-      - run: node --test tests/*.mjs
-      - run: python tests/check_site.py
-      - run: for f in assets/js/*.js; do node --check "$f" || exit 1; done
+          node-version: "22"
+      - name: Install test dependencies
+        run: python -m pip install pytest
+      - name: Payload, bulletin and harvest-logic checks
+        run: python -m pytest -q
+      - name: Official-feed parsing tests
+        run: node --test tests/mlb.test.mjs
+      - name: Page, link and ARIA checks
+        run: python3 tests/check_site.py
+      - name: Syntax-check every browser module
+        run: for f in assets/js/*.js; do node --check "$f" || exit 1; done
+      - name: Page smoke test (jsdom, real assets, real payload)
+        run: |
+          npm install --no-save --silent jsdom
+          node tests/site-smoke.mjs

@@ -85,12 +85,17 @@ API.onLoad((payload) => {
   setStatus("Data loaded.", "ok");
   setFooter(`Verified sample · ${payload.run_removed ? payload.run_removed.length : 0} run-removals · ${payload.decisions ? payload.decisions.length : 0} scorer entries`);
 
-  RunRemoved.init(payload);
-  Pending.init(payload);
-  Reviews.init(payload);
-  DecisionChanges.init(payload);
-  Scorer.init(payload);
-  Model.init(payload);
+  // One view must never take the rest of the page down with it: each initialiser is
+  // isolated so a failure is reported on its own tab instead of blanking every tab.
+  for (const [name, view] of [["RunRemoved", RunRemoved], ["Pending", Pending], ["Reviews", Reviews],
+    ["DecisionChanges", DecisionChanges], ["Scorer", Scorer], ["Model", Model]]) {
+    try {
+      view.init(payload);
+    } catch (error) {
+      console.error(`[app] ${name}.init failed:`, error);
+      setStatus(`${name} view failed to render — see the console.`, "warn");
+    }
+  }
 
   renderAnchors(payload.anchors);
   renderMeta(payload.meta);

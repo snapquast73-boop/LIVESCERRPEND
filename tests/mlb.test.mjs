@@ -51,6 +51,57 @@ test('scanner reports partial failures and handles an empty schedule', async () 
 });
 
 
+test('review reason codes are decoded only through MLB registry suffixes', async () => {
+  const {reasonCode, isPitchReview, reviewEvents, scanReviews, reviewReasonsUrl} = await import('../assets/js/mlb.js');
+  const registry = {H: 'Home run', N: 'Fan interference', J: 'Pitch result', A: 'Tag play'};
+  assert.equal(reasonCode('NH', registry), 'H');
+  assert.equal(reasonCode('MJ', registry), 'J');
+  assert.equal(reasonCode('QZ', registry), null);
+  assert.equal(reasonCode(null, registry), null);
+  assert.equal(isPitchReview('MJ', registry, null), true);
+  assert.equal(isPitchReview('NH', registry, 0), true);
+  assert.equal(isPitchReview('NH', registry, null), false);
+});
+
+test('reviewEvents keeps play-level and pitch-level records with official details', async () => {
+  const {reviewEvents} = await import('../assets/js/mlb.js');
+  const registry = {H: 'Home run', J: 'Pitch result'};
+  const plays = [
+    {atBatIndex: 1, about: {inning: 9, halfInning: 'bottom'}, matchup: {batter: {fullName: 'Juan Soto'}},
+     result: {description: 'Umpire reviewed (home run), overturned', eventType: 'double'},
+     runners: [{details: {isScoringEvent: false}}, {details: {isScoringEvent: true}}],
+     reviewDetails: {reviewType: 'NH', isOverturned: true, inProgress: false}},
+    {atBatIndex: 2, result: {description: 'Ball', eventType: 'single'}, runners: [],
+     playEvents: [{index: 3, playId: 'guid-1', details: {description: 'Called Strike'},
+                   reviewDetails: {reviewType: 'MJ', isOverturned: true, inProgress: false}}]}
+  ];
+  const rows = reviewEvents({game, plays}, registry);
+  assert.equal(rows.length, 2);
+  assert.deepEqual(rows.map(row => [row.atBatIndex, row.eventIndex, row.reviewType, row.overturned]),
+    [[1, null, 'NH', true], [2, 3, 'MJ', true]]);
+  assert.equal(rows[0].runsCredited, 1);
+  assert.equal(rows[0].isPitch, false);
+  assert.equal(rows[1].isPitch, true);
+  assert.equal(rows[1].playId, 'guid-1');
+  assert.equal(rows[1].description, 'Called Strike');
+});
+
+test('scanReviews reads the registry once and returns rows plus feed coverage', async () => {
+  const {scanReviews} = await import('../assets/js/mlb.js');
+  const request = async url => {
+    if (url === 'https://statsapi.mlb.com/api/v1/reviewReasons') return response([{code: 'H', description: 'Home run'}]);
+    if (url === scheduleFor(date)) return response({dates: [{games: [game]}]});
+    if (url === playByPlay(42)) return response({allPlays: [{atBatIndex: 5, result: {description: 'review'},
+      reviewDetails: {reviewType: 'NH', isOverturned: true, inProgress: false}}]});
+    assert.fail(`Unexpected lookup: ${url}`);
+  };
+  const result = await scanReviews(date, request);
+  assert.equal(result.scheduled, 1);
+  assert.equal(result.rows.length, 1);
+  assert.equal(result.rows[0].reason, 'Home run');
+  assert.equal(result.failed.length, 0);
+});
+
 test('official scorer keeps true zero RBI, never manufactures missing values or model scores', async () => {
   const {getScoredBalls} = await import('../assets/js/mlb.js');
   const p = {about: {isComplete:true, inning:4}, result: {event:'Double', rbi:0},

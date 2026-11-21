@@ -8,3 +8,10 @@ data/cache/
 # Watcher database — local observation log
 data/watch.sqlite3
 *.log
+data/cache/
+node_modules/
+package-lock.json
+probe-out.txt
+trace-out.txt
+bulletin.html
+official-out.txt

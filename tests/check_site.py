@@ -24,7 +24,7 @@ class Page(HTMLParser):
                          for value in attrs.get(key, '').split())
 
 
-pages = {file: Page(file) for file in ROOT.glob('*.html')}
+pages = {file: Page(file) for file in sorted(ROOT.glob('*.html'))}
 for file, page in pages.items():
     assert all(ref in page.ids for ref in page.refs), file
     for link in page.links:
@@ -43,6 +43,7 @@ for file, page in pages.items():
                      and f"{url.fragment}-tab" in pages[target].ids)), f'{file.name}: missing {link}'
 
 assert (ROOT / 'data/site/payload.json').is_file()
+assert (ROOT / 'reviews.html').is_file()
 assert (ROOT / 'assets/js/mlb.js').is_file()
 assert (ROOT / '.nojekyll').is_file()
 print('Pages entry points, local links, ARIA targets and packaged assets verified.')

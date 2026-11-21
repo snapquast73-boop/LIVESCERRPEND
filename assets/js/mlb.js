@@ -85,6 +85,98 @@ export function getReviews({game, plays}) {
   });
 }
 
+/* ------------------------------------------------------------------ *
+ * Live replay feed helpers (used by the "All replay overturns" tab and
+ * by reviews.html). Same official feed, different presentation.
+ * ------------------------------------------------------------------ */
+
+export const reviewReasonsUrl = () => `${api}/reviewReasons`;
+
+/** MLB's own review-reason registry (code -> description). */
+export async function reviewReasonRegistry(request = fetch) {
+  const rows = await readJSON(reviewReasonsUrl(), request);
+  if (!Array.isArray(rows)) throw new Error('Unexpected MLB review-reason registry format');
+  return Object.fromEntries(rows.filter(row => row.code).map(row => [row.code, row.description]));
+}
+
+/** Longest suffix of a feed review code that exists in MLB's registry. */
+export function reasonCode(reviewType, registry) {
+  if (!reviewType || !registry) return null;
+  if (registry[reviewType]) return reviewType;
+  const suffix = reviewType.slice(-1);
+  return registry[suffix] ? suffix : null;
+}
+
+/** A pitch challenge is attached to a pitch event, or reports a pitch-result reason. */
+export function isPitchReview(reviewType, registry, eventIndex) {
+  if (eventIndex !== null && eventIndex !== undefined) return true;
+  const code = reasonCode(reviewType, registry);
+  return code === 'J' || code === 'I' || code === 'Z';
+}
+
+const runsCredited = play => (play.runners ?? [])
+  .filter(runner => runner.details?.isScoringEvent === true).length;
+
+/** Every review record in one game, overturned or not, at play and pitch level. */
+export function reviewEvents({game, plays}, registry = {}) {
+  const rows = [];
+  const base = play => ({
+    gamePk: game.gamePk,
+    atBatIndex: play.atBatIndex,
+    date: game.officialDate,
+    season: game.season,
+    teams: game.teams ? `${game.teams.away?.team?.name} @ ${game.teams.home?.team?.name}` : null,
+    batter: play.matchup?.batter?.fullName ?? null,
+    pitcher: play.matchup?.pitcher?.fullName ?? null,
+    inning: play.about?.inning ?? null,
+    half: play.about?.halfInning ?? null,
+    event: play.result?.eventType ?? null,
+    description: play.result?.description ?? null,
+    runsCredited: runsCredited(play)
+  });
+  for (const play of plays) {
+    if (play.reviewDetails) {
+      rows.push({
+        ...base(play), eventIndex: null,
+        reviewType: play.reviewDetails.reviewType ?? null,
+        inProgress: play.reviewDetails.inProgress === true,
+        overturned: play.reviewDetails.isOverturned === true
+      });
+    }
+    for (const event of play.playEvents ?? []) {
+      if (!event.reviewDetails) continue;
+      rows.push({
+        ...base(play), eventIndex: event.index ?? null,
+        reviewType: event.reviewDetails.reviewType ?? null,
+        inProgress: event.reviewDetails.inProgress === true,
+        overturned: event.reviewDetails.isOverturned === true,
+        description: event.details?.description ?? play.result?.description ?? null,
+        playId: event.playId ?? null
+      });
+    }
+  }
+  for (const row of rows) {
+    row.isPitch = isPitchReview(row.reviewType, registry, row.eventIndex);
+    const code = reasonCode(row.reviewType, registry);
+    row.reasonCode = code;
+    row.reason = code ? registry[code] : null;
+  }
+  return rows;
+}
+
+/** Scan one date's finished and in-progress games and summarise their reviews. */
+export async function scanReviews(date, request = fetch) {
+  let registry = {};
+  try {
+    registry = await reviewReasonRegistry(request);
+  } catch {
+    registry = {};
+  }
+  const result = await scanDate(date, false, request);
+  const rows = result.feeds.flatMap(feed => reviewEvents(feed, registry));
+  return {...result, rows, registry};
+}
+
 // Report only completed plate appearances with an explicit in-play event. The
 // feed's actual ruling and RBI are not estimates of a different scorer decision.
 export function getScoredBalls({game, plays}) {

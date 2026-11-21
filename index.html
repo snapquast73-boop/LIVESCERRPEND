@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MLB Run-Removed Overturns &amp; Pending Scoring Decisions — verified from official feeds</title>
 <meta name="description" content="Replay overturns and live pending official-scorer rulings, with links to MLB records." />
+<link rel="preconnect" href="https://statsapi.mlb.com" crossorigin />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -16,7 +17,7 @@
       <span class="dot" aria-hidden="true"></span>
       <div>
         <h1>Run-Removed Overturns <span class="slash">/</span> Pending Scoring Decisions</h1>
-        <p class="tag">A sample verified against official MLB records, plus direct MLB lookups. Unverified values are left blank.</p>
+        <p class="tag">Harvested from the official MLB feeds by scripts in this repository, plus direct MLB lookups in your browser. Unverified values are left blank.</p>
       </div>
     </div>
     <div class="status" id="status" role="status" aria-live="polite">loading data…</div>
@@ -34,7 +35,11 @@
 </nav>
 
 <main id="main" class="wrap">
-  <p><a href="flagged-for-review.html">Flagged for Review</a></p>
+  <p class="quicklinks">
+    <a href="reviews.html">Live replay feed</a> ·
+    <a href="flagged-for-review.html">Flagged for Review</a> ·
+    <a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/docs/VERIFICATION.md">Verification log</a>
+  </p>
   <noscript>Filtering and live lookups require JavaScript.</noscript>
 
   <!-- ============================ RUN-REMOVED ============================ -->
@@ -49,7 +54,10 @@
       </p>
       <p class="formula">runs removed = (runners on base + 1 batter) − runs the final record credits</p>
       <p class="muted">
-        This is a verified sample, not a season census. Each row links to MLB. Counts appear only when the original call is confirmed independently; unverified candidates have no count.
+        The rows are harvested from the official play-by-play of every completed game in the
+        seasons this repository covers. A count appears only where the official record states the
+        original call and the arithmetic reconciles with the official score; anything else is listed
+        as a candidate with no count. Each row links to its own MLB record.
       </p>
       <div class="summary" id="rr-summary"></div>
     </div>
@@ -86,7 +94,11 @@
         <em>“Official Scorer Ruling Pending.”</em> Detection below uses those exact registry values.
       </p>
       <p class="muted">
-        The live panel checks MLB’s current Eastern Time schedule in your browser and reports unavailable feeds separately. It refreshes while this tab is visible.
+        The live panel checks MLB’s current Eastern Time schedule in your browser and reports
+        unavailable feeds separately. It refreshes while this tab is visible. The archive underneath
+        can only show a pending marker that MLB’s archive still carries, because the marker is
+        replaced by the corrected call once the scorer rules — which is why the live view and the
+        capture workflow exist.
       </p>
       <div class="controls">
         <button class="btn primary" id="pend-refresh">Refresh live</button>
@@ -105,7 +117,8 @@
     <div class="card">
       <h2>Pending cases on file</h2>
       <p class="muted">
-        The original archive and background capture history were not included in the upload.
+        Cases recorded by the harvest and by the live-capture workflow. A case captured while the
+        ruling was still pending keeps when it was first and last seen.
       </p>
       <div class="controls">
         <label>Season <select id="pend-season"><option value="">all</option></select></label>
@@ -124,7 +137,9 @@
         Read from <code>reviewDetails</code> on the official play-by-play
         (<code>isOverturned: true</code>, <code>inProgress: false</code>). Reviews are stored at two
         levels in that feed — on the play and on the individual pitch/play event — and both are
-        collected here. Opening this tab scans today automatically; choose a past date to inspect that schedule instead. The verified sample stays available when an MLB request fails. Each row links to official play-by-play, with an official clip when confirmed.
+        collected here. Opening this tab scans today automatically and the date picker below
+        inspects any other schedule; the harvested archive loads by season. Each row links to
+        official play-by-play and to the official clip search for its play id.
       </p>
       <form class="controls" id="rv-scan">
         <label>MLB schedule date <input id="rv-date" type="date" required></label>
@@ -158,7 +173,10 @@
         fielder's choice — and whether the batter's RBI moved with it.
       </p>
       <p class="muted">
-        These verified excerpts are a sample, not a base rate or probability. A blank RBI value means MLB did not state a change in the excerpt.
+        Every entry on MLB’s published bulletin is listed with the official sentence. A before/after
+        ruling is filled in only when that sentence names both sides of the change; otherwise the row
+        is counted as unclassified and left blank. These are tallies of published entries — not a base
+        rate and not a probability.
       </p>
       <div class="controls">
         <label>Change
@@ -172,6 +190,12 @@
           </select>
         </label>
         <label>Search <input type="search" id="dc-search" placeholder="player, date, or text"></label>
+        <label>Rows
+          <select id="dc-rows">
+            <option value="classified">classified reversals only</option>
+            <option value="all">every bulletin entry</option>
+          </select>
+        </label>
         <label><input type="checkbox" id="dc-rbi" /> only entries where the RBI changed</label>
         <span class="notice" id="dc-notice"></span>
       </div>
@@ -183,7 +207,13 @@
   <!-- ============================ LIVE SCORER ============================ -->
   <section id="view-scorer" class="view" role="tabpanel" aria-labelledby="scorer-tab">    <div class="card intro">
       <h2>How a batted ball is scored — the 0–100 view</h2>
-      <p>Completed balls in play from MLB’s schedule appear here with the official ruling and RBI. Today’s results refresh while this tab is open. The original 0–100 model and snapshot were not included. Probabilities, SCI, and hypothetical RBI are unverified and are not published.</p>
+      <p>
+        Completed balls in play from MLB’s schedule appear here with the official ruling and RBI;
+        today’s results refresh while this tab is open. The original 0–100 model, its training
+        corpus and its snapshot were not part of the upload, so no probability, SCI or
+        hypothetical RBI is published — the <a href="reviews.html">live replay feed</a> shows what
+        the official record does say about a play under review.
+      </p>
       <p class="foot" id="sc-caveat"></p>
       <div class="summary" id="sc-summary"></div>
     </div>
@@ -209,7 +239,8 @@
       <h2>What the numbers can and cannot say</h2>
       <table class="kv" id="model-card"></table>
       <p class="foot">
-        No trained model or holdout metrics could be recovered.
+        The model card below records what this repository can state about the model and about the
+        rule it would have to satisfy — nothing more.
       </p>
     </div>
     <div class="card">
@@ -233,9 +264,11 @@
     <div class="card">
       <h2>How every number on this site is produced</h2>
       <ol class="method">
-        <li>Read MLB’s official schedule and play-by-play. Show reviews explicitly marked overturned and complete; use exact registered pending codes.</li>
-        <li>Verify the original call independently before reporting a run-removal count. An overturned call is not necessarily a removed run.</li>
-        <li>Compare bulletin excerpts to MLB’s original text. Leave unconfirmed fields blank.</li>
+        <li><b>Harvest.</b> <code>scripts/harvest.py</code> reads the official schedule and every completed game’s play-by-play from <code>statsapi.mlb.com</code>; <code>scripts/harvest_scoring_changes.py</code> reads MLB’s scoring-change bulletin. GitHub Actions runs both and commits the JSON — no human edits the data.</li>
+        <li><b>Detect.</b> A review counts only when the feed marks it <code>isOverturned: true</code> and <code>inProgress: false</code>. A pending ruling counts only on the two registered event codes. Review codes are decoded against MLB’s own review-reason registry.</li>
+        <li><b>Compute.</b> Runs removed = (runners on base + 1 batter) − runs the corrected record credits, and only for a completed review whose own text says the on-field call was a home run. Base occupancy is tracked from the official runner movements and cross-checked against the score printed on every play and the official final score; a game that does not reconcile publishes no count.</li>
+        <li><b>Classify.</b> A bulletin row gets a before/after call only when the official sentence names both sides; the sentence is quoted on the row.</li>
+        <li><b>Verify.</b> Three games with published run-removal values are re-derived on every run and shown in the table below with their official play-by-play links.</li>
       </ol>
     </div>
     <div class="card">
@@ -256,7 +289,7 @@
         <li><a href="https://baseballsavant.mlb.com/sporty-videos?playId=4ff0b9e8-374a-34e0-9adc-f5c198e858b3">Baseball Savant — clip for a playId</a> (example clip)</li>
         <li><a href="https://www.mlb.com/official-information/scoring-changes">MLB — official scoring changes</a> (statistical revisions, a different mechanism from replay)</li>
         <li><a href="https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf">Official Baseball Rules — Rule 9, the Official Scorer</a> (Rule 9.01(a), 9.04)</li>
-        <li><a href="https://github.com/snapquast73-boop/LIVESCERRPEND">This repository</a> — README, docs/VERIFICATION.md, docs/FLAGGED.md</li>
+        <li><a href="https://github.com/snapquast73-boop/LIVESCERRPEND">This repository</a> — scripts/harvest.py, README, docs/VERIFICATION.md, docs/FLAGGED.md</li>
       </ul>
       <p class="foot">
         Data © MLB Advanced Media, L.P. This project is not affiliated with or endorsed by MLB.
@@ -268,7 +301,7 @@
 
 <footer class="wrap foot-bar">
   <span id="footer-meta">—</span>
-  <span><a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/docs/VERIFICATION.md">verification log</a> · <a href="flagged-for-review.html">flagged for review</a></span>
+  <span><a href="reviews.html">live replay feed</a> · <a href="https://github.com/snapquast73-boop/LIVESCERRPEND/blob/main/docs/VERIFICATION.md">verification log</a> · <a href="flagged-for-review.html">flagged for review</a></span>
 </footer>
 
 <script src="assets/js/api.js"></script>

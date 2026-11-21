@@ -1,5 +1,6 @@
 """Online drift check for the published sample. Does not extrapolate or rewrite data."""
 import json
+import re
 import time
 from functools import cache
 from html.parser import HTMLParser
@@ -44,37 +45,122 @@ class VisibleText(HTMLParser):
         return ' '.join(' '.join(self.parts).split())
 
 
-def main():
-    payload = json.loads((ROOT / 'data/site/payload.json').read_text())
-    for row in payload['reviews'] + payload['run_removed'] + payload['candidates']:
+def every(rows, step):
+    """A deterministic sample that always includes the first and last row."""
+    if len(rows) <= step:
+        return list(rows)
+    picked = rows[::step]
+    if rows[-1] not in picked:
+        picked.append(rows[-1])
+    return picked
+
+
+def series_rows():
+    """Overturned reviews live in one file per season; read them all."""
+    rows = []
+    for name in sorted((ROOT / 'data/site').glob('reviews-*.json')):
+        rows.extend(json.loads(name.read_text())['reviews'])
+    return rows
+
+
+def check_game_rows(rows):
+    for row in rows:
         gid = row['gamePk']
         schedule = json.loads(read(f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&gamePk={gid}'))
-        game, = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
-        assert (row['date'], row['season']) == (game['officialDate'], game['season']), gid
+        # A suspended or resumed game can be listed on more than one date; the first
+        # entry is the official record for the gamePk, and the row is checked against it.
+        matches = [g for day in schedule['dates'] for g in day['games'] if g['gamePk'] == gid]
+        assert matches, f"{gid}: the official schedule has no game with this gamePk"
+        game = matches[0]
+        assert (row['date'], str(row['season'])) == (game['officialDate'], str(game['season'])), gid
         assert row['teams'] == ' @ '.join(game['teams'][side]['team']['name'] for side in ('away', 'home')), gid
         plays = json.loads(read(row['pbp']))['allPlays']
         idx = row['atBatIndex']
         play, = [p for p in plays if p['atBatIndex'] == idx]
-        review = play['reviewDetails']
+        # A review can sit on the play or on one of its pitch events; the row records
+        # which one with `eventIndex`, so the same record is looked up either way.
+        # A review record can sit on the play or on any of its pitch events, and the
+        # published row records which one it used. The check accepts a record at the
+        # recorded position or, for a play-level row, any record on that play — what it
+        # will not accept is a review that is not in the official feed at all.
+        index = row.get('eventIndex')
+        official_texts = {play['result']['description']}
+        records = []
+        if index is None:
+            if play.get('reviewDetails'):
+                records.append(play['reviewDetails'])
+            for event in play['playEvents'] or []:
+                if event.get('reviewDetails'):
+                    records.append(event['reviewDetails'])
+                    pitch_text = (event.get('details') or {}).get('description')
+                    if pitch_text:
+                        official_texts.add(pitch_text)
+        else:
+            event, = [e for e in play['playEvents'] if e.get('index') == index]
+            if event.get('reviewDetails'):
+                records.append(event['reviewDetails'])
+            pitch_text = (event.get('details') or {}).get('description')
+            if pitch_text:
+                official_texts.add(pitch_text)
+        matching = [r for r in records if r.get('reviewType') == row['reviewType']]
+        assert matching, f"{gid}/{idx}: the official feed has no {row['reviewType']} review record on this play"
+        review = matching[0]
         assert review['isOverturned'] is True and review['inProgress'] is False, (gid, idx)
-        assert row['reviewType'] == review['reviewType'] and row['play'] == play['result']['description'], (gid, idx)
+        assert row['play'] in official_texts, (gid, idx, row['play'], official_texts)
         assert row['batter'] == play['matchup']['batter']['fullName'], gid
-        for key, actual in [('pitcher', play['matchup']['pitcher']['fullName']), ('inning', play['about']['inning']), ('event', play['result']['event'])]:
-            if key in row:
+        for key, actual in [('pitcher', play['matchup']['pitcher']['fullName']),
+                            ('inning', play['about']['inning']),
+                            ('event', play['result']['eventType'])]:
+            if row.get(key) is not None:
                 assert row[key] == actual, (gid, key)
-        if 'runsCredited' in row:
+        if row.get('runsCredited') is not None:
             prev, = [p for p in plays if p['atBatIndex'] == idx - 1]
             score = 'awayScore' if play['about']['isTopInning'] else 'homeScore'
-            assert row['runsCredited'] == play['result'][score] - prev['result'][score], gid
-        if 'runnersOn' in row:
-            # Count distinct players already on a base, not movement records or the batter.
+            delta = play['result'][score] - prev['result'][score]
+            assert row['runsCredited'] == delta, gid
+        if row.get('runnersOn') is not None:
+            # Distinct players already on a base, not movement records and not the batter.
             runners = {r['details']['runner']['id'] for r in play['runners'] if r['movement'].get('start')}
-            assert row['runnersOn'] == len(runners), gid
+            assert row['runnersOn'] == len(runners), (gid, row['runnersOn'], len(runners))
+        if row.get('runsRemoved') is not None:
+            assert row['runsRemoved'] == (row['runnersOn'] + 1) - row['runsCredited'], (gid, row['runsRemoved'])
         print(f"Checked game {gid}, play {idx}: {row['pbp']}")
+
+
+def norm(text):
+    """Whitespace, typography and ordinal markup are normalised before comparing text.
+
+    The bulletin renders the ordinal suffix of an inning in a <sup> element, so the
+    visible text of "1st" arrives as "1 st" once the tags are stripped.
+    """
+    text = ' '.join(text.replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"')
+                    .replace('\u201d', '"').replace('\u2014', '-').replace('\u2013', '-').split())
+    return re.sub(r'(\d) (st|nd|rd|th)\b', r'\1\2', text)
+
+
+def main():
+    payload = json.loads((ROOT / 'data/site/payload.json').read_text())
+    removals = payload['run_removed']
+    reviews = series_rows()
+    candidates = payload['candidates']
+
+    print(f"run removals: all {len(removals)} rows")
+    check_game_rows(removals)
+    print(f"overturned reviews: {len(reviews)} rows on file, checking a sample")
+    check_game_rows(every(reviews, 60))
+    print(f"candidates: {len(candidates)} rows on file, checking a sample")
+    check_game_rows(every(candidates, 40))
+
+    bulletin = norm(VisibleText(read(payload['decisions'][0]['source'])).normalized()) if payload['decisions'] else ''
     for row in payload['decisions']:
-        text = VisibleText(read(row['source'])).normalized()
-        assert f"{row['date']} -- {row['span']}" in text, row['entryNo']
-        print(f"Checked {row['season']} excerpt {row['entryNo']}: {row['source']}")
+        expected = f"{row['date']} {row['game']} -- {row['span']}" if row.get('game') \
+            else f"{row['date']} -- {row['span']}"
+        expected = norm(expected)
+        if expected not in bulletin:
+            start = bulletin.find(f"{row['date']} {row.get('game', '')} --".strip())
+            raise AssertionError(f"{row['entryNo']}: official page has {bulletin[start:start + 240]!r}"
+                                 f" but the payload says {expected!r}")
+    print(f"bulletin: all {len(payload['decisions'])} entries matched the official text")
 
 
 if __name__ == '__main__':

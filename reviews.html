@@ -1,10 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>All replay overturns</title>
-  <meta http-equiv="refresh" content="0; url=./index.html#reviews">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live replay feed — every review on the official MLB schedule</title>
+<meta name="description" content="Live replay-review feed for one MLB date: overturned and confirmed reviews, ABS pitch challenges, reviews still in progress, and the runs credited to a reviewed play — read from the official MLB Stats API in your browser." />
+<link rel="preconnect" href="https://statsapi.mlb.com" crossorigin />
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body><a href="./index.html#reviews">Open all replay overturns</a></body>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h1>Live replay feed <span class="slash">/</span> one date, every review</h1>
+        <p class="tag">Read straight from the official MLB Stats API in your browser. Overturned, confirmed, still under review — each row links to its own play-by-play.</p>
+      </div>
+    </div>
+    <div class="status" id="rf-summary" role="status" aria-live="polite">loading…</div>
+  </div>
+</header>
+
+<nav class="tabs wrap" aria-label="Site sections">
+  <a class="tab" href="index.html">Run-removed overturns</a>
+  <a class="tab is-active" href="reviews.html" aria-current="page">Live replay feed</a>
+  <a class="tab" href="flagged-for-review.html">Flagged for review</a>
+</nav>
+
+<main id="main" class="wrap">
+  <section class="card intro">
+    <h2>Every review record on one date</h2>
+    <p class="muted">
+      The page reads the date's official schedule, then each finished or in-progress game's
+      play-by-play, and lists every <code>reviewDetails</code> record it finds — on the play and on
+      individual pitch events. Review codes are printed as MLB reports them; the reason text comes
+      from MLB's own <a href="https://statsapi.mlb.com/api/v1/reviewReasons" target="_blank" rel="noopener">review-reason registry</a>.
+    </p>
+    <div class="controls">
+      <button class="btn" id="rf-prev" type="button" aria-label="Previous day">←</button>
+      <label>Date <input type="date" id="rf-date" /></label>
+      <button class="btn" id="rf-next" type="button" aria-label="Next day">→</button>
+      <button class="btn" id="rf-today" type="button">Today</button>
+      <button class="btn primary" id="rf-refresh" type="button">Refresh</button>
+      <span class="notice" id="rf-countdown"></span>
+    </div>
+    <div class="controls">
+      <label>Show
+        <select id="rf-show">
+          <option value="">every review record</option>
+          <option value="overturned">overturned only</option>
+          <option value="live">still under review</option>
+          <option value="pitch">ABS pitch challenges</option>
+        </select>
+      </label>
+      <label>Code <select id="rf-type"><option value="">all review codes</option></select></label>
+      <label>Search <input type="search" id="rf-search" placeholder="player, team, or text" /></label>
+      <label>Rows <select id="feed-max"><option value="">all</option><option value="50">50</option><option value="200">200</option></select></label>
+    </div>
+    <p class="notice" id="rf-status"></p>
+    <div class="statgrid" id="rf-stats"></div>
+  </section>
+
+  <div id="rf-list" class="cards"></div>
+
+  <section class="card">
+    <h2>What the counters mean</h2>
+    <ul class="sources">
+      <li><b>Reviews &amp; challenges</b> — every review record attached to a play (manager challenge, crew-chief, umpire or boundary review).</li>
+      <li><b>Overturned / Confirmed</b> — <code>reviewDetails.isOverturned</code> with <code>inProgress: false</code>.</li>
+      <li><b>Under review</b> — <code>reviewDetails.inProgress: true</code> in the last feed read.</li>
+      <li><b>ABS pitch challenges</b> — review records attached to an individual pitch event, or reporting a pitch-result reason code.</li>
+      <li><b>Runs on reviewed plays</b> — the play carries official runner movements marked <code>isScoringEvent</code>. It says runs crossed on the play under review; it does not predict what replay will decide.</li>
+    </ul>
+    <p class="foot">
+      Official sources: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1" target="_blank" rel="noopener">schedule</a> ·
+      <a href="https://statsapi.mlb.com/api/v1/game/823616/playByPlay" target="_blank" rel="noopener">play-by-play example</a> ·
+      <a href="https://statsapi.mlb.com/api/v1/reviewReasons" target="_blank" rel="noopener">review reasons</a> ·
+      <a href="https://www.mlb.com/official-information/scoring-changes" target="_blank" rel="noopener">official scoring changes</a>.
+      Data © MLB Advanced Media, L.P. Not affiliated with or endorsed by MLB.
+    </p>
+  </section>
+</main>
+
+<footer class="wrap foot-bar">
+  <span>Live feed · official MLB Stats API only</span>
+  <span><a href="index.html">run-removed archive</a> · <a href="flagged-for-review.html">flagged for review</a></span>
+</footer>
+
+<script src="assets/js/render.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/reviews-feed.js"></script>
+</body>
 </html>

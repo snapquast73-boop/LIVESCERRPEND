@@ -1,0 +1,41 @@
+name: live-capture
+
+# Polls in-progress games for "Official Scorer Ruling Pending" markers and keeps
+# every case it sees, because the archived feed replaces the marker with the
+# corrected call once the scorer rules.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Capture pending rulings
+        run: python3 scripts/capture_pending.py
+      - name: Rebuild payload from the capture
+        run: python3 scripts/build_payload.py
+      - name: Commit when a case changed
+        run: |
+          git config user.name "capture-bot"
+          git config user.email "capture-bot@users.noreply.github.com"
+          git add data/capture/pending_live.json data/site
+          if git diff --cached --quiet; then
+            echo "No pending case changed."
+            exit 0
+          fi
+          git commit -m "capture: pending rulings $(date -u +%FT%TZ)"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
