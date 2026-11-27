@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-27T04:58:44+00:00",
+ "generatedAt": "2026-11-27T06:02:17+00:00",
  "seasons": [
   "2024",
   "2025",
@@ -8375,7 +8375,7 @@
     "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-01&endDate=2026-11-30&fields=dates,date,games,gamePk,officialDate,season,gameType,status,abstractGameState,codedGameState,detailedState,teams,away,home,team,id,name,score,isWinner,venue"
    }
   ],
-  "freshness": "Official-feed harvest completed 2026-11-27 04:58 UTC.",
+  "freshness": "Official-feed harvest completed 2026-11-27 06:02 UTC.",
   "irregularities": [
    {
     "id": "FLAG-01",
