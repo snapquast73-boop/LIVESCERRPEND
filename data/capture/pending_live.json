@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T03:53:48+00:00",
+ "generated_at": "2026-11-27T04:58:44+00:00",
  "source": "https://statsapi.mlb.com/api/v1/eventTypes",
  "date": "2026-11-26",
  "note": "Pending official-scorer rulings observed in live feeds. A case keeps when it was first and last seen and what the same play later resolved to. Nothing is inferred.",
